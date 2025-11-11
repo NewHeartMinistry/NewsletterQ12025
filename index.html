@@ -1,169 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>New Heart Global Family Newsletter – Fall 2025</title>
 
-  <!-- Preload English dictionary -->
-  <link rel="preload" href="/i18n/en.json" as="fetch" crossorigin>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="assets/css/main.css">
-
-  <!-- Manifest (optional PWA) -->
-  <link rel="manifest" href="/manifest.webmanifest">
+  <!-- Use RELATIVE paths (project site) -->
+  <link rel="preload" href="i18n/en.json" as="fetch" crossorigin>
   <meta name="theme-color" content="#111827">
-</head>
 
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    /* Option B – mirror look: simple, clean blocks, centered masthead */
+    :root{ --bg:#fff; --fg:#111827; --muted:#6b7280; --card:#f9fafb; --border:#e5e7eb; --chip:#e5e7eb; --chip-fg:#111827; }
+    :root[data-theme="dark"]{ --bg:#0b0f19; --fg:#e5e7eb; --muted:#9ca3af; --card:#0f1525; --border:#1f2937; --chip:#1f2937; --chip-fg:#e5e7eb; }
+    html{ color-scheme:light dark }
+    body{ margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif }
+    .toolbar{ position:sticky; top:0; z-index:20; display:flex; gap:.5rem; align-items:center; padding:.6rem .9rem; background:var(--bg); border-bottom:1px solid var(--border) }
+    .spacer{ flex:1 }
+    .chip{ border:0; background:var(--chip); color:var(--chip-fg); padding:.45rem .8rem; border-radius:999px; cursor:pointer }
+    .lang-switch .chip[aria-pressed="true"]{ outline:2px solid currentColor; font-weight:600 }
+    .wrap{ max-width:980px; margin:0 auto; padding:0 16px }
+    .masthead{ text-align:center; padding:20px 0 6px }
+    .masthead h1{ margin:0 0 6px }
+    .masthead .subtitle,.season,.byline{ color:var(--muted); margin:.1rem 0 }
+    blockquote.verse{ margin:12px auto 18px; padding:12px 14px; background:var(--card); border:1px solid var(--border); border-radius:12px; max-width:820px }
+    h2{ margin:18px 0 10px }
+    .section{ padding:6px 0 18px }
+    .card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; margin:10px 0 }
+    .prose p{ margin:.7rem 0 }
+    .grid{ display:grid; gap:12px }
+    .two{ grid-template-columns:1fr; }
+    @media (min-width:800px){ .two{ grid-template-columns:1fr 1fr; } }
+    .video{ position:relative; padding-bottom:56.25%; height:0; border-radius:12px; overflow:hidden; border:1px solid var(--border); background:#000 }
+    .video iframe{ position:absolute; inset:0; width:100%; height:100% }
+    .list{ padding-left:18px }
+    .footer{ color:var(--muted); text-align:center; padding:18px 0; border-top:1px solid var(--border); margin-top:10px }
+    html[dir="rtl"]{ direction: rtl; }
+    html[dir="rtl"] .toolbar{ flex-direction: row-reverse; }
+
+    /* Print: hide UI controls */
+    @media print{
+      nav.toolbar, .actions, .lang-switch, .open-modal, .share-story, .add-to-calendar { display:none !important }
+      body{ background:#fff; color:#000 }
+      a[href]::after{ content:" (" attr(href) ")"; font-size:.85em }
+    }
+  </style>
+</head>
 <body>
 
-<!-- ============================= -->
-<!--       TOP TOOLBAR            -->
-<!-- ============================= -->
+<!-- ───────────────── Toolbar (Lang + Actions) ───────────────── -->
 <nav class="toolbar" aria-label="Site tools">
-
-  <!-- LANGUAGE SWITCH -->
-  <div class="lang-switch" role="group" aria-label="Language">
-    <button data-lang="en" class="chip" aria-pressed="false">EN</button>
-    <button data-lang="ko" class="chip" aria-pressed="false">KO</button>
-    <button data-lang="he" class="chip" aria-pressed="false">HE</button>
-    <button data-lang="th" class="chip" aria-pressed="false">TH</button>
-    <button data-lang="vi" class="chip" aria-pressed="false">VI</button>
-  </div>
-
-  <div class="spacer"></div>
-
-  <!-- ACTION BUTTONS -->
-  <div class="actions">
-    <button id="themeToggle" class="chip" aria-pressed="false" data-i18n="ui.darkMode">Dark</button>
-    <button id="printBtn" class="chip" data-i18n="ui.print">Print</button>
-    <button id="shareBtn" class="chip" data-i18n="ui.share">Share</button>
+  <div class="wrap" style="display:flex;gap:.5rem;align-items:center">
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button class="chip" data-lang="en" aria-pressed="false">EN</button>
+      <button class="chip" data-lang="ko" aria-pressed="false">KO</button>
+      <button class="chip" data-lang="he" aria-pressed="false">HE</button>
+      <button class="chip" data-lang="th" aria-pressed="false">TH</button>
+      <button class="chip" data-lang="vi" aria-pressed="false">VI</button>
+    </div>
+    <div class="spacer"></div>
+    <div class="actions" style="display:flex;gap:.4rem">
+      <button id="themeToggle" class="chip" aria-pressed="false" data-i18n="ui.darkMode">Dark</button>
+      <button id="printBtn" class="chip" data-i18n="ui.print">Print</button>
+      <button id="shareBtn" class="chip" data-i18n="ui.share">Share</button>
+    </div>
   </div>
 </nav>
 
-<!-- ============================= -->
-<!--         MASTHEAD              -->
-<!-- ============================= -->
-<header class="masthead">
-  <h1 data-i18n="masthead.title">New Heart Global Family Newsletter</h1>
-  <p class="subtitle" data-i18n="masthead.subtitle">The Fourth Day Chat</p>
-  <p class="season" data-i18n="masthead.season">Fall, 2025</p>
-  <p class="byline" data-i18n="masthead.byline">by New Heart Family</p>
-</header>
+<div class="wrap">
+  <!-- ───────────────── Masthead ───────────────── -->
+  <header class="masthead">
+    <h1 data-i18n="masthead.title">New Heart Global Family Newsletter</h1>
+    <p class="subtitle" data-i18n="masthead.subtitle">The Fourth Day Chat</p>
+    <p class="season" data-i18n="masthead.season">Fall, 2025</p>
+    <p class="byline" data-i18n="masthead.byline">by New Heart Family</p>
+  </header>
 
-<!-- ============================= -->
-<!--          VERSE                -->
-<!-- ============================= -->
-<blockquote class="verse" data-i18n="verse.ezekiel">
-  "I will give you a new heart and put a new spirit in you..."
-</blockquote>
+  <!-- Verse -->
+  <blockquote class="verse" data-i18n="verse.ezekiel">
+    "I will give you a new heart and put a new spirit in you; I will remove from you
+    your heart of stone and give you a heart of flesh." — Ezekiel 36:26
+  </blockquote>
 
-<!-- ============================= -->
-<!--       EDITORIAL SECTION       -->
-<!-- ============================= -->
-<section class="section">
-  <h2 data-i18n="sections.editorial">Editorial</h2>
-  <p data-i18n="editorial.body">
-    Welcome to the Fall 2025 edition of the New Heart Global Family Newsletter!
-  </p>
-</section>
+  <!-- ───────────────── Founders (video) ───────────────── -->
+  <section class="section" id="founders">
+    <h2 data-i18n="sections.founders">Pastors Jason & Youngmi Cha</h2>
+    <p class="muted" style="margin-top:-6px;color:var(--muted)" data-i18n="sections.foundersRole">Founders & New Heart Global Directors</p>
+    <div class="card">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/gZBn3xnHTL8" title="Founders message" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
 
-<!-- ============================= -->
-<!--      WAYS TO SERVE            -->
-<!-- ============================= -->
-<section class="section">
-  <h2 data-i18n="sections.serve">Ways to Serve</h2>
+  <!-- ───────────────── Regional Directors (video) ───────────────── -->
+  <section class="section" id="regional">
+    <h2 data-i18n="sections.regional">Pastors Matthew & Sarah Kim</h2>
+    <p class="muted" style="margin-top:-6px;color:var(--muted)" data-i18n="sections.regionalRole">Regional Directors, New Heart Thailand</p>
+    <div class="card">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/wNR9yt7HtbU" title="Regional Directors Thailand" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <h3>Palanca Donation Charts</h3>
-    <p>
-      PALANCA DONATION CHART #55 (Vietnam #14) – 50 each<br>
-      PALANCA DONATION CHART #56 (Thailand #1) – 40 each
-    </p>
-  </div>
-</section>
+  <!-- ───────────────── Upcoming + Reunions ───────────────── -->
+  <section class="section">
+    <div class="grid two">
+      <div class="card">
+        <h3 data-i18n="sections.upcoming">Upcoming Gatherings</h3>
+        <ul class="list">
+          <li class="event" data-title="Vietnam — Nha Trang" data-start="2025-12-02T09:00" data-end="2025-12-05T17:00" data-location="Nha Trang, Vietnam">
+            <span data-i18n="events.vn.title">Vietnam — Nha Trang — 12/2–5/2025</span>
+            <a href="#" class="add-to-calendar" data-i18n="ui.addToCalendar" style="margin-left:.5rem">Add to Calendar</a>
+          </li>
+          <li><span>Thailand — Bangkok — 1/27–30/2026</span></li>
+          <li><span>Israel — TBA (April 2026)</span></li>
+          <li><span>USA — TBA (May 2026)</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3 data-i18n="sections.reunions">Regional Reunions</h3>
+        <ul class="list">
+          <li><span>USA — Nov 14, 2025 • LA</span></li>
+          <li><span>Korea — Nov 22, 2025 • Seoul</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-<!-- ============================= -->
-<!-- Stories Search -->
-<!-- ============================= -->
-<div class="searchbar">
-  <label class="sr-only" for="storySearch" data-i18n="ui.searchLabel">Search stories</label>
-  <input id="storySearch" type="search" placeholder="Search…" data-i18n-placeholder="ui.searchPlaceholder">
-</div>
+  <!-- ───────────────── Stories (mirror list feel) ───────────────── -->
+  <section class="section" id="stories">
+    <h2 data-i18n="sections.stories">New Heart Stories</h2>
 
-<!-- ============================= -->
-<!--    STORIES GRID (EXAMPLE)     -->
-<!-- ============================= -->
-<section class="section">
-  <h2 data-i18n="sections.stories">New Heart Stories</h2>
-
-  <article class="story-card" 
-    data-story-title="Ariel Sabag"
-    data-story-tags="USA, Israel, testimony"
-    data-i18n-scope="stories.ariel">
-
-    <img src="assets/img/ariel.jpg" alt="Story image">
-    <h3 data-i18n="name">Ariel Sabag</h3>
-    <p class="role" data-i18n="role">USA #53, Candidate / Korea #54, Team Member</p>
-    <p class="blurb" data-i18n="blurb">
-      Born into an Orthodox family… I searched the prophecies…
-    </p>
-
-    <button class="open-modal chip" data-target="#arielModal" data-i18n="cta.read">Read story</button>
-  </article>
-</section>
-
-<!-- ============================= -->
-<!--        STORY MODAL            -->
-<!-- ============================= -->
-<div id="arielModal" class="modal" role="dialog" aria-modal="true" hidden data-i18n-scope="stories.ariel">
-  <div class="modal-body">
-    <h4 id="arielTitle" data-i18n="name">Ariel Sabag – Full Story</h4>
-    <div data-i18n="full">
-      Full story content goes here…
+    <!-- Search -->
+    <div class="card" style="display:flex;gap:10px;align-items:center">
+      <label class="sr-only" for="storySearch" data-i18n="ui.searchLabel">Search stories</label>
+      <input id="storySearch" type="search" placeholder="Search…" data-i18n-placeholder="ui.searchPlaceholder"
+             style="flex:1;padding:.6rem .8rem;border:1px solid var(--border);border-radius:.6rem;background:transparent;color:inherit">
     </div>
 
-    <footer class="modal-actions">
-      <button class="share-story chip" data-share="#arielModal" data-i18n="ui.share">Share</button>
-      <button class="close-modal chip" data-i18n="ui.close">Close</button>
-    </footer>
-  </div>
+    <!-- Example story card (you can add the rest later) -->
+    <article class="card story-card" data-story-title="Ariel Sabag" data-story-tags="USA, Israel, testimony"
+             data-i18n-scope="stories.ariel">
+      <div class="grid two">
+        <div>
+          <img src="assets/img/ariel.jpg" alt="Ariel Sabag" style="width:100%;border-radius:10px;border:1px solid var(--border)">
+        </div>
+        <div>
+          <h3 data-i18n="name">Ariel Sabag</h3>
+          <p class="muted" data-i18n="role">USA #53, Candidate / Korea #54, Team Member</p>
+          <p class="blurb" data-i18n="blurb">Born into an Orthodox family… I searched the prophecies and met Jesus the Messiah…</p>
+          <button class="open-modal chip" data-target="#arielModal" data-i18n="cta.read">Read story</button>
+        </div>
+      </div>
+    </article>
+
+    <!-- Modal -->
+    <div id="arielModal" class="modal" role="dialog" aria-modal="true" hidden data-i18n-scope="stories.ariel"
+         style="position:fixed;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.5)">
+      <div class="modal-body" style="background:var(--bg);color:var(--fg);padding:16px;border-radius:12px;max-width:900px;width:min(90vw,900px);max-height:75vh;overflow:auto">
+        <h4 id="arielTitle" data-i18n="name">Ariel Sabag – Full Story</h4>
+        <div data-i18n="full">
+          <p>My sister's profound experience with New Heart 52 in Israel had a deep impact on me…</p>
+        </div>
+        <div class="modal-actions" style="display:flex;gap:.5rem;justify-content:flex-end;margin-top:.6rem">
+          <button class="share-story chip" data-share="#arielModal" data-i18n="ui.share">Share</button>
+          <button class="close-modal chip" data-i18n="ui.close">Close</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ───────────────── New Heart Kids (header + grid placeholders) ───────────────── -->
+  <section class="section" id="kids">
+    <h2 data-i18n="sections.kids">New Heart Kids</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3 data-i18n="kids.sample1.title">Ji Yeowoon</h3>
+        <p class="muted" data-i18n="kids.sample1.role">New Heart Korea #54 • Team Member</p>
+        <p data-i18n="kids.sample1.blurb">22 children, 10 teachers… it felt like mission — and the Spirit held us.</p>
+      </div>
+      <div class="card">
+        <h3 data-i18n="kids.sample2.title">Kyungjin Park</h3>
+        <p class="muted" data-i18n="kids.sample2.role">New Heart USA #53 • Team Member</p>
+        <p data-i18n="kids.sample2.blurb">Parents and children both received “one new heart” by the Spirit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── Editorial ───────────────── -->
+  <section class="section" id="editorial">
+    <h2 data-i18n="sections.editorial">Editorial</h2>
+    <div class="card prose">
+      <p data-i18n="editorial.body">
+        Welcome to the Fall 2025 edition of the New Heart Global Family Newsletter.
+        As our family grows, we celebrate what the Lord is doing across nations and generations.
+      </p>
+    </div>
+  </section>
+
+  <!-- ───────────────── Ways to Serve ───────────────── -->
+  <section class="section" id="serve">
+    <h2 data-i18n="sections.serve">Ways to Serve</h2>
+    <div class="card prose">
+      <h3>Palanca Donation Charts</h3>
+      <ul class="list">
+        <li>PALANCA DONATION CHART #55 (Vietnam #14) — 50 each</li>
+        <li>PALANCA DONATION CHART #56 (Thailand #1) — 40 each</li>
+      </ul>
+      <p data-i18n="serve.note" class="muted">These bless candidates and teams with encouragement and support.</p>
+    </div>
+  </section>
+
+  <!-- ───────────────── Footer ───────────────── -->
+  <footer class="footer">
+    <p>Design &amp; Layout by New Heart Communications • 2025</p>
+    <p>Please keep this newsletter within the New Heart Family.</p>
+  </footer>
 </div>
 
-<!-- ============================= -->
-<!--    UPCOMING GATHERINGS        -->
-<!-- ============================= -->
-<section class="section">
-  <h2 data-i18n="sections.gatherings">Upcoming Gatherings</h2>
-  <ul id="gatherings">
-
-    <li class="event"
-      data-title="Vietnam — Nha Trang"
-      data-start="2025-12-02T09:00"
-      data-end="2025-12-05T17:00"
-      data-location="Nha Trang, Vietnam">
-
-      <span data-i18n="events.vn.title">Vietnam — Nha Trang — 12/2–5/2025</span>
-      <a href="#" class="add-to-calendar chip" data-i18n="ui.addToCalendar">Add to Calendar</a>
-    </li>
-
-  </ul>
-</section>
-
-<!-- ============================= -->
-<!--            FOOTER             -->
-<!-- ============================= -->
-<footer class="footer">
-  <p>© 2025 New Heart Ministry. All rights reserved.</p>
-</footer>
-
-<!-- ============================= -->
-<!--       JAVASCRIPT FILES        -->
-<!-- ============================= -->
-<script src="assets/js/i18n.js" defer></script>
-<script src="assets/js/addons.js" defer></script>
-<script src="assets/js/pwa.js" defer></script>
+<!-- JS (RELATIVE paths) -->
+<script defer src="assets/js/i18n.js"></script>
+<script defer src="assets/js/addons.js"></script>
 
 </body>
 </html>
