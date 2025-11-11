@@ -1,193 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-<title>New Heart Global Family Newsletter – The Fourth Day Chat</title>
-<style>
-:root{--sage:#7a9d7f;--sage-ink:#2e3a33;--ivory:#f6f5f2;--gold:#c9a648;--gold-deep:#a7892e;--ink:#2b2e2c}
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--sage);color:var(--ink);font-family:'Crimson Text','Georgia',serif;line-height:1.7;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;font-size:18px}
-.page{max-width:1024px;margin:0 auto;background:linear-gradient(180deg,var(--ivory),#fbfaf6);box-shadow:0 8px 32px rgba(0,0,0,.12)}
-header.hero{padding:48px 28px 10px;text-align:center}
-.gold-emboss{letter-spacing:.04em;font-weight:700;font-size:clamp(30px,4.5vw,44px);color:transparent;background:linear-gradient(180deg,var(--gold) 0%,var(--gold-deep) 60%,var(--gold) 100%);-webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 2px 1px #e7d9b0);font-family:'Playfair Display',Georgia,serif;text-shadow:0 1px 2px rgba(201,166,72,0.3)}
-.subtitle{margin-top:10px;font-style:italic;color:var(--sage-ink);font-size:24px;font-weight:500;letter-spacing:.03em;font-family:'Crimson Text',Georgia,serif}
-.season{margin-top:8px;color:#5a7560;font-size:16px;letter-spacing:.12em;text-transform:uppercase;font-family:'Lato',sans-serif;font-weight:400}
-.byline{margin-top:8px;color:#516058;font-size:14px;letter-spacing:.01em}
-.lang-bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:12px 16px;margin-top:14px}
-.lang-btn{display:flex;align-items:center;gap:8px;border:1px solid var(--gold);padding:6px 12px;border-radius:999px;background:#fffaf0;cursor:pointer;font-size:14px;transition:transform .15s}
-.lang-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.12)}
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:16px auto 8px;width:min(92%,880px)}
-.front{padding:18px 22px 28px;display:grid;gap:18px;grid-template-columns:25% 37.5% 37.5%;align-items:start}
-.card{background:#ffffffde;border:1px solid #eae7db;border-radius:14px;padding:16px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-.card h3{margin:.1rem 0 .35rem;color:var(--sage-ink);font-size:22px;font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-spacing:.01em}
-.goldline{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:.6rem 0 .9rem}
-.verse{font-family:'Crimson Text',Georgia,serif;font-style:italic;color:#1a4d2e;font-size:19px;line-height:1.8;font-weight:600}
-.small-note{font-size:14px;color:#6a786f;margin-top:4px;font-family:'Crimson Text',Georgia,serif;letter-spacing:.01em}
-.video-wrap{position:relative;border-radius:12px;overflow:hidden;border:1px solid #e6d6a6;background:#000;cursor:pointer;transition:transform .2s}
-.video-wrap:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
-.video-wrap img{width:100%;height:auto;display:block}
-.play-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3)}
-.play-button{width:60px;height:60px;background:rgba(201,166,72,.95);border-radius:50%;display:flex;align-items:center;justify-content:center}
-.play-button::after{content:'';width:0;height:0;border-left:20px solid white;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:4px}
-.section{padding:10px 22px 28px}
-.section h2{font-size:28px;margin:8px auto 10px;color:var(--sage-ink);border-left:4px solid var(--gold);padding-left:10px;font-family:'Playfair Display',Georgia,serif;font-weight:600;letter-spacing:.01em}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.story{border-left:3px solid var(--gold);padding:12px;border-radius:12px;display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:flex-start}
-.avatar{width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
-.story h4{margin:0 0 4px 0;color:#2f3d35;font-weight:600;font-family:'Playfair Display',Georgia,serif;letter-spacing:.01em;font-size:18px}
-.meta{font-size:14px;color:#5c6a61;margin-bottom:6px;font-family:'Crimson Text',Georgia,serif;letter-spacing:.01em}
-.teaser{font-size:17px;color:#2e3330;line-height:1.6;font-family:'Crimson Text',Georgia,serif}
-.cta{border:1px solid var(--gold);background:#fffdf7;border-radius:10px;padding:8px 10px;font-size:15px;cursor:pointer;margin-top:8px;transition:all .2s;font-family:'Crimson Text',Georgia,serif}
-.cta:hover{background:var(--gold);color:white;transform:translateY(-1px)}
-dialog{border:none;border-radius:14px;max-width:min(720px,92vw);padding:0;box-shadow:0 18px 60px rgba(0,0,0,.35)}
-dialog::backdrop{background:rgba(0,0,0,.55)}
-.modal{background:#fff;border:1px solid #eee6c9;border-radius:14px}
-.modal header{display:flex;justify-content:space-between;padding:14px 16px;background:linear-gradient(180deg,#fffaf0,#fff);border-bottom:1px solid #efe7ca}
-.modal h5{margin:0;color:#2d3a33;font-size:19px;font-family:'Playfair Display',Georgia,serif}
-.modal .x{border:none;background:transparent;font-size:24px;cursor:pointer;color:#666;padding:0 8px}
-.modal .body{max-height:60vh;overflow:auto;padding:14px 16px;font-size:17px;line-height:1.7;font-family:'Crimson Text',Georgia,serif}
-.kids{position:relative;min-height:100vh;display:flex;flex-direction:column}
-.kids .bg-slideshow{position:absolute;inset:0}
-.kids .bg-img{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;opacity:0;filter:sepia(.22) saturate(1.05) brightness(1.05);transition:opacity 2s ease-in-out}
-.kids .bg-img.active{opacity:.35}
-.kids .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12),rgba(0,0,0,.2));z-index:1}
-.kids .content{position:relative;padding:28px 22px;z-index:1}
-.kids h2{color:#fff;border-left-color:#fff}
-.kids .story{background:rgba(255,255,255,.9)}
-footer{margin:28px 0 0;padding:18px 20px;text-align:center;font-size:14px;color:#3a463f;border-top:1px solid #e5dcc3;background:linear-gradient(180deg,#fffdf8,#fffaf0);font-family:'Crimson Text',Georgia,serif}
-@media (max-width:768px){.front{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}}
-.video-wrap iframe{width:100%;height:100%;position:absolute;top:0;left:0}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="masthead.title">New Heart Global Family Newsletter</title>
+  <meta name="theme-color" content="#111827">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="preload" href="i18n/en.json" as="fetch" crossorigin>
 </head>
 <body>
-<div class="page">
-  <header class="hero">
-    <div class="gold-emboss">New Heart Global Family Newsletter</div>
-    <div class="subtitle">The Fourth Day Chat</div>
-    <div class="season">Fall, 2025</div>
-    <div class="byline">by New Heart Family</div>
-    <div class="lang-bar">
-      <button class="lang-btn">🇺🇸 EN</button>
-      <button class="lang-btn">🇰🇷 KO</button>
-      <button class="lang-btn">🇮🇱 HE</button>
-      <button class="lang-btn">🇹🇭 TH</button>
-      <button class="lang-btn">🇻🇳 VI</button>
+  <nav class="toolbar" aria-label="Site tools">
+    <div class="brand" data-i18n="masthead.brand">New Heart</div>
+    <div class="spacer"></div>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button data-lang="en" class="chip" aria-pressed="false">EN</button>
+      <button data-lang="ko" class="chip" aria-pressed="false">KO</button>
+      <button data-lang="he" class="chip" aria-pressed="false">HE</button>
+      <button data-lang="th" class="chip" aria-pressed="false">TH</button>
+      <button data-lang="vi" class="chip" aria-pressed="false">VI</button>
     </div>
+    <div class="actions">
+      <button id="themeToggle" class="chip" aria-pressed="false" data-i18n="ui.darkMode">Dark</button>
+      <button id="printBtn" class="chip" data-i18n="ui.print">Print</button>
+      <button id="shareBtn" class="chip" data-i18n="ui.share">Share</button>
+    </div>
+  </nav>
+
+  <header class="masthead">
+    <h1 data-i18n="masthead.title">New Heart Global Family Newsletter</h1>
+    <p class="subtitle" data-i18n="masthead.subtitle">The Fourth Day Chat</p>
+    <p class="season" data-i18n="masthead.season">Fall, 2025</p>
+    <p class="byline" data-i18n="masthead.byline">by New Heart Family</p>
   </header>
 
-  <div class="divider"></div>
+  <blockquote class="verse" data-i18n="verse.ezekiel">
+    "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh." — Ezekiel 36:26
+  </blockquote>
 
-  <section class="front">
-    <article class="card">
-      <div class="goldline"></div>
-      <p class="verse">"I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh." — Ezekiel 36:26</p>
-    </article>
+  <main>
+    <section class="section editorial">
+      <h2 data-i18n="sections.editorial">Editorial</h2>
+      <article class="card prose" data-i18n="editorial.body"></article>
+    </section>
 
-    <article class="card">
-      <h3>Pastors Jason &amp; Youngmi Cha</h3>
-      <div class="small-note">Founders &amp; New Heart Global Directors</div>
-      <div class="goldline"></div>
-      <div class="video-wrap" style="background:#000;position:relative;padding-bottom:56.25%;height:0">
-        <iframe src="https://www.youtube.com/embed/gZBn3xnHTL8" 
-          title="Pastors Jason &amp; Youngmi Cha — Founders Message"
-          frameborder="0"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-      <p style="margin-top:10px;font-size:16px;line-height:1.7">Hello, New Heart Family! ... — Jason & Youngmi Cha, New Heart Global Directors</p>
-    </article>
+    <section class="section serve">
+      <h2 data-i18n="sections.serve">Ways to Serve</h2>
 
-    <article class="card">
-      <h3>Pastors Matthew &amp; Sarah Kim</h3>
-      <div class="small-note">Regional Directors, New Heart Thailand</div>
-      <div class="goldline"></div>
-      <div class="video-wrap" style="background:#000;position:relative;padding-bottom:56.25%;height:0">
-        <iframe src="https://www.youtube.com/embed/wNR9yt7HtbU" 
-          title="Pastors Matthew &amp; Sarah Kim — Regional Directors (Thailand)"
-          frameborder="0"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-          referrerpolicy="strict-origin-when-cross-origin"></iframe>
-      </div>
-      
-      <div class="goldline"></div>
-      
-      <div style="text-align:center;background:#fff;padding:0;border-radius:12px;overflow:hidden">
-        <img src="Thailand-poster.jpeg" style="width:100%;height:auto;display:block" alt="New Heart Thailand #56"/>
-      </div>
-      <div class="goldline"></div>
-      <h4 style="margin:.2rem 0 .35rem;color:#2f3d35;font-family:'Playfair Display',Georgia,serif;font-size:18px">Upcoming Gatherings</h4>
-      <ul style="list-style:none;padding:0 12px 0 0;margin:0;font-size:16px;font-family:'Crimson Text',Georgia,serif">
-        <li style="margin-bottom:6px">🇻🇳 Vietnam — Nha Trang — 12/2–5/2025</li>
-        <li style="margin-bottom:6px">🇹🇭 Thailand — Bangkok — 1/27–30/2026</li>
-        <li style="margin-bottom:6px">🇮🇱 Israel — TBA (April 2026)</li>
-        <li style="margin-bottom:6px">🇺🇸 USA — TBA (May 2026)</li>
-      </ul>
-      <div class="goldline"></div>
-      <h4 style="margin:.2rem 0 .35rem;color:#2f3d35;font-family:'Playfair Display',Georgia,serif;font-size:18px">Regional Reunions</h4>
-      <div style="text-align:center;font-size:16px;font-family:'Crimson Text',Georgia,serif;padding-right:12px">🇺🇸 USA — Nov 14, 2025 • LA<br/>🇰🇷 Korea — Nov 22, 2025 • Seoul</div>
-    </article>
-  </section>
+      <details class="card" open>
+        <summary data-i18n="serve.vn.header">Palanca Donations — Vietnam #14</summary>
+        <div class="grid two">
+          <div class="item"><strong data-i18n="serve.items.notebook">Notebook</strong> — <span data-i18n="serve.vn.notebook">50 pcs • 304.5K VND</span></div>
+          <div class="item"><strong data-i18n="serve.items.pens">Blue/Red ballpens</strong> — <span data-i18n="serve.vn.pens">50 pcs • 283K VND</span></div>
+          <div class="item"><strong data-i18n="serve.items.towel">Towel</strong> — <span data-i18n="serve.vn.towel">50 pcs • 3,200K VND</span></div>
+          <div class="item"><strong data-i18n="serve.items.tooth">Toothbrush/Paste</strong> — <span data-i18n="serve.vn.tooth">50 pcs • 1,500K VND</span></div>
+          <div class="item"><strong data-i18n="serve.items.magnet">Food tray magnet</strong> — <span data-i18n="serve.vn.magnet">50 pcs • 2,100K VND</span></div>
+          <div class="item"><strong data-i18n="serve.items.sheep">Sheep Doll</strong> — <span data-i18n="serve.vn.sheep">50 pcs • 1,800K VND</span></div>
+          <div class="item"><strong data-i18n="serve.items.facial">Facial Pack</strong> — <span data-i18n="serve.vn.facial">200 pcs • 3,650K VND</span></div>
+        </div>
+        <p class="note" data-i18n="serve.note">Selected line items shown; full chart maintained by coordinators.</p>
+      </details>
 
-  <section class="section">
-    <h2>New Heart Stories</h2>
-    <div class="two-col">
-      <article class="story"><img class="avatar" src="ariel.jpeg" alt="Ariel Sabag"/><div><h4>Ariel Sabag</h4><div class="meta">USA #53, Candidate / Korea #54, Team Member</div><div class="teaser">Born into an Orthodox family… I searched the prophecies and met Jesus the Messiah…</div><button class="cta" onclick="document.getElementById('modal-ariel').showModal()">Read story</button></div></article>
-      <article class="story"><img class="avatar" src="keziah.jpeg" alt="Keziah Trong"/><div><h4>Keziah Trong</h4><div class="meta">Vietnam #50, Candidate</div><div class="teaser">God reminded me His love is unconditional… He's using me to bring many to Him.</div><button class="cta" onclick="document.getElementById('modal-keziah').showModal()">Read story</button></div></article>
-      <article class="story"><img class="avatar" src="han.jpeg" alt="Han Ye-seul"/><div><h4>Han Ye-seul</h4><div class="meta">Korea #54, Team Member</div><div class="teaser">Serving while pregnant, the Lord called my name… to sit at His feet first.</div><button class="cta" onclick="document.getElementById('modal-han').showModal()">Read story</button></div></article>
-      <article class="story"><img class="avatar" src="parichat.jpeg" alt="Parichat"/><div><h4>Parichat</h4><div class="meta">Korea #54, Candidate</div><div class="teaser">18 years of pain became light; I forgave and found new life in Jesus.</div><button class="cta" onclick="document.getElementById('modal-parichat').showModal()">Read story</button></div></article>
-      <article class="story"><img class="avatar" src="choi.jpeg" alt="Eun Young Choi"/><div><h4>Eun Young Choi</h4><div class="meta">Korea #54, Candidate</div><div class="teaser">Full testimony included.</div><button class="cta" onclick="document.getElementById('modal-choi').showModal()">Read story</button></div></article>
-    </div>
-  </section>
+      <details class="card">
+        <summary data-i18n="serve.th.header">Palanca Donations — Thailand #1</summary>
+        <div class="grid two">
+          <div class="item"><strong data-i18n="serve.items.notebook">Notebook</strong> — <span data-i18n="serve.th.notebook">45 pcs • ฿495</span></div>
+          <div class="item"><strong data-i18n="serve.items.towel">Towel</strong> — <span data-i18n="serve.th.towel">40 pcs • ฿4,060</span></div>
+          <div class="item"><strong data-i18n="serve.items.tooth">Toothbrush/Paste</strong> — <span data-i18n="serve.th.tooth">40 pcs • ฿1,630</span></div>
+          <div class="item"><strong data-i18n="serve.items.magnet">Food tray magnet</strong> — <span data-i18n="serve.th.magnet">40 pcs • ฿2,100</span></div>
+          <div class="item"><strong data-i18n="serve.items.youareloved">You are loved</strong> — <span data-i18n="serve.th.youareloved">40 pcs • ฿3,240</span></div>
+          <div class="item"><strong data-i18n="serve.items.lantern">Lantern</strong> — <span data-i18n="serve.th.lantern">40 pcs • ฿4,370</span></div>
+          <div class="item"><strong data-i18n="serve.items.usb">USB (4GB)</strong> — <span data-i18n="serve.th.usb">40 pcs • ฿3,240</span></div>
+        </div>
+        <p class="note" data-i18n="serve.note">Selected line items shown; full chart maintained by coordinators.</p>
+      </details>
+    </section>
 
-  <div class="divider"></div>
+    <section class="section stories">
+      <h2 data-i18n="sections.stories">New Heart Stories</h2>
+      <p data-i18n="stories.placeholder">Stories will appear here. Tap a language above to see live translation.</p>
+    </section>
 
-  <section class="kids">
-    <div class="bg-slideshow">
-      <img src="kids-bg-1.jpeg" alt="New Heart Kids" class="bg-img active"/>
-<img src="kids-bg-2.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-3.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-4.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-5.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-6.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-7.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-8.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-9.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-10.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-11.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-12.jpeg" alt="New Heart Kids" class="bg-img"/>
-<img src="kids-bg-13.jpeg" alt="New Heart Kids" class="bg-img"/>
-    </div>
-    <div class="shade"></div>
-    <div class="content">
-      <h2>New Heart Kids</h2>
-      <div class="two-col">
-        <article class="story"><img class="avatar" src="ji.jpeg" alt="Ji Yeowoon"/><div><h4>Ji Yeowoon</h4><div class="meta">New Heart Korea #54 • Team Member</div><div class="teaser">22 children, 10 teachers… it felt like mission — and the Spirit held us.</div><button class="cta" onclick="document.getElementById('modal-ji').showModal()">Read story</button></div></article>
-        <article class="story"><img class="avatar" src="kyungjin.jpeg" alt="Kyungjin Park"/><div><h4>Kyungjin Park</h4><div class="meta">New Heart USA #53 • Team Member</div><div class="teaser">Parents and children both received "one new heart" by the Spirit.</div><button class="cta" onclick="document.getElementById('modal-kyungjin').showModal()">Read story</button></div></article>
-      </div>
-    </div>
-  </section>
+    <section class="section kids">
+      <h2 data-i18n="sections.kids">New Heart Kids</h2>
+      <p data-i18n="kids.placeholder">Highlights and resources to serve families and kids in our global family.</p>
+    </section>
+  </main>
 
-  <footer>Design & Layout by New Heart Communications • 2025<br/>Please keep this newsletter within the New Heart Family.</footer>
-</div>
+  <footer class="footer">
+    <span data-i18n="footer.rights">Design & Layout by New Heart Communications • 2025 • Please keep this newsletter within the New Heart Family.</span>
+  </footer>
 
-<!-- Story modals trimmed for brevity in this build; add full content as needed -->
-<script>
-const bgImages = document.querySelectorAll('.kids .bg-img');
-let currentBg = 0;
-function rotateBg() {
-  bgImages[currentBg].classList.remove('active');
-  currentBg = (currentBg + 1) % bgImages.length;
-  bgImages[currentBg].classList.add('active');
-}
-setInterval(rotateBg, 4000);
-</script>
+  <script defer src="assets/js/i18n.js"></script>
+  <script defer src="assets/js/addons.js"></script>
 </body>
 </html>
