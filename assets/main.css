@@ -1,0 +1,24 @@
+:root{ --bg:#ffffff; --fg:#111827; --muted:#6b7280; --chip:#e5e7eb; --chip-fg:#111827; --card:#f9fafb; --border:#e5e7eb; }
+:root[data-theme="dark"]{ --bg:#0b0f19; --fg:#e5e7eb; --muted:#9ca3af; --chip:#1f2937; --chip-fg:#e5e7eb; --card:#0f1525; --border:#1f2937; }
+html{ color-scheme: light dark; }
+*{ box-sizing:border-box; }
+body{ margin:0; background:var(--bg); color:var(--fg); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, 'Noto Sans', sans-serif; }
+.toolbar{ position:sticky; top:0; z-index:20; display:flex; align-items:center; gap:.5rem; padding:.5rem .75rem; background:var(--bg); border-bottom:1px solid var(--border); }
+.toolbar .brand{ font-weight:700; }
+.toolbar .spacer{ flex:1; }
+.chip{ border:0; background:var(--chip); color:var(--chip-fg); padding:.45rem .75rem; border-radius:999px; cursor:pointer; }
+.actions{ display:flex; gap:.35rem; }
+.lang-switch{ display:flex; gap:.35rem; }
+.masthead{ padding:1rem .75rem .5rem; text-align:center; }
+.masthead .subtitle,.masthead .season,.masthead .byline{ color:var(--muted); margin:.15rem 0; }
+.verse{ margin:0 .75rem 1rem; padding:.75rem; background:var(--card); border:1px solid var(--border); border-radius:1rem; }
+.section{ padding: .5rem .75rem 1.25rem; }
+.card{ background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1rem; margin:.5rem 0; }
+.prose p{ margin:.75rem 0; }
+.grid.two{ display:grid; grid-template-columns: 1fr; gap:.5rem; }
+@media (min-width:700px){ .grid.two{ grid-template-columns: 1fr 1fr; } }
+.item{ background:rgba(0,0,0,.03); padding:.6rem .7rem; border-radius:.6rem; }
+.note{ color:var(--muted); font-size:.9rem; margin-top:.5rem; }
+.footer{ padding:1rem .75rem; border-top:1px solid var(--border); color:var(--muted); text-align:center; }
+html[dir="rtl"]{ direction: rtl; }
+html[dir="rtl"] .toolbar{ flex-direction: row-reverse; }
