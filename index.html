@@ -1,75 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>New Heart Global Family Newsletter – Fall 2025</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>New Heart Global Family Newsletter – Fall 2025</title>
+<meta name="theme-color" content="#111827">
 
-  <!-- Use RELATIVE paths (project site) -->
-  <link rel="preload" href="i18n/en.json" as="fetch" crossorigin>
-  <meta name="theme-color" content="#111827">
+<style>
+:root{ --bg:#ffffff; --fg:#111827; --muted:#6b7280; --chip:#e5e7eb; --chip-fg:#111827; --card:#f9fafb; --border:#e5e7eb; }
+:root[data-theme="dark"]{ --bg:#0b0f19; --fg:#e5e7eb; --muted:#9ca3af; --chip:#1f2937; --chip-fg:#e5e7eb; --card:#0f1525; --border:#1f2937; }
+html{ color-scheme: light dark; }
+*{ box-sizing:border-box; }
+body{ margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif; }
+a{ color:inherit; }
 
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <style>
-    /* Option B – mirror look: simple, clean blocks, centered masthead */
-    :root{ --bg:#fff; --fg:#111827; --muted:#6b7280; --card:#f9fafb; --border:#e5e7eb; --chip:#e5e7eb; --chip-fg:#111827; }
-    :root[data-theme="dark"]{ --bg:#0b0f19; --fg:#e5e7eb; --muted:#9ca3af; --card:#0f1525; --border:#1f2937; --chip:#1f2937; --chip-fg:#e5e7eb; }
-    html{ color-scheme:light dark }
-    body{ margin:0; background:var(--bg); color:var(--fg); font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif }
-    .toolbar{ position:sticky; top:0; z-index:20; display:flex; gap:.5rem; align-items:center; padding:.6rem .9rem; background:var(--bg); border-bottom:1px solid var(--border) }
-    .spacer{ flex:1 }
-    .chip{ border:0; background:var(--chip); color:var(--chip-fg); padding:.45rem .8rem; border-radius:999px; cursor:pointer }
-    .lang-switch .chip[aria-pressed="true"]{ outline:2px solid currentColor; font-weight:600 }
-    .wrap{ max-width:980px; margin:0 auto; padding:0 16px }
-    .masthead{ text-align:center; padding:20px 0 6px }
-    .masthead h1{ margin:0 0 6px }
-    .masthead .subtitle,.season,.byline{ color:var(--muted); margin:.1rem 0 }
-    blockquote.verse{ margin:12px auto 18px; padding:12px 14px; background:var(--card); border:1px solid var(--border); border-radius:12px; max-width:820px }
-    h2{ margin:18px 0 10px }
-    .section{ padding:6px 0 18px }
-    .card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; margin:10px 0 }
-    .prose p{ margin:.7rem 0 }
-    .grid{ display:grid; gap:12px }
-    .two{ grid-template-columns:1fr; }
-    @media (min-width:800px){ .two{ grid-template-columns:1fr 1fr; } }
-    .video{ position:relative; padding-bottom:56.25%; height:0; border-radius:12px; overflow:hidden; border:1px solid var(--border); background:#000 }
-    .video iframe{ position:absolute; inset:0; width:100%; height:100% }
-    .list{ padding-left:18px }
-    .footer{ color:var(--muted); text-align:center; padding:18px 0; border-top:1px solid var(--border); margin-top:10px }
-    html[dir="rtl"]{ direction: rtl; }
-    html[dir="rtl"] .toolbar{ flex-direction: row-reverse; }
+/* Wrap + Sections (pages) */
+.wrap{ max-width: 1100px; margin: 0 auto; padding: 0 16px; }
+.section{ padding: 18px 0 22px; }
+h1,h2,h3,h4{ margin: .2rem 0 .6rem; }
+.muted{ color:var(--muted); }
 
-    /* Print: hide UI controls */
-    @media print{
-      nav.toolbar, .actions, .lang-switch, .open-modal, .share-story, .add-to-calendar { display:none !important }
-      body{ background:#fff; color:#000 }
-      a[href]::after{ content:" (" attr(href) ")"; font-size:.85em }
-    }
-  </style>
+/* Toolbar */
+.toolbar{ position:sticky; top:0; z-index:50; display:flex; gap:.5rem; align-items:center; padding:.6rem .9rem; background:var(--bg); border-bottom:1px solid var(--border); }
+.toolbar .brand{ font-weight:700; }
+.toolbar .spacer{ flex:1; }
+.chip{ border:0; background:var(--chip); color:var(--chip-fg); padding:.45rem .8rem; border-radius:999px; cursor:pointer; }
+.lang-switch .chip[aria-pressed="true"]{ outline:2px solid currentColor; font-weight:600; }
+
+/* Masthead + Verse */
+.masthead{ text-align:center; padding: 22px 0 8px; }
+.masthead .subtitle,.season,.byline{ color:var(--muted); margin:.15rem 0; }
+.verse{ margin:12px auto 18px; padding:12px 14px; background:var(--card); border:1px solid var(--border); border-radius:12px; max-width:860px; }
+
+/* Cards, grids */
+.card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; margin:10px 0; }
+.grid{ display:grid; gap:14px; }
+.two{ grid-template-columns:1fr; }
+@media (min-width: 900px){ .two{ grid-template-columns:1fr 1fr; } }
+.story-card img, .kid-card img{ width:100%; border-radius:10px; border:1px solid var(--border); }
+
+/* Search */
+.searchbar{ margin:6px 0 12px; display:flex; gap:10px; align-items:center; }
+#storySearch{ flex:1; padding:.6rem .8rem; border:1px solid var(--border); border-radius:.6rem; background:transparent; color:inherit; }
+
+/* Modal (Read story) */
+.modal[role="dialog"]{ position:fixed; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.5); z-index:9999; }
+.modal[hidden]{ display:none !important; }
+.modal .modal-body{ max-height:72vh; overflow:auto; background:var(--bg); color:var(--fg); padding:16px; border-radius:12px; width:min(900px,90vw); box-shadow:0 6px 28px rgba(0,0,0,.35); }
+.modal .modal-actions{ display:flex; gap:.5rem; justify-content:flex-end; margin-top:.6rem; }
+
+/* Kids animated collage background */
+.kids-bg{
+  position: relative;
+  isolation:isolate;
+  border-radius:16px;
+  overflow:hidden;
+}
+.kids-bg::before{
+  content:""; position:absolute; inset:0; background:
+    radial-gradient(1200px 600px at -10% -10%, rgba(255,255,255,.35), transparent 60%),
+    radial-gradient(1200px 600px at 110% 110%, rgba(255,255,255,.35), transparent 60%),
+    linear-gradient(135deg, #f0f9ff, #fdf2f8);
+  opacity:.55; z-index:0;
+}
+.kids-collage{
+  position:absolute; inset:0; z-index:0; display:grid; grid-template-columns:repeat(6,1fr); gap:10px; padding:10px; opacity:.2;
+}
+.kids-collage img{
+  width:100%; height:100px; object-fit:cover; border-radius:10px; filter:saturate(1.1) contrast(1.05);
+  animation: floatFade 12s linear infinite;
+}
+@keyframes floatFade{
+  0%{ transform:translateY(10px) scale(1); opacity:.0; }
+  10%{ opacity:.5; }
+  50%{ transform:translateY(-6px) scale(1.03); opacity:.6; }
+  90%{ opacity:.4; }
+  100%{ transform:translateY(10px) scale(1); opacity:.0; }
+}
+.kids-content{ position:relative; z-index:1; }
+
+/* Footer */
+.footer{ color:var(--muted); text-align:center; padding:18px 0; border-top:1px solid var(--border); margin-top:12px; }
+
+/* RTL */
+html[dir="rtl"]{ direction: rtl; }
+html[dir="rtl"] .toolbar{ flex-direction: row-reverse; }
+
+/* Print: force page breaks per major section */
+@media print{
+  nav.toolbar, .actions, .lang-switch, .searchbar, .open-modal, .share-story, .add-to-calendar { display:none !important; }
+  .page-break{ page-break-before:always; break-before:page; }
+}
+</style>
 </head>
 <body>
 
-<!-- ───────────────── Toolbar (Lang + Actions) ───────────────── -->
+<!-- ===== Toolbar ===== -->
 <nav class="toolbar" aria-label="Site tools">
   <div class="wrap" style="display:flex;gap:.5rem;align-items:center">
+    <div class="brand">New Heart</div>
+    <div class="spacer"></div>
     <div class="lang-switch" role="group" aria-label="Language">
-      <button class="chip" data-lang="en" aria-pressed="false">EN</button>
+      <button class="chip" data-lang="en" aria-pressed="true">EN</button>
       <button class="chip" data-lang="ko" aria-pressed="false">KO</button>
       <button class="chip" data-lang="he" aria-pressed="false">HE</button>
       <button class="chip" data-lang="th" aria-pressed="false">TH</button>
       <button class="chip" data-lang="vi" aria-pressed="false">VI</button>
     </div>
-    <div class="spacer"></div>
-    <div class="actions" style="display:flex;gap:.4rem">
+    <div class="actions" style="display:flex;gap:.4rem;margin-left:.6rem">
       <button id="themeToggle" class="chip" aria-pressed="false" data-i18n="ui.darkMode">Dark</button>
       <button id="printBtn" class="chip" data-i18n="ui.print">Print</button>
-      <button id="shareBtn" class="chip" data-i18n="ui.share">Share</button>
     </div>
   </div>
 </nav>
 
 <div class="wrap">
-  <!-- ───────────────── Masthead ───────────────── -->
+
+  <!-- ===== Masthead ===== -->
   <header class="masthead">
     <h1 data-i18n="masthead.title">New Heart Global Family Newsletter</h1>
     <p class="subtitle" data-i18n="masthead.subtitle">The Fourth Day Chat</p>
@@ -77,180 +124,399 @@
     <p class="byline" data-i18n="masthead.byline">by New Heart Family</p>
   </header>
 
-  <!-- Verse -->
   <blockquote class="verse" data-i18n="verse.ezekiel">
-    "I will give you a new heart and put a new spirit in you; I will remove from you
-    your heart of stone and give you a heart of flesh." — Ezekiel 36:26
+    "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh." — Ezekiel 36:26
   </blockquote>
 
- <!-- ───────────────── Founders (video + image) ───────────────── -->
-<section class="section" id="founders">
-  <h2 data-i18n="sections.founders">Pastors Jason & Youngmi Cha</h2>
-  <p class="muted" style="margin-top:-6px;color:var(--muted)" data-i18n="sections.foundersRole">
-    Founders & New Heart Global Directors
-  </p>
-
-  <div class="card">
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/gZBn3xnHTL8" 
-              title="Founders message" frameborder="0" allowfullscreen></iframe>
- <img src="assets/img/founders.jpeg" alt="Pastors Jason & Youngmi Cha" width="600" style="margin-top:1rem;">
-    </div>
-
-    <!-- Optional founder image -->
-    <div class="image">
-      <img src="/NewsletterQ12025/assets/img/founders.jpeg" 
-           alt="Pastors Jason & Youngmi Cha" 
-           style="width:100%;max-width:600px;border-radius:1rem;margin-top:1rem;">
-    </div>
-  </div>
-</section>
-
-
-  <!-- ───────────────── Regional Directors (video + image) ───────────────── -->
-<section class="section" id="regional">
-  <h2 data-i18n="sections.regional">Pastors Matthew & Sarah Kim</h2>
-  <p class="muted" style="margin-top:-6px;color:var(--muted)" data-i18n="sections.regionalRole">
-    Regional Directors – Thailand
-  </p>
-
-  <div class="card">
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/wNR9yt7HtbU"
-              title="Regional Directors message" frameborder="0" allowfullscreen></iframe>
-      <img src="assets/img/regional-directors.jpeg" alt="Pastors Matthew & Sarah Kim" width="600" style="margin-top:1rem;">
-    </div>
-
-    <!-- Optional regional directors image -->
-    <div class="image">
-      <img src="/NewsletterQ12025/assets/img/regional-directors.jpeg" 
-           alt="Pastors Matthew & Sarah Kim"
-           style="width:100%;max-width:600px;border-radius:1rem;margin-top:1rem;">
-    </div>
-  </div>
-</section>
-
-
-  <!-- ───────────────── Upcoming + Reunions ───────────────── -->
-  <section class="section">
-    <div class="grid two">
-      <div class="card">
-        <h3 data-i18n="sections.upcoming">Upcoming Gatherings</h3>
-        <ul class="list">
-          <li class="event" data-title="Vietnam — Nha Trang" data-start="2025-12-02T09:00" data-end="2025-12-05T17:00" data-location="Nha Trang, Vietnam">
-            <span data-i18n="events.vn.title">Vietnam — Nha Trang — 12/2–5/2025</span>
-            <a href="#" class="add-to-calendar" data-i18n="ui.addToCalendar" style="margin-left:.5rem">Add to Calendar</a>
-          </li>
-          <li><span>Thailand — Bangkok — 1/27–30/2026</span></li>
-          <li><span>Israel — TBA (April 2026)</span></li>
-          <li><span>USA — TBA (May 2026)</span></li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3 data-i18n="sections.reunions">Regional Reunions</h3>
-        <ul class="list">
-          <li><span>USA — Nov 14, 2025 • LA</span></li>
-          <li><span>Korea — Nov 22, 2025 • Seoul</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- ───────────────── Stories (mirror list feel) ───────────────── -->
-  <section class="section" id="stories">
-    <h2 data-i18n="sections.stories">New Heart Stories</h2>
-
-    <!-- Search -->
-    <div class="card" style="display:flex;gap:10px;align-items:center">
-      <label class="sr-only" for="storySearch" data-i18n="ui.searchLabel">Search stories</label>
-      <input id="storySearch" type="search" placeholder="Search…" data-i18n-placeholder="ui.searchPlaceholder"
-             style="flex:1;padding:.6rem .8rem;border:1px solid var(--border);border-radius:.6rem;background:transparent;color:inherit">
-    </div>
-
-    <!-- Example story card (you can add the rest later) -->
-    <article class="card story-card" data-story-title="Ariel Sabag" data-story-tags="USA, Israel, testimony"
-             data-i18n-scope="stories.ariel">
+  <!-- ========================================================= -->
+  <!-- ====================== PAGE 1 =========================== -->
+  <!-- Founders + Regional Directors + Thai Poster + Upcoming -->
+  <!-- ========================================================= -->
+  <section class="section" id="page1">
+    <!-- Founders -->
+    <div class="card">
+      <h2>Pastors Jason &amp; Youngmi Cha</h2>
+      <p class="muted">Founders &amp; New Heart Global Directors</p>
       <div class="grid two">
         <div>
-          <img src="assets/img/ariel.jpg" alt="Ariel Sabag" style="width:100%;border-radius:10px;border:1px solid var(--border)">
+          <div class="video" style="aspect-ratio:16/9; background:#000; border-radius:12px; overflow:hidden;">
+            <iframe src="https://www.youtube.com/embed/gZBn3xnHTL8" title="Founders message" frameborder="0" allowfullscreen style="width:100%;height:100%;"></iframe>
+          </div>
         </div>
         <div>
-          <h3 data-i18n="name">Ariel Sabag</h3>
-          <p class="muted" data-i18n="role">USA #53, Candidate / Korea #54, Team Member</p>
-          <p class="blurb" data-i18n="blurb">Born into an Orthodox family… I searched the prophecies and met Jesus the Messiah…</p>
-          <button class="open-modal chip" data-target="#arielModal" data-i18n="cta.read">Read story</button>
-        </div>
-      </div>
-    </article>
-
-    <!-- Modal -->
-    <div id="arielModal" class="modal" role="dialog" aria-modal="true" hidden data-i18n-scope="stories.ariel"
-         style="position:fixed;inset:0;display:grid;place-items:center;background:rgba(0,0,0,.5)">
-      <div class="modal-body" style="background:var(--bg);color:var(--fg);padding:16px;border-radius:12px;max-width:900px;width:min(90vw,900px);max-height:75vh;overflow:auto">
-        <h4 id="arielTitle" data-i18n="name">Ariel Sabag – Full Story</h4>
-        <div data-i18n="full">
-          <p>My sister's profound experience with New Heart 52 in Israel had a deep impact on me…</p>
-        </div>
-        <div class="modal-actions" style="display:flex;gap:.5rem;justify-content:flex-end;margin-top:.6rem">
-          <button class="share-story chip" data-share="#arielModal" data-i18n="ui.share">Share</button>
-          <button class="close-modal chip" data-i18n="ui.close">Close</button>
+          <h3>Greeting</h3>
+          <p>
+            Hello, New Heart Family! Normally, we greet one another by saying, "How are you?" That is to say, how is your health, how is your family, and how is your work. Has anyone asked you, instead, "How is your heart?" Perhaps that is more appropriate for us. For God, it is always a matter of the heart. When God sent Samuel to Jesse's house to select the next king of Israel, He said, "The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart." This is particularly important because we are a New Heart community: "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh." It is our prayer and confident hope through faith in Jesus and the gift of grace that your heart is well, whatever your circumstances. We praise and thank our Abba Father for sustaining us in the power of the Holy Spirit through each victorious 4th day. God bless you, your family, and your labor of love for God's people and His church. — Jason &amp; Youngmi Cha, Founders &amp; New Heart Global Directors
+          </p>
         </div>
       </div>
     </div>
 
-  </section>
-
-  <!-- ───────────────── New Heart Kids (header + grid placeholders) ───────────────── -->
-  <section class="section" id="kids">
-    <h2 data-i18n="sections.kids">New Heart Kids</h2>
-    <div class="grid two">
-      <div class="card">
-        <h3 data-i18n="kids.sample1.title">Ji Yeowoon</h3>
-        <p class="muted" data-i18n="kids.sample1.role">New Heart Korea #54 • Team Member</p>
-        <p data-i18n="kids.sample1.blurb">22 children, 10 teachers… it felt like mission — and the Spirit held us.</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="kids.sample2.title">Kyungjin Park</h3>
-        <p class="muted" data-i18n="kids.sample2.role">New Heart USA #53 • Team Member</p>
-        <p data-i18n="kids.sample2.blurb">Parents and children both received “one new heart” by the Spirit.</p>
+    <!-- Regional Directors -->
+    <div class="card">
+      <h2>Regional Directors – Reflections &amp; Greetings</h2>
+      <div class="video" style="aspect-ratio:16/9; background:#000; border-radius:12px; overflow:hidden;">
+        <iframe src="https://www.youtube.com/embed/wNR9yt7HtbU" title="Regional Directors message" frameborder="0" allowfullscreen style="width:100%;height:100%;"></iframe>
       </div>
     </div>
-  </section>
 
-  <!-- ───────────────── Editorial ───────────────── -->
-  <section class="section" id="editorial">
-    <h2 data-i18n="sections.editorial">Editorial</h2>
-    <div class="card prose">
-      <p data-i18n="editorial.body">
-        Welcome to the Fall 2025 edition of the New Heart Global Family Newsletter.
-        As our family grows, we celebrate what the Lord is doing across nations and generations.
-      </p>
+    <!-- Thai Poster -->
+    <div class="card">
+      <h2>Thailand</h2>
+      <img src="assets/img/Thailand-poster.jpeg" alt="Thailand Poster" style="width:100%; border-radius:12px;">
     </div>
-  </section>
 
-  <!-- ───────────────── Ways to Serve ───────────────── -->
-  <section class="section" id="serve">
-    <h2 data-i18n="sections.serve">Ways to Serve</h2>
-    <div class="card prose">
-      <h3>Palanca Donation Charts</h3>
-      <ul class="list">
-        <li>PALANCA DONATION CHART #55 (Vietnam #14) — 50 each</li>
-        <li>PALANCA DONATION CHART #56 (Thailand #1) — 40 each</li>
+    <!-- Upcoming Gatherings -->
+    <div class="card">
+      <h2>Upcoming New Heart &amp; Regional Reunions</h2>
+      <ul id="gatherings" class="prose" style="padding-left:1rem;">
+        <li class="event" data-title="Vietnam — Nha Trang" data-start="2025-12-02T09:00" data-end="2025-12-05T17:00" data-location="Nha Trang, Vietnam">
+          Vietnam — Nha Trang — 12/2–5/2025 &nbsp; <a href="#" class="add-to-calendar chip">Add to Calendar</a>
+        </li>
+        <li class="event" data-title="Korea — Seoul" data-start="2026-01-15T10:00" data-end="2026-01-17T17:00" data-location="Seoul, South Korea">
+          Korea — Seoul — 1/15–17/2026 &nbsp; <a href="#" class="add-to-calendar chip">Add to Calendar</a>
+        </li>
       </ul>
-      <p data-i18n="serve.note" class="muted">These bless candidates and teams with encouragement and support.</p>
     </div>
   </section>
 
-  <!-- ───────────────── Footer ───────────────── -->
+  <div class="page-break"></div>
+
+  <!-- ========================================================= -->
+  <!-- ====================== PAGE 2 =========================== -->
+  <!-- New Heart Stories (5)                                    -->
+  <!-- ========================================================= -->
+  <section class="section" id="page2-stories">
+    <h2>New Heart Stories</h2>
+
+    <div class="searchbar">
+      <label class="sr-only" for="storySearch">Search stories</label>
+      <input id="storySearch" type="search" placeholder="Search stories by name, tag, or text" autocomplete="off">
+    </div>
+
+    <div class="grid two">
+      <!-- 1 Ariel -->
+      <article class="card story-card" data-story-title="Ariel Sabag" data-story-tags="USA,Korea,Testimony">
+        <img src="assets/img/ariel.jpeg" alt="Ariel Sabag">
+        <h3>Ariel Sabag</h3>
+        <p class="muted">NH USA #53, Candidate / NH Korea #54, Team Member</p>
+        <p>Born into an Orthodox family, Ariel’s journey moved from tradition to transformation as Scripture led him to Jesus the Messiah.</p>
+        <button class="open-modal chip" data-target="#modal-ariel">Read Story</button>
+      </article>
+
+      <!-- 2 Han, Ye-Sul -->
+      <article class="card story-card" data-story-title="Han, Ye-Sul" data-story-tags="Korea,Team,Service">
+        <img src="assets/img/han.jpeg" alt="Han, Ye-Sul">
+        <h3>Han, Ye-Sul</h3>
+        <p class="muted">NH Korea #54 Team Member</p>
+        <p>From weary striving to joyful surrender, Ye-Sul discovered fresh grace while serving and worshiping with the family.</p>
+        <button class="open-modal chip" data-target="#modal-yesul">Read Story</button>
+      </article>
+
+      <!-- 3 Keziah -->
+      <article class="card story-card" data-story-title="Keziah" data-story-tags="Vietnam,Candidate,Youth">
+        <img src="assets/img/keziah.jpeg" alt="Keziah">
+        <h3>Keziah</h3>
+        <p class="muted">NH Vietnam #50 Candidate</p>
+        <p>A steady faith through storms—Keziah learned to trust God’s timing and cherish the simple miracles of each day.</p>
+        <button class="open-modal chip" data-target="#modal-keziah">Read Story</button>
+      </article>
+
+      <!-- 4 Parichat -->
+      <article class="card story-card" data-story-title="Parichat" data-story-tags="Korea,Candidate,Thailand">
+        <img src="assets/img/parichat.jpeg" alt="Parichat">
+        <h3>Parichat</h3>
+        <p class="muted">NH Korea #54 Candidate</p>
+        <p>A worshiper at heart—her smile bridged languages as she served, prayed, and witnessed hearts soften.</p>
+        <button class="open-modal chip" data-target="#modal-parichat">Read Story</button>
+      </article>
+
+      <!-- 5 Choi, Eun Young -->
+      <article class="card story-card" data-story-title="Choi, Eun Young" data-story-tags="Korea,Candidate">
+        <img src="assets/img/choi.jpeg" alt="Choi, Eun Young">
+        <h3>Choi, Eun Young</h3>
+        <p class="muted">NH Korea #54 Candidate</p>
+        <p>Hesitant at first, Eun Young found a tender new heart—boldly testifying to the kindness of Jesus.</p>
+        <button class="open-modal chip" data-target="#modal-choi">Read Story</button>
+      </article>
+    </div>
+
+    <!-- Modals (Stories) -->
+    <div id="modal-ariel" class="modal" role="dialog" aria-modal="true" hidden>
+      <div class="modal-body">
+        <h4>Ariel Sabag — Full Story</h4>
+        <div>Born into an Orthodox family, Ariel searched the prophecies and met Jesus the Messiah. His sister’s encounter at New Heart Israel stirred him toward faith and service across nations.</div>
+        <div class="modal-actions"><button class="close-modal chip">Close</button></div>
+      </div>
+    </div>
+
+    <div id="modal-yesul" class="modal" role="dialog" aria-modal="true" hidden>
+      <div class="modal-body">
+        <h4>Han, Ye-Sul — Full Story</h4>
+        <div>Serving with New Heart Korea #54, Ye-Sul laid burdens down in worship and discovered the joy of simple obedience.</div>
+        <div class="modal-actions"><button class="close-modal chip">Close</button></div>
+      </div>
+    </div>
+
+    <div id="modal-keziah" class="modal" role="dialog" aria-modal="true" hidden>
+      <div class="modal-body">
+        <h4>Keziah — Full Story</h4>
+        <div>Through NH Vietnam #50, Keziah learned to trust Jesus amid uncertainty, seeing God’s provision one step at a time.</div>
+        <div class="modal-actions"><button class="close-modal chip">Close</button></div>
+      </div>
+    </div>
+
+    <div id="modal-parichat" class="modal" role="dialog" aria-modal="true" hidden>
+      <div class="modal-body">
+        <h4>Parichat — Full Story</h4>
+        <div>In community and prayer, Parichat saw how worship softens hearts—no barrier too great for the love of Christ.</div>
+        <div class="modal-actions"><button class="close-modal chip">Close</button></div>
+      </div>
+    </div>
+
+    <div id="modal-choi" class="modal" role="dialog" aria-modal="true" hidden>
+      <div class="modal-body">
+        <h4>Choi, Eun Young — Full Story</h4>
+        <div>From hesitation to hope, Eun Young experienced the Spirit’s gentle renewal and now shares her testimony with boldness.</div>
+        <div class="modal-actions"><button class="close-modal chip">Close</button></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-break"></div>
+
+  <!-- ========================================================= -->
+  <!-- ====================== PAGE 3 =========================== -->
+  <!-- New Heart Kids (animated background)                     -->
+  <!-- ========================================================= -->
+  <section class="section" id="page3-kids">
+    <h2>New Heart Kids</h2>
+
+    <div class="kids-bg card">
+      <!-- animated collage (uses ji / kyungjin images multiple times) -->
+      <div class="kids-collage">
+        <img src="assets/img/ji.jpeg" alt="">
+        <img src="assets/img/kyungjin.jpeg" alt="">
+        <img src="assets/img/ji.jpeg" alt="">
+        <img src="assets/img/kyungjin.jpeg" alt="">
+        <img src="assets/img/ji.jpeg" alt="">
+        <img src="assets/img/kyungjin.jpeg" alt="">
+        <img src="assets/img/ji.jpeg" alt="">
+        <img src="assets/img/kyungjin.jpeg" alt="">
+        <img src="assets/img/ji.jpeg" alt="">
+        <img src="assets/img/kyungjin.jpeg" alt="">
+        <img src="assets/img/ji.jpeg" alt="">
+        <img src="assets/img/kyungjin.jpeg" alt="">
+      </div>
+
+      <div class="kids-content">
+        <div class="grid two">
+          <!-- Ji -->
+          <article class="card kid-card" style="background:rgba(255,255,255,.75);backdrop-filter:saturate(1.2) blur(2px);">
+            <img src="assets/img/ji.jpeg" alt="Ji">
+            <h3>Ji</h3>
+            <p class="muted">New Heart Kids</p>
+            <p>“Helping decorate and pray made me feel part of something bigger than myself.”</p>
+          </article>
+
+          <!-- Kyungjin -->
+          <article class="card kid-card" style="background:rgba(255,255,255,.75);backdrop-filter:saturate(1.2) blur(2px);">
+            <img src="assets/img/kyungjin.jpeg" alt="Kyungjin">
+            <h3>Kyungjin</h3>
+            <p class="muted">New Heart Kids</p>
+            <p>“My laughter filled the reunion hall — childlike faith sees miracles in every moment.”</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-break"></div>
+
+  <!-- ========================================================= -->
+  <!-- ====================== PAGE 4 =========================== -->
+  <!-- Editorial + Ways to Serve (two columns)                  -->
+  <!-- ========================================================= -->
+  <section class="section" id="page4-editorial-serve">
+    <div class="grid two">
+      <!-- Editorial -->
+      <div class="card prose">
+        <h2>God’s Faithfulness: Our Enduring Foundation</h2>
+        <p>
+          Through every season, the Lord anchors our community in His steadfast love.
+          Across nations and generations, testimonies remind us: the Spirit forms one family with one new heart.
+        </p>
+        <p>
+          May we keep beholding Jesus, building with humility, and carrying His presence into our cities until every heart hears.
+        </p>
+      </div>
+
+      <!-- Ways to Serve -->
+      <div class="card prose">
+        <h2>Ways to Serve</h2>
+        <h3>Palanca Donation Charts</h3>
+        <ul>
+          <li>PALANCA DONATION CHART #55 (Vietnam #14) — 50 each</li>
+          <li>PALANCA DONATION CHART #56 (Thailand #1) — 40 each</li>
+        </ul>
+        <p class="muted">These bless candidates and teams with encouragement and support.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
   <footer class="footer">
-    <p>Design &amp; Layout by New Heart Communications • 2025</p>
-    <p>Please keep this newsletter within the New Heart Family.</p>
+    <p>© 2025 New Heart Ministry. All rights reserved.</p>
+    <p>Please keep this Newsletter within the New Heart Family.</p>
   </footer>
+
 </div>
 
-<!-- JS (RELATIVE paths) -->
-<script defer src="assets/js/i18n.js"></script>
-<script defer src="assets/js/addons.js"></script>
+<script>
+"use strict";
+
+/* Utils */
+const $all = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+
+/* Theme */
+const themeKey='theme';
+function applyTheme(mode){
+  document.documentElement.dataset.theme = mode;
+  localStorage.setItem(themeKey, mode);
+  document.getElementById('themeToggle')?.setAttribute('aria-pressed', String(mode==='dark'));
+}
+function initTheme(){
+  const saved = localStorage.getItem(themeKey);
+  const prefers = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light';
+  applyTheme(saved || prefers);
+}
+
+/* Simple language dictionaries (EN default; placeholders for others) */
+const DEFAULT_LANG = "en";
+const SUPPORTED = ["en","ko","he","th","vi"];
+const DIR_MAP = { he: "rtl" };
+
+const DICTS = {
+  en:{
+    masthead:{ title:"New Heart Global Family Newsletter", subtitle:"The Fourth Day Chat", season:"Fall, 2025", byline:"by New Heart Family" },
+    verse:{ ezekiel:"\"I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh.\" — Ezekiel 36:26" },
+    ui:{ darkMode:"Dark", print:"Print", close:"Close" }
+  },
+  ko:{ masthead:{ title:"뉴하트 글로벌 패밀리 소식지", subtitle:"더 포스 데이 챗", season:"2025년 가을호", byline:"뉴하트 패밀리" }, verse:{ ezekiel:"\"내가 너희에게 새 마음을 주고 새 영을 너희 속에 두며…\" (겔 36:26)" }, ui:{ darkMode:"다크", print:"인쇄", close:"닫기" } },
+  he:{ masthead:{ title:"עלון משפחת ניו־הארט העולמית", subtitle:"שיחת היום הרביעי", season:"סתיו 2025", byline:"מאת משפחת ניו־הארט" }, verse:{ ezekiel:"\"ונתתי לכם לב חדש ורוח חדשה…\" (יחזקאל 36:26)" }, ui:{ darkMode:"כהה", print:"הדפסה", close:"סגור" } },
+  th:{ masthead:{ title:"จดหมายข่าวครอบครัวนิวฮาร์ททั่วโลก", subtitle:"การสนทนาในวันที่สี่", season:"ฤดูใบไม้ร่วง 2025", byline:"โดยครอบครัวนิวฮาร์ท" }, verse:{ ezekiel:"“เราจะให้ใจใหม่แก่เจ้า… ” (เอเสเคียล 36:26)" }, ui:{ darkMode:"มืด", print:"พิมพ์", close:"ปิด" } },
+  vi:{ masthead:{ title:"Bản Tin Gia Đình New Heart Toàn Cầu", subtitle:"Cuộc Trò Chuyện Ngày Thứ Tư", season:"Mùa Thu 2025", byline:"từ Gia Đình New Heart" }, verse:{ ezekiel:"“Ta sẽ ban cho các con một tấm lòng mới…” (Ê-xê-chi-ên 36:26)" }, ui:{ darkMode:"Tối", print:"In", close:"Đóng" } }
+};
+const state = { lang: localStorage.getItem("lang") || DEFAULT_LANG };
+
+function t(key){
+  const dict = DICTS[state.lang] || DICTS[DEFAULT_LANG];
+  const parts = key.split(".");
+  let val = dict;
+  for (const p of parts) val = val?.[p];
+  if (val == null && state.lang !== DEFAULT_LANG){
+    let en = DICTS[DEFAULT_LANG]; for (const p of parts) en = en?.[p]; val = en ?? null;
+  }
+  return val == null ? null : String(val);
+}
+function applyI18n(root=document){
+  $all('[data-i18n]', root).forEach(el=>{
+    const key = el.getAttribute('data-i18n'); const val = t(key);
+    if (val != null) el.textContent = val;
+  });
+  document.documentElement.lang = state.lang;
+  document.documentElement.dir  = (state.lang==='he') ? 'rtl' : 'ltr';
+  $all('[data-lang]').forEach(btn=>btn.setAttribute('aria-pressed', String(btn.dataset.lang===state.lang)));
+}
+
+/* Search (stories) */
+function initSearch(){
+  const input = document.getElementById('storySearch'); if(!input) return;
+  input.addEventListener('input', ()=>{
+    const q = input.value.trim().toLowerCase();
+    $all('.story-card').forEach(card=>{
+      const hay=[card.dataset.storyTitle||'', card.dataset.storyTags||'', card.textContent||''].join(' ').toLowerCase();
+      card.style.display = (!q || hay.includes(q)) ? '' : 'none';
+    });
+  });
+}
+
+/* Modals */
+function initModals(){
+  document.body.addEventListener('click', (e)=>{
+    const opener = e.target.closest('.open-modal'); if(opener){ e.preventDefault();
+      const modal = document.querySelector(opener.getAttribute('data-target')); if(modal){ modal.hidden=false; modal.dataset.open='true'; modal.focus(); } return; }
+    const closer = e.target.closest('.close-modal'); if(closer){ const modal=closer.closest('[role="dialog"]'); if(modal){ modal.hidden=true; modal.dataset.open=''; } }
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') $all('[role="dialog"][data-open="true"]').forEach(m=>{m.hidden=true;m.dataset.open='';}); });
+}
+
+/* Share/Print/Theme */
+function initSharePrintTheme(){
+  document.getElementById('printBtn')?.addEventListener('click', ()=>window.print());
+  document.getElementById('themeToggle')?.addEventListener('click', ()=>{
+    const current = document.documentElement.dataset.theme || 'light';
+    applyTheme(current==='light' ? 'dark' : 'light');
+  });
+}
+
+/* Language buttons */
+function setLanguage(lang){
+  if(!SUPPORTED.includes(lang)) lang = DEFAULT_LANG;
+  state.lang = lang; localStorage.setItem('lang', lang); applyI18n();
+}
+function initLang(){
+  document.body.addEventListener('click', (e)=>{
+    const btn = e.target.closest('[data-lang]'); if(!btn) return;
+    e.preventDefault(); setLanguage(btn.dataset.lang);
+  });
+}
+
+/* Add-to-Calendar (.ics) */
+function toICSDate(dt){
+  const d=new Date(dt), pad=n=>String(n).padStart(2,'0');
+  return `${d.getUTCFullYear()}${pad(d.getUTCMonth()+1)}${pad(d.getUTCDate())}T${pad(d.getUTCHours())}${pad(d.getUTCMinutes())}${pad(d.getUTCSeconds())}Z`;
+}
+function makeICS({ title, start, end, location, desc }){
+  const uid=`${Date.now()}@newheart.newsletter`;
+  return `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//NewHeart//Newsletter//EN
+BEGIN:VEVENT
+UID:${uid}
+DTSTAMP:${toICSDate(new Date())}
+DTSTART:${toICSDate(start)}
+DTEND:${toICSDate(end||start)}
+SUMMARY:${title}
+LOCATION:${location||""}
+DESCRIPTION:${(desc||"").replace(/\n/g,"\\n")}
+END:VEVENT
+END:VCALENDAR`;
+}
+function download(name, text){
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([text],{type:'text/calendar'})); a.download=name;
+  document.body.appendChild(a); a.click(); a.remove();
+}
+function initICS(){
+  document.body.addEventListener('click',(e)=>{
+    const a=e.target.closest('.add-to-calendar'); if(!a) return; e.preventDefault();
+    const li=a.closest('.event'); const ics=makeICS({ title:li.dataset.title, start:li.dataset.start, end:li.dataset.end, location:li.dataset.location });
+    download(`${(li.dataset.title||'event').replace(/\s+/g,'_')}.ics`, ics);
+  });
+}
+
+/* Boot */
+document.addEventListener('DOMContentLoaded', ()=>{
+  initTheme();
+  initLang();
+  applyI18n();
+  initSearch();
+  initModals();
+  initSharePrintTheme();
+  initICS();
+});
+</script>
 
 </body>
 </html>
