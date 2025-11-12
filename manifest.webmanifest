@@ -1,1 +1,21 @@
-
+{
+  "name": "New Heart Global Family Newsletter",
+  "short_name": "NH Newsletter",
+  "start_url": "/NewsletterQ12025/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111827",
+  "description": "A multilingual interactive newsletter by New Heart Ministry.",
+  "icons": [
+    {
+      "src": "assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
