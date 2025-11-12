@@ -22,3 +22,36 @@ body{ margin:0; background:var(--bg); color:var(--fg); font: 16px/1.6 system-ui,
 .footer{ padding:1rem .75rem; border-top:1px solid var(--border); color:var(--muted); text-align:center; }
 html[dir="rtl"]{ direction: rtl; }
 html[dir="rtl"] .toolbar{ flex-direction: row-reverse; }
+/* ──────────────────────────────── */
+/* Modal (Story Popups)             */
+/* ──────────────────────────────── */
+.modal[role="dialog"] {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0,0,0,.5);
+  z-index: 9999;
+}
+
+.modal[hidden] {
+  display: none !important;
+}
+
+.modal .modal-body {
+  max-height: 70vh;
+  overflow: auto;
+  background: var(--bg);
+  color: var(--fg);
+  padding: 1rem;
+  border-radius: 1rem;
+  width: min(900px, 90vw);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+.modal .modal-actions {
+  display: flex;
+  gap: .5rem;
+  justify-content: flex-end;
+  margin-top: .5rem;
+}
