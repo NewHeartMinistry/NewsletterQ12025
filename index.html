@@ -7,128 +7,180 @@
 <meta name="theme-color" content="#E9F1E3" />
 
 <style>
-  /* ====== Theme (warm sage) ====== */
-  :root{
-    --bg:#E9F1E3;         /* page background */
-    --fg:#2B2B2B;         /* main text */
-    --muted:#5f6c5c;      /* subtle text */
-    --accent:#50614E;     /* headings/accents */
-    --card:#FFFFFF;       /* cards */
-    --border:#C9D3C3;     /* borders */
-    --shadow: 0 6px 18px rgba(42,64,52,0.10);
-  }
-  html{ color-scheme: light; }
-  *{ box-sizing:border-box; }
-  body{ margin:0; font:14.5px/1.5 system-ui,-apple-system,Segoe UI,Roboto,"Noto Sans",sans-serif; color:var(--fg); background:var(--bg); }
+/* ===== Warm Sage Theme ===== */
+:root{
+  --bg:#E9F1E3;         /* page background (warm sage) */
+  --fg:#2B2B2B;         /* main text */
+  --muted:#5f6c5c;      /* subtle text */
+  --accent:#50614E;     /* headings/accents (forest green) */
+  --accent-2:#3F5A46;   /* subtitle color (olive/gray) */
+  --card:#FFFFFF;       /* cards */
+  --border:#C9D3C3;     /* borders */
+  --shadow: 0 6px 18px rgba(42,64,52,0.08);
+}
+html{ color-scheme: light; }
+*{ box-sizing:border-box; }
+body{
+  margin:0;
+  font:14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  color:var(--fg);
+  background:var(--bg);
+}
 
-  a{ color:inherit; text-decoration: none; }
-  .wrap{ max-width: 900px; margin: 0 auto; padding: 0 14px; }
-  .section{ padding: 16px 0 20px; }
-  h1,h2,h3{ margin:.2rem 0 .5rem; color:var(--accent); }
-  .muted{ color:var(--muted); }
+/* Layout wrappers */
+.wrap{ max-width: 980px; margin: 0 auto; padding: 0 14px; }
+.section{ padding: 16px 0 20px; }
+h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
+.muted{ color:var(--muted); }
 
-  /* Toolbar (simple) */
-  .toolbar{ position:sticky; top:0; z-index:20; background:var(--bg); border-bottom:1px solid var(--border);
-            box-shadow: 0 2px 0 rgba(0,0,0,0.02); }
-  .toolbar .inner{ display:flex; align-items:center; justify-content:space-between; padding:.6rem .4rem; }
-  .brand{ font-weight:700; color:var(--accent); }
+/* Toolbar + Language flags */
+.toolbar{
+  position:sticky; top:0; z-index:30; background:var(--bg);
+  border-bottom:1px solid var(--border); box-shadow:0 2px 0 rgba(0,0,0,0.02);
+}
+.toolbar .inner{ display:flex; align-items:center; justify-content:space-between; padding:.6rem .4rem; }
+.brand{
+  font-weight:800; letter-spacing:.2px; color:var(--accent);
+}
+.langflags{
+  display:flex; gap:.25rem; align-items:center;
+  position:relative;
+}
+.langflags button{
+  background:#edf3ea; border:1px solid var(--border); border-radius:10px;
+  padding:.3rem .42rem; cursor:pointer; box-shadow: var(--shadow);
+  font-size:16px; line-height:1;
+}
+.langflags button[aria-pressed="true"]{ outline:2px solid var(--accent); }
+.langflags button:hover{ filter:brightness(.96); }
+.langflags button span{ vertical-align:middle; }
 
-  /* Masthead + verse */
-  .masthead{ text-align:center; padding: 18px 0 8px; }
-  .masthead .subtitle,.season,.byline{ color:var(--muted); margin:.1rem 0; }
-  .verse-card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px; box-shadow: var(--shadow); }
+/* Masthead */
+.masthead{ text-align:center; padding: 18px 0 8px; }
+.title{
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+  font-weight:800; letter-spacing:.2px; color:var(--accent);
+}
+.subtitle{
+  font-family: Georgia, Cambria, "Times New Roman", serif;
+  color:var(--accent-2);
+  font-style:italic;
+  font-size:1.05rem;
+  margin-top:.2rem;
+}
+.season, .byline{ color:var(--muted); margin:.08rem 0; }
 
-  /* Cards and grids */
-  .card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; box-shadow: var(--shadow); }
-  .grid{ display:grid; gap:12px; }
-  .two{ grid-template-columns: 1fr; }
-  .three{ grid-template-columns: 1fr; }
-  @media (min-width: 980px){
-    .two{ grid-template-columns: 1fr 1fr; }
-    .three{ grid-template-columns: 1.1fr 1.5fr 1.2fr; } /* Page 1 columns */
-  }
+/* Cards & grids */
+.card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; box-shadow: var(--shadow); }
+.grid{ display:grid; gap:12px; }
+.two{ grid-template-columns: 1fr; }
+.three{ grid-template-columns: 1fr; }
+@media (min-width: 980px){
+  .two{ grid-template-columns: 1fr 1fr; }
+  .three{ grid-template-columns: 1.05fr 1.4fr 1.1fr; } /* Page 1 columns */
+}
 
-  /* Video embeds */
-  .video{ aspect-ratio:16/9; background:#000; border-radius:10px; overflow:hidden; }
-  .video iframe{ width:100%; height:100%; border:0; display:block; }
+/* Verse */
+.verse-card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:12px; box-shadow: var(--shadow); }
 
-  /* Story & kids cards */
-  .story-card img, .kid-card img{ width:100%; border-radius:10px; border:1px solid var(--border); }
+/* Video embeds */
+.video{ aspect-ratio:16/9; background:#000; border-radius:10px; overflow:hidden; }
+.video iframe{ width:100%; height:100%; border:0; display:block; }
 
-  /* Search */
-  .searchbar{ margin:6px 0 12px; display:flex; gap:8px; align-items:center; }
-  #storySearch{ flex:1; padding:.55rem .7rem; border:1px solid var(--border); border-radius:.6rem; background:#fff; color:inherit; }
+/* Story & kids cards */
+.story-card img, .kid-card img{
+  width:100%; border-radius:10px; border:1px solid var(--border);
+}
 
-  /* Modal */
-  .modal[role="dialog"]{ position:fixed; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.45); z-index:9999; }
-  .modal[hidden]{ display:none !important; }
-  .modal .modal-body{ max-height:75vh; overflow:auto; background:var(--card); color:var(--fg); padding:16px; border-radius:12px; width:min(820px,92vw); box-shadow:0 10px 28px rgba(0,0,0,.35); }
-  .modal .modal-actions{ display:flex; gap:.5rem; justify-content:flex-end; margin-top:.6rem; }
-  .chip{ border:0; background:#eef3ea; color:#243225; padding:.42rem .7rem; border-radius:999px; cursor:pointer; border:1px solid var(--border); }
-  .chip:hover{ filter:brightness(0.96); }
+/* Kids adjustments to see background */
+.kid-card{ padding:10px; }
+.kid-card img{ max-height:160px; object-fit:cover; }
 
-  /* Kids animated collage background */
-  .kids-bg{ position:relative; border-radius:16px; overflow:hidden; }
-  .kids-bg::before{
-    content:""; position:absolute; inset:0;
-    background: linear-gradient(135deg, rgba(255,255,255,.66), rgba(255,255,255,.3));
-    z-index:0;
-  }
-  .kids-collage{ position:absolute; inset:0; z-index:0; display:grid; grid-template-columns:repeat(6,1fr); gap:10px; padding:10px; opacity:.22; }
-  .kids-collage img{
-    width:100%; height:90px; object-fit:cover; border-radius:10px;
-    animation: floatFade 12s linear infinite;
-  }
-  @keyframes floatFade{
-    0%{ transform:translateY(8px) scale(1); opacity:.0; }
-    10%{ opacity:.45; }
-    50%{ transform:translateY(-4px) scale(1.02); opacity:.55; }
-    90%{ opacity:.35; }
-    100%{ transform:translateY(8px) scale(1); opacity:.0; }
-  }
-  .kids-content{ position:relative; z-index:1; }
+/* Modal */
+.modal[role="dialog"]{ position:fixed; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.45); z-index:9999; }
+.modal[hidden]{ display:none !important; }
+.modal .modal-body{
+  max-height:74vh; overflow:auto; background:var(--card); color:var(--fg);
+  padding:16px; border-radius:12px; width:min(780px,92vw); box-shadow:0 10px 28px rgba(0,0,0,.35);
+}
+.modal .modal-actions{ display:flex; gap:.5rem; justify-content:flex-end; margin-top:.6rem; }
+.chip{
+  border:0; background:#eef3ea; color:#243225; padding:.38rem .66rem; border-radius:999px; cursor:pointer; border:1px solid var(--border);
+}
+.chip:hover{ filter:brightness(0.96); }
 
-  /* Fade-in reveals */
-  .reveal{ opacity:0; transform: translateY(10px); }
-  .reveal.is-in{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
+/* Kids animated collage background (subtle, visible) */
+.kids-bg{ position:relative; border-radius:16px; overflow:hidden; }
+.kids-bg::before{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(255,255,255,.66), rgba(255,255,255,.3));
+  z-index:0;
+}
+.kids-collage{
+  position:absolute; inset:0; z-index:0; display:grid;
+  grid-template-columns:repeat(6,1fr); gap:8px; padding:10px; opacity:.26;
+}
+.kids-collage img{
+  width:100%; height:82px; object-fit:cover; border-radius:10px;
+  animation: floatFade 13s linear infinite;
+}
+@keyframes floatFade{
+  0%{ transform:translateY(8px) scale(1); opacity:.0; }
+  12%{ opacity:.42; }
+  50%{ transform:translateY(-4px) scale(1.02); opacity:.52; }
+  88%{ opacity:.35; }
+  100%{ transform:translateY(8px) scale(1); opacity:.0; }
+}
+.kids-content{ position:relative; z-index:1; }
 
-  /* Lists */
-  .list{ margin:0; padding-left:1.1rem; }
-  .list li{ margin:.35rem 0; }
-  .emoji{ font-size: 1.05em; margin-right:.4rem; }
+/* Lists */
+.list{ margin:0; padding-left:1.1rem; }
+.list li{ margin:.35rem 0; }
+.emoji{ font-size: 1.05em; margin-right:.35rem; }
 
-  /* Footer */
-  .footer{ color:var(--muted); text-align:center; padding:16px 0 28px; border-top:1px solid var(--border); margin-top:10px; }
+/* Alignment refinements for Page 1 right column lists */
+.right-lists .card h2{ margin-bottom:.35rem; }
+.right-lists .list{ padding-left:1rem; }
+.right-lists h3{ margin:.6rem 0 .35rem; color:var(--accent); }
 
-  /* Print */
-  @media print{
-    .toolbar{ display:none !important; }
-    .page-break{ page-break-before:always; break-before:page; }
-    .chip{ display:none !important; }
-  }
+/* Reveal fade-ins */
+.reveal{ opacity:0; transform: translateY(10px); }
+.reveal.is-in{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
+
+/* Footer */
+.footer{ color:var(--muted); text-align:center; padding:16px 0 28px; border-top:1px solid var(--border); margin-top:10px; }
+
+/* Print */
+@media print{
+  .toolbar, .langflags, .chip{ display:none !important; }
+  .page-break{ page-break-before:always; break-before:page; }
+}
 </style>
 </head>
 <body>
 
-<!-- ===== Top Bar ===== -->
+<!-- ===== Toolbar with Language Flags (top-right) ===== -->
 <header class="toolbar">
   <div class="wrap inner">
     <div class="brand">New Heart</div>
-    <div style="font-size:.9rem;color:var(--muted)">Global Family Newsletter</div>
+    <div class="langflags" aria-label="Language">
+      <button class="flag" data-lang="en" aria-pressed="true" title="English"><span>🇺🇸</span></button>
+      <button class="flag" data-lang="ko" aria-pressed="false" title="한국어"><span>🇰🇷</span></button>
+      <button class="flag" data-lang="he" aria-pressed="false" title="עברית"><span>🇮🇱</span></button>
+      <button class="flag" data-lang="th" aria-pressed="false" title="ไทย"><span>🇹🇭</span></button>
+      <button class="flag" data-lang="vi" aria-pressed="false" title="Tiếng Việt"><span>🇻🇳</span></button>
+    </div>
   </div>
 </header>
 
 <div class="wrap">
 
   <!-- ===== Masthead ===== -->
-<section class="section masthead reveal is-in">
-  <h1>New Heart Global Family Newsletter</h1>
-  <p class="subtitle" style="font-size:1rem;font-style:italic;color:var(--muted);margin-top:.2rem;">
-    The Fourth Day Chat by New Heart Family
-  </p>
-  <p class="season" style="margin-top:.1rem;">Fall, 2025</p>
-</section>
-
+  <section class="section masthead reveal is-in">
+    <h1 class="title">New Heart Global Family Newsletter</h1>
+    <p class="subtitle">The Fourth Day Chat by New Heart Family</p>
+    <p class="season">Fall, 2025</p>
+  </section>
 
   <!-- ========================================================= -->
   <!-- ====================== PAGE 1 =========================== -->
@@ -155,7 +207,7 @@
           <div class="video" style="margin:.45rem 0 10px;">
             <iframe src="https://www.youtube.com/embed/gZBn3xnHTL8" title="Founders message" allowfullscreen></iframe>
           </div>
-          <h3 style="margin-top:.3rem;">Greeting</h3>
+          <h3 style="margin-top:.3rem; color:var(--accent-2);">Greeting</h3>
           <p>
             Hello, New Heart Family! Normally, we greet one another by saying, "How are you?" That is to say, how is your
             health, how is your family, and how is your work. Has anyone asked you, instead, "How is your heart?" Perhaps
@@ -173,7 +225,7 @@
       </article>
 
       <!-- Right: Regional + Poster + Lists -->
-      <aside>
+      <aside class="right-lists">
         <div class="card" style="margin-bottom:12px;">
           <h2>Regional Directors</h2>
           <div class="video">
@@ -194,7 +246,7 @@
             <li><span class="emoji">🇮🇱</span>Israel — TBA (April 2026)</li>
             <li><span class="emoji">🇺🇸</span>USA — TBA (May 2026)</li>
           </ul>
-          <h3 style="margin-top:.7rem;">Regional Reunions</h3>
+          <h3>Regional Reunions</h3>
           <ul class="list">
             <li><span class="emoji">🇺🇸</span>USA — Nov 14, 2025 • LA</li>
             <li><span class="emoji">🇰🇷</span>Korea — Nov 22, 2025 • Seoul</li>
@@ -208,15 +260,10 @@
 
   <!-- ========================================================= -->
   <!-- ====================== PAGE 2 =========================== -->
-  <!-- New Heart Stories (2 columns)                            -->
+  <!-- New Heart Stories (2 columns, NO search)                 -->
   <!-- ========================================================= -->
   <section class="section reveal" id="page2-stories">
     <h2>New Heart Stories</h2>
-
-    <div class="searchbar">
-      <label class="muted" for="storySearch" style="font-size:.9rem;">Search</label>
-      <input id="storySearch" type="search" placeholder="Search stories by name, tag, or text" autocomplete="off">
-    </div>
 
     <div class="grid two">
       <!-- 1 Ariel -->
@@ -336,17 +383,17 @@
       <div class="kids-content" style="position:relative; padding:8px;">
         <div class="grid two">
           <!-- Ji -->
-          <article class="card kid-card" style="background:rgba(255,255,255,.80);backdrop-filter:saturate(1.1) blur(2px);">
+          <article class="card kid-card" style="background:rgba(255,255,255,.85);backdrop-filter:saturate(1.1) blur(2px);">
             <img src="assets/img/ji.jpeg" alt="Ji" />
-            <h3 style="margin-top:.5rem;">Ji</h3>
+            <h3 style="margin-top:.4rem;">Ji</h3>
             <p class="muted">New Heart Kids</p>
             <p>“Decorating, praying, and helping made me feel part of something big that God is doing.”</p>
           </article>
 
           <!-- Kyungjin -->
-          <article class="card kid-card" style="background:rgba(255,255,255,.80);backdrop-filter:saturate(1.1) blur(2px);">
+          <article class="card kid-card" style="background:rgba(255,255,255,.85);backdrop-filter:saturate(1.1) blur(2px);">
             <img src="assets/img/kyungjin.jpeg" alt="Kyungjin" />
-            <h3 style="margin-top:.5rem;">Kyungjin</h3>
+            <h3 style="margin-top:.4rem;">Kyungjin</h3>
             <p class="muted">New Heart Kids</p>
             <p>“I saw God’s answers in little moments. We laughed, prayed, and shared—Jesus was with us!”</p>
           </article>
@@ -365,14 +412,20 @@
     <div class="grid two">
       <!-- Editorial -->
       <article class="card">
-        <h2>God’s Faithfulness: Our Enduring Foundation</h2>
+        <h2>Editorial</h2>
+        <h3 style="margin-top:.1rem; color:var(--accent-2);">God’s Faithfulness: Our Enduring Foundation.</h3>
         <p>
           Through every season, the Lord anchors our community in His steadfast love. Across nations and generations,
-          testimonies remind us: the Spirit forms one family with one new heart.
+          testimonies remind us that the Spirit forms one family with one new heart—His heart—beating for the world.
         </p>
         <p>
-          As we abide in Jesus and build with humility, may our worship and service carry His presence into our cities
-          until every heart hears. He is faithful; we respond in love.
+          We move forward together with humility and courage, remembering that every small “yes” becomes a doorway for
+          grace to enter homes, schools, and cities. The Father is faithful; Jesus is our cornerstone; the Holy Spirit
+          empowers our daily worship and service.
+        </p>
+        <p>
+          May we keep beholding Jesus, encouraging one another, and building up the saints, so that His presence
+          transforms our communities—one heart at a time.
         </p>
       </article>
 
@@ -381,8 +434,16 @@
         <h2>Ways to Serve</h2>
         <h3 style="margin-top:.2rem;">Palanca Donation Charts</h3>
         <ul class="list" style="margin-top:.3rem;">
-          <li>PALANCA DONATION CHART #55 (Vietnam #14) — 50 each</li>
-          <li>PALANCA DONATION CHART #56 (Thailand #1) — 40 each</li>
+          <li>
+            <a href="assets/docs/Palanca_Donation_Chart_55_VNH_14.docx" download>
+              PALANCA DONATION CHART #55 (Vietnam #14) — 50 each
+            </a>
+          </li>
+          <li>
+            <a href="assets/docs/Palanca%20Donation%20Chart%20%2356%20(TNH%20%231).docx" download>
+              PALANCA DONATION CHART #56 (Thailand #1) — 40 each
+            </a>
+          </li>
         </ul>
         <p class="muted" style="margin-top:.4rem;">These bless candidates and teams with encouragement and support.</p>
       </aside>
@@ -397,49 +458,61 @@
 </div>
 
 <script>
-  "use strict";
+"use strict";
 
-  // Reveal on scroll (gentle fade-ins)
-  const io = new IntersectionObserver((entries)=>{
-    for (const e of entries){
-      if (e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
-    }
-  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+/* Minimal i18n scaffolding with emoji flags */
+const SUPPORTED = ["en","ko","he","th","vi"];
+const DEFAULT_LANG = "en";
+const state = { lang: localStorage.getItem("lang") || DEFAULT_LANG };
 
-  // Search (stories)
-  const input = document.getElementById('storySearch');
-  if (input){
-    input.addEventListener('input', ()=>{
-      const q = input.value.trim().toLowerCase();
-      document.querySelectorAll('.story-card').forEach(card=>{
-        const hay = [card.dataset.storyTitle||'', card.dataset.storyTags||'', card.textContent||''].join(' ').toLowerCase();
-        card.style.display = (!q || hay.includes(q)) ? '' : 'none';
-      });
-    });
+function applyLang(){
+  document.documentElement.lang = state.lang;
+  document.documentElement.dir = (state.lang === "he") ? "rtl" : "ltr";
+  document.querySelectorAll('.langflags [data-lang]').forEach(btn=>{
+    btn.setAttribute('aria-pressed', String(btn.dataset.lang === state.lang));
+  });
+}
+document.addEventListener('click', (e)=>{
+  const b = e.target.closest('.langflags [data-lang]');
+  if(!b) return;
+  e.preventDefault();
+  const lang = b.dataset.lang;
+  state.lang = SUPPORTED.includes(lang) ? lang : DEFAULT_LANG;
+  localStorage.setItem('lang', state.lang);
+  applyLang(); // (Text stays English unless you add dictionaries later)
+});
+
+/* Reveal on scroll (gentle fade-ins) */
+const io = new IntersectionObserver((entries)=>{
+  for (const e of entries){
+    if (e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
   }
+},{ rootMargin:"0px 0px -10% 0px", threshold:0.05 });
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // Modals
-  document.body.addEventListener('click', (e)=>{
-    const open = e.target.closest('.open-modal');
-    if (open){
-      e.preventDefault();
-      const sel = open.getAttribute('data-target');
-      const modal = document.querySelector(sel);
-      if (modal){ modal.hidden = false; modal.dataset.open = 'true'; modal.focus(); }
-      return;
-    }
-    const close = e.target.closest('.close-modal');
-    if (close){
-      const modal = close.closest('[role="dialog"]');
-      if (modal){ modal.hidden = true; modal.dataset.open = ''; }
-    }
-  });
-  document.addEventListener('keydown', (e)=>{
-    if (e.key === 'Escape'){
-      document.querySelectorAll('[role="dialog"][data-open="true"]').forEach(m => { m.hidden = true; m.dataset.open=''; });
-    }
-  });
+/* Modals */
+document.body.addEventListener('click',(e)=>{
+  const open = e.target.closest('.open-modal');
+  if(open){
+    e.preventDefault();
+    const m = document.querySelector(open.getAttribute('data-target'));
+    if(m){ m.hidden=false; m.dataset.open='true'; m.focus(); }
+    return;
+  }
+  const close = e.target.closest('.close-modal');
+  if(close){
+    const m = close.closest('[role="dialog"]');
+    if(m){ m.hidden=true; m.dataset.open=''; }
+  }
+});
+document.addEventListener('keydown',(e)=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('[role="dialog"][data-open="true"]').forEach(m=>{ m.hidden=true; m.dataset.open=''; });
+  }
+});
+
+/* Init */
+applyLang();
 </script>
 
 </body>
