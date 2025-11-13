@@ -7,22 +7,22 @@
 <meta name="theme-color" content="#E9F1E3" />
 
 <style>
-/* ===== Warm Sage Theme ===== */
+/* ===== Warm Sage Theme (no dark mode) ===== */
 :root{
   --bg:#E9F1E3;         /* page background (warm sage) */
   --fg:#2B2B2B;         /* main text */
   --muted:#5f6c5c;      /* subtle text */
   --accent:#50614E;     /* headings/accents (forest green) */
-  --accent-2:#3F5A46;   /* subtitle color (olive/gray) */
+  --accent-2:#3F5A46;   /* subtitle/secondary headings (olive gray) */
   --card:#FFFFFF;       /* cards */
   --border:#C9D3C3;     /* borders */
   --shadow: 0 6px 18px rgba(42,64,52,0.08);
 }
-html{ color-scheme: light; }
+html{ color-scheme: light; scroll-behavior:smooth; }
 *{ box-sizing:border-box; }
 body{
   margin:0;
-  font:14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  font:14px/1.52 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
   color:var(--fg);
   background:var(--bg);
 }
@@ -33,19 +33,14 @@ body{
 h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 .muted{ color:var(--muted); }
 
-/* Toolbar + Language flags */
+/* Toolbar + Language flags (top-right) */
 .toolbar{
-  position:sticky; top:0; z-index:30; background:var(--bg);
+  position:sticky; top:0; z-index:40; background:var(--bg);
   border-bottom:1px solid var(--border); box-shadow:0 2px 0 rgba(0,0,0,0.02);
 }
 .toolbar .inner{ display:flex; align-items:center; justify-content:space-between; padding:.6rem .4rem; }
-.brand{
-  font-weight:800; letter-spacing:.2px; color:var(--accent);
-}
-.langflags{
-  display:flex; gap:.25rem; align-items:center;
-  position:relative;
-}
+.brand{ font-weight:800; letter-spacing:.2px; color:var(--accent); }
+.langflags{ display:flex; gap:.25rem; align-items:center; }
 .langflags button{
   background:#edf3ea; border:1px solid var(--border); border-radius:10px;
   padding:.3rem .42rem; cursor:pointer; box-shadow: var(--shadow);
@@ -53,7 +48,6 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 }
 .langflags button[aria-pressed="true"]{ outline:2px solid var(--accent); }
 .langflags button:hover{ filter:brightness(.96); }
-.langflags button span{ vertical-align:middle; }
 
 /* Masthead */
 .masthead{ text-align:center; padding: 18px 0 8px; }
@@ -65,10 +59,10 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
   font-family: Georgia, Cambria, "Times New Roman", serif;
   color:var(--accent-2);
   font-style:italic;
-  font-size:1.05rem;
-  margin-top:.2rem;
+  font-size:1.1rem;
+  margin-top:.25rem;
 }
-.season, .byline{ color:var(--muted); margin:.08rem 0; }
+.season{ color:var(--muted); margin:.12rem 0; }
 
 /* Cards & grids */
 .card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; box-shadow: var(--shadow); }
@@ -87,42 +81,27 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 .video{ aspect-ratio:16/9; background:#000; border-radius:10px; overflow:hidden; }
 .video iframe{ width:100%; height:100%; border:0; display:block; }
 
-/* Story & kids cards */
+/* Story & kids cards — smaller images */
 .story-card img, .kid-card img{
   width:100%; border-radius:10px; border:1px solid var(--border);
+  max-height:200px; object-fit:cover; /* smaller */
 }
 
-/* Kids adjustments to see background */
-.kid-card{ padding:10px; }
-.kid-card img{ max-height:160px; object-fit:cover; }
-
-/* Modal */
-.modal[role="dialog"]{ position:fixed; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.45); z-index:9999; }
-.modal[hidden]{ display:none !important; }
-.modal .modal-body{
-  max-height:74vh; overflow:auto; background:var(--card); color:var(--fg);
-  padding:16px; border-radius:12px; width:min(780px,92vw); box-shadow:0 10px 28px rgba(0,0,0,.35);
-}
-.modal .modal-actions{ display:flex; gap:.5rem; justify-content:flex-end; margin-top:.6rem; }
-.chip{
-  border:0; background:#eef3ea; color:#243225; padding:.38rem .66rem; border-radius:999px; cursor:pointer; border:1px solid var(--border);
-}
-.chip:hover{ filter:brightness(0.96); }
-
-/* Kids animated collage background (subtle, visible) */
-.kids-bg{ position:relative; border-radius:16px; overflow:hidden; }
+/* Kids section full-page background */
+#page3-kids{ position:relative; min-height: 75vh; }
+.kids-bg{ position:absolute; inset:0; z-index:0; }
 .kids-bg::before{
   content:""; position:absolute; inset:0;
-  background: linear-gradient(135deg, rgba(255,255,255,.66), rgba(255,255,255,.3));
+  background: linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.35));
   z-index:0;
 }
 .kids-collage{
-  position:absolute; inset:0; z-index:0; display:grid;
-  grid-template-columns:repeat(6,1fr); gap:8px; padding:10px; opacity:.26;
+  position:absolute; inset:0; z-index:-1;
+  display:grid; grid-template-columns:repeat(8,1fr); gap:8px; padding:10px; opacity:.28;
 }
 .kids-collage img{
-  width:100%; height:82px; object-fit:cover; border-radius:10px;
-  animation: floatFade 13s linear infinite;
+  width:100%; height:90px; object-fit:cover; border-radius:10px;
+  animation: floatFade 14s linear infinite;
 }
 @keyframes floatFade{
   0%{ transform:translateY(8px) scale(1); opacity:.0; }
@@ -131,7 +110,8 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
   88%{ opacity:.35; }
   100%{ transform:translateY(8px) scale(1); opacity:.0; }
 }
-.kids-content{ position:relative; z-index:1; }
+.kids-foreground{ position:relative; z-index:1; }
+.kid-card{ padding:10px; }
 
 /* Lists */
 .list{ margin:0; padding-left:1.1rem; }
@@ -143,7 +123,22 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 .right-lists .list{ padding-left:1rem; }
 .right-lists h3{ margin:.6rem 0 .35rem; color:var(--accent); }
 
-/* Reveal fade-ins */
+/* Buttons */
+.chip{
+  border:0; background:#eef3ea; color:#243225; padding:.38rem .66rem; border-radius:999px; cursor:pointer; border:1px solid var(--border);
+}
+.chip:hover{ filter:brightness(0.96); }
+
+/* Modal (pop-ups for full stories) */
+.modal[role="dialog"]{ position:fixed; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.45); z-index:9999; }
+.modal[hidden]{ display:none !important; }
+.modal .modal-body{
+  max-height:76vh; overflow:auto; background:var(--card); color:var(--fg);
+  padding:18px; border-radius:12px; width:min(760px,92vw); box-shadow:0 10px 28px rgba(0,0,0,.35);
+}
+.modal .modal-actions{ display:flex; gap:.5rem; justify-content:flex-end; margin-top:.6rem; }
+
+/* Fade-ins + section transition feel */
 .reveal{ opacity:0; transform: translateY(10px); }
 .reveal.is-in{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
 
@@ -260,7 +255,7 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 
   <!-- ========================================================= -->
   <!-- ====================== PAGE 2 =========================== -->
-  <!-- New Heart Stories (2 columns, NO search)                 -->
+  <!-- New Heart Stories (2 columns, smaller images)            -->
   <!-- ========================================================= -->
   <section class="section reveal" id="page2-stories">
     <h2>New Heart Stories</h2>
@@ -269,16 +264,16 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
       <!-- 1 Ariel -->
       <article class="card story-card" data-story-title="Ariel Sabag" data-story-tags="USA,Korea,Testimony">
         <img src="assets/img/ariel.jpeg" alt="Ariel Sabag" />
-        <h3 style="margin-top:.5rem;">Ariel Sabag</h3>
+        <h3 style="margin-top:.45rem;">Ariel Sabag</h3>
         <p class="muted">NH USA #53, Candidate / NH Korea #54, Team Member</p>
-        <p>Raised in Orthodox tradition, Ariel followed the prophecies and met Jesus as Messiah—now carrying hope between nations.</p>
+        <p>Raised in Orthodox tradition, Ariel searched the prophecies and met Jesus as Messiah—now carrying hope between nations.</p>
         <button class="open-modal chip" data-target="#modal-ariel">Read Story</button>
       </article>
 
       <!-- 2 Han, Ye-Sul -->
       <article class="card story-card" data-story-title="Han, Ye-Sul" data-story-tags="Korea,Team,Service">
         <img src="assets/img/han.jpeg" alt="Han, Ye-Sul" />
-        <h3 style="margin-top:.5rem;">Han, Ye-Sul</h3>
+        <h3 style="margin-top:.45rem;">Han, Ye-Sul</h3>
         <p class="muted">NH Korea #54 Team Member</p>
         <p>In worship and simple service, Ye-Sul laid down burdens and discovered the joy of a tender, listening heart.</p>
         <button class="open-modal chip" data-target="#modal-yesul">Read Story</button>
@@ -287,36 +282,41 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
       <!-- 3 Keziah -->
       <article class="card story-card" data-story-title="Keziah" data-story-tags="Vietnam,Candidate,Youth">
         <img src="assets/img/keziah.jpeg" alt="Keziah" />
-        <h3 style="margin-top:.5rem;">Keziah</h3>
+        <h3 style="margin-top:.45rem;">Keziah</h3>
         <p class="muted">NH Vietnam #50 Candidate</p>
-        <p>Learning to trust God’s timing through uncertainty, Keziah saw small miracles become a steady testimony.</p>
+        <p>Trusting God’s timing through uncertainty, Keziah watched small mercies become a steady testimony.</p>
         <button class="open-modal chip" data-target="#modal-keziah">Read Story</button>
       </article>
 
       <!-- 4 Parichat -->
       <article class="card story-card" data-story-title="Parichat" data-story-tags="Korea,Candidate,Thailand">
         <img src="assets/img/parichat.jpeg" alt="Parichat" />
-        <h3 style="margin-top:.5rem;">Parichat</h3>
+        <h3 style="margin-top:.45rem;">Parichat</h3>
         <p class="muted">NH Korea #54 Candidate</p>
-        <p>With a worshiper’s heart, Parichat watched language barriers melt as love and prayer united the family.</p>
+        <p>With a worshiper’s heart, Parichat watched language barriers melt as prayer knit the family together.</p>
         <button class="open-modal chip" data-target="#modal-parichat">Read Story</button>
       </article>
 
       <!-- 5 Choi, Eun Young -->
       <article class="card story-card" data-story-title="Choi, Eun Young" data-story-tags="Korea,Candidate">
         <img src="assets/img/choi.jpeg" alt="Choi, Eun Young" />
-        <h3 style="margin-top:.5rem;">Choi, Eun Young</h3>
+        <h3 style="margin-top:.45rem;">Choi, Eun Young</h3>
         <p class="muted">NH Korea #54 Candidate</p>
-        <p>From hesitation to hope, Eun Young encountered gentle renewal and began to share her faith with boldness.</p>
+        <p>From hesitation to hope, Eun Young encountered gentle renewal and began to witness with courage.</p>
         <button class="open-modal chip" data-target="#modal-choi">Read Story</button>
       </article>
     </div>
 
-    <!-- Modals -->
+    <!-- FULL STORY MODALS (Adults) -->
     <div id="modal-ariel" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
         <h4>Ariel Sabag — Full Story</h4>
-        <div>Following Scripture’s promises, Ariel encountered Jesus the Messiah. Through NH USA #53 and NH Korea #54, he learned to carry the gospel with humility across cultures.</div>
+        <div>
+          Born into an Orthodox family, Ariel honored the traditions he received. But as he studied the prophets,
+          the promises of a suffering and redeeming Messiah drew him to Jesus. Through NH USA #53 and NH Korea #54,
+          he discovered a family eager to serve and worship. With a new heart, he now carries the Good News across
+          cultures—patiently, humbly, joyfully.
+        </div>
         <div class="modal-actions"><button class="close-modal chip">Close</button></div>
       </div>
     </div>
@@ -324,7 +324,11 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
     <div id="modal-yesul" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
         <h4>Han, Ye-Sul — Full Story</h4>
-        <div>Serving with New Heart Korea #54, Ye-Sul found rest in worship and courage in community, discovering that obedience opens the door to joy.</div>
+        <div>
+          At NH Korea #54, Ye-Sul discovered that simple obedience—stacking chairs, praying quietly, listening—was a
+          doorway to joy. As burdens lifted in worship, she began to serve with a tender heart, finding Jesus faithful
+          in small things and great.
+        </div>
         <div class="modal-actions"><button class="close-modal chip">Close</button></div>
       </div>
     </div>
@@ -332,7 +336,11 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
     <div id="modal-keziah" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
         <h4>Keziah — Full Story</h4>
-        <div>During NH Vietnam #50, Keziah learned to notice God’s quiet provisions—each prayer answered in the right time became a stone of remembrance.</div>
+        <div>
+          NH Vietnam #50 became a turning point for Keziah. Faced with uncertainty, she saw the Lord provide step by
+          step—through a timely word, a friend’s prayer, and unexpected strength. Those small mercies became stones of
+          remembrance, building trust for the path ahead.
+        </div>
         <div class="modal-actions"><button class="close-modal chip">Close</button></div>
       </div>
     </div>
@@ -340,7 +348,10 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
     <div id="modal-parichat" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
         <h4>Parichat — Full Story</h4>
-        <div>Serving across cultures, Parichat saw worship soften hearts and unite brothers and sisters as one family in Christ.</div>
+        <div>
+          Serving among brothers and sisters from many nations, Parichat saw how worship softens hearts and heals
+          misunderstandings. Even when words failed, love, prayer, and a smile spoke clearly: we are one family in Christ.
+        </div>
         <div class="modal-actions"><button class="close-modal chip">Close</button></div>
       </div>
     </div>
@@ -348,7 +359,10 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
     <div id="modal-choi" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
         <h4>Choi, Eun Young — Full Story</h4>
-        <div>Eun Young’s small “yes” grew into a bold witness, as the Spirit gently renewed her heart through prayer and community.</div>
+        <div>
+          Eun Young entered NH Korea #54 cautiously, unsure what to expect. The Lord met her gently. Through testimonies
+          and quiet moments in prayer, He restored courage and tenderness. Now, she shares with boldness what Jesus has done.
+        </div>
         <div class="modal-actions"><button class="close-modal chip">Close</button></div>
       </div>
     </div>
@@ -358,14 +372,19 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 
   <!-- ========================================================= -->
   <!-- ====================== PAGE 3 =========================== -->
-  <!-- New Heart Kids (animated collage background)             -->
+  <!-- New Heart Kids (full-section animated background)        -->
   <!-- ========================================================= -->
-  <section class="section reveal" id="page3-kids">
+  <section class="section reveal" id="page3-kids" aria-label="New Heart Kids">
     <h2>New Heart Kids</h2>
 
-    <div class="kids-bg card">
-      <!-- animated collage -->
+    <!-- Full-section animated collage behind content -->
+    <div class="kids-bg">
       <div class="kids-collage" aria-hidden="true">
+        <!-- repeat to fill -->
+        <img src="assets/img/ji.jpeg" alt="">
+        <img src="assets/img/kyungjin.jpeg" alt="">
+        <img src="assets/img/ji.jpeg" alt="">
+        <img src="assets/img/kyungjin.jpeg" alt="">
         <img src="assets/img/ji.jpeg" alt="">
         <img src="assets/img/kyungjin.jpeg" alt="">
         <img src="assets/img/ji.jpeg" alt="">
@@ -379,25 +398,53 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
         <img src="assets/img/ji.jpeg" alt="">
         <img src="assets/img/kyungjin.jpeg" alt="">
       </div>
+    </div>
 
-      <div class="kids-content" style="position:relative; padding:8px;">
-        <div class="grid two">
-          <!-- Ji -->
-          <article class="card kid-card" style="background:rgba(255,255,255,.85);backdrop-filter:saturate(1.1) blur(2px);">
-            <img src="assets/img/ji.jpeg" alt="Ji" />
-            <h3 style="margin-top:.4rem;">Ji</h3>
-            <p class="muted">New Heart Kids</p>
-            <p>“Decorating, praying, and helping made me feel part of something big that God is doing.”</p>
-          </article>
+    <!-- Foreground content (smaller cards so bg is visible) -->
+    <div class="kids-foreground">
+      <div class="grid two">
+        <!-- Ji -->
+        <article class="card kid-card" style="background:rgba(255,255,255,.88);backdrop-filter:saturate(1.1) blur(2px);">
+          <img src="assets/img/ji.jpeg" alt="Ji" />
+          <h3 style="margin-top:.4rem;">Ji</h3>
+          <p class="muted">New Heart Kids</p>
+          <p>“Decorating, praying, and helping made me feel part of something big that God is doing.”</p>
+          <button class="open-modal chip" data-target="#modal-ji">Read Story</button>
+        </article>
 
-          <!-- Kyungjin -->
-          <article class="card kid-card" style="background:rgba(255,255,255,.85);backdrop-filter:saturate(1.1) blur(2px);">
-            <img src="assets/img/kyungjin.jpeg" alt="Kyungjin" />
-            <h3 style="margin-top:.4rem;">Kyungjin</h3>
-            <p class="muted">New Heart Kids</p>
-            <p>“I saw God’s answers in little moments. We laughed, prayed, and shared—Jesus was with us!”</p>
-          </article>
+        <!-- Kyungjin -->
+        <article class="card kid-card" style="background:rgba(255,255,255,.88);backdrop-filter:saturate(1.1) blur(2px);">
+          <img src="assets/img/kyungjin.jpeg" alt="Kyungjin" />
+          <h3 style="margin-top:.4rem;">Kyungjin</h3>
+          <p class="muted">New Heart Kids</p>
+          <p>“I saw God’s answers in little moments. We laughed, prayed, and shared—Jesus was with us!”</p>
+          <button class="open-modal chip" data-target="#modal-kyungjin">Read Story</button>
+        </article>
+      </div>
+    </div>
+
+    <!-- FULL STORY MODALS (Kids) -->
+    <div id="modal-ji" class="modal" role="dialog" aria-modal="true" hidden>
+      <div class="modal-body">
+        <h4>Ji — Full Story</h4>
+        <div>
+          Ji loved helping prepare the space—taping signs, arranging crayons, and praying with friends. During worship,
+          she felt Jesus close. “I think God likes when we help,” she said. Simple moments became memories, and Ji learned
+          that serving together is a way to show God’s love.
         </div>
+        <div class="modal-actions"><button class="close-modal chip">Close</button></div>
+      </div>
+    </div>
+
+    <div id="modal-kyungjin" class="modal" role="dialog" aria-modal="true" hidden>
+      <div class="modal-body">
+        <h4>Kyungjin — Full Story</h4>
+        <div>
+          Kyungjin’s joy was contagious. He noticed answers to prayer—like finding a lost pencil and an unexpected hug
+          from a friend. “Jesus was with us!” he said. Through laughter and small acts of kindness, he learned that faith
+          is simply trusting Jesus in every little moment.
+        </div>
+        <div class="modal-actions"><button class="close-modal chip">Close</button></div>
       </div>
     </div>
   </section>
@@ -415,17 +462,15 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
         <h2>Editorial</h2>
         <h3 style="margin-top:.1rem; color:var(--accent-2);">God’s Faithfulness: Our Enduring Foundation.</h3>
         <p>
-          Through every season, the Lord anchors our community in His steadfast love. Across nations and generations,
-          testimonies remind us that the Spirit forms one family with one new heart—His heart—beating for the world.
+          Through every season, God has proven His steadfast love and mercy toward the New Heart Family. As we look back
+          on the many journeys across nations and teams, we can see His fingerprints guiding every detail. What began
+          with small acts of obedience has become a global testimony of His faithfulness. Each team, each story, each
+          “yes” has built upon the foundation of His grace.
         </p>
         <p>
-          We move forward together with humility and courage, remembering that every small “yes” becomes a doorway for
-          grace to enter homes, schools, and cities. The Father is faithful; Jesus is our cornerstone; the Holy Spirit
-          empowers our daily worship and service.
-        </p>
-        <p>
-          May we keep beholding Jesus, encouraging one another, and building up the saints, so that His presence
-          transforms our communities—one heart at a time.
+          Let us continue to fix our eyes on Jesus, who began this good work in us and will be faithful to complete it.
+          May every new team, every gathering, and every heart find renewed strength in the One who remains unshaken—
+          our God, our foundation, our enduring faithfulness.
         </p>
       </article>
 
@@ -460,42 +505,41 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 <script>
 "use strict";
 
-/* Minimal i18n scaffolding with emoji flags */
+/* Minimal language flags (no external dictionaries yet) */
 const SUPPORTED = ["en","ko","he","th","vi"];
 const DEFAULT_LANG = "en";
 const state = { lang: localStorage.getItem("lang") || DEFAULT_LANG };
-
 function applyLang(){
   document.documentElement.lang = state.lang;
-  document.documentElement.dir = (state.lang === "he") ? "rtl" : "ltr";
+  document.documentElement.dir  = (state.lang === "he") ? "rtl" : "ltr";
   document.querySelectorAll('.langflags [data-lang]').forEach(btn=>{
     btn.setAttribute('aria-pressed', String(btn.dataset.lang === state.lang));
   });
 }
 document.addEventListener('click', (e)=>{
-  const b = e.target.closest('.langflags [data-lang]');
-  if(!b) return;
+  const b = e.target.closest('.langflags [data-lang]'); if(!b) return;
   e.preventDefault();
   const lang = b.dataset.lang;
   state.lang = SUPPORTED.includes(lang) ? lang : DEFAULT_LANG;
   localStorage.setItem('lang', state.lang);
-  applyLang(); // (Text stays English unless you add dictionaries later)
+  applyLang(); // text stays English until you add JSON dictionaries
 });
 
-/* Reveal on scroll (gentle fade-ins) */
+/* Reveal on scroll (gentle fades) */
 const io = new IntersectionObserver((entries)=>{
   for (const e of entries){
     if (e.isIntersecting){ e.target.classList.add('is-in'); io.unobserve(e.target); }
   }
-},{ rootMargin:"0px 0px -10% 0px", threshold:0.05 });
+},{ rootMargin:"0px 0px -10% 0px", threshold:0.06 });
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-/* Modals */
+/* Modals (pop-ups) */
 document.body.addEventListener('click',(e)=>{
   const open = e.target.closest('.open-modal');
   if(open){
     e.preventDefault();
-    const m = document.querySelector(open.getAttribute('data-target'));
+    const sel = open.getAttribute('data-target');
+    const m = document.querySelector(sel);
     if(m){ m.hidden=false; m.dataset.open='true'; m.focus(); }
     return;
   }
