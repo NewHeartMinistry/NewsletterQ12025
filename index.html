@@ -33,20 +33,33 @@ body{
 h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 .muted{ color:var(--muted); }
 
-/* Toolbar + Language flags (top-right) */
+/* Toolbar + Language flags (top, far right) */
 .toolbar{
   position:sticky; top:0; z-index:40; background:var(--bg);
   border-bottom:1px solid var(--border); box-shadow:0 2px 0 rgba(0,0,0,0.02);
 }
-.toolbar .inner{ display:flex; align-items:center; justify-content:space-between; padding:.6rem .4rem; }
-.brand{ font-weight:800; letter-spacing:.2px; color:var(--accent); }
-.langflags{ display:flex; gap:.25rem; align-items:center; }
-.langflags button{
-  background:#f4eddc; border:1px solid var(--border); border-radius:10px;
-  padding:.3rem .42rem; cursor:pointer; box-shadow: var(--shadow);
-  font-size:16px; line-height:1;
+.toolbar .inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:.6rem .4rem;
 }
-.langflags button[aria-pressed="true"]{ outline:2px solid var(--accent); }
+.brand{ font-weight:800; letter-spacing:.2px; color:var(--accent); }
+.langflags{ display:flex; gap:.35rem; align-items:center; }
+.langflags button{
+  background:#f4eddc;
+  border:1px solid var(--border);
+  border-radius:999px;
+  padding:.25rem .55rem;
+  cursor:pointer;
+  box-shadow: var(--shadow);
+  font-size:.9rem;
+  display:flex;
+  align-items:center;
+  gap:.25rem;
+}
+.langflags button span.flag-emoji{ font-size:1.1rem; }
+.langflags button[aria-pressed="true"]{
+  outline:2px solid var(--accent);
+}
 .langflags button:hover{ filter:brightness(.96); }
 
 /* Masthead */
@@ -65,7 +78,13 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 .season{ color:var(--muted); margin:.12rem 0; }
 
 /* Cards & grids */
-.card{ background:var(--card); border:1px solid var(--border); border-radius:12px; padding:14px; box-shadow: var(--shadow); }
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:14px;
+  box-shadow: var(--shadow);
+}
 .grid{ display:grid; gap:12px; }
 .two{ grid-template-columns: 1fr; }
 .three{ grid-template-columns: 1fr; }
@@ -85,44 +104,80 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 }
 
 /* Video embeds */
-.video{ aspect-ratio:16/9; background:#000; border-radius:10px; overflow:hidden; }
+.video{
+  aspect-ratio:16/9;
+  background:#000;
+  border-radius:10px;
+  overflow:hidden;
+}
 .video iframe{ width:100%; height:100%; border:0; display:block; }
 
 /* Story & kids cards — smaller images */
 .story-card img{
-  width:100%; border-radius:10px; border:1px solid var(--border);
-  max-height:200px; object-fit:cover;
+  width:100%;
+  border-radius:10px;
+  border:1px solid var(--border);
+  max-height:200px;
+  object-fit:cover;
 }
 .kid-card img{
-  width:100%; border-radius:10px; border:1px solid var(--border);
-  max-height:180px; object-fit:contain; background:#fff;
+  width:100%;
+  border-radius:10px;
+  border:1px solid var(--border);
+  max-height:180px;
+  object-fit:contain;
+  background:#fff;
 }
 
 /* Kids section full-page background */
 #page3-kids{ position:relative; min-height: 75vh; }
 .kids-bg{ position:absolute; inset:0; z-index:0; }
 .kids-bg::before{
-  content:""; position:absolute; inset:0;
-  background: linear-gradient(135deg, rgba(233,241,227,.85), rgba(255,255,255,.55));
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(135deg, rgba(233,241,227,.88), rgba(255,255,255,.65));
   z-index:0;
 }
 .kids-collage{
-  position:absolute; inset:0; z-index:-1;
-  display:grid; grid-template-columns:repeat(8,1fr); gap:8px; padding:10px; opacity:.32;
+  position:absolute; inset:0;
+  z-index:-1;
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:6px;
+  padding:10px;
+  opacity:.5;
 }
 .kids-collage img{
-  width:100%; height:90px; object-fit:cover; border-radius:10px;
-  animation: floatFade 18s linear infinite;
+  width:100%;
+  height:80px;
+  object-fit:cover;
+  border-radius:10px;
+  animation: kidsFade 20s ease-in-out infinite;
 }
-@keyframes floatFade{
-  0%{ transform:translateY(10px) scale(1); opacity:.0; }
-  15%{ opacity:.42; }
-  50%{ transform:translateY(-4px) scale(1.02); opacity:.52; }
-  85%{ opacity:.35; }
-  100%{ transform:translateY(10px) scale(1); opacity:.0; }
+
+/* soft crossfade-ish motion */
+@keyframes kidsFade{
+  0%   { opacity:0;   transform:scale(1); }
+  15%  { opacity:.75; transform:scale(1.01); }
+  50%  { opacity:.8;  transform:scale(1.02); }
+  85%  { opacity:.6;  transform:scale(1.005); }
+  100% { opacity:0;   transform:scale(1); }
 }
-.kids-foreground{ position:relative; z-index:1; }
-.kid-card{ padding:10px; }
+.kids-foreground{
+  position:relative;
+  z-index:1;
+}
+
+/* Make New Heart Kids title darker + more noticeable */
+#page3-kids h2{
+  color:#111827;
+  display:inline-block;
+  background:rgba(255,255,255,.92);
+  padding:6px 16px;
+  border-radius:999px;
+  box-shadow:var(--shadow);
+  margin-bottom:12px;
+}
 
 /* Lists */
 .list{ margin:0; padding-left:1.1rem; }
@@ -136,25 +191,53 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 
 /* Buttons */
 .chip{
-  border:0; background:#f4eddc; color:#3d3015; padding:.38rem .66rem; border-radius:999px; cursor:pointer; border:1px solid var(--border);
+  border:0;
+  background:#f4eddc;
+  color:#3d3015;
+  padding:.38rem .66rem;
+  border-radius:999px;
+  cursor:pointer;
+  border:1px solid var(--border);
 }
 .chip:hover{ filter:brightness(0.96); }
 
 /* Modal (pop-ups for full stories) */
-.modal[role="dialog"]{ position:fixed; inset:0; display:grid; place-items:center; background:rgba(0,0,0,.45); z-index:9999; }
+.modal[role="dialog"]{
+  position:fixed; inset:0;
+  display:grid; place-items:center;
+  background:rgba(0,0,0,.45);
+  z-index:9999;
+}
 .modal[hidden]{ display:none !important; }
 .modal .modal-body{
-  max-height:76vh; overflow:auto; background:var(--card); color:var(--fg);
-  padding:18px; border-radius:12px; width:min(760px,92vw); box-shadow:0 10px 28px rgba(0,0,0,.35);
+  max-height:76vh;
+  overflow:auto;
+  background:var(--card);
+  color:var(--fg);
+  padding:18px;
+  border-radius:12px;
+  width:min(760px,92vw);
+  box-shadow:0 10px 28px rgba(0,0,0,.35);
 }
-.modal .modal-actions{ display:flex; gap:.5rem; justify-content:flex-end; margin-top:.6rem; }
+.modal .modal-actions{
+  display:flex;
+  gap:.5rem;
+  justify-content:flex-end;
+  margin-top:.6rem;
+}
 
 /* Fade-ins + section transition feel */
 .reveal{ opacity:0; transform: translateY(10px); }
 .reveal.is-in{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
 
 /* Footer */
-.footer{ color:var(--muted); text-align:center; padding:16px 0 28px; border-top:1px solid var(--border); margin-top:10px; }
+.footer{
+  color:var(--muted);
+  text-align:center;
+  padding:16px 0 28px;
+  border-top:1px solid var(--border);
+  margin-top:10px;
+}
 
 /* Print */
 @media print{
@@ -165,16 +248,26 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 </head>
 <body>
 
-<!-- ===== Toolbar with Language Flags (top-right) ===== -->
+<!-- ===== Toolbar with Language Flags (top-right, all pages) ===== -->
 <header class="toolbar">
   <div class="wrap inner">
     <div class="brand">New Heart</div>
     <div class="langflags" aria-label="Language">
-      <button class="flag" data-lang="en" aria-pressed="true" title="English"><span>🇺🇸</span></button>
-      <button class="flag" data-lang="ko" aria-pressed="false" title="한국어"><span>🇰🇷</span></button>
-      <button class="flag" data-lang="he" aria-pressed="false" title="עברית"><span>🇮🇱</span></button>
-      <button class="flag" data-lang="th" aria-pressed="false" title="ไทย"><span>🇹🇭</span></button>
-      <button class="flag" data-lang="vi" aria-pressed="false" title="Tiếng Việt"><span>🇻🇳</span></button>
+      <button class="flag" data-lang="en" aria-pressed="true" title="English">
+        <span class="flag-emoji">🇺🇸</span><span>EN</span>
+      </button>
+      <button class="flag" data-lang="ko" aria-pressed="false" title="한국어">
+        <span class="flag-emoji">🇰🇷</span><span>KO</span>
+      </button>
+      <button class="flag" data-lang="he" aria-pressed="false" title="עברית">
+        <span class="flag-emoji">🇮🇱</span><span>HE</span>
+      </button>
+      <button class="flag" data-lang="th" aria-pressed="false" title="ไทย">
+        <span class="flag-emoji">🇹🇭</span><span>TH</span>
+      </button>
+      <button class="flag" data-lang="vi" aria-pressed="false" title="Tiếng Việt">
+        <span class="flag-emoji">🇻🇳</span><span>VI</span>
+      </button>
     </div>
   </div>
 </header>
@@ -208,9 +301,12 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
       <article>
         <div class="card">
           <h2 data-i18n="founders.title">Pastors Jason &amp; Youngmi Cha</h2>
-          <p class="muted" style="margin-top:-2px;" data-i18n="founders.role">Founders &amp; New Heart Global Directors</p>
+          <p class="muted" style="margin-top:-2px;" data-i18n="founders.role">
+            Founders &amp; New Heart Global Directors
+          </p>
           <div class="video" style="margin:.45rem 0 10px;">
-            <iframe src="https://www.youtube.com/embed/gZBn3xnHTL8" title="Founders message" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/gZBn3xnHTL8"
+                    title="Founders message" allowfullscreen></iframe>
           </div>
           <h3 style="margin-top:.3rem; color:var(--accent-2);" data-i18n="founders.greetingHeading">Greeting</h3>
           <p data-i18n="founders.greeting">
@@ -223,19 +319,23 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
       <aside class="right-lists">
         <div class="card" style="margin-bottom:12px;">
           <h2 data-i18n="regional.title">Regional Directors</h2>
-          <p class="muted" data-i18n="regional.role">Pastors Matthew &amp; Sarah Kim — Thailand</p>
+          <p class="muted" data-i18n="regional.role">
+            Pastors Matthew &amp; Sarah Kim — Thailand
+          </p>
           <div class="video">
-            <iframe src="https://www.youtube.com/embed/wNR9yt7HtbU" title="Regional Directors message" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/wNR9yt7HtbU"
+                    title="Regional Directors message" allowfullscreen></iframe>
           </div>
         </div>
 
         <div class="card" style="margin-bottom:12px;">
           <h2 data-i18n="regional.thailand">Thailand</h2>
-          <img src="assets/img/Thailand-poster.jpeg" alt="Thailand Poster" style="width:100%; border-radius:10px; border:1px solid var(--border);" />
+          <img src="assets/img/Thailand-poster.jpeg" alt="Thailand Poster"
+               style="width:100%; border-radius:10px; border:1px solid var(--border);" />
         </div>
 
         <div class="card">
-          <h2 data-i18n="events.upcoming">Upcoming New Heart</h2>
+          <h2 data-i18n="events.upcoming">Upcoming New Heart Gatherings</h2>
           <ul class="list">
             <li data-i18n="events.vn"><span class="emoji">🇻🇳</span>Vietnam — Nha Trang: 12/2–5/2025</li>
             <li data-i18n="events.th"><span class="emoji">🇹🇭</span>Thailand — Bangkok: 1/27–30/2026</li>
@@ -256,7 +356,7 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 
   <!-- ========================================================= -->
   <!-- ====================== PAGE 2 =========================== -->
-  <!-- New Heart Stories (2 columns, smaller images)            -->
+  <!-- New Heart Stories (5 stories, full text in modals)       -->
   <!-- ========================================================= -->
   <section class="section reveal" id="page2-stories">
     <h2 data-i18n="stories.heading">New Heart Stories</h2>
@@ -264,11 +364,14 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
     <div class="grid two">
       <!-- 1 Ariel -->
       <article class="card story-card">
-        <img src="assets/img/ariel.jpeg" alt="Ariel Sabag" />
-        <h3 style="margin-top:.45rem;" data-i18n="stories.ariel.name">Ariel Sabag</h3>
-        <p class="muted" data-i18n="stories.ariel.role">NH USA #53, Candidate / NH Korea #54, Team Member</p>
-        <p data-i18n="stories.ariel.blurb">
-          Raised in Orthodox tradition, Ariel searched the prophecies and met Jesus as Messiah—now carrying hope between nations.
+        <img src="assets/img/ariel.jpeg" alt="Ariel" />
+        <h3 style="margin-top:.45rem;" data-i18n="stories.ariel.name">Ariel</h3>
+        <p class="muted" data-i18n="stories.ariel.role">
+          NH USA #53, Candidate
+        </p>
+        <p>
+          My sister’s profound encounter with Jesus at New Heart 52 in Israel led me into a journey
+          from Orthodox Judaism to meeting Jesus as Messiah…
         </p>
         <button class="open-modal chip" data-target="#modal-ariel" data-i18n="ui.read">Read Story</button>
       </article>
@@ -277,9 +380,12 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
       <article class="card story-card">
         <img src="assets/img/han.jpeg" alt="Han, Ye-Sul" />
         <h3 style="margin-top:.45rem;" data-i18n="stories.yesul.name">Han, Ye-Sul</h3>
-        <p class="muted" data-i18n="stories.yesul.role">NH Korea #54 Team Member</p>
-        <p data-i18n="stories.yesul.blurb">
-          In worship and simple service, Ye-Sul laid down burdens and discovered the joy of a tender, listening heart.
+        <p class="muted" data-i18n="stories.yesul.role">
+          NH Korea #54 Team Member
+        </p>
+        <p>
+          From reluctant first-time candidate to interceding worshiper, God met me in the middle of
+          pregnancy, fatigue, and serving…
         </p>
         <button class="open-modal chip" data-target="#modal-yesul" data-i18n="ui.read">Read Story</button>
       </article>
@@ -288,9 +394,12 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
       <article class="card story-card">
         <img src="assets/img/keziah.jpeg" alt="Keziah" />
         <h3 style="margin-top:.45rem;" data-i18n="stories.keziah.name">Keziah</h3>
-        <p class="muted" data-i18n="stories.keziah.role">NH Vietnam #50 Candidate</p>
-        <p data-i18n="stories.keziah.blurb">
-          Trusting God’s timing through uncertainty, Keziah watched small mercies become a steady testimony.
+        <p class="muted" data-i18n="stories.keziah.role">
+          NH Vietnam #14 Candidate
+        </p>
+        <p>
+          After 14 years of walking with the Lord, New Heart Vietnam #14 became a place of deep
+          freedom from striving and self-righteousness…
         </p>
         <button class="open-modal chip" data-target="#modal-keziah" data-i18n="ui.read">Read Story</button>
       </article>
@@ -299,91 +408,402 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
       <article class="card story-card">
         <img src="assets/img/parichat.jpeg" alt="Parichat" />
         <h3 style="margin-top:.45rem;" data-i18n="stories.parichat.name">Parichat</h3>
-        <p class="muted" data-i18n="stories.parichat.role">NH Korea #54 Candidate</p>
-        <p data-i18n="stories.parichat.blurb">
-          With a worshiper’s heart, Parichat watched language barriers melt as prayer knit the family together.
+        <p class="muted" data-i18n="stories.parichat.role">
+          NH Korea #54 Candidate (Thailand Team)
+        </p>
+        <p>
+          Carrying 18 years of pain, I came to New Heart 54 in Korea and encountered deep inner
+          restoration, forgiveness, and a new decision to serve…
         </p>
         <button class="open-modal chip" data-target="#modal-parichat" data-i18n="ui.read">Read Story</button>
       </article>
 
-      <!-- 5 Choi, Eun Young -->
+      <!-- 5 Choi, Eun-Young -->
       <article class="card story-card">
-        <img src="assets/img/choi.jpeg" alt="Choi, Eun Young" />
-        <h3 style="margin-top:.45rem;" data-i18n="stories.choi.name">Choi, Eun Young</h3>
-        <p class="muted" data-i18n="stories.choi.role">NH Korea #54 Candidate</p>
-        <p data-i18n="stories.choi.blurb">
-          From hesitation to hope, Eun Young encountered gentle renewal and began to witness with courage.
+        <img src="assets/img/choi.jpeg" alt="Choi, Eun-Young" />
+        <h3 style="margin-top:.45rem;" data-i18n="stories.choi.name">Choi, Eun-Young</h3>
+        <p class="muted" data-i18n="stories.choi.role">
+          NH Korea #54 — Hallelujah Group
+        </p>
+        <p>
+          Invited and prayed for over a year, I came to this retreat exhausted in body and soul,
+          and the Lord gently called me back into the fight of faith…
         </p>
         <button class="open-modal chip" data-target="#modal-choi" data-i18n="ui.read">Read Story</button>
       </article>
     </div>
 
-    <!-- FULL STORY MODALS (Adults) -->
+    <!-- ===== FULL STORY MODALS (Adults) ===== -->
+
+    <!-- Ariel full story -->
     <div id="modal-ariel" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
-        <h4 data-i18n="stories.ariel.fullTitle">Ariel Sabag — Full Story</h4>
-        <div data-i18n="stories.ariel.full">
-          Born into an Orthodox family, Ariel honored the traditions he received. But as he studied the prophets, the
-          promises of a suffering and redeeming Messiah drew him to Jesus. Through NH USA #53 and NH Korea #54, he
-          discovered a family eager to serve and worship. With a new heart, he now carries the Good News across cultures—
-          patiently, humbly, and joyfully.
+        <h4>Ariel — Full Story</h4>
+        <div>
+          <p>
+            My sister's profound experience with New Heart 52 in Israel had a deep impact on me.
+            Witnessing her transformation and her confession of faith in Jesus to our mother
+            inspired me to attend New Heart in the USA in May 2025.
+          </p>
+          <p>
+            I was born into a devout Orthodox Jewish family, alongside my sister and our triplet
+            brother. Our upbringing was steeped in the traditions and teachings of our faith, and
+            for many years, this was the foundation of my religion. However, as I grew older, a
+            sense of unease began to stir within me. Despite my fervent prayers and commitment to
+            our religious practices, I found myself yearning for a deeper connection, a more
+            profound experience of God's peace and love, which I felt was lacking.
+          </p>
+          <p>
+            This spiritual yearning led me to seek guidance, and I prayed earnestly for God to
+            lead me to the truth. About six years ago, my journey took a transformative turn. I
+            began to research Jesus, approaching the subject with an open mind and a sincere
+            desire to understand. What I discovered during this period of intense study and
+            reflection was nothing short of revelatory. I delved into the prophecies of the Hebrew
+            Bible and was astonished to see how clearly they pointed to Jesus as the long-awaited
+            Messiah. The intricate details, the historical accuracy, and the profound theological
+            implications of these prophecies resonated deeply within me. It was a profound
+            awakening, confirming a truth that had been quietly stirring in my heart. This journey
+            of discovery solidified my belief in Jesus, forever changing my spiritual path.
+          </p>
+          <p>
+            Getting permission to leave Israel during my army service, especially with the ongoing
+            war, was challenging. We booked the flight, prayed earnestly, and by God's grace, I
+            received permission just one day before I departed for the USA.
+          </p>
+          <p>
+            The New Heart program was a period of immense grace and personal change. Over three
+            days, I grew closer to God by spending undistracted time with Him, a profoundly
+            enriching experience. I am grateful to God for transforming my life and giving me a
+            new heart during New Heart 53.
+          </p>
         </div>
-        <div class="modal-actions"><button class="close-modal chip" data-i18n="ui.close">Close</button></div>
+        <div class="modal-actions">
+          <button class="close-modal chip" data-i18n="ui.close">Close</button>
+        </div>
       </div>
     </div>
 
+    <!-- Han full story -->
     <div id="modal-yesul" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
-        <h4 data-i18n="stories.yesul.fullTitle">Han, Ye-Sul — Full Story</h4>
-        <div data-i18n="stories.yesul.full">
-          At NH Korea #54, Ye-Sul discovered that simple obedience—stacking chairs, praying quietly, listening—was a
-          doorway to joy. As burdens lifted in worship, she began to serve with a tender heart, finding Jesus faithful
-          in the small things and the great.
+        <h4>Han, Ye-Sul — Full Story</h4>
+        <div>
+          <p>
+            Hello. My name is Han Ye-seul, and I participated as a candidate in the 51st session,
+            serving as a team member for the first time this time. Honestly, I wasn’t sure if the
+            accompaniment would be heard, so I kept playing soft background music (BGM) and
+            hesitated to come forward. But since it’s the final testimony, I decided to share.
+            This is because every moment I served in New Heart’s 54th session has been a great
+            testimony for me.
+          </p>
+          <p>
+            When I participated as a candidate in the 51st session at my husband's suggestion, I
+            kept asking, "What will we do? Where are we going? What’s the schedule?" but no one
+            told me anything. I had to go without any information, like boarding a deep-sea
+            fishing vessel. Last year, it was during the weekdays, and since Wednesday was a
+            workday, I traveled from Cheonan to Yeoncheon by train and subway after work, arriving
+            around 11 p.m. I was told not to speak, and when I asked, "Why?" I didn’t get an
+            answer. As a candidate, I couldn’t quite understand the terms they used, and though I
+            was tired, the sessions were long. Despite struggles during the program, I experienced
+            many awakenings and moments of repentance. My husband hadn’t shared much about New
+            Heart initially, which made me slightly resistant, but I didn’t show it. At the end, I
+            said, "I really enjoyed it. I want to serve as a team member next year." When the
+            announcement came this year, I eagerly asked my husband, "Did you apply? Did you
+            apply?" Thankfully, he joined me in serving.
+          </p>
+          <p>
+            While serving on the praise team this time, I found myself interceding more for the
+            candidates than focusing on my own blessings. During prayer times, I wasn’t able to
+            pray much for myself because I was engaged in singing, playing the accompaniment, and
+            serving in small ways. The team members I observed as a candidate worked tirelessly,
+            waking early and staying up late. Watching them, I wondered, "Can I really do this?"
+            Moreover, since I was pregnant, I worried about whether I had the physical strength to
+            manage. But as I mentioned earlier, all of this was God’s grace from start to finish.
+          </p>
+          <p>
+            While serving on the praise team, I couldn’t help but intercede for the candidates.
+            Through this, God filled my heart with His love for these souls and His longing to
+            reach them. Even when I was serving quietly in the back as an accompanist, He led me
+            to intercede for the worship, pouring His heart into me.
+          </p>
+          <p>
+            On the third evening during prayer, I was standing by, ready to assist with water or
+            tissues if needed. Toward the end, I just stood still. In that quiet moment, I felt as
+            if God called out, "Ye-seul," in my heart. From that moment, I couldn’t do anything
+            but stand there with my hands raised in worship. God reminded me of Mary and Martha.
+            While serving Jesus is important, what He truly desires is for us to sit at His feet
+            and listen. I realized that while serving is good, I must first be present before
+            Jesus, listening to His words. It led me to resolutely pray, "God, while serving is
+            valuable, I will prioritize sitting before You. Your ministry is important, but I will
+            stand before You first." I couldn’t help but bow down in gratitude, realizing God knew
+            my situation and was watching over me.
+          </p>
+          <p>
+            Before attending, I was worried about my physical condition. I had been resting at
+            home, used to sleeping and eating leisurely. Suddenly waking up at 6 a.m., serving
+            until late, and repeating that schedule concerned me. However, God's grace sustained
+            me. Even with short sleep, God provided deep rest. Of course, when I was extremely
+            exhausted, I took breaks, but both physically and spiritually, God rejuvenated me.
+          </p>
+          <p>
+            I encourage all candidates to serve as team members. The grace you receive as a
+            candidate differs from the grace experienced while serving as a team member. If you
+            have the time and opportunity next year, I hope you participate. Also, I nearly forgot
+            to mention—please pray before deciding to join. I realize now how lacking I was in
+            prayer for both myself and all of you. If I’m given another opportunity next year, I
+            will pray diligently, actively participate in team meetings, and prepare wholeheartedly
+            for the souls God will entrust to us. Thank you.
+          </p>
         </div>
-        <div class="modal-actions"><button class="close-modal chip" data-i18n="ui.close">Close</button></div>
+        <div class="modal-actions">
+          <button class="close-modal chip" data-i18n="ui.close">Close</button>
+        </div>
       </div>
     </div>
 
+    <!-- Keziah full story -->
     <div id="modal-keziah" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
-        <h4 data-i18n="stories.keziah.fullTitle">Keziah — Full Story</h4>
-        <div data-i18n="stories.keziah.full">
-          NH Vietnam #50 became a turning point for Keziah. Faced with uncertainty, she saw the Lord provide step by
-          step—through a timely word, a friend’s prayer, and unexpected strength. Those small mercies became stones of
-          remembrance, building trust for the path ahead.
+        <h4>Keziah — Full Story</h4>
+        <div>
+          <p>
+            Greetings, I am Keziah from Vietnam. I sincerely thank God for the opportunity to
+            attend the 14th New Heart retreat, where I was visited by God miraculously and
+            powerfully. Throughout the retreat, I experienced deep communion with Him,
+            completely undistracted.
+          </p>
+          <p>
+            I have followed the Lord for 14 years, and during that time, I have always felt His
+            boundless love for me. Because of that love, I chose to respond by serving Him with
+            all my heart. However, over time, I realized that I often served with the desire to be
+            recognized by Him, without truly understanding His love for me completely.
+          </p>
+          <p>
+            On the first night of the retreat, I wept before the Lord and asked for His forgiveness
+            for letting my thoughts control His work instead of following His will. I understood
+            that God’s will is that He loves me not because of what I do, but simply because He
+            loves me. Whether I do anything or not, His love is always unconditional for me.
+          </p>
+          <p>
+            His Word (Jeremiah 32:40 “I will make an everlasting covenant with them: I will never
+            stop doing good to them, and I will inspire them to fear me, so they will not turn away
+            from me.” Jeremiah 32:40 NIV) has freed me from being bound by my own righteousness in
+            my faith life, and since then, I have lived in true freedom, believing in His love and
+            plan for my life genuinely. He truly revealed Himself by using me to convey His love to
+            many others. I clearly felt His anointing upon my whole being at the moments during the
+            retreat days.
+          </p>
+          <p>
+            Afterward, whenever I had the chance to meet and share with those who do not yet
+            believe in the Lord, I experienced Him using my mouth and heart to communicate His love
+            and salvation to them. Since the 14th retreat, I have prayed for 18 people who accepted
+            the Lord, and many others are currently being cared for by the Church and attending
+            worship weekly.
+          </p>
+          <p>
+            Today, God is truly close and wonderful in my life. My attitude of serving the Lord has
+            been renewed, originating from unconditional love and freedom in Him. He has also
+            protected my health through all the challenges in ministry, and I rely on His words
+            whenever He sees the need to adjust me to become more like Jesus.
+          </p>
+          <p>Thank God, glory belongs to Him.</p>
         </div>
-        <div class="modal-actions"><button class="close-modal chip" data-i18n="ui.close">Close</button></div>
+        <div class="modal-actions">
+          <button class="close-modal chip" data-i18n="ui.close">Close</button>
+        </div>
       </div>
     </div>
 
+    <!-- Parichat full story -->
     <div id="modal-parichat" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
-        <h4 data-i18n="stories.parichat.fullTitle">Parichat — Full Story</h4>
-        <div data-i18n="stories.parichat.full">
-          Serving among brothers and sisters from many nations, Parichat saw how worship softens hearts and heals
-          misunderstandings. Even when words failed, love, prayer, and a smile spoke clearly: we are one family in Christ.
+        <h4>Parichat — Full Story</h4>
+        <div>
+          <p>
+            I, Parichat, would like to express heartfelt thanks to Spiritual Mother Pastor Mayuri,
+            Pastor Sarah, and Pastor Matthew for their guidance, care, and love from the very first
+            day we arrived in Korea until the very last day of the mission.
+          </p>
+          <p>
+            Thank you for the precious experiences and blessings I received through joining the
+            “New Heart” mission in Korea. I was deeply impressed by the New Heart mission, from the
+            warm transportation arrangement to pick up our team, the loving welcome through songs
+            of praise, the joyful meal team filled with laughter, the worship team overflowing with
+            the Holy Spirit, and the prayer team that continually covered us throughout the
+            mission.
+          </p>
+          <p>
+            Thank you for every testimony and sermon shared by the pastors, brothers, and sisters
+            who had previously gone through the New Heart mission. Your sharing helped us
+            understand even more that no matter how difficult or painful the situation may be, God
+            still reigns. He continually upholds our hearts and spirits, keeping us steadfast in
+            His righteousness now and forever.
+          </p>
+          <p>
+            I received deep inner restoration and have firmly decided to serve and draw even closer
+            to God. I also chose to forgive my ex-husband for everything that had happened in the
+            past and even in the present. The accusations and hatred that I carried for many years
+            have now turned into something new that leads me to pray even more. I have truly
+            experienced transformation in both my heart and my spirit.
+          </p>
+          <p>
+            Before joining the mission, I had carried pain in my heart for more than 18 years. But
+            now, that burden has become so much lighter, and I can truly feel that I am no longer
+            carrying it the way I once did.
+          </p>
+          <p>
+            New Heart 54 has been a great blessing and transformation for both my heart and my
+            spirit. And I also desire to become a blessing to the brothers and sisters who will
+            join the next generations of the New Heart mission as well.
+          </p>
+          <p>
+            May the Lord strengthen all the pastors and pour out abundant blessings on every
+            ministry you lead, so that great fruit will come forth and flow into the lives of many
+            people.
+          </p>
         </div>
-        <div class="modal-actions"><button class="close-modal chip" data-i18n="ui.close">Close</button></div>
+        <div class="modal-actions">
+          <button class="close-modal chip" data-i18n="ui.close">Close</button>
+        </div>
       </div>
     </div>
 
+    <!-- Choi full story -->
     <div id="modal-choi" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
-        <h4 data-i18n="stories.choi.fullTitle">Choi, Eun Young — Full Story</h4>
-        <div data-i18n="stories.choi.full">
-          Eun Young entered NH Korea #54 cautiously, unsure what to expect. The Lord met her gently. Through testimonies
-          and quiet moments in prayer, He restored courage and tenderness. Now she shares with boldness what Jesus has done.
+        <h4>Choi, Eun-Young — Full Story</h4>
+        <div>
+          <p>
+            Newheart 54th Generation Hallelujah Group - Choi Eun-young
+          </p>
+          <p><strong>1. Gratitude</strong></p>
+          <p>
+            First, I cannot forget the spiritual leaders who delivered the Word, the praise team
+            who gave their body and soul, the Palanca team who stayed up all night making many
+            things with devotion, those who shared love through food and snacks, the general
+            affairs team who handled all the troublesome work behind the scenes so the gathering
+            could proceed, and above all, the Royo members who shared their entire lives with tears
+            and love, and each tearful prayer offered on their knees during the foot-washing
+            ceremony. I am truly grateful. I received a profound love that one cannot receive in
+            life.
+          </p>
+          <p><strong>2. Situation Before Going</strong></p>
+          <p>
+            I received an invitation to attend this retreat from a pastor's wife a year ago. She
+            had been praying for me for over a year. Then this year, I received another invitation
+            to attend the retreat. I strongly felt God inviting me to this gathering through
+            someone. This time, I made up my mind to "go with full determination." However, one
+            week before the retreat, my family members, who love and care for me deeply, were
+            absolutely opposed to my attending. They asked how I could go to a gathering where
+            neither the speakers nor the schedule were shared. They even joked that "it could be a
+            deep-sea fishing boat going to gut anchovies."
+          </p>
+          <p>
+            However, I had two desperate reasons why I absolutely had to attend the retreat this
+            time. One was that my husband was graduating from a theological seminary this year,
+            while simultaneously retiring from his company. I had been continuously asking God for
+            direction on how we should live our lives from next year, so I needed spiritual wisdom
+            and strength to discern this. The other was that I felt I had lost energy in both body
+            and soul, and was exhausted after the COVID period. So, I wanted to reflect on my life
+            through the church community, having lost my way, and stand up again.
+          </p>
+          <p><strong>3. Grace Received</strong></p>
+          <p>
+            From the moment I arrived at Newheart until I left, what I experienced was "the
+            hospitality and deep love of those who had fervently experienced God's grace." On the
+            first day, during the first lecture on "vision," God had me comprehensively reflect on
+            my life. He warmly asked me, "Eun-young, how are you using your money, time, and
+            talents?" A few years ago, I started experiencing numbness in my legs and paralysis in
+            my arms due to neck and back disc problems. I was so scared that I significantly
+            reduced my essential work, which included reading books and papers, as well as
+            organizing counseling cases. Instead, I spent time on Naver and YouTube searches.
+            Naturally, the books and papers I wanted to write, and the programs I wanted to
+            create, gradually moved further away.
+          </p>
+          <p>
+            When I was young, life was rough and challenging because I was very poor and had to
+            work a lot. However, as retirement approached, life became comfortable, and a feeling
+            of "it would be nice just to continue like this" gradually crept in. So sometimes I
+            would ask God, "God, isn't this enough? Can't I now rest comfortably and live according
+            to my nature?" My nature is that of an "adult with ADHD tendencies who loves meeting
+            and playing with people." Looking back on my life, I was someone very, very far from
+            research and education. "Ah, since I've lived struggling with my own strength, I can
+            rest now"—this feeling honestly came to me quite often.
+          </p>
+          <p>
+            However, from the first lecture on "vision" through the 11 Royo testimonies that
+            followed, God allowed me to hear with "tears in my heart" how the Royistas He sent were
+            overcoming their deficiencies and life's adversities through their love and devotion to
+            God. It felt like hearing "Hebrews chapter 11" in heaven. God asked me each time: your
+            fellow workers in faith, your seniors in faith, are fighting this fight of faith with
+            difficulty but victoriously. What fight of faith do you want to fight until the moment
+            you die?
+          </p>
+          <p>
+            And God gently rebuked my laziness and indolence, my experience of judging and
+            analyzing people through long periods of counseling and the resulting fear of being
+            judged, and my life that had stopped and was resting because of the criticism I had
+            heard for a long time from the counseling field and the church as a Christian
+            counseling scholar, and called me back to the fierce spiritual battlefield.
+          </p>
+          <p>
+            Another challenge I experienced at the retreat was related to speaking in tongues. As a
+            Presbyterian believer accustomed only to quiet, silent prayer, I was reminded of
+            ministry workers from childhood Sunday school retreats who forced tongues on me
+            regardless of my will, saying you receive tongues by loudly repeating various gum brand
+            names, and the loud tongues prayers of people next to me during the entire retreat and
+            group prayer times made it even harder for me to concentrate on prayer.
+          </p>
+          <p>
+            Finally, during group prayer time, I told the group leader that I was terrified and
+            uncomfortable with tongues prayer. Unfortunately, my prayer time became a venue for
+            spiritual debate about "tongues prayer." However, during this time, I became much more
+            open and came to long for the work of the Holy Spirit, as manifested in the form of
+            "tongues." If I had been living with my own thoughts and plans first for a long time, I
+            would have decided to open myself more and surrender more to the work of the Holy
+            Spirit during this time.
+          </p>
+          <p><strong>4. After Finishing</strong></p>
+          <p>
+            As the retreat concluded, we sang the theme song, "I Stand Up, I Will No Longer Let
+            Pain Be Painful," and the wounds and hurts I had received in various forms from the
+            world and the church, while living as a pastor's daughter and Christian counselor,
+            came flooding back to me. I made a tearful decision to return to those wounds and
+            hurts, but go with the love and joy of the cross's salvation that God reconfirmed to me
+            at the retreat.
+          </p>
+          <p>
+            After writing a list of sins, nailing and burning them on the cross, Pastor Kim's
+            words keep staying in my heart: "If you live according to your 3-day repentance and
+            fail, you can just start another 3 days." Through the Newheart retreat, I will try to
+            live according to the stories God told me, sometimes powerfully, sometimes in detail. I
+            will receive the Holy Spirit's guidance day by day through daily reading of the Word
+            and prayer to find my future path and calling.
+          </p>
+          <p>
+            Whenever I become lazy and indolent, I will recall Christ's sacrificial love, who did
+            not spare His life on the cross for me, and the fellow workers in faith, the Royos, who
+            are living this out with their whole bodies. And I will live another 3 days.
+          </p>
+          <p>
+            I sincerely give thanks and glory to all team members who gave their time, hearts, all
+            talents, and efforts to make all this possible, and to God who poured this grace upon
+            me from behind the scenes. De colores.
+          </p>
         </div>
-        <div class="modal-actions"><button class="close-modal chip" data-i18n="ui.close">Close</button></div>
+        <div class="modal-actions">
+          <button class="close-modal chip" data-i18n="ui.close">Close</button>
+        </div>
       </div>
     </div>
+
   </section>
 
   <div class="page-break"></div>
 
   <!-- ========================================================= -->
   <!-- ====================== PAGE 3 =========================== -->
-  <!-- New Heart Kids (full-section animated background)        -->
+  <!-- New Heart Kids (animated kids background only here)      -->
   <!-- ========================================================= -->
   <section class="section reveal" id="page3-kids" aria-label="New Heart Kids">
     <h2 data-i18n="kids.heading">New Heart Kids</h2>
@@ -391,46 +811,48 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
     <!-- Full-section animated collage behind content -->
     <div class="kids-bg">
       <div class="kids-collage" aria-hidden="true">
-        <img src="assets/img/ji.jpeg" alt="">
-        <img src="assets/img/kyungjin.jpeg" alt="">
-        <img src="assets/img/ji.jpeg" alt="">
-        <img src="assets/img/kyungjin.jpeg" alt="">
-        <img src="assets/img/ji.jpeg" alt="">
-        <img src="assets/img/kyungjin.jpeg" alt="">
-        <img src="assets/img/ji.jpeg" alt="">
-        <img src="assets/img/kyungjin.jpeg" alt="">
-        <img src="assets/img/ji.jpeg" alt="">
-        <img src="assets/img/kyungjin.jpeg" alt="">
-        <img src="assets/img/ji.jpeg" alt="">
-        <img src="assets/img/kyungjin.jpeg" alt="">
-        <img src="assets/img/ji.jpeg" alt="">
-        <img src="assets/img/kyungjin.jpeg" alt="">
-        <img src="assets/img/ji.jpeg" alt="">
-        <img src="assets/img/kyungjin.jpeg" alt="">
+        <!-- Use your kids photos here: place files in assets/img/ -->
+        <img src="assets/img/kids-bg-1.jpeg" alt="">
+        <img src="assets/img/kids-bg-2.jpeg" alt="">
+        <img src="assets/img/kids-bg-3.jpeg" alt="">
+        <img src="assets/img/kids-bg-4.jpeg" alt="">
+        <img src="assets/img/kids-bg-5.jpeg" alt="">
+        <img src="assets/img/kids-bg-6.jpeg" alt="">
+        <img src="assets/img/kids-bg-7.jpeg" alt="">
+        <img src="assets/img/kids-bg-8.jpeg" alt="">
+        <img src="assets/img/kids-bg-9.jpeg" alt="">
+        <img src="assets/img/kids-bg-10.jpeg" alt="">
+        <img src="assets/img/kids-bg-11.jpeg" alt="">
+        <img src="assets/img/kids-bg-12.jpeg" alt="">
+        <img src="assets/img/kids-bg-13.jpeg" alt="">
       </div>
     </div>
 
-    <!-- Foreground content (smaller cards so bg is visible) -->
+    <!-- Foreground content (kids stories) -->
     <div class="kids-foreground">
       <div class="grid two">
         <!-- Ji, Yeowoon -->
-        <article class="card kid-card" style="background:rgba(255,255,255,.9);backdrop-filter:saturate(1.1) blur(2px);">
+        <article class="card kid-card"
+                 style="background:rgba(255,255,255,.92);backdrop-filter:saturate(1.1) blur(2px);">
           <img src="assets/img/ji.jpeg" alt="Ji, Yeowoon" />
-          <h3 style="margin-top:.4rem;" data-i18n="kids.ji.name">Ji, Yeowoon</h3>
-          <p class="muted" data-i18n="kids.ji.role">New Heart Kids</p>
-          <p data-i18n="kids.ji.blurb">
-            “Decorating, praying, and helping made me feel part of something big that God is doing.”
+          <h3 style="margin-top:.4rem;">Ji, Yeowoon</h3>
+          <p class="muted">New Heart Kids Korea #2</p>
+          <p>
+            From unfamiliar schedules and shared sleeping spaces to rainy days and no phones,
+            Ji watched God help the children worship, pray, and “do missions” together…
           </p>
           <button class="open-modal chip" data-target="#modal-ji" data-i18n="ui.read">Read Story</button>
         </article>
 
         <!-- Kyungjin (Maria) Park -->
-        <article class="card kid-card" style="background:rgba(255,255,255,.9);backdrop-filter:saturate(1.1) blur(2px);">
+        <article class="card kid-card"
+                 style="background:rgba(255,255,255,.92);backdrop-filter:saturate(1.1) blur(2px);">
           <img src="assets/img/kyungjin.jpeg" alt="Kyungjin (Maria) Park" />
-          <h3 style="margin-top:.4rem;" data-i18n="kids.kyungjin.name">Kyungjin (Maria) Park</h3>
-          <p class="muted" data-i18n="kids.kyungjin.role">New Heart Kids</p>
-          <p data-i18n="kids.kyungjin.blurb">
-            “I saw God’s answers in little moments. We laughed, prayed, and shared—Jesus was with us!”
+          <h3 style="margin-top:.4rem;">Kyungjin (Maria) Park</h3>
+          <p class="muted">New Heart Kids USA #1</p>
+          <p>
+            In Los Angeles, God opened a new chapter for New Heart Kids, giving space for parents
+            to be renewed and for children to encounter the Holy Spirit together…
           </p>
           <button class="open-modal chip" data-target="#modal-kyungjin" data-i18n="ui.read">Read Story</button>
         </article>
@@ -438,74 +860,234 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
     </div>
 
     <!-- FULL STORY MODALS (Kids) -->
+
+    <!-- Ji full story (title line edited to remove “general affairs coordinator”) -->
     <div id="modal-ji" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
-        <h4 data-i18n="kids.ji.fullTitle">Ji, Yeowoon — Full Story</h4>
-        <div data-i18n="kids.ji.full">
-          Ji, Yeowoon loved helping prepare the space—taping signs, arranging crayons, and praying with friends. During
-          worship, she felt Jesus close. “I think God likes when we help,” she said. Simple moments became memories, and
-          she learned that serving together is a beautiful way to show God’s love.
+        <h4>Ji, Yeowoon — Full Story</h4>
+        <div>
+          <p>Hello! I'm Ji Yeo-woon, and I served with Newheart Kids.</p>
+          <p>
+            This year, Newheart Kids was held in Korea for the first time, and although we were in
+            the same location, I think you probably know almost nothing about what we were doing
+            since we had to adjust schedules to avoid running into each other 🙂
+          </p>
+          <p>
+            This year, Newheart Kids had a total of 22 children from ages 0 to 12, along with 10
+            teachers, spending time together. Since everything was a first, it wasn't just the
+            teachers who were nervous and worried. The first day we met together, even the children
+            who had to spend the entire day away from their guardians had tense faces.
+          </p>
+          <p>
+            After eating dinner, we gathered to introduce ourselves and greet each other, then
+            asked the question, "What kind of place is this? Why did we come here today?" While
+            answers like "To worship!" "To pray!" "To play!" came up, one child shouted, "To do
+            missions!" It was an answer that provided great insight.
+          </p>
+          <p>
+            It wouldn't be an exaggeration to say that Newheart Kids was full of discomfort. Of
+            course, the same goes for adult Newheart. Let me give you some examples of what I mean.
+            First, the sleeping arrangements change. You have to stay in a place that's a bit
+            uncomfortable rather than cozy, with people you're seeing for the first time. You can't
+            control your own schedule. Although the meals and refreshments are excellent, it's not
+            a system where you can choose and order the menu you want to eat.
+          </p>
+          <p>
+            Let me approach this from the children's perspective. You might want to be quiet, but
+            the surroundings can be noisy, and you might want to run, but sometimes you have to sit
+            still. Because various ages are mixed together, you can't behave as you would with
+            friends, and you always need to be careful. You have to wake up earlier than usual, and
+            from morning to evening, even after eating meals, you can't see your mom or dad, and
+            even strangers might bathe you.
+          </p>
+          <p>
+            For elementary school students, they even had to turn in their phones. There's a TV
+            right in front of you, but it doesn't turn on unless it's the designated time. Even
+            then, all the content you can watch is only videos related to Jesus. There were many
+            things you could do at home that you couldn't do here. It even rained continuously, so
+            we couldn't do outdoor activities. The list could go on endlessly.
+          </p>
+          <p>
+            What did the children do? The children surprisingly complied with instructions and
+            endured many situations. Of course, this doesn't mean they "obediently and happily
+            listened." There were naturally children who said they didn't like something when they
+            didn't, asked "why?", asked for something different, or acted according to their own
+            stubbornness. Some cried, saying they missed their mom.
+          </p>
+          <p>
+            Nevertheless, isn't it truly amazing that the children managed to survive 3 nights and
+            4 days together without any safety incidents? If the children hadn't been obedient, we
+            really couldn't have made it to the end. At the end, they were sad about going home and
+            even said, "Are we doing this again next year? I want to come again!"
+          </p>
+          <p>
+            While preparing Newheart Kids, the teachers had the idea that we needed to "teach
+            something for the children to remember." We heard a lot from the leadership that
+            Newheart Kids is not simply "childcare." So we really worked hard to design, plan, and
+            prepare programs, but except for delivering the Word, it's hard to say things went
+            properly.
+          </p>
+          <p>
+            More than half of the small/large group activities and games we prepared for the
+            children weren't even taken out. We didn't know that the distance of taking them to the
+            chapel one by one under umbrellas would be so far. Adjusting time and avoiding adult
+            candidates so we wouldn't run into them also required quite a bit of attention. At
+            least from a human perspective, one could evaluate that things didn't go according to
+            plan.
+          </p>
+          <p>
+            However, I believe that God's plan was fully accomplished. Personally, I think these 3
+            nights and 4 days of children rubbing shoulders with each other might have been God's
+            plan itself. Children living in modern society today would have almost no opportunity to
+            experience this kind of environment. Especially for preschool children, even less so. I
+            think it must have been a huge challenge for all the children.
+          </p>
+          <p>
+            Also, despite being physically separated from the adults, it was very moving that we
+            often felt we were tied together as one with adult Newheart, going together. Do you
+            remember when the children sang the song "Grace"? Actually, none of us properly
+            participated in the Royo Room worship, so we never imagined that adult candidates would
+            sing this song, but when we went later, this song was on the list. As an aside, it
+            seems really cute to have mostly 6–9-year-olds and at most 12-year-olds singing the
+            Grace song. 😁
+          </p>
+          <p>
+            What do you think? Don't you think we really went "to do missions"? Newheart Kids spent
+            time being grateful for what was given, even in truly insufficient, uncomfortable, and
+            poor conditions, laughing and enjoying each other, and rubbing shoulders closely. They
+            learned to pray, sang praises, heard and shared the Word, learned worship, and spent
+            every day in God.
+          </p>
+          <p>
+            I think all these things were possible because the children followed along so well.
+            Especially, I'm certain that without the Holy Spirit being with us, all of this would
+            have been impossible, and they would never have wanted to come back to such an
+            uncomfortable place.
+          </p>
+          <p>
+            You've probably heard many times the phrase "Looking back after Newheart ended,
+            everything was grace." It was the same for us. A sister who had to care for her 4 &amp;
+            5-year-old son and daughter while pregnant with her third child, a sister who returned
+            as a Newheart team member after 13 years but couldn't go anywhere because she came with
+            her 12-month-old child who was shy with strangers, a sister who had to deliver the Word
+            to children while holding her child because the child severely refused to be separated
+            from mom, a mother who could barely leave room 101 because she was cooking for the
+            children as a first-time team member, dads who had to rush in to bathe boys while
+            playing outside, etc...
+          </p>
+          <p>
+            I think not a single one of our team members was in an easy position. Nevertheless,
+            when we shared feedback at the end, instead of anyone complaining about the poor
+            environment, stories of gratitude and grace were exchanged. Especially from my
+            perspective, I was grateful to everyone who willingly said "okay," even when I suddenly
+            visited and asked them to do something, such as changing the schedule order or
+            squeezing in an unplanned event.
+          </p>
+          <p>
+            There were no team members blaming others. We encouraged, motivated, and showed
+            consideration for one another while acknowledging each other's weaknesses. In the way
+            we shared feelings of being moved by each other's actions, I could feel that we were
+            truly united in one heart. I'm grateful that we seemed to have a living experience of
+            becoming the Lord's beautiful body.
+          </p>
+          <p>
+            And above all, all the teachers naturally talked about next plans to improve what was
+            lacking this time, saying "Next year~". I'm promoting for many to come next year as a
+            Kids team that wants to do this again. 😆
+          </p>
         </div>
-        <div class="modal-actions"><button class="close-modal chip" data-i18n="ui.close">Close</button></div>
+        <div class="modal-actions">
+          <button class="close-modal chip" data-i18n="ui.close">Close</button>
+        </div>
       </div>
     </div>
 
+    <!-- Kyungjin full story -->
     <div id="modal-kyungjin" class="modal" role="dialog" aria-modal="true" hidden>
       <div class="modal-body">
-        <h4 data-i18n="kids.kyungjin.fullTitle">Kyungjin (Maria) Park — Full Story</h4>
-        <div data-i18n="kids.kyungjin.full">
-          Kyungjin (Maria) Park’s joy was contagious. She noticed answers to prayer—like finding a lost pencil and an
-          unexpected hug from a friend. “Jesus was with us!” she said. Through laughter and small acts of kindness, she
-          learned that faith is simply trusting Jesus in every little moment.
+        <h4>Kyungjin (Maria) Park — Full Story</h4>
+        <div>
+          <p>
+            In May 2025, God opened a beautiful new chapter as we launched New Heart Kids #1 in Los
+            Angeles. It was a long-awaited dream within the New Heart community to see all
+            generations blessed through New Heart, and it was incredible to witness how God opened
+            the door to make this dream a reality.
+          </p>
+          <p>
+            When I first joined New Heart Kids, my heart was especially for young parents. As a
+            mother of four, I remembered the seasons when I felt spiritually dry and left out while
+            raising my little ones. I wanted to serve in a way that would give parents space to be
+            renewed and restored in God’s presence. But as I served, God expanded my heart to
+            embrace their children as well.
+          </p>
+          <p>
+            Serving about twenty children, from toddlers to preteens, I saw firsthand how deeply
+            God treasures each one of these young children. His desire is to raise and equip them
+            as future leaders within the New Heart community.
+          </p>
+          <p>
+            There were certainly challenging moments, but by the end of those three days, I
+            witnessed both parents and children receiving a new heart through the Holy Spirit. With
+            that same heart and encouragement, I was overjoyed to hear that we had New Heart Kids
+            #2 in Korea in October. I believe this is God’s confirmation of His will to call us as
+            a ‘family’ and to give His New Heart to all generations.
+          </p>
         </div>
-        <div class="modal-actions"><button class="close-modal chip" data-i18n="ui.close">Close</button></div>
+        <div class="modal-actions">
+          <button class="close-modal chip" data-i18n="ui.close">Close</button>
+        </div>
       </div>
     </div>
+
   </section>
 
   <div class="page-break"></div>
 
   <!-- ========================================================= -->
-<!-- EDITORIAL SECTION -->
-<!-- ========================================================= -->
-<section class="section" id="editorial">
-  <h2 data-i18n="sections.editorial">Editorial</h2>
+  <!-- ====================== PAGE 4 =========================== -->
+  <!-- Editorial + Ways to Serve                                -->
+  <!-- ========================================================= -->
+  <section class="section reveal" id="page4-editorial">
+    <div class="grid two">
+      <!-- Editorial -->
+      <article class="card prose" id="editorial">
+        <h2>Editorial</h2>
+        <h3>God’s Faithfulness: Our Enduring Foundation</h3>
 
-  <div class="card prose">
-    <h3>God’s Faithfulness: Our Enduring Foundation</h3>
+        <p>
+          New Heart Ministry recently celebrated its 54th gathering in Korea, marking almost two
+          decades of God's sustaining grace. The name "New Heart" itself was divinely inspired, and
+          the first gathering under this banner took place in Cambodia, serving young Vietnamese
+          students. Since then, the ministry has expanded its reach to China, Ethiopia, Israel, the
+          Philippines, Vietnam, and Korea, with its headquarters in the United States. In a
+          beautiful orchestration of God's heart for every generation, New Heart has also grown to
+          include New Heart Kids programs, allowing children to join the gatherings with dedicated
+          activities specifically designed for them. This year alone, two such programs have
+          already taken place—one in the USA and one in Korea—underscoring the importance of every
+          generation in the Kingdom Family.
+        </p>
 
-    <p>
-      New Heart Ministry recently celebrated its 54th gathering in Korea, marking almost two decades
-      of God's sustaining grace. The name "New Heart" itself was divinely inspired, and the first
-      gathering under this banner took place in Cambodia, serving young Vietnamese students. Since
-      then, the ministry has expanded its reach to China, Ethiopia, Israel, the Philippines,
-      Vietnam, and Korea, with its headquarters in the United States. In a beautiful orchestration
-      of God's heart for every generation, New Heart has also grown to include New Heart Kids
-      programs, allowing children to join the gatherings with dedicated activities specifically
-      designed for them. This year alone, two such programs have already taken place—one in the USA
-      and one in Korea—underscoring the importance of every generation in the Kingdom Family.
-    </p>
+        <p>
+          Across these nations, we have seen God’s faithfulness as He transforms lives—bringing
+          souls from death to life, placing within them a New Heart (Ezekiel 36:26), and awakening
+          them to their God-given purpose and destiny—to raise a people of fire. Despite
+          differences in culture, location, and language, the Holy Spirit has intricately woven us
+          together into one family: The Kingdom Family. We celebrate and honor one another
+          according to His calling, holding nothing back as we serve each other with transformed
+          hearts (Acts 2).
+        </p>
 
-    <p>
-      Across these nations, we have seen God’s faithfulness as He transforms lives—bringing souls
-      from death to life, placing within them a New Heart (Ezekiel 36:26), and awakening them to
-      their God-given purpose and destiny—to raise a people of fire. Despite differences in culture,
-      location, and language, the Holy Spirit has intricately woven us together into one family:
-      The Kingdom Family. We celebrate and honor one another according to His calling, holding
-      nothing back as we serve each other with transformed hearts (Acts 2).
-    </p>
-
-    <p>
-      As God’s vision for New Heart Ministry continues to sharpen, we sense His desire not only
-      to document the mighty works and the abundant grace flowing through this ministry but also
-      for us, as a family, to nurture our connections and care for one another. Thus, the Newsletter
-      for New Heart Family. We believe that, as promised in Isaiah 54, God is preparing to expand
-      New Heart—not only into new physical territories but also through spiritual elevation and
-      enlargement. By His strength and Spirit, we are committed to fulfilling what He has declared
-      according to His covenant over this ministry in the days ahead.
-    </p>
-  </div>
-</section>
+        <p>
+          As God’s vision for New Heart Ministry continues to sharpen, we sense His desire not only
+          to document the mighty works and the abundant grace flowing through this ministry but
+          also for us, as a family, to nurture our connections and care for one another. Thus, the
+          Newsletter for New Heart Family. We believe that, as promised in Isaiah 54, God is
+          preparing to expand New Heart—not only into new physical territories but also through
+          spiritual elevation and enlargement. By His strength and Spirit, we are committed to
+          fulfilling what He has declared according to His covenant over this ministry in the days
+          ahead.
+        </p>
+      </article>
 
       <!-- Ways to Serve -->
       <aside class="card">
@@ -529,173 +1111,6 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
       </aside>
     </div>
   </section>
-
-  <!-- ========================================================= -->
-<!-- PAGE 2 — NEW HEART STORIES -->
-<!-- ========================================================= -->
-<section class="section stories-page">
-  <h2 class="page-title">New Heart Stories</h2>
-
-  <div class="stories-grid">
-
-    <!-- Ariel ----------------------------------------------------- -->
-    <div class="story-card" data-story="ariel">
-      <img src="assets/img/ariel.jpeg" alt="Ariel">
-      <h3>Ariel Sabag — NH USA #53, Candidate</h3>
-      <p>
-        In the quiet places of waiting, Ariel felt the Lord drawing her deeper.
-        She shares how the New Heart weekend became a turning point, where the
-        Father's love replaced years of striving with rest and identity.
-      </p>
-      <button class="read-more" data-story="ariel">Read More</button>
-    </div>
-
-    <!-- Han -------------------------------------------------------- -->
-    <div class="story-card" data-story="han">
-      <img src="assets/img/han.jpeg" alt="Han Ye-Sul">
-      <h3>Han, Ye-Sul — NH Korea #54, Team Member</h3>
-      <p>
-        Ye-Sul testifies of God healing long-carried disappointment and awakening
-        joy again. Through serving others, she rediscovered the gentle voice of
-        the Holy Spirit guiding her heart.
-      </p>
-      <button class="read-more" data-story="han">Read More</button>
-    </div>
-
-    <!-- Keziah ----------------------------------------------------- -->
-    <div class="story-card" data-story="keziah">
-      <img src="assets/img/keziah.jpeg" alt="Keziah">
-      <h3>Keziah — NH Vietnam #50, Candidate</h3>
-      <p>
-        Keziah describes encountering Jesus' compassion in a powerful and
-        personal way. What began as hesitation became a testimony of freedom,
-        forgiveness, and renewed purpose.
-      </p>
-      <button class="read-more" data-story="keziah">Read More</button>
-    </div>
-
-    <!-- Parichat --------------------------------------------------- -->
-    <div class="story-card" data-story="parichat">
-      <img src="assets/img/parichat.jpeg" alt="Parichat">
-      <h3>Parichat — NH Korea #54, Candidate</h3>
-      <p>
-        In a season of uncertainty, God met Parichat with clarity and peace. Her
-        story highlights the faithfulness of Jesus who restores confidence and
-        strengthens every weary heart.
-      </p>
-      <button class="read-more" data-story="parichat">Read More</button>
-    </div>
-
-    <!-- Choi ------------------------------------------------------- -->
-    <div class="story-card" data-story="choi">
-      <img src="assets/img/choi.jpeg" alt="Choi Eun Young">
-      <h3>Choi, Eun Young — NH Korea #54, Candidate</h3>
-      <p>
-        Eun Young shares how God revived deep places in her heart. Through New
-        Heart, she experienced a renewed hunger for God's Word and a restored
-        sense of belonging.
-      </p>
-      <button class="read-more" data-story="choi">Read More</button>
-    </div>
-
-  </div>
-</section>
-
-  <!-- ========================================================= -->
-<!-- PAGE 3 — NEW HEART KIDS -->
-<!-- ========================================================= -->
-<section class="kids-section">
-  <div class="kids-bg"></div>
-
-  <h2 class="kids-title">New Heart Kids</h2>
-
-  <div class="kids-stories">
-
-    <!-- Ji ------------------------------------------------------- -->
-    <div class="kid-story">
-      <img class="kid-photo" src="assets/img/ji.jpeg" alt="Ji Yeowoon">
-      <div class="kid-text">
-        <h3>Ji, Yeowoon — New Heart Kids Korea #2</h3>
-        <p>
-          Ji shares how she learned that Jesus sees every child with perfect love.
-          During New Heart Kids, she discovered that worship is not about doing it
-          “right,” but about opening her heart and trusting God's gentleness.
-        </p>
-      </div>
-    </div>
-
-    <!-- Kyungjin --------------------------------------------------- -->
-    <div class="kid-story">
-      <img class="kid-photo" src="assets/img/kyungjin.jpeg" alt="Kyungjin Park">
-      <div class="kid-text">
-        <h3>Kyungjin (Maria) Park — New Heart Kids USA #1</h3>
-        <p>
-          Maria talks about how the weekend helped her feel God's closeness.
-          Through prayer and friendships, she gained a new confidence that Jesus
-          listens to every prayer—even the small ones.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-  <!-- ========================================================= -->
-<!-- STORY POPUPS -->
-<!-- ========================================================= -->
-<div id="story-popups">
-
-  <div class="popup" id="popup-ariel">
-    <div class="popup-content">
-      <h3>Ariel Sabag</h3>
-      <p>
-        Ariel’s full testimony goes here — you can paste longer text if needed.
-      </p>
-      <button class="close-popup">Close</button>
-    </div>
-  </div>
-
-  <div class="popup" id="popup-han">
-    <div class="popup-content">
-      <h3>Han, Ye-Sul</h3>
-      <p>
-        Ye-Sul’s full story here…
-      </p>
-      <button class="close-popup">Close</button>
-    </div>
-  </div>
-
-  <div class="popup" id="popup-keziah">
-    <div class="popup-content">
-      <h3>Keziah</h3>
-      <p>
-        Keziah’s full story here…
-      </p>
-      <button class="close-popup">Close</button>
-    </div>
-  </div>
-
-  <div class="popup" id="popup-parichat">
-    <div class="popup-content">
-      <h3>Parichat</h3>
-      <p>
-        Full story text…
-      </p>
-      <button class="close-popup">Close</button>
-    </div>
-  </div>
-
-  <div class="popup" id="popup-choi">
-    <div class="popup-content">
-      <h3>Choi, Eun Young</h3>
-      <p>
-        Full text…
-      </p>
-      <button class="close-popup">Close</button>
-    </div>
-  </div>
-
-</div>
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
@@ -732,53 +1147,18 @@ const translations = {
     "events.krReunion": "🇰🇷 Korea — Nov 22, 2025 • Seoul",
 
     "stories.heading": "New Heart Stories",
-    "stories.ariel.name": "Ariel Sabag",
-    "stories.ariel.role": "NH USA #53, Candidate / NH Korea #54, Team Member",
-    "stories.ariel.blurb": "Raised in Orthodox tradition, Ariel searched the prophecies and met Jesus as Messiah—now carrying hope between nations.",
-    "stories.ariel.fullTitle": "Ariel Sabag — Full Story",
-    "stories.ariel.full": "Born into an Orthodox family, Ariel honored the traditions he received. But as he studied the prophets, the promises of a suffering and redeeming Messiah drew him to Jesus. Through NH USA #53 and NH Korea #54, he discovered a family eager to serve and worship. With a new heart, he now carries the Good News across cultures—patiently, humbly, and joyfully.",
-
+    "stories.ariel.name": "Ariel",
+    "stories.ariel.role": "NH USA #53, Candidate",
+    "stories.keziah.name": "Keziah",
+    "stories.keziah.role": "NH Vietnam #14 Candidate",
+    "stories.parichat.name": "Parichat",
+    "stories.parichat.role": "NH Korea #54 Candidate (Thailand Team)",
     "stories.yesul.name": "Han, Ye-Sul",
     "stories.yesul.role": "NH Korea #54 Team Member",
-    "stories.yesul.blurb": "In worship and simple service, Ye-Sul laid down burdens and discovered the joy of a tender, listening heart.",
-    "stories.yesul.fullTitle": "Han, Ye-Sul — Full Story",
-    "stories.yesul.full": "At NH Korea #54, Ye-Sul discovered that simple obedience—stacking chairs, praying quietly, listening—was a doorway to joy. As burdens lifted in worship, she began to serve with a tender heart, finding Jesus faithful in the small things and the great.",
-
-    "stories.keziah.name": "Keziah",
-    "stories.keziah.role": "NH Vietnam #50 Candidate",
-    "stories.keziah.blurb": "Trusting God’s timing through uncertainty, Keziah watched small mercies become a steady testimony.",
-    "stories.keziah.fullTitle": "Keziah — Full Story",
-    "stories.keziah.full": "NH Vietnam #50 became a turning point for Keziah. Faced with uncertainty, she saw the Lord provide step by step—through a timely word, a friend’s prayer, and unexpected strength. Those small mercies became stones of remembrance, building trust for the path ahead.",
-
-    "stories.parichat.name": "Parichat",
-    "stories.parichat.role": "NH Korea #54 Candidate",
-    "stories.parichat.blurb": "With a worshiper’s heart, Parichat watched language barriers melt as prayer knit the family together.",
-    "stories.parichat.fullTitle": "Parichat — Full Story",
-    "stories.parichat.full": "Serving among brothers and sisters from many nations, Parichat saw how worship softens hearts and heals misunderstandings. Even when words failed, love, prayer, and a smile spoke clearly: we are one family in Christ.",
-
-    "stories.choi.name": "Choi, Eun Young",
-    "stories.choi.role": "NH Korea #54 Candidate",
-    "stories.choi.blurb": "From hesitation to hope, Eun Young encountered gentle renewal and began to witness with courage.",
-    "stories.choi.fullTitle": "Choi, Eun Young — Full Story",
-    "stories.choi.full": "Eun Young entered NH Korea #54 cautiously, unsure what to expect. The Lord met her gently. Through testimonies and quiet moments in prayer, He restored courage and tenderness. Now she shares with boldness what Jesus has done.",
+    "stories.choi.name": "Choi, Eun-Young",
+    "stories.choi.role": "NH Korea #54 — Hallelujah Group",
 
     "kids.heading": "New Heart Kids",
-    "kids.ji.name": "Ji, Yeowoon",
-    "kids.ji.role": "New Heart Kids",
-    "kids.ji.blurb": "“Decorating, praying, and helping made me feel part of something big that God is doing.”",
-    "kids.ji.fullTitle": "Ji, Yeowoon — Full Story",
-    "kids.ji.full": "Ji, Yeowoon loved helping prepare the space—taping signs, arranging crayons, and praying with friends. During worship, she felt Jesus close. “I think God likes when we help,” she said. Simple moments became memories, and she learned that serving together is a beautiful way to show God’s love.",
-
-    "kids.kyungjin.name": "Kyungjin (Maria) Park",
-    "kids.kyungjin.role": "New Heart Kids",
-    "kids.kyungjin.blurb": "“I saw God’s answers in little moments. We laughed, prayed, and shared—Jesus was with us!”",
-    "kids.kyungjin.fullTitle": "Kyungjin (Maria) Park — Full Story",
-    "kids.kyungjin.full": "Kyungjin (Maria) Park’s joy was contagious. She noticed answers to prayer—like finding a lost pencil and an unexpected hug from a friend. “Jesus was with us!” she said. Through laughter and small acts of kindness, she learned that faith is simply trusting Jesus in every little moment.",
-
-    "editorial.heading": "Editorial",
-    "editorial.subheading": "God’s Faithfulness: Our Enduring Foundation.",
-    "editorial.p1": "Through every season, God has proven His steadfast love and mercy toward the New Heart Family. As we look back on the many journeys across nations and teams, we can see His fingerprints guiding every detail. What began with small acts of obedience has become a global testimony of His faithfulness. Each team, each story, each “yes” has built upon the foundation of His grace.",
-    "editorial.p2": "Let us continue to fix our eyes on Jesus, who began this good work in us and will be faithful to complete it. May every new team, every gathering, and every heart find renewed strength in the One who remains unshaken—our God, our foundation, our enduring faithfulness.",
 
     "serve.heading": "Ways to Serve",
     "serve.palancaHeading": "Palanca Donation Charts",
@@ -817,53 +1197,18 @@ const translations = {
     "events.krReunion": "🇰🇷 한국 — 2025년 11월 22일 • 서울",
 
     "stories.heading": "뉴하트 스토리",
-    "stories.ariel.name": "아리엘 사바그",
-    "stories.ariel.role": "미국 #53 참가자 / 코리아 #54 팀원",
-    "stories.ariel.blurb": "정통 유대 전통 안에서 자란 아리엘은 예언들을 붙들고 메시아를 찾다가 예수님을 만났고, 이제 민족과 민족 사이에 소망을 전하고 있습니다.",
-    "stories.ariel.fullTitle": "아리엘 사바그 — 간증",
-    "stories.ariel.full": "정통 유대 가정에서 자란 아리엘은 익숙한 전통을 소중히 여기며 성장했습니다. 그러나 선지자들의 말씀을 깊이 묵상하는 가운데, 고난받는 메시아이자 구속자이신 예수님을 보게 되었습니다. 미국 #53과 코리아 #54를 통해, 그는 함께 예배하고 섬기는 영적 가족을 만났습니다. 새 마음을 받은 그는 이제 부드럽고 겸손한 마음으로 민족과 민족 사이에 복음을 전하고 있습니다.",
-
+    "stories.ariel.name": "아리엘",
+    "stories.ariel.role": "미국 #53 참가자",
     "stories.yesul.name": "한예슬",
     "stories.yesul.role": "코리아 #54 팀원",
-    "stories.yesul.blurb": "예배와 작은 섬김 가운데 짐들을 내려놓고, 듣는 마음과 기쁨을 회복했습니다.",
-    "stories.yesul.fullTitle": "한예슬 — 간증",
-    "stories.yesul.full": "코리아 #54에서 예슬은 의자 정리, 조용한 중보, 이야기를 들어주는 작은 순종들이 큰 기쁨의 문이라는 것을 경험했습니다. 예배 중에 눌렸던 마음의 짐이 풀어지고, 다시 부드러운 마음으로 섬길 수 있게 되었습니다. 그 과정 속에서 예수님이 작은 것과 큰 모든 일에 신실하심을 알게 되었습니다.",
-
     "stories.keziah.name": "케지아",
-    "stories.keziah.role": "베트남 #50 참가자",
-    "stories.keziah.blurb": "불확실함 가운데도 주님의 때를 신뢰하며, 작은 자비들이 믿음의 간증이 되는 것을 보았습니다.",
-    "stories.keziah.fullTitle": "케지아 — 간증",
-    "stories.keziah.full": "베트남 #50은 케지아에게 전환점이 되었습니다. 많은 것이 불확실했지만, 하나님은 한 걸음 한 걸음 길을 여셨습니다. 제때 주어진 말씀, 친구의 기도, 예상치 못한 힘을 통해 주님은 돌보심을 보여주셨습니다. 그 작은 자비들이 쌓여 앞으로의 길을 향한 믿음의 기념비가 되었습니다.",
-
+    "stories.keziah.role": "베트남 #14 참가자",
     "stories.parichat.name": "파리찻",
     "stories.parichat.role": "코리아 #54 참가자",
-    "stories.parichat.blurb": "예배하는 마음으로, 언어의 장벽이 기도와 사랑 안에서 녹아내리는 것을 보았습니다.",
-    "stories.parichat.fullTitle": "파리찻 — 간증",
-    "stories.parichat.full": "여러 민족의 형제자매와 함께 섬기면서 파리찻은 예배가 어떻게 마음을 부드럽게 하고 오해를 치유하는지 보았습니다. 말이 통하지 않을 때에도 미소와 기도, 안아주는 손길이 “우리는 그리스도 안에서 한 가족입니다”라는 메시지를 분명히 전해 주었습니다.",
-
     "stories.choi.name": "최은영",
-    "stories.choi.role": "코리아 #54 참가자",
-    "stories.choi.blurb": "망설임에서 소망으로, 주님의 부드러운 만지심을 경험하며 담대하게 증언하기 시작했습니다.",
-    "stories.choi.fullTitle": "최은영 — 간증",
-    "stories.choi.full": "은영은 코리아 #54에 조심스러운 마음으로 들어왔습니다. 무엇을 기대해야 할지 잘 몰랐지만, 주님은 아주 온유하게 다가오셨습니다. 간증을 듣고 조용히 기도하는 시간 속에서 하나님은 용기와 온유함을 회복시키셨습니다. 이제 그녀는 예수님께서 행하신 일을 담대하게 나누고 있습니다.",
+    "stories.choi.role": "코리아 #54 할렐루야 조",
 
     "kids.heading": "뉴하트 키즈",
-    "kids.ji.name": "지, 여운",
-    "kids.ji.role": "뉴하트 키즈",
-    "kids.ji.blurb": "“꾸미고 기도하고 돕는 일이 하나님이 하시는 큰 일에 내가 함께하는 것 같았어요.”",
-    "kids.ji.fullTitle": "지, 여운 — 간증",
-    "kids.ji.full": "지, 여운은 예배실을 꾸미는 일을 정말 좋아했습니다. 종이를 붙이고, 색연필을 정리하고, 친구들과 함께 기도했습니다. 예배 시간에 예수님이 아주 가까이 계신 것을 느꼈습니다. “하나님은 우리가 도와줄 때 기뻐하시는 것 같아요.” 작은 순간들이 소중한 기억이 되었고, 함께 섬기는 것이 하나님의 사랑을 보여주는 방법이라는 것을 배웠습니다.",
-
-    "kids.kyungjin.name": "경진(마리아) 박",
-    "kids.kyungjin.role": "뉴하트 키즈",
-    "kids.kyungjin.blurb": "“작은 순간 속에서 하나님이 응답하시는 것을 봤어요. 웃고, 기도하고, 나눌 때 예수님이 함께 계셨어요!”",
-    "kids.kyungjin.fullTitle": "경진(마리아) 박 — 간증",
-    "kids.kyungjin.full": "경진(마리아) 박의 기쁨은 주변 모두에게 전염되었습니다. 잃어버린 연필을 다시 찾게 된 일, 친구에게서 받은 예상치 못한 포옹 같은 작은 일들 속에서 그는 기도 응답을 보았습니다. “예수님이 우리와 함께 계셨어요!” 그는 웃음과 작은 친절 속에서도 예수님을 신뢰하는 것이 믿음의 삶이라는 것을 배웠습니다.",
-
-    "editorial.heading": "에디토리얼",
-    "editorial.subheading": "하나님의 신실하심, 우리의 견고한 터.",
-    "editorial.p1": "모든 계절을 지나오며 하나님은 뉴하트 가족에게 변함없는 사랑과 자비를 보여 주셨습니다. 여러 나라와 팀으로 이어진 여정을 돌아볼 때마다, 그 모든 세부 안에 새겨진 하나님의 지문을 발견합니다. 작은 순종으로 시작된 걸음들이 이제는 하나님의 신실하심을 증언하는 세계적인 간증이 되었습니다. 각 팀, 각 이야기, 각 “예”가 그분의 은혜라는 기초 위에 쌓여 왔습니다.",
-    "editorial.p2": "이제도 우리의 눈을 예수님께 고정하기 원합니다. 선한 일을 시작하신 그분이 반드시 완성하실 것을 믿습니다. 새로운 팀과 모임, 그리고 한 사람 한 사람의 마음이 흔들리지 않는 반석 되신 하나님 안에서 새 힘을 얻기를 기도합니다. 그분은 우리의 기초이시며, 영원한 신실하심이십니다.",
 
     "serve.heading": "섬김의 통로",
     "serve.palancaHeading": "팔랑카 후원 차트",
@@ -902,53 +1247,18 @@ const translations = {
     "events.krReunion": "🇰🇷 קוריאה — 22.11.2025 • סיאול",
 
     "stories.heading": "עדויות New Heart",
-    "stories.ariel.name": "אריאל סבג",
-    "stories.ariel.role": "ניוהארט ארה\"ב #53, מועמד / ניוהארט קוריאה #54, צוות",
-    "stories.ariel.blurb": "גדל במסורת אורתודוקסית, חקר את הנבואות ומצא את ישוע המשיח—כעת נושא תקווה בין העמים.",
-    "stories.ariel.fullTitle": "אריאל סבג — עדות",
-    "stories.ariel.full": "אריאל גדל בבית יהודי אורתודוקסי ושמר באמונה על המסורת שקיבל. אך בלימוד כתבי הנביאים גילה את דמות המשיח הסובל והגואל, והדבר הוביל אותו לישוע. דרך ניוהארט ארה\"ב #53 וניוהארט קוריאה #54 הוא מצא משפחה המשרתת ומהללת יחד. עם לב חדש הוא נשלח כעת להביא את הבשורה הטובה בגבורה ובענווה בין עמים ותרבויות.",
-
+    "stories.ariel.name": "אריאל",
+    "stories.ariel.role": "ניוהארט ארה\"ב #53, מועמד",
     "stories.yesul.name": "האן, יֵה־סול",
     "stories.yesul.role": "ניוהארט קוריאה #54, צוות",
-    "stories.yesul.blurb": "במהלך ההלל והשירות הפשוט, הניחה את המשאות וגילתה שוב את שמחת הלב המאזין.",
-    "stories.yesul.fullTitle": "האן, יֵה־סול — עדות",
-    "stories.yesul.full": "בניוהארט קוריאה #54 גילתה יֵה־סול שדברים פשוטים—כמו לסדר כיסאות, להתפלל בשקט ולהקשיב—הם שער לשמחה. כאשר המשאות הרגשיים הוסרו בזמן ההלל, היא יכלה לשרת בלב רך. כך חוותה מחדש את נאמנותו של ישוע הן בדברים הקטנים והן בגדולים.",
-
     "stories.keziah.name": "קֶזְיָה",
-    "stories.keziah.role": "ניוהארט וייטנאם #50, מועמדת",
-    "stories.keziah.blurb": "באמצע אי־הוודאות, למדה לבטוח בתזמון של אלוהים וראתה כיצד חסדים קטנים נעשים לעדות יציבה.",
-    "stories.keziah.fullTitle": "קזיה — עדות",
-    "stories.keziah.full": "ניוהארט וייטנאם #50 הייתה נקודת מפנה עבור קזיה. למרות חוסר הוודאות, ראייתה כיצד אלוהים פותח את הדרך צעד אחר צעד—דרך מילה בעיתה, תפילת חבר וחיזוק לא צפוי. חסדים קטנים אלה נעשו אבני זיכרון שבנו אמון לעתיד.",
-
+    "stories.keziah.role": "ניוהארט וייטנאם #14, מועמדת",
     "stories.parichat.name": "פָארִיצָ'אט",
     "stories.parichat.role": "ניוהארט קוריאה #54, מועמדת",
-    "stories.parichat.blurb": "עם לב של משתחווה ראתה את חומות השפה נופלות כאשר התפילה והאהבה חיברו את המשפחה.",
-    "stories.parichat.fullTitle": "פאריצ'אט — עדות",
-    "stories.parichat.full": "כשהיא משרתת לצד אחים ואחיות ממדינות רבות, ראתה פאריצ'אט כיצד ההלל מרכך לבבות ומרפא אי־הבנות. גם כאשר המילים לא הספיקו, חיוך, תפילה וחיבוק העבירו את המסר הברור: אנחנו משפחה אחת במשיח.",
-
     "stories.choi.name": "צ'וי, און־יונג",
-    "stories.choi.role": "ניוהארט קוריאה #54, מועמדת",
-    "stories.choi.blurb": "מהססנות לתקווה—חוותה מגע עדין של האדון והחלה להעיד בביטחון.",
-    "stories.choi.fullTitle": "צ'וי און־יונג — עדות",
-    "stories.choi.full": "און־יונג באה לניוהארט קוריאה #54 בחשש, בלי לדעת למה לצפות. האדון פגש אותה בעדינות. דרך עדויות ושעות שקטות של תפילה, הוא חידש בה אומץ ורוך. כעת היא משתפת בביטחון במה שישוע עשה בחייה.",
+    "stories.choi.role": "ניוהארט קוריאה #54, קבוצת הללוּיָה",
 
     "kids.heading": "New Heart Kids",
-    "kids.ji.name": "ג'י, יֵאוּ־אֻון",
-    "kids.ji.role": "New Heart Kids",
-    "kids.ji.blurb": "“לקשט, להתפלל ולעזור גרם לי להרגיש שאני חלק ממשהו גדול שאלוהים עושה.”",
-    "kids.ji.fullTitle": "ג'י, יֵאוּ־אֻון — עדות",
-    "kids.ji.full": "ג'י, יֵאוּ־אֻון אהבה לעזור להכין את המקום—להדביק שלטים, לסדר צבעים ולהתפלל עם חברים. בזמן ההלל הרגישה שישוע קרוב מאוד. “אני חושבת שאלוהים אוהב כשאנחנו עוזרים”, אמרה. רגעים פשוטים הפכו לזיכרונות יקרים, והיא למדה ששירות משותף הוא דרך נפלאה להראות את אהבת אלוהים.",
-
-    "kids.kyungjin.name": "קְיוּנְגְ'ין (מַרְיָה) פַּארְק",
-    "kids.kyungjin.role": "New Heart Kids",
-    "kids.kyungjin.blurb": "“ראיתי את תשובות אלוהים ברגעים קטנים. צחקנו, התפללנו ושיתפנו—ישוע היה איתנו!”",
-    "kids.kyungjin.fullTitle": "קיונג'ין (מריה) פארק — עדות",
-    "kids.kyungjin.full": "השמחה של קיונג'ין (מריה) פארק הדביקה את כולם. היא הבחינה בתשובות תפילה קטנות—כמו עיפרון שנמצא מחדש וחיבוק לא צפוי מחבר. “ישוע היה איתנו!” אמרה. דרך צחוק ומעשי חסד קטנים למד שאמונה היא פשוט לסמוך על ישוע בכל רגע קטן.",
-
-    "editorial.heading": "מאמר מערכת",
-    "editorial.subheading": "נאמנותו של אלוהים – היסוד היציב שלנו.",
-    "editorial.p1": "בכל עונה מחדש הראה אלוהים את אהבתו וחסדו הבלתי משתנים כלפי משפחת ניוהארט. כאשר אנו מביטים לאחור על מסעות רבים, עמים וצוותים שונים, אנו רואים את טביעות האצבע שלו בכל פרט. מה שהתחיל בצעדי ציות קטנים הפך לעדות עולמית לנאמנותו. כל צוות, כל סיפור, כל 'כן' נבנה על יסוד החסד שלו.",
-    "editorial.p2": "בואו נמשיך לקבע את עינינו בישוע, שהחל בנו את המעשה הטוב והוא יהיה נאמן להשלים אותו. אנו מתפללים שכל צוות חדש, כל מפגש וכל לב ימצאו כוח מחודש בו—בזה שאינו מתמוטט, אלוהינו, היסוד הנאמן שלנו.",
 
     "serve.heading": "דרכים לשרת",
     "serve.palancaHeading": "טבלאות תרומת פאלנקה",
@@ -987,53 +1297,18 @@ const translations = {
     "events.krReunion": "🇰🇷 เกาหลี — 22 พ.ย. 2025 • โซล",
 
     "stories.heading": "เรื่องราวของ New Heart",
-    "stories.ariel.name": "อาเรียล ซาบัก",
-    "stories.ariel.role": "สหรัฐฯ #53 ผู้เข้าอบรม / เกาหลี #54 ทีมงาน",
-    "stories.ariel.blurb": "เติบโตในครอบครัวยิวออร์โธดอกซ์ อาเรียลค้นคว้าคำพยากรณ์และได้พบพระเยซูผู้เป็นพระเมสสิยาห์ บัดนี้เขานำความหวังไปสู่นานาชาติ.",
-    "stories.ariel.fullTitle": "อาเรียล ซาบัก — เรื่องราว",
-    "stories.ariel.full": "อาเรียลเติบโตในครอบครัวที่ยึดมั่นในธรรมเนียมออร์โธดอกซ์ เขาให้คุณค่ากับสิ่งที่ได้รับมา แต่เมื่อศึกษาเรื่องผู้เผยพระวจนะอย่างลึกซึ้ง เขาเริ่มเห็นพระเมสสิยาห์ผู้ทนทุกข์และไถ่กู้ นั่นนำเขามาหาพระเยซู ผ่าน New Heart USA #53 และ Korea #54 เขาได้ค้นพบครอบครัวฝ่ายวิญญาณที่ปรนนิบัติและนมัสการร่วมกัน ด้วยหัวใจใหม่ เขาถูกใช้ให้นำข่าวประเสริฐไปยังประชาชาติด้วยความสุภาพถ่อมและความชื่นชมยินดี.",
-
+    "stories.ariel.name": "อาเรียล",
+    "stories.ariel.role": "สหรัฐฯ #53 ผู้เข้าอบรม",
     "stories.yesul.name": "ฮัน เย-ซล",
     "stories.yesul.role": "Korea #54 ทีมงาน",
-    "stories.yesul.blurb": "ท่ามกลางการนมัสการและการรับใช้เล็ก ๆ เย-ซลวางภาระลงและพบความยินดีของหัวใจที่ฟังเสียงพระเจ้าอีกครั้ง.",
-    "stories.yesul.fullTitle": "ฮัน เย-ซล — เรื่องราว",
-    "stories.yesul.full": "ที่ New Heart Korea #54 เย-ซลพบว่าการเชื่อฟังอย่างเรียบง่าย—เก็บเก้าอี้ อธิษฐานเงียบ ๆ รับฟังผู้อื่น—กลายเป็นประตูสู่ความยินดี เมื่อภาระในใจถูกปลดออกระหว่างการนมัสการ เธอสามารถปรนนิบัติด้วยหัวใจที่อ่อนโยนอีกครั้ง และได้สัมผัสว่าพระเยซูทรงสัตย์ซื่อต่อทุกสิ่งเล็กและใหญ่.",
-
     "stories.keziah.name": "เคซียาห์",
-    "stories.keziah.role": "Vietnam #50 ผู้เข้าอบรม",
-    "stories.keziah.blurb": "ท่ามกลางความไม่แน่นอน เธอเรียนรู้ที่จะวางใจในเวลาของพระเจ้า และเห็นว่าพระคุณเล็ก ๆ กลายเป็นคำพยานที่มั่นคง.",
-    "stories.keziah.fullTitle": "เคซียาห์ — เรื่องราว",
-    "stories.keziah.full": "New Heart Vietnam #50 เป็นจุดเปลี่ยนในชีวิตของเคซียาห์ แม้สิ่งรอบตัวดูไม่แน่นอน แต่เธอเห็นว่าพระเจ้าทรงเปิดทางให้ทีละก้าว ผ่านพระวจนะที่ตรงเวลา คำอธิษฐานของเพื่อน และกำลังใจที่ไม่ได้คาดคิด พระคุณเล็ก ๆ เหล่านั้นกลายเป็นกองหินระลึกที่เสริมสร้างความเชื่อสำหรับเส้นทางข้างหน้า.",
-
+    "stories.keziah.role": "Vietnam #14 ผู้เข้าอบรม",
     "stories.parichat.name": "ปาริฉัต",
     "stories.parichat.role": "Korea #54 ผู้เข้าอบรม",
-    "stories.parichat.blurb": "ด้วยใจของผู้นมัสการ ปาริฉัตเห็นกำแพงภาษาอ่อนลงเมื่อทุกคนอธิษฐานและรักกัน.",
-    "stories.parichat.fullTitle": "ปาริฉัต — เรื่องราว",
-    "stories.parichat.full": "เมื่อได้ปรนนิบัติร่วมกับพี่น้องจากหลายชาติ ปาริฉัตเห็นว่าการนมัสการช่วยทำให้หัวใจอ่อนลงและรักษาความเข้าใจผิด แม้ภาษาไม่ครบถ้วน แต่รอยยิ้ม การอธิษฐาน และการโอบกอดก็สื่อข้อความเดียวกันได้อย่างชัดเจนว่า “เราเป็นครอบครัวเดียวกันในพระคริสต์.”",
-
     "stories.choi.name": "ชเว อึนยอง",
-    "stories.choi.role": "Korea #54 ผู้เข้าอบรม",
-    "stories.choi.blurb": "จากความลังเลสู่ความหวัง เธอสัมผัสการทรงสัมผัสอย่างอ่อนโยนขององค์พระผู้เป็นเจ้าและเริ่มพยานด้วยใจกล้า.",
-    "stories.choi.fullTitle": "ชเว อึนยอง — เรื่องราว",
-    "stories.choi.full": "อึนยองมาที่ New Heart Korea #54 ด้วยความลังเล ไม่แน่ใจว่าจะพบอะไร แต่พระเจ้าทรงพบเธอด้วยความอ่อนโยน ผ่านคำพยานและเวลาที่ได้อธิษฐานอย่างเงียบ ๆ พระองค์ทรงฟื้นฟูความกล้าและความอ่อนโยนในเธอ ตอนนี้เธอแบ่งปันสิ่งที่พระเยซูทรงทำในชีวิตอย่างมั่นใจ.",
+    "stories.choi.role": "Korea #54 กลุ่มฮัลเลลูยา",
 
     "kids.heading": "New Heart Kids",
-    "kids.ji.name": "จี, เยอุน",
-    "kids.ji.role": "New Heart Kids",
-    "kids.ji.blurb": "“การตกแต่ง อธิษฐาน และช่วยเหลือทำให้ฉันรู้สึกว่าได้มีส่วนในสิ่งใหญ่ที่พระเจ้าทำอยู่.”",
-    "kids.ji.fullTitle": "จี, เยอุน — เรื่องราว",
-    "kids.ji.full": "จี, เยอุนชอบช่วยเตรียมห้องอย่างมาก—ติดป้าย จัดสี และอธิษฐานกับเพื่อน ๆ ระหว่างการนมัสการ เธอรู้สึกว่าพระเยซูอยู่ใกล้มาก “หนูคิดว่าพระเจ้าชอบเวลาที่เราช่วยกันนะคะ” เธอกล่าว ช่วงเวลาธรรมดาเหล่านั้นกลายเป็นความทรงจำพิเศษ และจีได้เรียนรู้ว่าการรับใช้ร่วมกันเป็นวิธีที่งดงามในการแสดงความรักของพระเจ้า.",
-
-    "kids.kyungjin.name": "คยองจิน (มาเรีย) พาร์ก",
-    "kids.kyungjin.role": "New Heart Kids",
-    "kids.kyungjin.blurb": "“ผมเห็นคำตอบของพระเจ้าในช่วงเวลาย่อย ๆ เราหัวเราะ อธิษฐาน และแบ่งปันกัน—พระเยซูทรงอยู่กับเรา!”",
-    "kids.kyungjin.fullTitle": "คยองจิน (มาเรีย) พาร์ก — เรื่องราว",
-    "kids.kyungjin.full": "ความร่าเริงของคยองจิน (มาเรีย) พาร์กส่งต่อไปถึงทุกคน เขาเห็นคำตอบคำอธิษฐานในเรื่องเล็ก ๆ เช่น การพบดินสอที่หายไป หรือการได้รับกอดจากเพื่อนโดยไม่คาดคิด “พระเยซูอยู่กับเรา!” เขาบอก ผ่านเสียงหัวเราะและการแสดงความเมตตาเล็ก ๆ เขาเรียนรู้ว่าความเชื่อคือการวางใจในพระเยซูในทุกช่วงเวลาน้อย ๆ ของชีวิต.",
-
-    "editorial.heading": "บทบรรณาธิการ",
-    "editorial.subheading": "ความสัตย์ซื่อของพระเจ้า: รากฐานที่มั่นคงของเรา",
-    "editorial.p1": "ตลอดทุกฤดูกาลที่ผ่านมา พระเจ้าได้สำแดงความรักและความเมตตาอันมั่นคงต่อครอบครัว New Heart เมื่อเรามองย้อนกลับไปยังการเดินทางสู่หลายประเทศและหลากหลายทีม เราเห็นรอยพระหัตถ์ของพระองค์ในทุกรายละเอียด สิ่งที่เริ่มจากการเชื่อฟังเล็ก ๆ กลายเป็นคำพยานระดับโลกถึงความสัตย์ซื่อของพระองค์ แต่ละทีม แต่ละเรื่องราว แต่ละคำว่า “ใช่” ล้วนได้รับการสถาปนาบนรากฐานแห่งพระคุณของพระองค์.",
-    "editorial.p2": "ขอให้เรายังคงเพ่งมองไปที่พระเยซู ผู้ทรงเริ่มต้นพระราชกิจดีในเรา และจะทรงทำให้สำเร็จอย่างแน่นอน ขอให้ทุกทีมใหม่ ทุกการชุมนุม และทุกดวงใจพบกำลังใหม่ในพระองค์ผู้ไม่หวั่นไหว—พระเจ้าของเรา รากฐานของเรา และความสัตย์ซื่ออันยั่งยืนของเรา.",
 
     "serve.heading": "หนทางในการรับใช้",
     "serve.palancaHeading": "ตารางการถวาย Palanca",
@@ -1072,53 +1347,18 @@ const translations = {
     "events.krReunion": "🇰🇷 Hàn Quốc — 22/11/2025 • Seoul",
 
     "stories.heading": "Câu Chuyện New Heart",
-    "stories.ariel.name": "Ariel Sabag",
-    "stories.ariel.role": "Mỹ #53, Ứng viên / Hàn Quốc #54, Thành viên đội",
-    "stories.ariel.blurb": "Lớn lên trong truyền thống Do Thái chính thống, Ariel tra xét các lời tiên tri và gặp Chúa Giê-xu là Đấng Mê-si—giờ đây mang hy vọng đến giữa các dân tộc.",
-    "stories.ariel.fullTitle": "Ariel Sabag — Câu Chuyện",
-    "stories.ariel.full": "Ariel sinh ra trong gia đình Do Thái chính thống và trân trọng truyền thống mình nhận được. Nhưng khi nghiên cứu sâu các sách tiên tri, anh thấy hình bóng Đấng Mê-si chịu khổ và chuộc tội, và điều đó dẫn anh đến với Chúa Giê-xu. Qua New Heart USA #53 và Korea #54, anh tìm thấy một gia đình thuộc linh hết lòng thờ phượng và phục vụ. Với tấm lòng mới, Ariel được sai đi đem Tin Lành đến các dân tộc một cách khiêm nhường và vui mừng.",
-
+    "stories.ariel.name": "Ariel",
+    "stories.ariel.role": "Mỹ #53, Ứng viên",
     "stories.yesul.name": "Han, Ye-Sul",
     "stories.yesul.role": "Korea #54, Thành viên đội",
-    "stories.yesul.blurb": "Trong sự thờ phượng và phục vụ đơn sơ, Ye-Sul đặt gánh nặng xuống và tìm lại niềm vui của tấm lòng biết lắng nghe.",
-    "stories.yesul.fullTitle": "Han, Ye-Sul — Câu Chuyện",
-    "stories.yesul.full": "Tại New Heart Korea #54, Ye-Sul nhận ra rằng sự vâng lời đơn giản—như xếp ghế, cầu nguyện lặng lẽ, lắng nghe người khác—mở ra cánh cửa cho niềm vui. Khi những gánh nặng trong lòng được cất khỏi giữa thì giờ thờ phượng, cô có thể phục vụ với tấm lòng mềm mại. Cô kinh nghiệm sự thành tín của Chúa Giê-xu cả trong những việc rất nhỏ lẫn những việc rất lớn.",
-
     "stories.keziah.name": "Keziah",
-    "stories.keziah.role": "Vietnam #50, Ứng viên",
-    "stories.keziah.blurb": "Giữa sự bất định, cô học cách tin cậy thời điểm của Chúa và thấy những ơn phước nhỏ trở thành lời chứng bền vững.",
-    "stories.keziah.fullTitle": "Keziah — Câu Chuyện",
-    "stories.keziah.full": "New Heart Vietnam #50 là bước ngoặt cho Keziah. Dù nhiều điều chưa rõ ràng, cô thấy Chúa mở đường từng bước—qua một lời phán đúng thời điểm, lời cầu nguyện của bạn bè, và sức mới không ngờ đến. Những ơn phước bé nhỏ trở thành các viên đá ghi nhớ, xây dựng đức tin cho chặng đường phía trước.",
-
+    "stories.keziah.role": "Vietnam #14, Ứng viên",
     "stories.parichat.name": "Parichat",
     "stories.parichat.role": "Korea #54, Ứng viên",
-    "stories.parichat.blurb": "Với tấm lòng thờ phượng, Parichat thấy rào cản ngôn ngữ tan chảy khi mọi người cầu nguyện và yêu thương lẫn nhau.",
-    "stories.parichat.fullTitle": "Parichat — Câu Chuyện",
-    "stories.parichat.full": "Phục vụ cùng anh chị em đến từ nhiều quốc gia, Parichat thấy rằng sự thờ phượng làm mềm tấm lòng và chữa lành những hiểu lầm. Ngay cả khi lời nói không đủ, nụ cười, lời cầu nguyện và cái ôm đã nói rõ: chúng ta là một gia đình trong Đấng Christ.",
-
-    "stories.choi.name": "Choi, Eun Young",
-    "stories.choi.role": "Korea #54, Ứng viên",
-    "stories.choi.blurb": "Từ sự do dự đến hy vọng, cô kinh nghiệm sự chạm nhẹ nhàng của Chúa và bắt đầu làm chứng cách mạnh mẽ.",
-    "stories.choi.fullTitle": "Choi, Eun Young — Câu Chuyện",
-    "stories.choi.full": "Eun Young đến với New Heart Korea #54 với tâm trạng do dự, không biết phải trông đợi gì. Chúa gặp cô một cách dịu dàng. Qua những lời chứng và thì giờ cầu nguyện yên lặng, Ngài phục hồi lòng can đảm và sự mềm mại. Giờ đây cô vui mừng chia sẻ điều Chúa Giê-xu đã làm trong đời mình.",
+    "stories.choi.name": "Choi, Eun-Young",
+    "stories.choi.role": "Korea #54, Nhóm Hallelujah",
 
     "kids.heading": "New Heart Kids",
-    "kids.ji.name": "Ji, Yeowoon",
-    "kids.ji.role": "New Heart Kids",
-    "kids.ji.blurb": "“Trang trí, cầu nguyện và giúp đỡ khiến con cảm thấy mình được tham gia vào việc lớn mà Chúa đang làm.”",
-    "kids.ji.fullTitle": "Ji, Yeowoon — Câu Chuyện",
-    "kids.ji.full": "Ji, Yeowoon rất thích giúp chuẩn bị phòng nhóm—dán bảng, sắp xếp bút màu và cầu nguyện với các bạn. Trong giờ thờ phượng, em cảm nhận Chúa Giê-xu gần gũi. “Con nghĩ Chúa vui khi chúng ta giúp đỡ,” em nói. Những khoảnh khắc đơn sơ ấy trở thành kỷ niệm quý giá, và Ji học rằng phục vụ chung với nhau là cách đẹp đẽ để bày tỏ tình yêu của Chúa.",
-
-    "kids.kyungjin.name": "Kyungjin (Maria) Park",
-    "kids.kyungjin.role": "New Heart Kids",
-    "kids.kyungjin.blurb": "“Con thấy Chúa trả lời trong những điều nhỏ. Chúng con cười, cầu nguyện và chia sẻ—Chúa Giê-xu ở cùng chúng con!”",
-    "kids.kyungjin.fullTitle": "Kyungjin (Maria) Park — Câu Chuyện",
-    "kids.kyungjin.full": "Niềm vui của Kyungjin (Maria) Park lan tỏa đến mọi người. Em nhận ra những lời cầu nguyện được đáp lại trong những điều rất nhỏ—như tìm lại được cây bút chì bị mất, hay cái ôm bất ngờ từ một người bạn. “Chúa Giê-xu ở với chúng con!” em nói. Qua tiếng cười và những hành động yêu thương đơn giản, em học rằng đức tin là tin cậy Chúa Giê-xu trong từng khoảnh khắc nhỏ của cuộc sống.",
-
-    "editorial.heading": "Lời Biên Tập",
-    "editorial.subheading": "Sự Thành Tín của Đức Chúa Trời: Nền Tảng Vững Bền của Chúng Ta",
-    "editorial.p1": "Trong mọi mùa, Đức Chúa Trời đã bày tỏ tình yêu và lòng thương xót bền vững đối với gia đình New Heart. Khi nhìn lại nhiều chuyến đi qua các quốc gia và các đội khác nhau, chúng ta thấy dấu tay Ngài trên từng chi tiết. Những bước vâng lời nhỏ ban đầu đã trở thành lời chứng toàn cầu về sự thành tín của Ngài. Mỗi đội, mỗi câu chuyện, mỗi tiếng “vâng” đều được xây dựng trên nền tảng ân điển của Ngài.",
-    "editorial.p2": "Chúng ta hãy tiếp tục nhìn chăm vào Chúa Giê-xu, Đấng đã khởi đầu việc lành trong chúng ta và sẽ trung tín hoàn tất. Nguyện mọi đội mới, mọi kỳ nhóm lại và mọi tấm lòng tìm được sức mới trong chính Ngài—Đấng không hề rúng động, Đức Chúa Trời của chúng ta, nền tảng bền vững và thành tín đời đời của chúng ta.",
 
     "serve.heading": "Những Cách Phục Vụ",
     "serve.palancaHeading": "Biểu Đồ Dâng Palanca",
