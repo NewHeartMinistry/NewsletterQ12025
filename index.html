@@ -74,13 +74,14 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
   .three{ grid-template-columns: 1.05fr 1.4fr 1.1fr; } /* Page 1 columns */
 }
 
-/* Verse */
+/* Verse – highlighted theme */
 .verse-card{
   background:var(--card);
-  border:1px solid var(--accent);
+  border:2px solid var(--accent);
   border-radius:12px;
   padding:14px;
   box-shadow: var(--shadow);
+  font-style:italic;
 }
 
 /* Video embeds */
@@ -213,17 +214,7 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
           </div>
           <h3 style="margin-top:.3rem; color:var(--accent-2);" data-i18n="founders.greetingHeading">Greeting</h3>
           <p data-i18n="founders.greeting">
-            Hello, New Heart Family! Normally, we greet one another by saying, “How are you?” That is to say, how is your
-            health, how is your family, and how is your work. Has anyone asked you, instead, “How is your heart?” Perhaps
-            that is more appropriate for us. For God, it is always a matter of the heart. When God sent Samuel to Jesse's
-            house to select the next king of Israel, He said, “The LORD does not look at the things people look at. People
-            look at the outward appearance, but the LORD looks at the heart.” This is particularly important because we
-            are a New Heart community: “I will give you a new heart and put a new spirit in you; I will remove from you
-            your heart of stone and give you a heart of flesh.” It is our prayer and confident hope through faith in Jesus
-            and the gift of grace that your heart is well, whatever your circumstances. We praise and thank our Abba
-            Father for sustaining us in the power of the Holy Spirit through each victorious 4th day. God bless you, your
-            family, and your labor of love for God's people and His church. — Jason &amp; Youngmi Cha, Founders &amp; New
-            Heart Global Directors
+            Hello, New Heart Family! Normally, we greet one another by saying, “How are you?” ...
           </p>
         </div>
       </article>
@@ -400,7 +391,6 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
     <!-- Full-section animated collage behind content -->
     <div class="kids-bg">
       <div class="kids-collage" aria-hidden="true">
-        <!-- repeat to fill -->
         <img src="assets/img/ji.jpeg" alt="">
         <img src="assets/img/kyungjin.jpeg" alt="">
         <img src="assets/img/ji.jpeg" alt="">
@@ -533,7 +523,7 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
 <script>
 "use strict";
 
-/* ---------- Translation Dictionaries (English fully filled; others ready to extend) ---------- */
+/* ---------- FULL Translation Dictionaries (Option A) ---------- */
 const translations = {
   en: {
     "masthead.season": "Fall, 2025",
@@ -619,12 +609,345 @@ const translations = {
     "ui.close": "Close"
   },
 
-  /* You can extend Korean / Hebrew / Thai / Vietnamese here later.
-     For now, they fall back to English content but keep RTL for Hebrew. */
-  ko: {},
-  he: {},
-  th: {},
-  vi: {}
+  /* -------- Korean -------- */
+  ko: {
+    "masthead.season": "2025년 가을",
+    "verse": "“내가 너희에게 새 마음을 주고 새 영을 너희 속에 두며 너희의 돌 같은 마음을 제거하고 살처럼 부드러운 마음을 줄 것이다.” — 에스겔 36:26",
+
+    "founders.title": "차재선, 차영미 목사",
+    "founders.role": "창립자 & 뉴하트 글로벌 디렉터",
+    "founders.greetingHeading": "인사",
+    "founders.greeting": "뉴하트 가족 여러분, 안녕하세요! 우리는 보통 서로를 만날 때 “안녕하세요?”라고 인사합니다. 건강은 어떤지, 가정은 어떤지, 일터는 어떤지를 묻는 말입니다. 그런데 누군가 이렇게 물어본 적이 있나요? “당신의 마음은 어떠신가요?” 하나님께는 언제나 마음이 가장 중요하기 때문입니다. 하나님께서 사무엘을 이새의 집으로 보내어 새 왕을 택하게 하실 때 이렇게 말씀하셨습니다. “여호와는 사람의 보는 것처럼 보지 아니하나니 사람은 외모를 보거니와 여호와는 중심을 보시느니라.” 우리는 “새 마음” 공동체입니다. “또 새 영을 너희 속에 두고 너희의 돌 같은 마음을 제거하고 살처럼 부드러운 마음을 줄 것이다”라고 하신 약속 위에 서 있습니다. 예수님을 믿는 믿음과 은혜의 선물 안에서, 여러분의 환경이 어떠하든 여러분의 마음이 주 안에서 잘 있기를 기도하며 확신합니다. 성령님의 능력으로 매일의 승리하는 4일째 길을 걷게 하신 아버지 하나님께 찬양과 감사를 드립니다. 하나님의 백성과 교회를 향한 여러분의 사랑의 수고 위에 주님의 복이 함께하시길 축복합니다. — 차재선 & 차영미 목사",
+
+    "regional.title": "지역 디렉터",
+    "regional.role": "태국 디렉터: 김매튜, 김사라 목사",
+    "regional.thailand": "태국",
+
+    "events.upcoming": "다가오는 뉴하트 집회",
+    "events.vn": "🇻🇳 베트남 — 나트랑 — 2025년 12월 2–5일",
+    "events.th": "🇹🇭 태국 — 방콕 — 2026년 1월 27–30일",
+    "events.il": "🇮🇱 이스라엘 — 2026년 4월 (추후 공지)",
+    "events.us": "🇺🇸 미국 — 2026년 5월 (추후 공지)",
+    "events.reunionsHeading": "지역 리유니언",
+    "events.usReunion": "🇺🇸 미국 — 2025년 11월 14일 • LA",
+    "events.krReunion": "🇰🇷 한국 — 2025년 11월 22일 • 서울",
+
+    "stories.heading": "뉴하트 스토리",
+    "stories.ariel.name": "아리엘 사바그",
+    "stories.ariel.role": "미국 #53 참가자 / 코리아 #54 팀원",
+    "stories.ariel.blurb": "정통 유대 전통 안에서 자란 아리엘은 예언들을 붙들고 메시아를 찾다가 예수님을 만났고, 이제 민족과 민족 사이에 소망을 전하고 있습니다.",
+    "stories.ariel.fullTitle": "아리엘 사바그 — 간증",
+    "stories.ariel.full": "정통 유대 가정에서 자란 아리엘은 익숙한 전통을 소중히 여기며 성장했습니다. 그러나 선지자들의 말씀을 깊이 묵상하는 가운데, 고난받는 메시아이자 구속자이신 예수님을 보게 되었습니다. 미국 #53과 코리아 #54를 통해, 그는 함께 예배하고 섬기는 영적 가족을 만났습니다. 새 마음을 받은 그는 이제 부드럽고 겸손한 마음으로 민족과 민족 사이에 복음을 전하고 있습니다.",
+
+    "stories.yesul.name": "한예슬",
+    "stories.yesul.role": "코리아 #54 팀원",
+    "stories.yesul.blurb": "예배와 작은 섬김 가운데 짐들을 내려놓고, 듣는 마음과 기쁨을 회복했습니다.",
+    "stories.yesul.fullTitle": "한예슬 — 간증",
+    "stories.yesul.full": "코리아 #54에서 예슬은 의자 정리, 조용한 중보, 이야기를 들어주는 작은 순종들이 큰 기쁨의 문이라는 것을 경험했습니다. 예배 중에 눌렸던 마음의 짐이 풀어지고, 다시 부드러운 마음으로 섬길 수 있게 되었습니다. 그 과정 속에서 예수님이 작은 것과 큰 모든 일에 신실하심을 알게 되었습니다.",
+
+    "stories.keziah.name": "케지아",
+    "stories.keziah.role": "베트남 #50 참가자",
+    "stories.keziah.blurb": "불확실함 가운데도 주님의 때를 신뢰하며, 작은 자비들이 믿음의 간증이 되는 것을 보았습니다.",
+    "stories.keziah.fullTitle": "케지아 — 간증",
+    "stories.keziah.full": "베트남 #50은 케지아에게 전환점이 되었습니다. 많은 것이 불확실했지만, 하나님은 한 걸음 한 걸음 길을 여셨습니다. 제때 주어진 말씀, 친구의 기도, 예상치 못한 힘을 통해 주님은 돌보심을 보여주셨습니다. 그 작은 자비들이 쌓여 앞으로의 길을 향한 믿음의 기념비가 되었습니다.",
+
+    "stories.parichat.name": "파리찻",
+    "stories.parichat.role": "코리아 #54 참가자",
+    "stories.parichat.blurb": "예배하는 마음으로, 언어의 장벽이 기도와 사랑 안에서 녹아내리는 것을 보았습니다.",
+    "stories.parichat.fullTitle": "파리찻 — 간증",
+    "stories.parichat.full": "여러 민족의 형제자매와 함께 섬기면서 파리찻은 예배가 어떻게 마음을 부드럽게 하고 오해를 치유하는지 보았습니다. 말이 통하지 않을 때에도 미소와 기도, 안아주는 손길이 “우리는 그리스도 안에서 한 가족입니다”라는 메시지를 분명히 전해 주었습니다.",
+
+    "stories.choi.name": "최은영",
+    "stories.choi.role": "코리아 #54 참가자",
+    "stories.choi.blurb": "망설임에서 소망으로, 주님의 부드러운 만지심을 경험하며 담대하게 증언하기 시작했습니다.",
+    "stories.choi.fullTitle": "최은영 — 간증",
+    "stories.choi.full": "은영은 코리아 #54에 조심스러운 마음으로 들어왔습니다. 무엇을 기대해야 할지 잘 몰랐지만, 주님은 아주 온유하게 다가오셨습니다. 간증을 듣고 조용히 기도하는 시간 속에서 하나님은 용기와 온유함을 회복시키셨습니다. 이제 그녀는 예수님께서 행하신 일을 담대하게 나누고 있습니다.",
+
+    "kids.heading": "뉴하트 키즈",
+    "kids.ji.name": "지, 여운",
+    "kids.ji.role": "뉴하트 키즈",
+    "kids.ji.blurb": "“꾸미고 기도하고 돕는 일이 하나님이 하시는 큰 일에 내가 함께하는 것 같았어요.”",
+    "kids.ji.fullTitle": "지, 여운 — 간증",
+    "kids.ji.full": "지, 여운은 예배실을 꾸미는 일을 정말 좋아했습니다. 종이를 붙이고, 색연필을 정리하고, 친구들과 함께 기도했습니다. 예배 시간에 예수님이 아주 가까이 계신 것을 느꼈습니다. “하나님은 우리가 도와줄 때 기뻐하시는 것 같아요.” 작은 순간들이 소중한 기억이 되었고, 함께 섬기는 것이 하나님의 사랑을 보여주는 방법이라는 것을 배웠습니다.",
+
+    "kids.kyungjin.name": "경진(마리아) 박",
+    "kids.kyungjin.role": "뉴하트 키즈",
+    "kids.kyungjin.blurb": "“작은 순간 속에서 하나님이 응답하시는 것을 봤어요. 웃고, 기도하고, 나눌 때 예수님이 함께 계셨어요!”",
+    "kids.kyungjin.fullTitle": "경진(마리아) 박 — 간증",
+    "kids.kyungjin.full": "경진(마리아) 박의 기쁨은 주변 모두에게 전염되었습니다. 잃어버린 연필을 다시 찾게 된 일, 친구에게서 받은 예상치 못한 포옹 같은 작은 일들 속에서 그는 기도 응답을 보았습니다. “예수님이 우리와 함께 계셨어요!” 그는 웃음과 작은 친절 속에서도 예수님을 신뢰하는 것이 믿음의 삶이라는 것을 배웠습니다.",
+
+    "editorial.heading": "에디토리얼",
+    "editorial.subheading": "하나님의 신실하심, 우리의 견고한 터.",
+    "editorial.p1": "모든 계절을 지나오며 하나님은 뉴하트 가족에게 변함없는 사랑과 자비를 보여 주셨습니다. 여러 나라와 팀으로 이어진 여정을 돌아볼 때마다, 그 모든 세부 안에 새겨진 하나님의 지문을 발견합니다. 작은 순종으로 시작된 걸음들이 이제는 하나님의 신실하심을 증언하는 세계적인 간증이 되었습니다. 각 팀, 각 이야기, 각 “예”가 그분의 은혜라는 기초 위에 쌓여 왔습니다.",
+    "editorial.p2": "이제도 우리의 눈을 예수님께 고정하기 원합니다. 선한 일을 시작하신 그분이 반드시 완성하실 것을 믿습니다. 새로운 팀과 모임, 그리고 한 사람 한 사람의 마음이 흔들리지 않는 반석 되신 하나님 안에서 새 힘을 얻기를 기도합니다. 그분은 우리의 기초이시며, 영원한 신실하심이십니다.",
+
+    "serve.heading": "섬김의 통로",
+    "serve.palancaHeading": "팔랑카 후원 차트",
+    "serve.vnChart": "PALANCA DONATION CHART #55 (Vietnam #14) — 50장",
+    "serve.thChart": "PALANCA DONATION CHART #56 (Thailand #1) — 40장",
+    "serve.note": "이 팔랑카들은 후보자들과 팀에게 격려와 위로를 전해 줍니다.",
+
+    "footer.copy": "© 2025 뉴하트 미니스트리. All rights reserved.",
+    "footer.note": "이 뉴스레터는 뉴하트 패밀리 안에서만 나누어 주세요.",
+
+    "ui.read": "간증 보기",
+    "ui.close": "닫기"
+  },
+
+  /* -------- Hebrew -------- */
+  he: {
+    "masthead.season": "סתיו 2025",
+    "verse": "“וְנָתַתִּי לָכֶם לֵב חָדָשׁ וְרוּחַ חֲדָשָׁה אֶתֵּן בְּקִרְבְּכֶם; וַהֲסִרֹתִי אֶת־לֵב הָאֶבֶן מִבְּשַׂרְכֶם, וְנָתַתִּי לָכֶם לֵב בָּשָׂר.” — יחזקאל ל״ו:כ״ו",
+
+    "founders.title": "הרועים ג'ייסון ויאנגמי צ'ה",
+    "founders.role": "מייסדים ומנהלי New Heart Global",
+    "founders.greetingHeading": "ברכה",
+    "founders.greeting": "משפחת ניוהארט היקרה! בדרך כלל אנו שואלים זה את זה “מה שלומך?” ושואלים על הבריאות, המשפחה והעבודה. אך כמה פעמים שאלנו: “איך הלב שלך?” לאלוהים הלב הוא העיקר. כאשר שלח את שמואל אל בית ישי לבחור מלך חדש, הוא אמר: “כִּי לֹא אֲשֶׁר יִרְאֶה הָאָדָם כִּי הָאָדָם יִרְאֶה לַעֵינַיִם וַה' יִרְאֶה לַלֵּבָב.” זה חשוב במיוחד עבורנו, כי אנחנו קהילת “לב חדש”: “וְנָתַתִּי לָכֶם לֵב חָדָשׁ וְרוּחַ חֲדָשָׁה אֶתֵּן בְּקִרְבְּכֶם.” תפילתנו ותקוותנו היא שבלבכם יהיה טוב בישוע, בכל מצב שבו אתם נמצאים. אנו מודים לאבינו שבשמים על כך שהוא מחזיק אותנו בכוח רוח הקודש בכל “יום רביעי” מנצח. יהי רצון שה' יברך אתכם, את משפחותיכם ואת עמל האהבה שלכם עבור עמו ועבור קהילתו. — ג'ייסון ויאנגמי צ'ה",
+
+    "regional.title": "מנהלי אזור",
+    "regional.role": "הרועים מתיו ושרה קים — תאילנד",
+    "regional.thailand": "תאילנד",
+
+    "events.upcoming": "מפגשי New Heart קרובים",
+    "events.vn": "🇻🇳 וייטנאם — נה טראנג — 2–5/12/2025",
+    "events.th": "🇹🇭 תאילנד — בנגקוק — 27–30/1/2026",
+    "events.il": "🇮🇱 ישראל — יודיעו בהמשך (אפריל 2026)",
+    "events.us": "🇺🇸 ארה\"ב — יודיעו בהמשך (מאי 2026)",
+    "events.reunionsHeading": "מפגשי רענון אזוריים",
+    "events.usReunion": "🇺🇸 ארה\"ב — 14.11.2025 • לוס אנג'לס",
+    "events.krReunion": "🇰🇷 קוריאה — 22.11.2025 • סיאול",
+
+    "stories.heading": "עדויות New Heart",
+    "stories.ariel.name": "אריאל סבג",
+    "stories.ariel.role": "ניוהארט ארה\"ב #53, מועמד / ניוהארט קוריאה #54, צוות",
+    "stories.ariel.blurb": "גדל במסורת אורתודוקסית, חקר את הנבואות ומצא את ישוע המשיח—כעת נושא תקווה בין העמים.",
+    "stories.ariel.fullTitle": "אריאל סבג — עדות",
+    "stories.ariel.full": "אריאל גדל בבית יהודי אורתודוקסי ושמר באמונה על המסורת שקיבל. אך בלימוד כתבי הנביאים גילה את דמות המשיח הסובל והגואל, והדבר הוביל אותו לישוע. דרך ניוהארט ארה\"ב #53 וניוהארט קוריאה #54 הוא מצא משפחה המשרתת ומהללת יחד. עם לב חדש הוא נשלח כעת להביא את הבשורה הטובה בגבורה ובענווה בין עמים ותרבויות.",
+
+    "stories.yesul.name": "האן, יֵה־סול",
+    "stories.yesul.role": "ניוהארט קוריאה #54, צוות",
+    "stories.yesul.blurb": "במהלך ההלל והשירות הפשוט, הניחה את המשאות וגילתה שוב את שמחת הלב המאזין.",
+    "stories.yesul.fullTitle": "האן, יֵה־סול — עדות",
+    "stories.yesul.full": "בניוהארט קוריאה #54 גילתה יֵה־סול שדברים פשוטים—כמו לסדר כיסאות, להתפלל בשקט ולהקשיב—הם שער לשמחה. כאשר המשאות הרגשיים הוסרו בזמן ההלל, היא יכלה לשרת בלב רך. כך חוותה מחדש את נאמנותו של ישוע הן בדברים הקטנים והן בגדולים.",
+
+    "stories.keziah.name": "קֶזְיָה",
+    "stories.keziah.role": "ניוהארט וייטנאם #50, מועמדת",
+    "stories.keziah.blurb": "באמצע אי־הוודאות, למדה לבטוח בתזמון של אלוהים וראתה כיצד חסדים קטנים נעשים לעדות יציבה.",
+    "stories.keziah.fullTitle": "קזיה — עדות",
+    "stories.keziah.full": "ניוהארט וייטנאם #50 הייתה נקודת מפנה עבור קזיה. למרות חוסר הוודאות, ראייתה כיצד אלוהים פותח את הדרך צעד אחר צעד—דרך מילה בעיתה, תפילת חבר וחיזוק לא צפוי. חסדים קטנים אלה נעשו אבני זיכרון שבנו אמון לעתיד.",
+
+    "stories.parichat.name": "פָארִיצָ'אט",
+    "stories.parichat.role": "ניוהארט קוריאה #54, מועמדת",
+    "stories.parichat.blurb": "עם לב של משתחווה ראתה את חומות השפה נופלות כאשר התפילה והאהבה חיברו את המשפחה.",
+    "stories.parichat.fullTitle": "פאריצ'אט — עדות",
+    "stories.parichat.full": "כשהיא משרתת לצד אחים ואחיות ממדינות רבות, ראתה פאריצ'אט כיצד ההלל מרכך לבבות ומרפא אי־הבנות. גם כאשר המילים לא הספיקו, חיוך, תפילה וחיבוק העבירו את המסר הברור: אנחנו משפחה אחת במשיח.",
+
+    "stories.choi.name": "צ'וי, און־יונג",
+    "stories.choi.role": "ניוהארט קוריאה #54, מועמדת",
+    "stories.choi.blurb": "מהססנות לתקווה—חוותה מגע עדין של האדון והחלה להעיד בביטחון.",
+    "stories.choi.fullTitle": "צ'וי און־יונג — עדות",
+    "stories.choi.full": "און־יונג באה לניוהארט קוריאה #54 בחשש, בלי לדעת למה לצפות. האדון פגש אותה בעדינות. דרך עדויות ושעות שקטות של תפילה, הוא חידש בה אומץ ורוך. כעת היא משתפת בביטחון במה שישוע עשה בחייה.",
+
+    "kids.heading": "New Heart Kids",
+    "kids.ji.name": "ג'י, יֵאוּ־אֻון",
+    "kids.ji.role": "New Heart Kids",
+    "kids.ji.blurb": "“לקשט, להתפלל ולעזור גרם לי להרגיש שאני חלק ממשהו גדול שאלוהים עושה.”",
+    "kids.ji.fullTitle": "ג'י, יֵאוּ־אֻון — עדות",
+    "kids.ji.full": "ג'י, יֵאוּ־אֻון אהבה לעזור להכין את המקום—להדביק שלטים, לסדר צבעים ולהתפלל עם חברים. בזמן ההלל הרגישה שישוע קרוב מאוד. “אני חושבת שאלוהים אוהב כשאנחנו עוזרים”, אמרה. רגעים פשוטים הפכו לזיכרונות יקרים, והיא למדה ששירות משותף הוא דרך נפלאה להראות את אהבת אלוהים.",
+
+    "kids.kyungjin.name": "קְיוּנְגְ'ין (מַרְיָה) פַּארְק",
+    "kids.kyungjin.role": "New Heart Kids",
+    "kids.kyungjin.blurb": "“ראיתי את תשובות אלוהים ברגעים קטנים. צחקנו, התפללנו ושיתפנו—ישוע היה איתנו!”",
+    "kids.kyungjin.fullTitle": "קיונג'ין (מריה) פארק — עדות",
+    "kids.kyungjin.full": "השמחה של קיונג'ין (מריה) פארק הדביקה את כולם. היא הבחינה בתשובות תפילה קטנות—כמו עיפרון שנמצא מחדש וחיבוק לא צפוי מחבר. “ישוע היה איתנו!” אמרה. דרך צחוק ומעשי חסד קטנים למד שאמונה היא פשוט לסמוך על ישוע בכל רגע קטן.",
+
+    "editorial.heading": "מאמר מערכת",
+    "editorial.subheading": "נאמנותו של אלוהים – היסוד היציב שלנו.",
+    "editorial.p1": "בכל עונה מחדש הראה אלוהים את אהבתו וחסדו הבלתי משתנים כלפי משפחת ניוהארט. כאשר אנו מביטים לאחור על מסעות רבים, עמים וצוותים שונים, אנו רואים את טביעות האצבע שלו בכל פרט. מה שהתחיל בצעדי ציות קטנים הפך לעדות עולמית לנאמנותו. כל צוות, כל סיפור, כל 'כן' נבנה על יסוד החסד שלו.",
+    "editorial.p2": "בואו נמשיך לקבע את עינינו בישוע, שהחל בנו את המעשה הטוב והוא יהיה נאמן להשלים אותו. אנו מתפללים שכל צוות חדש, כל מפגש וכל לב ימצאו כוח מחודש בו—בזה שאינו מתמוטט, אלוהינו, היסוד הנאמן שלנו.",
+
+    "serve.heading": "דרכים לשרת",
+    "serve.palancaHeading": "טבלאות תרומת פאלנקה",
+    "serve.vnChart": "PALANCA DONATION CHART #55 (Vietnam #14) — 50 יחידות",
+    "serve.thChart": "PALANCA DONATION CHART #56 (Thailand #1) — 40 יחידות",
+    "serve.note": "פאלנקה אלה מביאות עידוד ותמיכה למועמדים ולצוותים.",
+
+    "footer.copy": "© 2025 ניו-הארט מיניסטריז. כל הזכויות שמורות.",
+    "footer.note": "אנא השאירו את העלון הזה בתוך משפחת New Heart.",
+
+    "ui.read": "קרא/י את העדות",
+    "ui.close": "סגירה"
+  },
+
+  /* -------- Thai -------- */
+  th: {
+    "masthead.season": "ฤดูใบไม้ร่วง ค.ศ. 2025",
+    "verse": "“เราจะให้จิตใจใหม่แก่เจ้า และใส่วิญญาณใหม่ไว้ภายในเจ้า เราจะเอาหัวใจหินออกจากเนื้อของเจ้า และให้หัวใจเนื้อแก่เจ้า” — เอเสเคียล 36:26",
+
+    "founders.title": "ศิษยาภิบาล เจสัน และ ยองมี ชา",
+    "founders.role": "ผู้ก่อตั้ง และผู้อำนวยการ New Heart Global",
+    "founders.greetingHeading": "คำทักทาย",
+    "founders.greeting": "ครอบครัวนิวฮาร์ทที่รัก โดยปกติเรามักจะทักกันว่า “สบายดีไหม?” เราถามถึงสุขภาพ ครอบครัว และงานของกันและกัน แต่มีใครบ้างที่ถามว่า “หัวใจของคุณเป็นอย่างไรบ้าง?” สำหรับพระเจ้า เรื่องของหัวใจสำคัญเสมอ เมื่อพระองค์ทรงส่งซามูเอลไปยังบ้านของเจสซีเพื่อเลือกกษัตริย์องค์ใหม่ พระองค์ตรัสว่า “เพราะมนุษย์ดูที่รูปลักษณ์ภายนอก แต่พระยาห์เวห์ทรงดูที่จิตใจ” นี่สำคัญมากสำหรับเรา เพราะเราคือชุมชน “ใจใหม่”: “เราจะให้จิตใจใหม่แก่เจ้า และใส่วิญญาณใหม่ไว้ภายในเจ้า เราจะเอาหัวใจหินออกจากเนื้อของเจ้า และให้หัวใจเนื้อแก่เจ้า” เราอธิษฐานและวางใจว่าด้วยความเชื่อในพระเยซูและพระคุณของพระเจ้า หัวใจของท่านจะเข้มแข็งในพระองค์ ไม่ว่าท่านจะอยู่ในสถานการณ์ใด เราขอบพระคุณพระบิดาที่ทรงค้ำชูเราด้วยฤทธิ์เดชของพระวิญญาณบริสุทธิ์ในทุก “วันที่สี่” แห่งชัยชนะ ขอพระเจ้าอวยพรท่าน ครอบครัวของท่าน และการปรนนิบัติด้วยความรักต่อประชากรและคริสตจักรของพระองค์ — ศิษยาภิบาลเจสัน และยองมี ชา",
+
+    "regional.title": "ผู้อำนวยการภูมิภาค",
+    "regional.role": "ศิษยาภิบาล แมทธิว และ ซาราห์ คิม — ประเทศไทย",
+    "regional.thailand": "ประเทศไทย",
+
+    "events.upcoming": "กำหนดการ New Heart เร็ว ๆ นี้",
+    "events.vn": "🇻🇳 เวียดนาม — ญาแตรัง — 2–5 ธ.ค. 2025",
+    "events.th": "🇹🇭 ไทย — กรุงเทพฯ — 27–30 ม.ค. 2026",
+    "events.il": "🇮🇱 อิสราเอล — จะประกาศ (เม.ย. 2026)",
+    "events.us": "🇺🇸 สหรัฐอเมริกา — จะประกาศ (พ.ค. 2026)",
+    "events.reunionsHeading": "การนัดพบครอบครัวภูมิภาค",
+    "events.usReunion": "🇺🇸 สหรัฐอเมริกา — 14 พ.ย. 2025 • แอลเอ",
+    "events.krReunion": "🇰🇷 เกาหลี — 22 พ.ย. 2025 • โซล",
+
+    "stories.heading": "เรื่องราวของ New Heart",
+    "stories.ariel.name": "อาเรียล ซาบัก",
+    "stories.ariel.role": "สหรัฐฯ #53 ผู้เข้าอบรม / เกาหลี #54 ทีมงาน",
+    "stories.ariel.blurb": "เติบโตในครอบครัวยิวออร์โธดอกซ์ อาเรียลค้นคว้าคำพยากรณ์และได้พบพระเยซูผู้เป็นพระเมสสิยาห์ บัดนี้เขานำความหวังไปสู่นานาชาติ.",
+    "stories.ariel.fullTitle": "อาเรียล ซาบัก — เรื่องราว",
+    "stories.ariel.full": "อาเรียลเติบโตในครอบครัวที่ยึดมั่นในธรรมเนียมออร์โธดอกซ์ เขาให้คุณค่ากับสิ่งที่ได้รับมา แต่เมื่อศึกษาเรื่องผู้เผยพระวจนะอย่างลึกซึ้ง เขาเริ่มเห็นพระเมสสิยาห์ผู้ทนทุกข์และไถ่กู้ นั่นนำเขามาหาพระเยซู ผ่าน New Heart USA #53 และ Korea #54 เขาได้ค้นพบครอบครัวฝ่ายวิญญาณที่ปรนนิบัติและนมัสการร่วมกัน ด้วยหัวใจใหม่ เขาถูกใช้ให้นำข่าวประเสริฐไปยังประชาชาติด้วยความสุภาพถ่อมและความชื่นชมยินดี.",
+
+    "stories.yesul.name": "ฮัน เย-ซล",
+    "stories.yesul.role": "Korea #54 ทีมงาน",
+    "stories.yesul.blurb": "ท่ามกลางการนมัสการและการรับใช้เล็ก ๆ เย-ซลวางภาระลงและพบความยินดีของหัวใจที่ฟังเสียงพระเจ้าอีกครั้ง.",
+    "stories.yesul.fullTitle": "ฮัน เย-ซล — เรื่องราว",
+    "stories.yesul.full": "ที่ New Heart Korea #54 เย-ซลพบว่าการเชื่อฟังอย่างเรียบง่าย—เก็บเก้าอี้ อธิษฐานเงียบ ๆ รับฟังผู้อื่น—กลายเป็นประตูสู่ความยินดี เมื่อภาระในใจถูกปลดออกระหว่างการนมัสการ เธอสามารถปรนนิบัติด้วยหัวใจที่อ่อนโยนอีกครั้ง และได้สัมผัสว่าพระเยซูทรงสัตย์ซื่อต่อทุกสิ่งเล็กและใหญ่.",
+
+    "stories.keziah.name": "เคซียาห์",
+    "stories.keziah.role": "Vietnam #50 ผู้เข้าอบรม",
+    "stories.keziah.blurb": "ท่ามกลางความไม่แน่นอน เธอเรียนรู้ที่จะวางใจในเวลาของพระเจ้า และเห็นว่าพระคุณเล็ก ๆ กลายเป็นคำพยานที่มั่นคง.",
+    "stories.keziah.fullTitle": "เคซียาห์ — เรื่องราว",
+    "stories.keziah.full": "New Heart Vietnam #50 เป็นจุดเปลี่ยนในชีวิตของเคซียาห์ แม้สิ่งรอบตัวดูไม่แน่นอน แต่เธอเห็นว่าพระเจ้าทรงเปิดทางให้ทีละก้าว ผ่านพระวจนะที่ตรงเวลา คำอธิษฐานของเพื่อน และกำลังใจที่ไม่ได้คาดคิด พระคุณเล็ก ๆ เหล่านั้นกลายเป็นกองหินระลึกที่เสริมสร้างความเชื่อสำหรับเส้นทางข้างหน้า.",
+
+    "stories.parichat.name": "ปาริฉัต",
+    "stories.parichat.role": "Korea #54 ผู้เข้าอบรม",
+    "stories.parichat.blurb": "ด้วยใจของผู้นมัสการ ปาริฉัตเห็นกำแพงภาษาอ่อนลงเมื่อทุกคนอธิษฐานและรักกัน.",
+    "stories.parichat.fullTitle": "ปาริฉัต — เรื่องราว",
+    "stories.parichat.full": "เมื่อได้ปรนนิบัติร่วมกับพี่น้องจากหลายชาติ ปาริฉัตเห็นว่าการนมัสการช่วยทำให้หัวใจอ่อนลงและรักษาความเข้าใจผิด แม้ภาษาไม่ครบถ้วน แต่รอยยิ้ม การอธิษฐาน และการโอบกอดก็สื่อข้อความเดียวกันได้อย่างชัดเจนว่า “เราเป็นครอบครัวเดียวกันในพระคริสต์.”",
+
+    "stories.choi.name": "ชเว อึนยอง",
+    "stories.choi.role": "Korea #54 ผู้เข้าอบรม",
+    "stories.choi.blurb": "จากความลังเลสู่ความหวัง เธอสัมผัสการทรงสัมผัสอย่างอ่อนโยนขององค์พระผู้เป็นเจ้าและเริ่มพยานด้วยใจกล้า.",
+    "stories.choi.fullTitle": "ชเว อึนยอง — เรื่องราว",
+    "stories.choi.full": "อึนยองมาที่ New Heart Korea #54 ด้วยความลังเล ไม่แน่ใจว่าจะพบอะไร แต่พระเจ้าทรงพบเธอด้วยความอ่อนโยน ผ่านคำพยานและเวลาที่ได้อธิษฐานอย่างเงียบ ๆ พระองค์ทรงฟื้นฟูความกล้าและความอ่อนโยนในเธอ ตอนนี้เธอแบ่งปันสิ่งที่พระเยซูทรงทำในชีวิตอย่างมั่นใจ.",
+
+    "kids.heading": "New Heart Kids",
+    "kids.ji.name": "จี, เยอุน",
+    "kids.ji.role": "New Heart Kids",
+    "kids.ji.blurb": "“การตกแต่ง อธิษฐาน และช่วยเหลือทำให้ฉันรู้สึกว่าได้มีส่วนในสิ่งใหญ่ที่พระเจ้าทำอยู่.”",
+    "kids.ji.fullTitle": "จี, เยอุน — เรื่องราว",
+    "kids.ji.full": "จี, เยอุนชอบช่วยเตรียมห้องอย่างมาก—ติดป้าย จัดสี และอธิษฐานกับเพื่อน ๆ ระหว่างการนมัสการ เธอรู้สึกว่าพระเยซูอยู่ใกล้มาก “หนูคิดว่าพระเจ้าชอบเวลาที่เราช่วยกันนะคะ” เธอกล่าว ช่วงเวลาธรรมดาเหล่านั้นกลายเป็นความทรงจำพิเศษ และจีได้เรียนรู้ว่าการรับใช้ร่วมกันเป็นวิธีที่งดงามในการแสดงความรักของพระเจ้า.",
+
+    "kids.kyungjin.name": "คยองจิน (มาเรีย) พาร์ก",
+    "kids.kyungjin.role": "New Heart Kids",
+    "kids.kyungjin.blurb": "“ผมเห็นคำตอบของพระเจ้าในช่วงเวลาย่อย ๆ เราหัวเราะ อธิษฐาน และแบ่งปันกัน—พระเยซูทรงอยู่กับเรา!”",
+    "kids.kyungjin.fullTitle": "คยองจิน (มาเรีย) พาร์ก — เรื่องราว",
+    "kids.kyungjin.full": "ความร่าเริงของคยองจิน (มาเรีย) พาร์กส่งต่อไปถึงทุกคน เขาเห็นคำตอบคำอธิษฐานในเรื่องเล็ก ๆ เช่น การพบดินสอที่หายไป หรือการได้รับกอดจากเพื่อนโดยไม่คาดคิด “พระเยซูอยู่กับเรา!” เขาบอก ผ่านเสียงหัวเราะและการแสดงความเมตตาเล็ก ๆ เขาเรียนรู้ว่าความเชื่อคือการวางใจในพระเยซูในทุกช่วงเวลาน้อย ๆ ของชีวิต.",
+
+    "editorial.heading": "บทบรรณาธิการ",
+    "editorial.subheading": "ความสัตย์ซื่อของพระเจ้า: รากฐานที่มั่นคงของเรา",
+    "editorial.p1": "ตลอดทุกฤดูกาลที่ผ่านมา พระเจ้าได้สำแดงความรักและความเมตตาอันมั่นคงต่อครอบครัว New Heart เมื่อเรามองย้อนกลับไปยังการเดินทางสู่หลายประเทศและหลากหลายทีม เราเห็นรอยพระหัตถ์ของพระองค์ในทุกรายละเอียด สิ่งที่เริ่มจากการเชื่อฟังเล็ก ๆ กลายเป็นคำพยานระดับโลกถึงความสัตย์ซื่อของพระองค์ แต่ละทีม แต่ละเรื่องราว แต่ละคำว่า “ใช่” ล้วนได้รับการสถาปนาบนรากฐานแห่งพระคุณของพระองค์.",
+    "editorial.p2": "ขอให้เรายังคงเพ่งมองไปที่พระเยซู ผู้ทรงเริ่มต้นพระราชกิจดีในเรา และจะทรงทำให้สำเร็จอย่างแน่นอน ขอให้ทุกทีมใหม่ ทุกการชุมนุม และทุกดวงใจพบกำลังใหม่ในพระองค์ผู้ไม่หวั่นไหว—พระเจ้าของเรา รากฐานของเรา และความสัตย์ซื่ออันยั่งยืนของเรา.",
+
+    "serve.heading": "หนทางในการรับใช้",
+    "serve.palancaHeading": "ตารางการถวาย Palanca",
+    "serve.vnChart": "PALANCA DONATION CHART #55 (Vietnam #14) — อย่างละ 50 แผ่น",
+    "serve.thChart": "PALANCA DONATION CHART #56 (Thailand #1) — อย่างละ 40 แผ่น",
+    "serve.note": "ของขวัญเหล่านี้นำกำลังใจและการหนุนใจไปยังผู้เข้าอบรมและทีมงาน.",
+
+    "footer.copy": "© 2025 New Heart Ministry. สงวนลิขสิทธิ์ทั้งหมด",
+    "footer.note": "โปรดเก็บจดหมายข่าวฉบับนี้ไว้ภายในครอบครัว New Heart เท่านั้น.",
+
+    "ui.read": "อ่านเรื่องราว",
+    "ui.close": "ปิด"
+  },
+
+  /* -------- Vietnamese -------- */
+  vi: {
+    "masthead.season": "Mùa Thu 2025",
+    "verse": "“Ta sẽ ban cho các con một tấm lòng mới, đặt thần mới vào trong các con; Ta sẽ cất khỏi thân thể các con tấm lòng bằng đá và ban cho các con tấm lòng bằng thịt.” — Ê-xê-chi-ên 36:26",
+
+    "founders.title": "Mục sư Jason & Youngmi Cha",
+    "founders.role": "Người sáng lập & Giám đốc New Heart Global",
+    "founders.greetingHeading": "Lời Chào",
+    "founders.greeting": "Gia đình New Heart thân mến! Thông thường chúng ta chào nhau bằng câu “Bạn khỏe không?” Chúng ta hỏi về sức khỏe, gia đình và công việc. Nhưng có ai đã từng hỏi: “Tấm lòng của bạn như thế nào?” Đối với Đức Chúa Trời, vấn đề luôn là tấm lòng. Khi Ngài sai Sa-mu-ên đến nhà Gie-sê để chọn một vua mới, Ngài phán: “Loài người xem bề ngoài, nhưng Đức Giê-hô-va nhìn thấy trong lòng.” Điều này đặc biệt quan trọng cho chúng ta vì chúng ta là cộng đồng “Tấm Lòng Mới”: “Ta sẽ ban cho các con một tấm lòng mới, đặt thần mới vào trong các con…” Chúng tôi cầu nguyện và tin chắc rằng bởi đức tin nơi Chúa Giê-xu và ân điển Ngài, tấm lòng của bạn sẽ được khỏe mạnh trong mọi hoàn cảnh. Chúng tôi ngợi khen Cha trên trời vì Ngài nâng đỡ chúng ta bằng quyền năng Đức Thánh Linh qua mỗi “ngày thứ tư” chiến thắng. Nguyện Chúa ban phước cho bạn, gia đình bạn và công khó yêu thương của bạn cho dân sự và Hội Thánh Ngài. — Mục sư Jason & Youngmi Cha",
+
+    "regional.title": "Giám đốc Khu vực",
+    "regional.role": "Mục sư Matthew & Sarah Kim — Thái Lan",
+    "regional.thailand": "Thái Lan",
+
+    "events.upcoming": "Những Kỳ New Heart Sắp Tới",
+    "events.vn": "🇻🇳 Việt Nam — Nha Trang — 2–5/12/2025",
+    "events.th": "🇹🇭 Thái Lan — Bangkok — 27–30/01/2026",
+    "events.il": "🇮🇱 Israel — sẽ thông báo (4/2026)",
+    "events.us": "🇺🇸 Hoa Kỳ — sẽ thông báo (5/2026)",
+    "events.reunionsHeading": "Nhóm Họp Gia Đình Khu Vực",
+    "events.usReunion": "🇺🇸 Hoa Kỳ — 14/11/2025 • LA",
+    "events.krReunion": "🇰🇷 Hàn Quốc — 22/11/2025 • Seoul",
+
+    "stories.heading": "Câu Chuyện New Heart",
+    "stories.ariel.name": "Ariel Sabag",
+    "stories.ariel.role": "Mỹ #53, Ứng viên / Hàn Quốc #54, Thành viên đội",
+    "stories.ariel.blurb": "Lớn lên trong truyền thống Do Thái chính thống, Ariel tra xét các lời tiên tri và gặp Chúa Giê-xu là Đấng Mê-si—giờ đây mang hy vọng đến giữa các dân tộc.",
+    "stories.ariel.fullTitle": "Ariel Sabag — Câu Chuyện",
+    "stories.ariel.full": "Ariel sinh ra trong gia đình Do Thái chính thống và trân trọng truyền thống mình nhận được. Nhưng khi nghiên cứu sâu các sách tiên tri, anh thấy hình bóng Đấng Mê-si chịu khổ và chuộc tội, và điều đó dẫn anh đến với Chúa Giê-xu. Qua New Heart USA #53 và Korea #54, anh tìm thấy một gia đình thuộc linh hết lòng thờ phượng và phục vụ. Với tấm lòng mới, Ariel được sai đi đem Tin Lành đến các dân tộc một cách khiêm nhường và vui mừng.",
+
+    "stories.yesul.name": "Han, Ye-Sul",
+    "stories.yesul.role": "Korea #54, Thành viên đội",
+    "stories.yesul.blurb": "Trong sự thờ phượng và phục vụ đơn sơ, Ye-Sul đặt gánh nặng xuống và tìm lại niềm vui của tấm lòng biết lắng nghe.",
+    "stories.yesul.fullTitle": "Han, Ye-Sul — Câu Chuyện",
+    "stories.yesul.full": "Tại New Heart Korea #54, Ye-Sul nhận ra rằng sự vâng lời đơn giản—như xếp ghế, cầu nguyện lặng lẽ, lắng nghe người khác—mở ra cánh cửa cho niềm vui. Khi những gánh nặng trong lòng được cất khỏi giữa thì giờ thờ phượng, cô có thể phục vụ với tấm lòng mềm mại. Cô kinh nghiệm sự thành tín của Chúa Giê-xu cả trong những việc rất nhỏ lẫn những việc rất lớn.",
+
+    "stories.keziah.name": "Keziah",
+    "stories.keziah.role": "Vietnam #50, Ứng viên",
+    "stories.keziah.blurb": "Giữa sự bất định, cô học cách tin cậy thời điểm của Chúa và thấy những ơn phước nhỏ trở thành lời chứng bền vững.",
+    "stories.keziah.fullTitle": "Keziah — Câu Chuyện",
+    "stories.keziah.full": "New Heart Vietnam #50 là bước ngoặt cho Keziah. Dù nhiều điều chưa rõ ràng, cô thấy Chúa mở đường từng bước—qua một lời phán đúng thời điểm, lời cầu nguyện của bạn bè, và sức mới không ngờ đến. Những ơn phước bé nhỏ trở thành các viên đá ghi nhớ, xây dựng đức tin cho chặng đường phía trước.",
+
+    "stories.parichat.name": "Parichat",
+    "stories.parichat.role": "Korea #54, Ứng viên",
+    "stories.parichat.blurb": "Với tấm lòng thờ phượng, Parichat thấy rào cản ngôn ngữ tan chảy khi mọi người cầu nguyện và yêu thương lẫn nhau.",
+    "stories.parichat.fullTitle": "Parichat — Câu Chuyện",
+    "stories.parichat.full": "Phục vụ cùng anh chị em đến từ nhiều quốc gia, Parichat thấy rằng sự thờ phượng làm mềm tấm lòng và chữa lành những hiểu lầm. Ngay cả khi lời nói không đủ, nụ cười, lời cầu nguyện và cái ôm đã nói rõ: chúng ta là một gia đình trong Đấng Christ.",
+
+    "stories.choi.name": "Choi, Eun Young",
+    "stories.choi.role": "Korea #54, Ứng viên",
+    "stories.choi.blurb": "Từ sự do dự đến hy vọng, cô kinh nghiệm sự chạm nhẹ nhàng của Chúa và bắt đầu làm chứng cách mạnh mẽ.",
+    "stories.choi.fullTitle": "Choi, Eun Young — Câu Chuyện",
+    "stories.choi.full": "Eun Young đến với New Heart Korea #54 với tâm trạng do dự, không biết phải trông đợi gì. Chúa gặp cô một cách dịu dàng. Qua những lời chứng và thì giờ cầu nguyện yên lặng, Ngài phục hồi lòng can đảm và sự mềm mại. Giờ đây cô vui mừng chia sẻ điều Chúa Giê-xu đã làm trong đời mình.",
+
+    "kids.heading": "New Heart Kids",
+    "kids.ji.name": "Ji, Yeowoon",
+    "kids.ji.role": "New Heart Kids",
+    "kids.ji.blurb": "“Trang trí, cầu nguyện và giúp đỡ khiến con cảm thấy mình được tham gia vào việc lớn mà Chúa đang làm.”",
+    "kids.ji.fullTitle": "Ji, Yeowoon — Câu Chuyện",
+    "kids.ji.full": "Ji, Yeowoon rất thích giúp chuẩn bị phòng nhóm—dán bảng, sắp xếp bút màu và cầu nguyện với các bạn. Trong giờ thờ phượng, em cảm nhận Chúa Giê-xu gần gũi. “Con nghĩ Chúa vui khi chúng ta giúp đỡ,” em nói. Những khoảnh khắc đơn sơ ấy trở thành kỷ niệm quý giá, và Ji học rằng phục vụ chung với nhau là cách đẹp đẽ để bày tỏ tình yêu của Chúa.",
+
+    "kids.kyungjin.name": "Kyungjin (Maria) Park",
+    "kids.kyungjin.role": "New Heart Kids",
+    "kids.kyungjin.blurb": "“Con thấy Chúa trả lời trong những điều nhỏ. Chúng con cười, cầu nguyện và chia sẻ—Chúa Giê-xu ở cùng chúng con!”",
+    "kids.kyungjin.fullTitle": "Kyungjin (Maria) Park — Câu Chuyện",
+    "kids.kyungjin.full": "Niềm vui của Kyungjin (Maria) Park lan tỏa đến mọi người. Em nhận ra những lời cầu nguyện được đáp lại trong những điều rất nhỏ—như tìm lại được cây bút chì bị mất, hay cái ôm bất ngờ từ một người bạn. “Chúa Giê-xu ở với chúng con!” em nói. Qua tiếng cười và những hành động yêu thương đơn giản, em học rằng đức tin là tin cậy Chúa Giê-xu trong từng khoảnh khắc nhỏ của cuộc sống.",
+
+    "editorial.heading": "Lời Biên Tập",
+    "editorial.subheading": "Sự Thành Tín của Đức Chúa Trời: Nền Tảng Vững Bền của Chúng Ta",
+    "editorial.p1": "Trong mọi mùa, Đức Chúa Trời đã bày tỏ tình yêu và lòng thương xót bền vững đối với gia đình New Heart. Khi nhìn lại nhiều chuyến đi qua các quốc gia và các đội khác nhau, chúng ta thấy dấu tay Ngài trên từng chi tiết. Những bước vâng lời nhỏ ban đầu đã trở thành lời chứng toàn cầu về sự thành tín của Ngài. Mỗi đội, mỗi câu chuyện, mỗi tiếng “vâng” đều được xây dựng trên nền tảng ân điển của Ngài.",
+    "editorial.p2": "Chúng ta hãy tiếp tục nhìn chăm vào Chúa Giê-xu, Đấng đã khởi đầu việc lành trong chúng ta và sẽ trung tín hoàn tất. Nguyện mọi đội mới, mọi kỳ nhóm lại và mọi tấm lòng tìm được sức mới trong chính Ngài—Đấng không hề rúng động, Đức Chúa Trời của chúng ta, nền tảng bền vững và thành tín đời đời của chúng ta.",
+
+    "serve.heading": "Những Cách Phục Vụ",
+    "serve.palancaHeading": "Biểu Đồ Dâng Palanca",
+    "serve.vnChart": "PALANCA DONATION CHART #55 (Vietnam #14) — 50 tờ",
+    "serve.thChart": "PALANCA DONATION CHART #56 (Thailand #1) — 40 tờ",
+    "serve.note": "Những tấm Palanca này đem đến sự khích lệ và nâng đỡ cho ứng viên và các đội.",
+
+    "footer.copy": "© 2025 New Heart Ministry. Giữ toàn quyền.",
+    "footer.note": "Xin vui lòng giữ bản tin này trong gia đình New Heart.",
+
+    "ui.read": "Đọc Câu Chuyện",
+    "ui.close": "Đóng"
+  }
 };
 
 /* ---------- Language handling ---------- */
