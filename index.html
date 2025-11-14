@@ -7,243 +7,120 @@
 <meta name="theme-color" content="#E9F1E3" />
 
 <style>
-/* ===== Warm Sage Theme + Gold Accents ===== */
-:root{
-  --bg:#E9F1E3;         /* page background (warm sage) */
-  --fg:#2B2B2B;         /* main text */
-  --muted:#5f6c5c;      /* subtle text */
-  --accent:#B88A1E;     /* headings/accents (warm gold) */
-  --accent-2:#9A7720;   /* subtitle/secondary headings (muted gold) */
-  --card:#FFFFFF;       /* cards */
-  --border:#C9D3C3;     /* borders */
-  --shadow: 0 6px 18px rgba(42,64,52,0.08);
-}
-html{ color-scheme: light; scroll-behavior:smooth; }
-*{ box-sizing:border-box; }
-body{
-  margin:0;
-  font:14px/1.52 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
-  color:var(--fg);
-  background:var(--bg);
-}
-.lang-block[hidden] { display: none !important; }
+/* ======================= PAGE 3 — KIDS ======================= */
 
-/* Layout wrappers */
-.wrap{ max-width: 980px; margin: 0 auto; padding: 0 14px; }
-.section{ padding: 16px 0 20px; }
-h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
-.muted{ color:var(--muted); }
-
-/* Toolbar + Language flags (top, far right) */
-.toolbar{
-  position:sticky; top:0; z-index:40; background:var(--bg);
-  border-bottom:1px solid var(--border); box-shadow:0 2px 0 rgba(0,0,0,0.02);
-}
-.toolbar .inner{
-  display:flex; align-items:center; justify-content:space-between;
-  padding:.6rem .4rem;
-}
-.brand{ font-weight:800; letter-spacing:.2px; color:var(--accent); }
-.langflags{ display:flex; gap:.35rem; align-items:center; }
-.langflags button{
-  background:#f4eddc;
-  border:1px solid var(--border);
-  border-radius:999px;
-  padding:.25rem .55rem;
-  cursor:pointer;
-  box-shadow: var(--shadow);
-  font-size:.9rem;
-  display:flex;
-  align-items:center;
-  gap:.25rem;
-}
-.langflags button span.flag-emoji{ font-size:1.1rem; }
-.langflags button[aria-pressed="true"]{
-  outline:2px solid var(--accent);
-}
-.langflags button:hover{ filter:brightness(.96); }
-
-/* Masthead */
-.masthead{ text-align:center; padding: 18px 0 8px; }
-.title{
-  font-family: Georgia, Cambria, "Times New Roman", serif;
-  font-weight:800; letter-spacing:.2px; color:var(--accent);
-}
-.subtitle{
-  font-family: Georgia, Cambria, "Times New Roman", serif;
-  color:var(--accent-2);
-  font-style:italic;
-  font-size:1.15rem;
-  margin-top:.25rem;
-}
-.season{ color:var(--muted); margin:.12rem 0; }
-
-/* Cards & grids */
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:14px;
-  box-shadow: var(--shadow);
-}
-.grid{ display:grid; gap:12px; }
-.two{ grid-template-columns: 1fr; }
-.three{ grid-template-columns: 1fr; }
-@media (min-width: 980px){
-  .two{ grid-template-columns: 1fr 1fr; }
-  .three{ grid-template-columns: 1.05fr 1.4fr 1.1fr; } /* Page 1 columns */
+.kids-section {
+  position: relative;
+  min-height: 90vh;
+  padding: 32px 16px 40px;
+  overflow: hidden;
 }
 
-/* Verse – highlighted theme */
-.verse-card{
-  background:var(--card);
-  border:2px solid var(--accent);
-  border-radius:12px;
-  padding:14px;
-  box-shadow: var(--shadow);
-  font-style:italic;
-}
-
-/* Video embeds */
-.video{
-  aspect-ratio:16/9;
-  background:#000;
-  border-radius:10px;
-  overflow:hidden;
-}
-.video iframe{ width:100%; height:100%; border:0; display:block; }
-
-/* Story & kids cards — smaller images */
-.story-card img{
-  width:100%;
-  border-radius:10px;
-  border:1px solid var(--border);
-  max-height:200px;
-  object-fit:cover;
-}
-.kid-card img{
-  width:100%;
-  border-radius:10px;
-  border:1px solid var(--border);
-  max-height:180px;
-  object-fit:contain;
-  background:#fff;
-}
-
-/* Kids section full-page background */
-#page3-kids{ position:relative; min-height: 75vh; }
-.kids-bg{ position:absolute; inset:0; z-index:0; }
-.kids-bg::before{
-  content:"";
-  position:absolute; inset:0;
-  background: linear-gradient(135deg, rgba(233,241,227,.88), rgba(255,255,255,.65));
-  z-index:0;
-}
-.kids-collage{
-  position:absolute; inset:0;
-  z-index:-1;
-  display:grid;
-  grid-template-columns:repeat(6,1fr);
-  gap:6px;
-  padding:10px;
-  opacity:.5;
-}
-.kids-collage img{
-  width:100%;
-  height:80px;
-  object-fit:cover;
-  border-radius:10px;
-  animation: kidsFade 20s ease-in-out infinite;
-}
-
-/* soft crossfade-ish motion */
-@keyframes kidsFade{
-  0%   { opacity:0;   transform:scale(1); }
-  15%  { opacity:.75; transform:scale(1.01); }
-  50%  { opacity:.8;  transform:scale(1.02); }
-  85%  { opacity:.6;  transform:scale(1.005); }
-  100% { opacity:0;   transform:scale(1); }
-}
-.kids-foreground{
-  position:relative;
-  z-index:1;
-}
-
-/* Make New Heart Kids title darker + more noticeable */
-#page3-kids h2{
-  color:#111827;
+/* Title: darker + bold */
+.kids-title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 18px;
+  color: #111827;
   display:inline-block;
   background:rgba(255,255,255,.92);
-  padding:6px 16px;
+  padding:6px 18px;
   border-radius:999px;
-  box-shadow:var(--shadow);
-  margin-bottom:12px;
+  box-shadow:0 6px 18px rgba(42,64,52,0.08);
 }
 
-/* Lists */
-.list{ margin:0; padding-left:1.1rem; }
-.list li{ margin:.35rem 0; }
-.emoji{ font-size: 1.05em; margin-right:.35rem; }
-
-/* Alignment refinements for Page 1 right column lists */
-.right-lists .card h2{ margin-bottom:.35rem; }
-.right-lists .list{ padding-left:1rem; }
-.right-lists h3{ margin:.6rem 0 .35rem; color:var(--accent); }
-
-/* Buttons */
-.chip{
-  border:0;
-  background:#f4eddc;
-  color:#3d3015;
-  padding:.38rem .66rem;
-  border-radius:999px;
-  cursor:pointer;
-  border:1px solid var(--border);
+/* Animated Background */
+.kids-bg {
+  position:absolute;
+  inset:0;
+  z-index:0;
+  overflow:hidden;
 }
-.chip:hover{ filter:brightness(0.96); }
 
-/* Modal (pop-ups for full stories) */
-.modal[role="dialog"]{
-  position:fixed; inset:0;
-  display:grid; place-items:center;
-  background:rgba(0,0,0,.45);
-  z-index:9999;
+.kids-img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1.8s ease-in-out;
 }
-.modal[hidden]{ display:none !important; }
-.modal .modal-body{
-  max-height:76vh;
-  overflow:auto;
-  background:var(--card);
-  color:var(--fg);
-  padding:18px;
-  border-radius:12px;
-  width:min(760px,92vw);
-  box-shadow:0 10px 28px rgba(0,0,0,.35);
+
+.kids-img.active {
+  opacity:1;
 }
-.modal .modal-actions{
+
+/* Foreground Content */
+.kids-content {
+  position:relative;
+  z-index:2;
+  max-width:880px;
+  margin:0 auto;
+  background:rgba(255,255,255,0.9);
+  border-radius:20px;
+  padding:18px 18px 22px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+}
+
+.kid-story + .kid-story {
+  margin-top:14px;
+  border-top:1px solid rgba(200,210,196,0.9);
+  padding-top:12px;
+}
+
+.kid-story h3 {
+  margin:.1rem 0 .4rem;
+  color:#374151;
+}
+
+/* Upcoming New Heart (bottom area) */
+.upcoming-kids {
+  position:relative;
+  z-index:2;
+  margin:18px auto 0;
+  max-width:480px;
+  background:rgba(255,255,255,0.95);
+  padding:12px 16px 14px;
+  border-radius:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,0.06);
+}
+
+.upcoming-kids h4 {
+  margin:.1rem 0 .35rem;
+  font-size:1.1rem;
+  color:#374151;
+}
+
+.upcoming-list {
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.upcoming-list li {
   display:flex;
-  gap:.5rem;
-  justify-content:flex-end;
-  margin-top:.6rem;
+  justify-content:space-between;
+  align-items:center;
+  font-size:.9rem;
+  margin:.1rem 0;
 }
 
-/* Fade-ins + section transition feel */
-.reveal{ opacity:0; transform: translateY(10px); }
-.reveal.is-in{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
-
-/* Footer */
-.footer{
-  color:var(--muted);
-  text-align:center;
-  padding:16px 0 28px;
-  border-top:1px solid var(--border);
-  margin-top:10px;
+.upcoming-list .flag {
+  margin-right:.35rem;
 }
 
-/* Print */
-@media print{
-  .toolbar, .langflags, .chip{ display:none !important; }
-  .page-break{ page-break-before:always; break-before:page; }
+.upcoming-list .date {
+  font-weight:600;
+  color:#4B5563;
+}
+
+/* Mobile tweaks */
+@media (min-width: 768px){
+  .kids-content{
+    padding:22px 26px 26px;
+  }
 }
 </style>
 </head>
