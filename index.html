@@ -886,18 +886,31 @@ document.addEventListener("DOMContentLoaded", () => {
   const kidsImages = document.querySelectorAll(".kids-img");
   let index = 0;
 
-  if (kidsImages.length > 0) {
-    // Ensure only the first is active
-    kidsImages.forEach((img, i) => img.classList.toggle("active", i === 0));
+  if (kidsImages.length === 0) return;
 
-    setInterval(() => {
-      kidsImages[index].classList.remove("active");     // fade out current
-      index = (index + 1) % kidsImages.length;          // move to next image
-      kidsImages[index].classList.add("active");        // fade in new
-    }, 6000); // 6 seconds per frame — adjust if needed
-  }
+  // Determine fade speed (mobile = faster)
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+  const fadeDuration = isMobile ? 900 : 1800;   // CSS fade speed
+  const slideInterval = isMobile ? 3800 : 6500; // Time per image
+
+  // Apply transition duration dynamically
+  kidsImages.forEach(img => {
+    img.style.transition = `opacity ${fadeDuration}ms ease-in-out`;
+  });
+
+  // Make first image active
+  kidsImages.forEach((img, i) => img.classList.toggle("active", i === 0));
+
+  // Auto-rotate slideshow
+  setInterval(() => {
+    kidsImages[index].classList.remove("active");
+    index = (index + 1) % kidsImages.length;
+    kidsImages[index].classList.add("active");
+  }, slideInterval);
 });
 </script>
+
 
 </body>
 </html>
