@@ -26,6 +26,7 @@ body{
   color:var(--fg);
   background:var(--bg);
 }
+.lang-block[hidden] { display: none !important; }
 
 /* Layout wrappers */
 .wrap{ max-width: 980px; margin: 0 auto; padding: 0 14px; }
@@ -438,89 +439,115 @@ h1,h2,h3,h4{ margin:.2rem 0 .5rem; color:var(--accent); }
   <div class="page-break"></div>
 
 <!-- ========================================================= -->
-<!-- NEW HEART KIDS SECTION (PAGE 3) -->
+<!-- ====================== PAGE 3 =========================== -->
+<!--                NEW HEART KIDS SECTION                    -->
 <!-- ========================================================= -->
-<section class="section kids-section" id="newHeartKids">
 
-  <h2 class="kids-title" data-i18n="sections.kids">New Heart Kids</h2>
+<section id="page3-kids" class="section kids-section">
 
-  <!-- Animated Background -->
-  <div class="kids-bg-container">
-    <img src="assets/kids/kids-bg-1.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-2.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-3.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-4.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-5.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-6.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-7.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-8.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-9.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-10.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-11.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-12.jpeg" class="kids-bg-frame">
-    <img src="assets/kids/kids-bg-13.jpeg" class="kids-bg-frame">
+  <!-- PAGE TITLE -->
+  <h2 class="kids-title" data-i18n="kids.heading">New Heart Kids</h2>
+
+  <!-- ANIMATED BACKGROUND (KIDS PHOTOS) -->
+  <div class="kids-bg">
+    <img src="assets/kids/kids-bg-1.jpeg" class="kids-img active" alt="New Heart Kids 1">
+    <img src="assets/kids/kids-bg-2.jpeg" class="kids-img" alt="New Heart Kids 2">
+    <img src="assets/kids/kids-bg-3.jpeg" class="kids-img" alt="New Heart Kids 3">
   </div>
 
-  <!-- CONTENT BOXES -->
-  <div class="card prose kids-story">
-    <h3>Ji Yeo-woon — New Heart Kids Korea #2</h3>
-    <p>
-      Hello! I'm Ji Yeo-woon, who served as the coordinator for New Heart Kids.
-      This year, New Heart Kids was held in Korea for the first time, and
-      although we were in the same location as the adult program, we mostly
-      adjusted schedules so we wouldn't cross paths.
-      <br><br>
-      This year, New Heart Kids had 22 children (ages 0–12) and 10 teachers.
-      Everything was new, so both teachers and children were nervous. On the
-      first night, we asked the children why they came. Answers included,
-      “To worship,” “To pray,” “To play,” and one child said, “To do missions!”
-      It was profound.
-      <br><br>
-      New Heart Kids was full of discomfort — sleeping in unfamiliar places,
-      being separated from parents, mixed ages, phones removed, strict TV limits,
-      and rain that cancelled outdoor play. Despite all of this, the children
-      endured, followed instructions, and many even cried when it was time to go
-      home, asking if they could come again next year.
-      <br><br>
-      We prepared many programs, but more than half never happened because leading
-      the children safely from place to place took longer than expected. But God’s
-      plan was fully accomplished. The children prayed, worshiped, heard the Word,
-      and experienced God in ways that surprised even us. We truly saw the Holy
-      Spirit holding everything together.
-      <br><br>
-      In the end, teachers shared only gratitude — despite exhaustion, babies,
-      pregnancy, and physical difficulties — because grace overflowed. Many even
-      said, “Next year!” without hesitation. We believe God is building the body
-      of Christ even among the little ones, and we look forward to what He will do
-      next.
-    </p>
+  <!-- FOREGROUND CONTENT -->
+  <div class="kids-content">
+    <!-- Ji story -->
+    <div class="kid-story">
+      <h3 data-i18n="kids.jiName">Ji Yeo-woon — New Heart Kids Korea #2</h3>
+      <p data-i18n="kids.jiStory">
+        Hello! I'm Ji Yeo-woon, who served as the coordinator for New Heart Kids.
+        This year, New Heart Kids was held in Korea for the first time, and
+        although we were in the same location as the adult program, we mostly
+        adjusted schedules so we wouldn't cross paths.
+        <br><br>
+        This year, New Heart Kids had 22 children (ages 0–12) and 10 teachers.
+        Everything was new, so both teachers and children were nervous. On the
+        first night, we asked the children why they came. Answers included,
+        “To worship,” “To pray,” “To play,” and one child said, “To do missions!”
+        It was profound.
+        <br><br>
+        New Heart Kids was full of discomfort — sleeping in unfamiliar places,
+        being separated from parents, mixed ages, phones removed, strict TV limits,
+        and rain that cancelled outdoor play. Despite all of this, the children
+        endured, followed instructions, and many even cried when it was time to go
+        home, asking if they could come again next year.
+        <br><br>
+        We prepared many programs, but more than half never happened because leading
+        the children safely from place to place took longer than expected. But God’s
+        plan was fully accomplished. The children prayed, worshiped, heard the Word,
+        and experienced God in ways that surprised even us. We truly saw the Holy
+        Spirit holding everything together.
+        <br><br>
+        In the end, teachers shared only gratitude — despite exhaustion, babies,
+        pregnancy, and physical difficulties — because grace overflowed. Many even
+        said, “Next year!” without hesitation. We believe God is building the body
+        of Christ even among the little ones, and we look forward to what He will do
+        next.
+      </p>
+    </div>
+
+    <!-- Kyungjin story -->
+    <div class="kid-story">
+      <h3 data-i18n="kids.kjName">Kyungjin (Maria) Park — New Heart Kids USA #1</h3>
+      <p data-i18n="kids.kjStory">
+        In May 2025, God opened a beautiful new chapter as we launched New Heart
+        Kids #1 in Los Angeles. It had been a long-awaited dream within New Heart to
+        see all generations blessed together, and God opened the way.
+        <br><br>
+        As a mother of four, I remembered the years when I longed for spiritual
+        renewal but could not join fully because I was raising little children.
+        My heart was especially for young parents — I wanted to serve them so they
+        could receive restoration in the Lord.
+        <br><br>
+        But as we served, God expanded my heart to love their children deeply.
+        Serving about twenty children, from toddlers to preteens, I saw how much
+        God treasures every single one. He desires to raise and equip them as
+        future leaders within the New Heart family.
+        <br><br>
+        By the end of the three days, both parents and children had received a new
+        heart through the Holy Spirit. When we later heard that New Heart Kids #2
+        had launched in Korea, we felt God confirming His heart — that He is calling
+        us as a family, to pass His New Heart to all generations.
+      </p>
+    </div>
   </div>
 
-  <div class="card prose kids-story">
-    <h3>Kyungjin (Maria) Park — New Heart Kids USA #1</h3>
-    <p>
-      In May 2025, God opened a beautiful new chapter as we launched New Heart
-      Kids #1 in Los Angeles. It had been a long-awaited dream within New Heart to
-      see all generations blessed together, and God opened the way.
-      <br><br>
-      As a mother of four, I remembered the years when I longed for spiritual
-      renewal but could not join fully because I was raising little children.
-      My heart was especially for young parents — I wanted to serve them so they
-      could receive restoration in the Lord.
-      <br><br>
-      But as we served, God expanded my heart to love their children deeply.
-      Serving about twenty children, from toddlers to preteens, I saw how much
-      God treasures every single one. He desires to raise and equip them as
-      future leaders within the New Heart family.
-      <br><br>
-      By the end of the three days, both parents and children had received a new
-      heart through the Holy Spirit. When we later heard that New Heart Kids #2
-      had launched in Korea, we felt God confirming His heart — that He is calling
-      us as a family, to pass His New Heart to all generations.
-    </p>
+  <!-- UPCOMING NEW HEART (SMALL HEADER) -->
+  <div class="upcoming-kids">
+    <h4 data-i18n="kids.upcomingTitle">Upcoming New Heart</h4>
+    <ul class="upcoming-list">
+      <li>
+        <span class="flag">🇻🇳</span>
+        <span data-i18n="kids.vn">Vietnam — Nha Trang</span>
+        <span class="date">12/2–5/2025</span>
+      </li>
+      <li>
+        <span class="flag">🇹🇭</span>
+        <span data-i18n="kids.th">Thailand — Bangkok</span>
+        <span class="date">1/27–30/2026</span>
+      </li>
+      <li>
+        <span class="flag">🇮🇱</span>
+        <span data-i18n="kids.il">Israel — TBA</span>
+        <span class="date">(April 2026)</span>
+      </li>
+      <li>
+        <span class="flag">🇺🇸</span>
+        <span data-i18n="kids.us">USA — TBA</span>
+        <span class="date">(May 2026)</span>
+      </li>
+    </ul>
   </div>
 
 </section>
+
+<div class="page-break"></div>
 
   <div class="page-break"></div>
 
@@ -861,6 +888,36 @@ const DEFAULT_LANG = "en";
 const state = { lang: localStorage.getItem("nh_lang") || DEFAULT_LANG };
 
 function applyLang(){
+  const dict = translations[state.lang] || translations["en"];
+  document.documentElement.lang = state.lang;
+  document.documentElement.dir  = (state.lang === "he") ? "rtl" : "ltr";
+
+  // Replace normal translated text
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    const key = el.getAttribute("data-i18n");
+    const value =
+      (dict && dict[key]) ||
+      (translations["en"] && translations["en"][key]) ||
+      el.textContent;
+    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+      el.placeholder = value;
+    } else {
+      el.textContent = value;
+    }
+  });
+
+  // NEW: Show only the selected language inside modals
+  const currentLang = state.lang;
+  document.querySelectorAll("[data-lang-block]").forEach(block=>{
+    block.hidden = block.getAttribute("data-lang-block") !== currentLang;
+  });
+
+  // Update language button active state
+  document.querySelectorAll(".langflags [data-lang]").forEach(btn=>{
+    btn.setAttribute("aria-pressed", btn.dataset.lang === state.lang);
+  });
+}
+
   const dict = translations[state.lang] || translations[DEFAULT_LANG];
   document.documentElement.lang = state.lang;
   document.documentElement.dir  = (state.lang === "he") ? "rtl" : "ltr";
