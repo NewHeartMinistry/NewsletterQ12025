@@ -881,6 +881,23 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const kidsImages = document.querySelectorAll(".kids-img");
+  let index = 0;
+
+  if (kidsImages.length > 0) {
+    // Ensure only the first is active
+    kidsImages.forEach((img, i) => img.classList.toggle("active", i === 0));
+
+    setInterval(() => {
+      kidsImages[index].classList.remove("active");     // fade out current
+      index = (index + 1) % kidsImages.length;          // move to next image
+      kidsImages[index].classList.add("active");        // fade in new
+    }, 6000); // 6 seconds per frame — adjust if needed
+  }
+});
+</script>
 
 </body>
 </html>
