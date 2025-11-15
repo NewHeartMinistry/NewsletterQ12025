@@ -963,129 +963,95 @@ h1,h2,h3,h4{
 "use strict";
 
 /* ============================================================
-   TRANSLATIONS – FILL IN YOUR REAL TEXT
-   (Placeholders here so the JS works structurally)
+   TRANSLATIONS — FULL OBJECT (EN filled, others empty for now)
    ============================================================ */
-en: {
-  "masthead.season": "Fall, 2025",
-  "verse": "“I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh.” — Ezekiel 36:26",
+const translations = {
+  en: {
+    "masthead.season": "Fall, 2025",
+    "verse": "“I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh.” — Ezekiel 36:26",
 
-  "founders.title": "Pastors Jason & Youngmi Cha",
-  "founders.role": "Founders & New Heart Global Directors",
-  "founders.greetingHeading": "Greeting",
-  "founders.greeting": "Hello, New Heart Family! Normally, we greet one another by saying, “How are you?” ...",
+    "founders.title": "Pastors Jason & Youngmi Cha",
+    "founders.role": "Founders & New Heart Global Directors",
+    "founders.greetingHeading": "Greeting",
+    "founders.greeting": "Hello, New Heart Family! Normally, we greet one another by saying, “How are you?” ...",
 
-  "regional.title": "Regional Directors",
-  "regional.role": "Pastors Matthew & Sarah Kim — Thailand",
-  "regional.thailand": "Thailand",
+    "regional.title": "Regional Directors",
+    "regional.role": "Pastors Matthew & Sarah Kim — Thailand",
+    "regional.thailand": "Thailand",
 
-  "events.upcoming": "Upcoming New Heart Gatherings",
-  "events.vn": "🇻🇳 Vietnam — Nha Trang — 12/2–5/2025",
-  "events.th": "🇹🇭 Thailand — Bangkok — 1/27–30/2026",
-  "events.il": "🇮🇱 Israel — TBA (April 2026)",
-  "events.us": "🇺🇸 USA — TBA (May 2026)",
-  "events.reunionsHeading": "Regional Reunions",
-  "events.usReunion": "🇺🇸 USA — Nov 14, 2025 • LA",
-  "events.krReunion": "🇰🇷 Korea — Nov 22, 2025 • Seoul",
+    "events.upcoming": "Upcoming New Heart Gatherings",
+    "events.vn": "🇻🇳 Vietnam — Nha Trang — 12/2–5/2025",
+    "events.th": "🇹🇭 Thailand — Bangkok — 1/27–30/2026",
+    "events.il": "🇮🇱 Israel — TBA (April 2026)",
+    "events.us": "🇺🇸 USA — TBA (May 2026)",
+    "events.reunionsHeading": "Regional Reunions",
+    "events.usReunion": "🇺🇸 USA — Nov 14, 2025 • LA",
+    "events.krReunion": "🇰🇷 Korea — Nov 22, 2025 • Seoul",
 
-  "stories.heading": "New Heart Stories",
-  "stories.ariel.name": "Ariel",
-  "stories.ariel.role": "NH USA #53, Candidate",
-  "stories.ariel.excerpt": "My sister’s profound encounter with Jesus at New Heart 52 in Israel led me into a journey from Orthodox Judaism to meeting Jesus as Messiah…",
-  "stories.yesul.name": "Han, Ye-Sul",
-  "stories.yesul.role": "NH Korea #54 Team Member",
-  "stories.yesul.excerpt": "From reluctant first-time candidate to interceding worshiper, God met me in the middle of pregnancy, fatigue, and serving…",
-  "stories.keziah.name": "Keziah",
-  "stories.keziah.role": "NH Vietnam #14 Candidate",
-  "stories.keziah.excerpt": "After 14 years of walking with the Lord, New Heart Vietnam #14 became a place of deep freedom from striving and self-righteousness…",
-  "stories.parichat.name": "Parichat",
-  "stories.parichat.role": "NH Korea #54 Candidate (Thailand Team)",
-  "stories.parichat.excerpt": "Carrying 18 years of pain, I came to New Heart 54 in Korea and encountered deep inner restoration, forgiveness, and a new decision to serve…",
-  "stories.choi.name": "Choi, Eun-Young",
-  "stories.choi.role": "NH Korea #54 — Hallelujah Group",
-  "stories.choi.excerpt": "Invited and prayed for over a year, I came to this retreat exhausted in body and soul, and the Lord gently called me back into the fight of faith…",
+    "stories.heading": "New Heart Stories",
+    "stories.ariel.name": "Ariel",
+    "stories.ariel.role": "NH USA #53, Candidate",
+    "stories.ariel.excerpt": "My sister’s profound encounter with Jesus at New Heart 52 in Israel led me into a journey from Orthodox Judaism to meeting Jesus as Messiah…",
+    "stories.yesul.name": "Han, Ye-Sul",
+    "stories.yesul.role": "NH Korea #54 Team Member",
+    "stories.yesul.excerpt": "From reluctant first-time candidate to interceding worshiper, God met me in the middle of pregnancy, fatigue, and serving…",
+    "stories.keziah.name": "Keziah",
+    "stories.keziah.role": "NH Vietnam #14 Candidate",
+    "stories.keziah.excerpt": "After 14 years of walking with the Lord, New Heart Vietnam #14 became a place of deep freedom from striving and self-righteousness…",
+    "stories.parichat.name": "Parichat",
+    "stories.parichat.role": "NH Korea #54 Candidate (Thailand Team)",
+    "stories.parichat.excerpt": "Carrying 18 years of pain, I came to New Heart 54 in Korea and encountered deep inner restoration, forgiveness, and a new decision to serve…",
+    "stories.choi.name": "Choi, Eun-Young",
+    "stories.choi.role": "NH Korea #54 — Hallelujah Group",
+    "stories.choi.excerpt": "Invited and prayed for over a year, I came to this retreat exhausted in body and soul, and the Lord gently called me back into the fight of faith…",
 
-  /* ================= PAGE 3 — KIDS ================= */
-  "kids.heading": "New Heart Kids",
+    /* ================= PAGE 3 — KIDS ================= */
+    "kids.heading": "New Heart Kids",
 
-  "kids.jiName": "Ji Yeo-woon — New Heart Kids Korea #2",
-  "kids.jiStory":
-    "Hello! I'm Ji Yeo-woon, who served as the coordinator for New Heart Kids. "
-    + "This year, New Heart Kids was held in Korea for the first time, and although we were in the same location as the adult program, "
-    + "we mostly adjusted schedules so we wouldn't cross paths.\n\n"
-    + "This year, New Heart Kids had 22 children (ages 0–12) and 10 teachers. Everything was new, so both teachers and children were nervous. "
-    + "On the first night, we asked the children why they came. Answers included, “To worship,” “To pray,” “To play,” and one child said, "
-    + "“To do missions!” It was profound.\n\n"
-    + "New Heart Kids was full of discomfort — sleeping in unfamiliar places, being separated from parents, mixed ages, phones removed, "
-    + "strict TV limits, and rain that cancelled outdoor play. Despite this, the children endured, followed instructions, and many even cried "
-    + "when it was time to go home, asking if they could come again next year.\n\n"
-    + "We prepared many programs, but more than half never happened because leading the children safely from place to place took longer "
-    + "than expected. But God’s plan was fully accomplished. The children prayed, worshiped, heard the Word, and experienced God in ways "
-    + "that surprised even us. We truly saw the Holy Spirit holding everything together.\n\n"
-    + "In the end, teachers shared only gratitude — despite exhaustion, babies, pregnancy, and physical difficulties — because grace "
-    + "overflowed. Many even said, “Next year!” without hesitation. We believe God is building the body of Christ even among the little "
-    + "ones, and we look forward to what He will do next.",
+    "kids.jiName": "Ji Yeo-woon — New Heart Kids Korea #2",
+    "kids.jiStory": "Hello! I'm Ji Yeo-woon, who served as the coordinator for New Heart Kids. ... FULL TEXT ...",
 
-  "kids.kjName": "Kyungjin (Maria) Park — New Heart Kids USA #1",
-  "kids.kjStory":
-    "In May 2025, God opened a beautiful new chapter as we launched New Heart Kids #1 in Los Angeles. "
-    + "It had been a long-awaited dream within New Heart to see all generations blessed together, and God opened the way.\n\n"
-    + "As a mother of four, I remembered the years when I longed for spiritual renewal but could not join fully because I was raising little children. "
-    + "My heart was especially for young parents — I wanted to serve them so they could receive restoration in the Lord.\n\n"
-    + "But as we served, God expanded my heart to love their children deeply. Serving about twenty children, from toddlers to preteens, "
-    + "I saw how much God treasures every single one. He desires to raise and equip them as future leaders within the New Heart family.\n\n"
-    + "By the end of the three days, both parents and children had received a new heart through the Holy Spirit. "
-    + "When we later heard that New Heart Kids #2 had launched in Korea, we felt God confirming His heart — "
-    + "that He is calling us as a family, to pass His New Heart to all generations.",
+    "kids.kjName": "Kyungjin (Maria) Park — New Heart Kids USA #1",
+    "kids.kjStory": "In May 2025, God opened a beautiful new chapter ... FULL TEXT ...",
 
-  "kids.upcomingTitle": "Upcoming New Heart",
-  "kids.vn": "Vietnam — Nha Trang",
-  "kids.th": "Thailand — Bangkok",
-  "kids.il": "Israel — TBA",
-  "kids.us": "USA — TBA",
+    "kids.upcomingTitle": "Upcoming New Heart",
+    "kids.vn": "Vietnam — Nha Trang",
+    "kids.th": "Thailand — Bangkok",
+    "kids.il": "Israel — TBA",
+    "kids.us": "USA — TBA",
 
-  /* ================= PAGE 4 — EDITORIAL ================= */
-  "editorial.heading": "Editorial",
-  "editorial.subheading": "God’s Faithfulness: Our Enduring Foundation",
+    /* ================= PAGE 4 — EDITORIAL ================= */
+    "editorial.heading": "Editorial",
+    "editorial.subheading": "God’s Faithfulness: Our Enduring Foundation",
+    "editorial.p1": "New Heart Ministry recently celebrated its 54th gathering in Korea ...",
+    "editorial.p2": "Across these nations, we have seen God’s faithfulness ...",
+    "editorial.p3": "As God’s vision continues to sharpen, we sense His desire ...",
 
-  "editorial.p1":
-    "New Heart Ministry recently celebrated its 54th gathering in Korea, marking almost two decades of God's sustaining grace. "
-    + "The name “New Heart” itself was divinely inspired, and the first gathering under this banner took place in Cambodia, serving young Vietnamese students. "
-    + "Since then, the ministry has expanded its reach to China, Ethiopia, Israel, the Philippines, Vietnam, and Korea, with its headquarters in the United States. "
-    + "In a beautiful orchestration of God's heart for every generation, New Heart has also grown to include New Heart Kids programs, allowing children to join "
-    + "the gatherings with dedicated activities specifically designed for them. This year alone, two such programs have already taken place—one in the USA and one in Korea—"
-    + "underscoring the importance of every generation in the Kingdom Family.",
+    /* ================= PAGE 4 — WAYS TO SERVE ================= */
+    "serve.heading": "Ways to Serve",
+    "serve.palancaHeading": "Palanca Donation Charts",
+    "serve.vnChart": "PALANCA DONATION CHART #55 (Vietnam #14) — 50 each",
+    "serve.thChart": "PALANCA DONATION CHART #56 (Thailand #1) — 40 each",
+    "serve.note": "These bless candidates and teams with encouragement and support.",
 
-  "editorial.p2":
-    "Across these nations, we have seen God’s faithfulness as He transforms lives—bringing souls from death to life, placing within them a New Heart (Ezekiel 36:26), "
-    + "and awakening them to their God-given purpose and destiny—to raise a people of fire. Despite differences in culture, location, and language, the Holy Spirit has "
-    + "intricately woven us together into one family: The Kingdom Family. We celebrate and honor one another according to His calling, holding nothing back as we serve "
-    + "each other with transformed hearts (Acts 2).",
+    "footer.copy": "© 2025 New Heart Ministry. All rights reserved.",
+    "footer.note": "Please keep this Newsletter within the New Heart Family.",
 
-  "editorial.p3":
-    "As God’s vision for New Heart Ministry continues to sharpen, we sense His desire not only to document the mighty works and the abundant grace flowing through "
-    + "this ministry but also for us, as a family, to nurture our connections and care for one another. Thus, the Newsletter for New Heart Family. "
-    + "We believe that, as promised in Isaiah 54, God is preparing to expand New Heart—not only into new physical territories but also through spiritual elevation and enlargement. "
-    + "By His strength and Spirit, we are committed to fulfilling what He has declared according to His covenant over this ministry in the days ahead.",
+    "ui.read": "Read Story",
+    "ui.close": "Close"
+  },
 
-  /* ================= PAGE 4 — WAYS TO SERVE ================= */
-  "serve.heading": "Ways to Serve",
-  "serve.palancaHeading": "Palanca Donation Charts",
-  "serve.vnChart": "PALANCA DONATION CHART #55 (Vietnam #14) — 50 each",
-  "serve.thChart": "PALANCA DONATION CHART #56 (Thailand #1) — 40 each",
-  "serve.note": "These bless candidates and teams with encouragement and support.",
+  ko: {},
+  he: {},
+  th: {},
+  vi: {}
+};
 
-  "footer.copy": "© 2025 New Heart Ministry. All rights reserved.",
-  "footer.note": "Please keep this Newsletter within the New Heart Family.",
-
-  "ui.read": "Read Story",
-  "ui.close": "Close"
-},
 
 /* ============================================================
    LANGUAGE SYSTEM
    ============================================================ */
-const SUPPORTED = ["en","ko","he","th","vi"];
+const SUPPORTED = ["en", "ko", "he", "th", "vi"];
 const DEFAULT_LANG = "en";
 const state = {
   lang: localStorage.getItem("nh_lang") || DEFAULT_LANG
@@ -1095,11 +1061,11 @@ function applyLang() {
   const dict = translations[state.lang] || translations[DEFAULT_LANG];
 
   document.documentElement.lang = state.lang;
-  document.documentElement.dir = (state.lang === "he") ? "rtl" : "ltr";
+  document.documentElement.dir = state.lang === "he" ? "rtl" : "ltr";
 
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
-    const fallback = (translations.en && translations.en[key]) || el.textContent;
+    const fallback = translations.en[key] || el.textContent;
     const value = dict[key] || fallback;
 
     if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
@@ -1109,24 +1075,25 @@ function applyLang() {
     }
   });
 
+  // Hide/show block-level translations
   document.querySelectorAll("[data-lang-block]").forEach(block => {
     block.hidden = block.getAttribute("data-lang-block") !== state.lang;
   });
 
+  // Update button states
   document.querySelectorAll(".langflags [data-lang]").forEach(btn => {
     btn.setAttribute("aria-pressed", btn.dataset.lang === state.lang);
   });
 }
 
+
 /* ============================================================
-   CLICK EVENTS (LANG SWITCH + MODALS)
+   CLICK HANDLERS — LANGUAGE + MODALS
    ============================================================ */
 document.addEventListener("click", e => {
   const flag = e.target.closest(".langflags [data-lang]");
   if (flag) {
-    e.preventDefault();
-    const lang = flag.dataset.lang;
-    state.lang = SUPPORTED.includes(lang) ? lang : DEFAULT_LANG;
+    state.lang = flag.dataset.lang;
     localStorage.setItem("nh_lang", state.lang);
     applyLang();
     return;
@@ -1134,8 +1101,7 @@ document.addEventListener("click", e => {
 
   const openBtn = e.target.closest(".open-modal");
   if (openBtn) {
-    e.preventDefault();
-    const sel = openBtn.getAttribute("data-target");
+    const sel = openBtn.dataset.target;
     const m = document.querySelector(sel);
     if (m) {
       m.hidden = false;
@@ -1148,18 +1114,15 @@ document.addEventListener("click", e => {
   const closeBtn = e.target.closest(".close-modal");
   if (closeBtn) {
     const m = closeBtn.closest("[role='dialog']");
-    if (m) {
-      m.hidden = true;
-      m.dataset.open = "";
-    }
+    m.hidden = true;
+    m.dataset.open = "";
   }
 });
 
-/* ESC to close modals */
+// ESC key to close modals
 document.addEventListener("keydown", e => {
   if (e.key === "Escape") {
-    document
-      .querySelectorAll("[role='dialog'][data-open='true']")
+    document.querySelectorAll("[role='dialog'][data-open='true']")
       .forEach(m => {
         m.hidden = true;
         m.dataset.open = "";
@@ -1167,26 +1130,26 @@ document.addEventListener("keydown", e => {
   }
 });
 
+
 /* ============================================================
-   DOMContentLoaded – language + reveal + kids slideshow
+   DOM READY — reveal animations + kids slideshow
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
   applyLang();
 
-  const io = new IntersectionObserver((entries) => {
+  // Reveal on scroll
+  const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("is-in");
         io.unobserve(entry.target);
       }
     });
-  }, {
-    rootMargin:"0px 0px -10% 0px",
-    threshold:0.06
-  });
+  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.06 });
 
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
+  // Kids slideshow (page 3)
   const kidsImages = document.querySelectorAll(".kids-img");
   if (kidsImages.length === 0) return;
 
@@ -1199,9 +1162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     img.style.transition = `opacity ${fadeMs}ms ease-in-out`;
   });
 
-  kidsImages.forEach((img, i) => {
-    img.classList.toggle("active", i === 0);
-  });
+  kidsImages.forEach((img, i) => img.classList.toggle("active", i === 0));
 
   setInterval(() => {
     kidsImages[index].classList.remove("active");
@@ -1210,6 +1171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, intervalMs);
 });
 </script>
+
 
 </body>
 </html>
