@@ -259,7 +259,9 @@ h1,h2,h3,h4{
   margin-top:10px;
 }
 
-/* ============ KIDS PAGE (PAGE 3) ============ */
+/* ============================================================
+   PAGE 3 — NEW HEART KIDS (Optimized, Same Look)
+   ============================================================ */
 
 .kids-section {
   position: relative;
@@ -268,112 +270,111 @@ h1,h2,h3,h4{
   overflow: hidden;
 }
 
-/* Title: darker + bold */
+/* Title */
 .kids-title {
+  display: inline-block;
+  margin-bottom: 18px;
+  padding: 6px 18px;
   font-size: 2.4rem;
   font-weight: 900;
   text-align: center;
-  margin-bottom: 18px;
   color: #111827;
-  display:inline-block;
-  background:rgba(255,255,255,.92);
-  padding:6px 18px;
-  border-radius:999px;
-  box-shadow:0 6px 18px rgba(42,64,52,0.08);
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 999px;
+  box-shadow: 0 6px 18px rgba(42, 64, 52, 0.08);
 }
 
-/* Animated Background */
+/* Background Slideshow */
 .kids-bg {
-  position:absolute;
-  inset:0;
-  z-index:0;
-  overflow:hidden;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
 }
+
 .kids-img {
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:0;
-  transition:opacity 1.8s ease-in-out;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1.8s ease-in-out;
 }
+
 .kids-img.active {
-  opacity:1;
+  opacity: 1;
 }
 
-/* Foreground Content */
+/* Foreground Card */
 .kids-content {
-  position:relative;
-  z-index:2;
-  max-width:880px;
-  margin:0 auto;
-  background:rgba(255,255,255,0.9);
-  border-radius:20px;
-  padding:18px 18px 22px;
-  box-shadow:0 8px 24px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 2;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 18px 18px 22px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
+
 .kid-story + .kid-story {
-  margin-top:14px;
-  border-top:1px solid rgba(200,210,196,0.9);
-  padding-top:12px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(200, 210, 196, 0.9);
 }
+
 .kid-story h3 {
-  margin:.1rem 0 .4rem;
-  color:#374151;
+  margin: 0.1rem 0 0.4rem;
+  color: #374151;
 }
 
-/* Upcoming New Heart (bottom area) */
+/* Upcoming Section */
 .upcoming-kids {
-  position:relative;
-  z-index:2;
-  margin:18px auto 0;
-  max-width:480px;
-  background:rgba(255,255,255,0.95);
-  padding:12px 16px 14px;
-  border-radius:16px;
-  box-shadow:0 6px 16px rgba(0,0,0,0.06);
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+  margin: 18px auto 0;
+  padding: 12px 16px 14px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
+
 .upcoming-kids h4 {
-  margin:.1rem 0 .35rem;
-  font-size:1.1rem;
-  color:#374151;
+  margin: 0.1rem 0 0.35rem;
+  font-size: 1.1rem;
+  color: #374151;
 }
+
 .upcoming-list {
-  list-style:none;
-  padding:0;
-  margin:0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
 .upcoming-list li {
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-size:.9rem;
-  margin:.1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.1rem 0;
+  font-size: 0.9rem;
 }
+
 .upcoming-list .flag {
-  margin-right:.35rem;
+  margin-right: 0.35rem;
 }
+
 .upcoming-list .date {
-  font-weight:600;
-  color:#4B5563;
+  font-weight: 600;
+  color: #4B5563;
 }
 
-/* Mobile tweaks */
-@media (min-width: 768px){
-  .kids-content{
-    padding:22px 26px 26px;
+/* Slightly enhanced padding for tablets */
+@media (min-width: 768px) {
+  .kids-content {
+    padding: 22px 26px 26px;
   }
-}
-
-/* ============ PRINT ============ */
-
-@media print{
-  .toolbar,
-  .langflags,
-  .chip,
-  .video iframe{ display:none !important; }
-  .page-break{ page-break-before:always; break-before:page; }
 }
 </style>
 </head>
