@@ -289,6 +289,8 @@ h1,h2,h3,h4{
   inset: 0;
   z-index: 0;
   overflow: hidden;
+  pointer-events: none;
+  will-change: transform;
 }
 
 .kids-img {
@@ -327,50 +329,35 @@ h1,h2,h3,h4{
   color: #374151;
 }
 
-.upcoming-kids {
-  position: relative;
-  z-index: 2;
-  max-width: 480px;
-  margin: 18px auto 0;
-  padding: 12px 16px 14px;
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-}
-
-.upcoming-kids h4 {
-  margin: 0.1rem 0 0.35rem;
-  font-size: 1.1rem;
-  color: #374151;
-}
-
-.upcoming-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.upcoming-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.1rem 0;
-  font-size: 0.9rem;
-}
-
-.upcoming-list .flag {
-  margin-right: 0.35rem;
-}
-
-.upcoming-list .date {
-  font-weight: 600;
-  color: #4B5563;
-}
-
 @media (min-width: 768px) {
   .kids-content {
     padding: 22px 26px 26px;
   }
+}
+
+/* (Optional) styles for QR images on page 4 */
+.qr-wrap{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:.4rem;
+}
+.qr-item{
+  flex:1 1 130px;
+  max-width:170px;
+  text-align:center;
+}
+.qr-item img{
+  width:100%;
+  height:auto;
+  border-radius:10px;
+  border:1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.qr-item p{
+  font-size:.8rem;
+  margin-top:.25rem;
+  color:var(--muted);
 }
 </style>
 </head>
@@ -771,7 +758,7 @@ h1,h2,h3,h4{
   <section id="page3-kids" class="section kids-section">
     <h2 class="kids-title" data-i18n="kids.heading">New Heart Kids</h2>
 
-    <!-- Animated background -->
+    <!-- Animated background (fade + parallax) -->
     <div class="kids-bg">
       <img src="assets/img/kids-bg-1.jpeg" class="kids-img active" alt="New Heart Kids 1">
       <img src="assets/img/kids-bg-2.jpeg" class="kids-img" alt="New Heart Kids 2">
@@ -834,32 +821,7 @@ h1,h2,h3,h4{
         </p>
       </div>
     </div>
-
-    <div class="upcoming-kids">
-      <h4 data-i18n="kids.upcomingTitle">Upcoming New Heart</h4>
-      <ul class="upcoming-list">
-        <li>
-          <span class="flag">🇻🇳</span>
-          <span data-i18n="kids.vn">Vietnam — Nha Trang</span>
-          <span class="date">12/2–5/2025</span>
-        </li>
-        <li>
-          <span class="flag">🇹🇭</span>
-          <span data-i18n="kids.th">Thailand — Bangkok</span>
-          <span class="date">1/27–30/2026</span>
-        </li>
-        <li>
-          <span class="flag">🇮🇱</span>
-          <span data-i18n="kids.il">Israel — TBA</span>
-          <span class="date">(April 2026)</span>
-        </li>
-        <li>
-          <span class="flag">🇺🇸</span>
-          <span data-i18n="kids.us">USA — TBA</span>
-          <span class="date">(May 2026)</span>
-        </li>
-      </ul>
-    </div>
+    <!-- NOTE: No Upcoming New Heart block on Page 3, as requested -->
   </section>
 
   <div class="page-break"></div>
@@ -876,38 +838,24 @@ h1,h2,h3,h4{
       <article class="card prose" id="editorial">
         <h2 data-i18n="editorial.heading">Editorial</h2>
 
-        <!-- Subheading (EN only) -->
+        <!-- Subheading -->
         <h3 data-i18n="editorial.subheading">
-          God's Faithfulness: Our Enduring Foundation
+          Compelled by Fire: The New Heart Family Living the Fourth Day
         </h3>
 
         <!-- Paragraph 1 -->
         <p data-i18n="editorial.p1">
-          New Heart Ministry recently celebrated its 54th gathering in Korea,
-          marking almost two decades of God's sustaining grace. The name
-          "New Heart" itself was divinely inspired, and the first gathering
-          under this banner took place in Cambodia, serving young Vietnamese
-          students. Since then, the ministry has expanded its reach to China,
-          Ethiopia, Israel, the Philippines, Vietnam, and Korea, with its
-          headquarters in the United States. In a beautiful orchestration
-          of God's heart for every generation, New Heart has also grown to
-          include New Heart Kids programs, allowing children to join the gatherings with dedicated activities specifically designed for them. This year alone, two such programs have already taken place—one in the USA and one in Korea—underscoring the importance of every generation in the Kingdom Family.
+          New Heart Ministry recently celebrated its 54th gathering in Korea, marking nearly two decades of God's undeniable grace across nations, including Cambodia, Vietnam, China, Ethiopia, Israel, and Korea. This movement is a divine summons igniting the promise of a New Heart (Ezekiel 36:26) in every generation and weaving us into one fierce, global Kingdom Family. Our commitment is comprehensive, extending to the New Heart Kids programs, which underscore our conviction that children are critical and active participants today, ensuring a legacy of passion that will sustain the movement for years to come.
         </p>
 
         <!-- Paragraph 2 -->
         <p data-i18n="editorial.p2">
-          Across these nations, we have seen God's faithfulness as He
-          transforms lives—bringing souls from death to life, placing
-          within them a New Heart (Ezekiel 36:26), and awakening them
-          to their God-given purpose and destiny—to raise a people of fire. Despite differences in culture, location, and language, the Holy Spirit has intricately woven us together into one family: The Kingdom Family. We celebrate and honor one another according to His calling, holding nothing back as we serve each other with transformed hearts (Acts 2).
+          Our three-day gatherings are a deep immersion—a holy soaking in God's love and transformative power, but this is the preparation, not the end; we are utterly compelled to live the Fourth Day, which is the immediate, daily application of our radical, transformed hearts and our unstoppable mandate to reject spiritual stagnation and pursue sustained maturity in God's goodness and grace by remaining connected, to hold nothing back and serve in unified purpose (Acts 2). Our strength is in our unbreakable family covenant spanning continents, and we are constantly committing to this ultimate purpose of raising a people of fire and fulfilling the global expansion God promised in Isaiah 54.
         </p>
 
         <!-- Paragraph 3 -->
         <p data-i18n="editorial.p3">
-          As God's vision for New Heart Ministry continues to sharpen,
-          we sense His desire not only to document the mighty works
-          and the abundant grace flowing through this ministry but also
-          for us, as a family, to nurture our connections and care for one another. Thus, the Newsletter for New Heart Family. We believe that, as promised in Isaiah 54, God is preparing to expand New Heart—not only into new physical territories but also through spiritual elevation and enlargement. By His strength and Spirit, we are committed to fulfilling what He has declared according to His covenant over this ministry in the days ahead.
+          As God’s vision for New Heart Ministry continues to sharpen with undeniable clarity, we sense His urgent desire not only to document the mighty works and abundant grace flowing but also for us, the Family, to become more intimately intertwined and nurtured; hence, this quarterly Global Newsletter for the New Heart Family is a necessity, not an option, serving as the intentional tool designed to bridge the miles and cultures across the world to nurture global connections and ensure we care for one another as one body, to share the undeniable evidence of God's faithfulness from every region, solidifying our collective faith, and to keep our focus sharp, reminding us of our compulsion to live out the Fourth Day together and fostering sustained growth and maturity until the next gathering. We must step forward. The Kingdom Family is not a passive recipient of grace, but an active force compelled by an unwavering vision. By His strength, we will fulfill every declaration over this ministry.
         </p>
       </article>
 
@@ -938,6 +886,31 @@ h1,h2,h3,h4{
         <p class="muted" data-i18n="serve.note" style="margin-top:.4rem;">
           These bless candidates and teams with encouragement and support.
         </p>
+
+        <!-- QR Giving Section -->
+        <h3 style="margin-top:.8rem;" data-i18n="serve.qrHeading">
+          Give by QR Code
+        </h3>
+        <p class="muted" data-i18n="serve.qrIntro">
+          You may also send a Palanca donation by scanning the QR codes below. Please note in your memo which New Heart gathering the gift is for.
+        </p>
+
+        <div class="qr-wrap">
+          <div class="qr-item">
+            <!-- Update src path/name to match your uploaded file -->
+            <img src="assets/img/IMG_1320.jpg" alt="LAUC QR code for Vietnam #14 or Thailand #1">
+            <p data-i18n="serve.qrLauc">
+              LAUC QR — use for<br>Vietnam #14 or Thailand #1
+            </p>
+          </div>
+          <div class="qr-item">
+            <!-- Update src path/name to match your uploaded file -->
+            <img src="assets/img/IMG_1324.jpg" alt="Thailand-only QR code">
+            <p data-i18n="serve.qrThai">
+              Thailand-only QR — use<br>specifically for Thailand #1
+            </p>
+          </div>
+        </div>
       </aside>
 
     </div>
@@ -994,16 +967,12 @@ function applyLang() {
 }
 
 /* ============================================================
-   DOMContentLoaded – language + reveal + kids slideshow + MODALS
+   DOMContentLoaded – language + reveal + kids slideshow + MODALS + PARALLAX
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("✅ DOM Content Loaded");
-  
   applyLang();
 
-  /* ============================================================
-     CLICK EVENTS (LANG SWITCH + MODALS)
-     ============================================================ */
+  /* CLICK EVENTS (LANG SWITCH + MODALS) */
   document.addEventListener("click", e => {
     const flag = e.target.closest(".langflags [data-lang]");
     if (flag) {
@@ -1017,25 +986,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const openBtn = e.target.closest(".open-modal");
     if (openBtn) {
-      console.log("🔘 Modal open button clicked");
       e.preventDefault();
       const sel = openBtn.getAttribute("data-target");
-      console.log("🎯 Target:", sel);
       const m = document.querySelector(sel);
       if (m) {
-        console.log("✅ Modal found, opening...");
         m.hidden = false;
         m.dataset.open = "true";
         m.focus();
-      } else {
-        console.error("❌ Modal not found:", sel);
       }
       return;
     }
 
     const closeBtn = e.target.closest(".close-modal");
     if (closeBtn) {
-      console.log("❌ Close button clicked");
       const m = closeBtn.closest("[role='dialog']");
       if (m) {
         m.hidden = true;
@@ -1047,7 +1010,6 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ESC to close modals */
   document.addEventListener("keydown", e => {
     if (e.key === "Escape") {
-      console.log("⌨️ ESC pressed - closing modals");
       document
         .querySelectorAll("[role='dialog'][data-open='true']")
         .forEach(m => {
@@ -1057,8 +1019,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  console.log("✅ Modal event listeners attached");
-
+  /* Reveal on scroll */
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1073,27 +1034,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
+  /* Kids background slideshow */
   const kidsImages = document.querySelectorAll(".kids-img");
-  if (kidsImages.length === 0) return;
+  if (kidsImages.length > 0) {
+    let index = 0;
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const fadeMs = isMobile ? 900 : 1800;
+    const intervalMs = isMobile ? 3800 : 6500;
 
-  let index = 0;
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
-  const fadeMs = isMobile ? 900 : 1800;
-  const intervalMs = isMobile ? 3800 : 6500;
+    kidsImages.forEach(img => {
+      img.style.transition = `opacity ${fadeMs}ms ease-in-out`;
+    });
 
-  kidsImages.forEach(img => {
-    img.style.transition = `opacity ${fadeMs}ms ease-in-out`;
-  });
+    kidsImages.forEach((img, i) => {
+      img.classList.toggle("active", i === 0);
+    });
 
-  kidsImages.forEach((img, i) => {
-    img.classList.toggle("active", i === 0);
-  });
+    setInterval(() => {
+      kidsImages[index].classList.remove("active");
+      index = (index + 1) % kidsImages.length;
+      kidsImages[index].classList.add("active");
+    }, intervalMs);
+  }
 
-  setInterval(() => {
-    kidsImages[index].classList.remove("active");
-    index = (index + 1) % kidsImages.length;
-    kidsImages[index].classList.add("active");
-  }, intervalMs);
+  /* Simple parallax for kids background */
+  const kidsSection = document.querySelector(".kids-section");
+  const kidsBg = document.querySelector(".kids-bg");
+  if (kidsSection && kidsBg) {
+    const onScroll = () => {
+      const rect = kidsSection.getBoundingClientRect();
+      const height = rect.height || 1;
+      const progress = Math.min(Math.max(-rect.top / height, 0), 1);
+      const translateY = progress * 40; // adjust for stronger/weaker parallax
+      kidsBg.style.transform = `translateY(${translateY}px)`;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
 });
 </script>
 
