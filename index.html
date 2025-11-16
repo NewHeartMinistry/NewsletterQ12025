@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>New Heart Global Family Newsletter – Fall 2025</title>
 <meta name="theme-color" content="#E9F1E3" />
-<meta name="description" content="New Heart Global Family Newsletter - Fall 2025.">
+<meta name="description" content="New Heart Global Family Newsletter - Fall 2025. Available in English, Korean, Hebrew, Thai, and Vietnamese.">
 
 <style>
 /* ============ THEME & GLOBAL LAYOUT ============ */
@@ -54,7 +54,7 @@ h1,h2,h3,h4{
   break-before:page;
 }
 
-/* ============ TOOLBAR (LANG STRIP – VISUAL ONLY) ============ */
+/* ============ TOOLBAR (LANG SWITCH) ============ */
 
 .toolbar{
   position:sticky;
@@ -85,13 +85,18 @@ h1,h2,h3,h4{
   border:1px solid var(--border);
   border-radius:999px;
   padding:.25rem .55rem;
+  cursor:pointer;
+  box-shadow: var(--shadow);
   font-size:.9rem;
   display:flex;
   align-items:center;
   gap:.25rem;
-  cursor:default; /* now just decorative */
 }
 .langflags button span.flag-emoji{ font-size:1.1rem; }
+.langflags button[aria-pressed="true"]{
+  outline:2px solid var(--accent);
+}
+.langflags button:hover{ filter:brightness(.96); }
 
 /* ============ MASTHEAD ============ */
 
@@ -165,14 +170,10 @@ h1,h2,h3,h4{
   display:block;
 }
 
-/* ============ STORIES & IMAGES ============ */
+/* ============ STORIES (TEXT-ONLY) ============ */
 
-.story-card img{
-  width:100%;
-  border-radius:10px;
-  border:1px solid var(--border);
-  max-height:200px;
-  object-fit:cover;
+.story-card h3{
+  margin-top:.45rem;
 }
 
 /* ============ LISTS ============ */
@@ -186,10 +187,6 @@ h1,h2,h3,h4{
 
 .right-lists .card h2{ margin-bottom:.35rem; }
 .right-lists .list{ padding-left:1rem; }
-.right-lists h3{
-  margin:.6rem 0 .35rem;
-  color:var(--accent);
-}
 
 /* ============ BUTTONS / CHIPS ============ */
 
@@ -256,6 +253,58 @@ h1,h2,h3,h4{
 }
 
 /* ============================================================
+   PAGE 2 — RAINBOW / HEART DECOR
+   ============================================================ */
+
+.rainbow-card{
+  position:relative;
+  min-height:170px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  background:radial-gradient(circle at top left,#ffd1dc 0,#ffd1dc 18%,transparent 40%),
+             radial-gradient(circle at top right,#ffefc2 0,#ffefc2 18%,transparent 40%),
+             radial-gradient(circle at bottom left,#c2f0ff 0,#c2f0ff 22%,transparent 48%),
+             radial-gradient(circle at bottom right,#d9cffd 0,#d9cffd 22%,transparent 48%),
+             #fffdf3;
+}
+.rainbow-card::before{
+  content:"";
+  position:absolute;
+  width:240%;
+  height:240%;
+  background:
+    conic-gradient(
+      from 210deg,
+      #ff7aa2,
+      #ffb347,
+      #ffe97f,
+      #9be7ff,
+      #b69cff,
+      #ff7aa2
+    );
+  opacity:0.25;
+  transform:translateY(18%);
+}
+.rainbow-card::after{
+  content:"❤";
+  position:relative;
+  font-size:3rem;
+  color:#b82b4b;
+  text-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+.rainbow-card h3{
+  position:absolute;
+  bottom:10px;
+  left:14px;
+  right:14px;
+  font-size:.9rem;
+  color:#5a4630;
+  text-align:center;
+}
+
+/* ============================================================
    PAGE 3 — NEW HEART KIDS
    ============================================================ */
 
@@ -274,7 +323,7 @@ h1,h2,h3,h4{
   font-weight: 900;
   text-align: center;
   color: #111827;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 999px;
   box-shadow: 0 6px 18px rgba(42, 64, 52, 0.08);
 }
@@ -295,12 +344,12 @@ h1,h2,h3,h4{
   height: 100%;
   object-fit: cover;
   opacity: 0;
+  filter: grayscale(100%) brightness(1.05);
   transition: opacity 1.8s ease-in-out;
-  filter: grayscale(1); /* slideshow in grayscale */
 }
 
 .kids-img.active {
-  opacity: 1;
+  opacity: 0.78;
 }
 
 .kids-content {
@@ -309,7 +358,7 @@ h1,h2,h3,h4{
   max-width: 880px;
   margin: 0 auto;
   padding: 18px 18px 22px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.90);
   border-radius: 20px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
@@ -331,8 +380,7 @@ h1,h2,h3,h4{
   }
 }
 
-/* ============ QR IMAGES ON PAGE 4 ============ */
-
+/* (Optional) styles for QR images on page 4 */
 .qr-wrap{
   display:flex;
   flex-wrap:wrap;
@@ -356,57 +404,28 @@ h1,h2,h3,h4{
   margin-top:.25rem;
   color:var(--muted);
 }
-
-/* ============ RAINBOW / HEART DECORATION (PAGE 2) ============ */
-
-.rainbow-heart-box{
-  margin-top:14px;
-  padding:12px;
-  border-radius:16px;
-  background: conic-gradient(from 180deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb, #ff9a9e);
-  box-shadow: var(--shadow);
-  position:relative;
-  overflow:hidden;
-}
-.rainbow-heart-inner{
-  background:rgba(255,255,255,0.92);
-  border-radius:12px;
-  padding:10px 12px;
-}
-.rainbow-heart-inner p{
-  margin:0;
-  font-size:.9rem;
-  color:#7c5a12;
-}
-.rainbow-heart-emoji{
-  position:absolute;
-  font-size:2.2rem;
-  right:12px;
-  bottom:6px;
-  opacity:0.7;
-}
 </style>
 </head>
 <body>
 
-<!-- ===== Toolbar with Language Flags (visual only now) ===== -->
+<!-- ===== Toolbar with Language Flags ===== -->
 <header class="toolbar">
   <div class="wrap inner">
     <div class="brand">New Heart</div>
     <div class="langflags" aria-label="Language">
-      <button title="English">
+      <button class="flag" data-lang="en" aria-pressed="true" title="English">
         <span class="flag-emoji">🇺🇸</span><span>EN</span>
       </button>
-      <button title="한국어">
+      <button class="flag" data-lang="ko" aria-pressed="false" title="한국어">
         <span class="flag-emoji">🇰🇷</span><span>KO</span>
       </button>
-      <button title="עברית">
+      <button class="flag" data-lang="he" aria-pressed="false" title="עברית">
         <span class="flag-emoji">🇮🇱</span><span>HE</span>
       </button>
-      <button title="ไทย">
+      <button class="flag" data-lang="th" aria-pressed="false" title="ไทย">
         <span class="flag-emoji">🇹🇭</span><span>TH</span>
       </button>
-      <button title="Tiếng Việt">
+      <button class="flag" data-lang="vi" aria-pressed="false" title="Tiếng Việt">
         <span class="flag-emoji">🇻🇳</span><span>VI</span>
       </button>
     </div>
@@ -417,9 +436,9 @@ h1,h2,h3,h4{
 
   <!-- ===== Masthead ===== -->
   <section class="section masthead reveal is-in">
-    <h1 class="title">New Heart Global Family Newsletter</h1>
-    <p class="subtitle">The Fourth Day Chat by New Heart Family</p>
-    <p class="season">Fall, 2025</p>
+    <h1 class="title" data-i18n="masthead.title">New Heart Global Family Newsletter</h1>
+    <p class="subtitle" data-i18n="masthead.subtitle">The Fourth Day Chat by New Heart Family</p>
+    <p class="season" data-i18n="masthead.season">Fall, 2025</p>
   </section>
 
   <!-- ========================================================= -->
@@ -430,7 +449,7 @@ h1,h2,h3,h4{
       <!-- Left: Theme Verse -->
       <aside>
         <div class="verse-card">
-          <p style="margin:0;">
+          <p style="margin:0;" data-i18n="verse">
             "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone
             and give you a heart of flesh." — Ezekiel 36:26
           </p>
@@ -440,25 +459,17 @@ h1,h2,h3,h4{
       <!-- Middle: Founders -->
       <article>
         <div class="card">
-          <h2>Pastors Jason &amp; Youngmi Cha</h2>
-          <p class="muted" style="margin-top:-2px;">
+          <h2 data-i18n="founders.title">Pastors Jason &amp; Youngmi Cha</h2>
+          <p class="muted" style="margin-top:-2px;" data-i18n="founders.role">
             Founders &amp; New Heart Global Directors
           </p>
           <div class="video" style="margin:.45rem 0 10px;">
             <iframe src="https://www.youtube.com/embed/gZBn3xnHTL8"
                     title="Founders message" allowfullscreen></iframe>
           </div>
-          <h3 style="margin-top:.3rem; color:var(--accent-2);">Greeting</h3>
-          <p>
-            Hello, New Heart Family! Normally, we greet one another by saying, “How are you?” But today,
-            we want to ask: “How is your heart?” This question goes beyond surface-level pleasantries
-            and touches the core of who we are. At New Heart, we believe that transformation begins with
-            the heart—a heart renewed by God’s Spirit, a heart that beats with His love and purpose.
-          </p>
-          <p>
-            Our prayer is that through every gathering, reunion, and testimony in this newsletter, the Lord
-            would gently search, heal, and strengthen your heart again—so that together, as one global
-            family, we may carry His New Heart to the nations.
+          <h3 style="margin-top:.3rem; color:var(--accent-2);" data-i18n="founders.greetingHeading">Greeting</h3>
+          <p data-i18n="founders.greeting">
+            Hello, New Heart Family! Normally, we greet one another by saying, "How are you?" But today, we want to ask: "How is your heart?" This question goes beyond surface-level pleasantries and touches the core of who we are. At New Heart, we believe that transformation begins with the heart—a heart renewed by God's Spirit, a heart that beats with His love and purpose. Whether you are joining us from the very first gathering or from the most recent New Heart, our prayer is that, through this family and through this newsletter, you would be reminded that God sees you, knows you, and is faithfully giving you a new heart for His glory and His Kingdom.
           </p>
         </div>
       </article>
@@ -466,8 +477,8 @@ h1,h2,h3,h4{
       <!-- Right: Regional + Poster + Lists -->
       <aside class="right-lists">
         <div class="card" style="margin-bottom:12px;">
-          <h2>Regional Directors</h2>
-          <p class="muted">
+          <h2 data-i18n="regional.title">Regional Directors</h2>
+          <p class="muted" data-i18n="regional.role">
             Pastors Matthew &amp; Sarah Kim — Thailand
           </p>
           <div class="video">
@@ -477,23 +488,23 @@ h1,h2,h3,h4{
         </div>
 
         <div class="card" style="margin-bottom:12px;">
-          <h2>Thailand</h2>
+          <h2 data-i18n="regional.thailand">Thailand</h2>
           <img src="assets/img/Thailand-poster.jpeg" alt="Thailand Poster"
                style="width:100%; border-radius:10px; border:1px solid var(--border);" />
         </div>
 
         <div class="card">
-          <h2>Upcoming New Heart Gatherings</h2>
+          <h2 data-i18n="events.upcoming">Upcoming New Heart</h2>
           <ul class="list">
-            <li><span class="emoji">🇻🇳</span>Vietnam — Nha Trang: 12/2–5/2025</li>
-            <li><span class="emoji">🇹🇭</span>Thailand — Bangkok: 1/27–30/2026</li>
-            <li><span class="emoji">🇮🇱</span>Israel — TBA (April 2026)</li>
-            <li><span class="emoji">🇺🇸</span>USA — TBA (May 2026)</li>
+            <li data-i18n="events.vn"><span class="emoji">🇻🇳</span>Vietnam — Nha Trang: 12/2–5/2025</li>
+            <li data-i18n="events.th"><span class="emoji">🇹🇭</span>Thailand — Bangkok: 1/27–30/2026</li>
+            <li data-i18n="events.il"><span class="emoji">🇮🇱</span>Israel — TBA (April 2026)</li>
+            <li data-i18n="events.us"><span class="emoji">🇺🇸</span>USA — TBA (May 2026)</li>
           </ul>
-          <h3>Regional Reunions</h3>
+          <h2 data-i18n="events.reunionsHeading">Regional Reunions</h2>
           <ul class="list">
-            <li><span class="emoji">🇺🇸</span>USA — Nov 14, 2025 • LA</li>
-            <li><span class="emoji">🇰🇷</span>Korea — Nov 22, 2025 • Seoul</li>
+            <li data-i18n="events.usReunion"><span class="emoji">🇺🇸</span>USA — Nov 14, 2025 • LA</li>
+            <li data-i18n="events.krReunion"><span class="emoji">🇰🇷</span>Korea — Nov 22, 2025 • Seoul</li>
           </ul>
         </div>
       </aside>
@@ -506,95 +517,87 @@ h1,h2,h3,h4{
   <!-- ====================== PAGE 2 =========================== -->
   <!-- ========================================================= -->
   <section class="section reveal" id="page2-stories">
-    <h2>New Heart Stories</h2>
+    <h2 data-i18n="stories.heading">New Heart Stories</h2>
 
     <div class="grid two">
-      <!-- 1 Ariel -->
+      <!-- 1 Ariel (TEXT ONLY) -->
       <article class="card story-card">
-        <img src="assets/img/ariel.jpeg" alt="Ariel" />
-        <h3 style="margin-top:.45rem;">Ariel</h3>
-        <p class="muted">
+        <h3 data-i18n="stories.ariel.name">Ariel</h3>
+        <p class="muted" data-i18n="stories.ariel.role">
           NH USA #53, Candidate
         </p>
-        <p>
-          My sister’s profound encounter with Jesus at New Heart 52 in Israel led me into a journey
+        <p data-i18n="stories.ariel.excerpt">
+          My sister's profound encounter with Jesus at New Heart 52 in Israel led me into a journey
           from Orthodox Judaism to meeting Jesus as Messiah…
         </p>
-        <button class="open-modal chip" data-target="#modal-ariel">Read Story</button>
+        <button class="open-modal chip" data-target="#modal-ariel" data-i18n="ui.read">Read Story</button>
       </article>
 
-      <!-- 2 Han, Ye-Sul -->
+      <!-- 2 Han, Ye-Sul (TEXT ONLY) -->
       <article class="card story-card">
-        <img src="assets/img/han.jpeg" alt="Han, Ye-Sul" />
-        <h3 style="margin-top:.45rem;">Han, Ye-Sul</h3>
-        <p class="muted">
+        <h3 data-i18n="stories.yesul.name">Han, Ye-Sul</h3>
+        <p class="muted" data-i18n="stories.yesul.role">
           NH Korea #54 Team Member
         </p>
-        <p>
+        <p data-i18n="stories.yesul.excerpt">
           From reluctant first-time candidate to interceding worshiper, God met me in the middle of
           pregnancy, fatigue, and serving…
         </p>
-        <button class="open-modal chip" data-target="#modal-yesul">Read Story</button>
+        <button class="open-modal chip" data-target="#modal-yesul" data-i18n="ui.read">Read Story</button>
       </article>
 
-      <!-- 3 Keziah -->
+      <!-- 3 Keziah (TEXT ONLY) -->
       <article class="card story-card">
-        <img src="assets/img/keziah.jpeg" alt="Keziah" />
-        <h3 style="margin-top:.45rem;">Keziah</h3>
-        <p class="muted">
+        <h3 data-i18n="stories.keziah.name">Keziah</h3>
+        <p class="muted" data-i18n="stories.keziah.role">
           NH Vietnam #14 Candidate
         </p>
-        <p>
+        <p data-i18n="stories.keziah.excerpt">
           After 14 years of walking with the Lord, New Heart Vietnam #14 became a place of deep
           freedom from striving and self-righteousness…
         </p>
-        <button class="open-modal chip" data-target="#modal-keziah">Read Story</button>
+        <button class="open-modal chip" data-target="#modal-keziah" data-i18n="ui.read">Read Story</button>
       </article>
 
-      <!-- 4 Parichat -->
+      <!-- 4 Parichat (TEXT ONLY) -->
       <article class="card story-card">
-        <img src="assets/img/parichat.jpeg" alt="Parichat" />
-        <h3 style="margin-top:.45rem;">Parichat</h3>
-        <p class="muted">
+        <h3 data-i18n="stories.parichat.name">Parichat</h3>
+        <p class="muted" data-i18n="stories.parichat.role">
           NH Korea #54 Candidate (Thailand Team)
         </p>
-        <p>
+        <p data-i18n="stories.parichat.excerpt">
           Carrying 18 years of pain, I came to New Heart 54 in Korea and encountered deep inner
           restoration, forgiveness, and a new decision to serve…
         </p>
-        <button class="open-modal chip" data-target="#modal-parichat">Read Story</button>
+        <button class="open-modal chip" data-target="#modal-parichat" data-i18n="ui.read">Read Story</button>
       </article>
 
-      <!-- 5 Choi, Eun-Young -->
+      <!-- 5 Choi, Eun-Young (TEXT ONLY) -->
       <article class="card story-card">
-        <img src="assets/img/choi.jpeg" alt="Choi, Eun-Young" />
-        <h3 style="margin-top:.45rem;">Choi, Eun-Young</h3>
-        <p class="muted">
+        <h3 data-i18n="stories.choi.name">Choi, Eun-Young</h3>
+        <p class="muted" data-i18n="stories.choi.role">
           NH Korea #54 — Hallelujah Group
         </p>
-        <p>
+        <p data-i18n="stories.choi.excerpt">
           Invited and prayed for over a year, I came to this retreat exhausted in body and soul,
           and the Lord gently called me back into the fight of faith…
         </p>
-        <button class="open-modal chip" data-target="#modal-choi">Read Story</button>
+        <button class="open-modal chip" data-target="#modal-choi" data-i18n="ui.read">Read Story</button>
       </article>
-    </div>
 
-    <!-- Rainbow / heart decorative box -->
-    <div class="rainbow-heart-box">
-      <div class="rainbow-heart-inner">
-        <p>
-          “Let the little ones and the grown ones together carry His New Heart to the nations.”
-        </p>
-      </div>
-      <div class="rainbow-heart-emoji">🌈❤️</div>
+      <!-- Rainbow + Heart decorative block -->
+      <article class="card rainbow-card">
+        <h3 data-i18n="stories.decor">
+          He is giving us a New Heart of color and joy across generations.
+        </h3>
+      </article>
     </div>
   </section>
 
   <!-- ===== FULL STORY MODALS (5 testimonies) ===== -->
   <div id="modal-ariel" class="modal" role="dialog" aria-modal="true" hidden>
     <div class="modal-body">
-      <h4>Ariel — Full Story</h4>
+      <h4 data-i18n="stories.ariel.modalTitle">Ariel — Full Story</h4>
       <p>
         My sister's profound experience with New Heart 52 in Israel had a deep impact on me.
         Witnessing her transformation and her confession of faith in Jesus to our mother
@@ -632,14 +635,14 @@ h1,h2,h3,h4{
         new heart during New Heart 53.
       </p>
       <div class="modal-actions">
-        <button class="close-modal chip">Close</button>
+        <button class="close-modal chip" data-i18n="ui.close">Close</button>
       </div>
     </div>
   </div>
 
   <div id="modal-yesul" class="modal" role="dialog" aria-modal="true" hidden>
     <div class="modal-body">
-      <h4>Han, Ye-Sul — Full Story</h4>
+      <h4 data-i18n="stories.yesul.modalTitle">Han, Ye-Sul — Full Story</h4>
       <p>
         Hello. My name is Han Ye-seul, and I participated as a candidate in the 51st session,
         serving as a team member for the first time this time. Honestly, I wasn't sure if the
@@ -692,14 +695,14 @@ h1,h2,h3,h4{
         have the time and opportunity next year, I hope you participate. Thank you.
       </p>
       <div class="modal-actions">
-        <button class="close-modal chip">Close</button>
+        <button class="close-modal chip" data-i18n="ui.close">Close</button>
       </div>
     </div>
   </div>
 
   <div id="modal-keziah" class="modal" role="dialog" aria-modal="true" hidden>
     <div class="modal-body">
-      <h4>Keziah — Full Story</h4>
+      <h4 data-i18n="stories.keziah.modalTitle">Keziah — Full Story</h4>
       <p>
         Greetings, I am Keziah from Vietnam. I sincerely thank God for the opportunity to
         attend the 14th New Heart retreat, where I was visited by God miraculously and
@@ -726,14 +729,14 @@ h1,h2,h3,h4{
       </p>
       <p>Thank God, glory belongs to Him.</p>
       <div class="modal-actions">
-        <button class="close-modal chip">Close</button>
+        <button class="close-modal chip" data-i18n="ui.close">Close</button>
       </div>
     </div>
   </div>
 
   <div id="modal-parichat" class="modal" role="dialog" aria-modal="true" hidden>
     <div class="modal-body">
-      <h4>Parichat — Full Story</h4>
+      <h4 data-i18n="stories.parichat.modalTitle">Parichat — Full Story</h4>
       <p>
         I, Parichat, would like to express heartfelt thanks to Spiritual Mother Pastor Mayuri,
         Pastor Sarah, and Pastor Matthew for their guidance, care, and love from the very first
@@ -760,14 +763,14 @@ h1,h2,h3,h4{
         transformation for both my heart and my spirit.
       </p>
       <div class="modal-actions">
-        <button class="close-modal chip">Close</button>
+        <button class="close-modal chip" data-i18n="ui.close">Close</button>
       </div>
     </div>
   </div>
 
   <div id="modal-choi" class="modal" role="dialog" aria-modal="true" hidden>
     <div class="modal-body">
-      <h4>Choi, Eun-Young — Full Story</h4>
+      <h4 data-i18n="stories.choi.modalTitle">Choi, Eun-Young — Full Story</h4>
       <p>
         Newheart 54th Generation Hallelujah Group - Choi Eun-young.
       </p>
@@ -789,7 +792,7 @@ h1,h2,h3,h4{
         those days, one "three-day" step of repentance at a time.
       </p>
       <div class="modal-actions">
-        <button class="close-modal chip">Close</button>
+        <button class="close-modal chip" data-i18n="ui.close">Close</button>
       </div>
     </div>
   </div>
@@ -800,13 +803,13 @@ h1,h2,h3,h4{
   <!-- ====================== PAGE 3 =========================== -->
   <!-- ========================================================= -->
   <section id="page3-kids" class="section kids-section">
-    <h2 class="kids-title">New Heart Kids</h2>
+    <h2 class="kids-title" data-i18n="kids.heading">New Heart Kids</h2>
 
-    <!-- Animated background (fade + parallax, grayscale, 3 at a time) -->
+    <!-- Animated background (greyscale, 3 at a time, parallax) -->
     <div class="kids-bg">
       <img src="assets/img/kids-bg-1.jpeg" class="kids-img active" alt="New Heart Kids 1">
-      <img src="assets/img/kids-bg-2.jpeg" class="kids-img" alt="New Heart Kids 2">
-      <img src="assets/img/kids-bg-3.jpeg" class="kids-img" alt="New Heart Kids 3">
+      <img src="assets/img/kids-bg-2.jpeg" class="kids-img active" alt="New Heart Kids 2">
+      <img src="assets/img/kids-bg-3.jpeg" class="kids-img active" alt="New Heart Kids 3">
       <img src="assets/img/kids-bg-4.jpeg" class="kids-img" alt="New Heart Kids 4">
       <img src="assets/img/kids-bg-5.jpeg" class="kids-img" alt="New Heart Kids 5">
       <img src="assets/img/kids-bg-6.jpeg" class="kids-img" alt="New Heart Kids 6">
@@ -819,44 +822,45 @@ h1,h2,h3,h4{
       <img src="assets/img/kids-bg-13.jpeg" class="kids-img" alt="New Heart Kids 13">
     </div>
 
-    <!-- Foreground content with intros + modals -->
+    <!-- Foreground content: brief intros + modals -->
     <div class="kids-content">
       <div class="kid-story">
-        <h3>Ji Yeo-woon — New Heart Kids Korea #2</h3>
-        <p>
-          This year, New Heart Kids was held in Korea for the first time with 22 children and 10 teachers.
-          In the middle of rain, schedule changes, and many “discomforts,” the Holy Spirit gently led the
-          little ones into worship, prayer, and powerful encounters with God…
+        <h3 data-i18n="kids.jiName">Ji Yeo-woon — New Heart Kids Korea #2</h3>
+        <p data-i18n="kids.jiIntro">
+          New Heart Kids Korea #2 brought together 22 children and 10 teachers in the same location as the adult gathering, yet on a carefully separate schedule. What began with nerves and newness turned into a powerful time where children worshiped, prayed, and even asked to come again next year.
         </p>
-        <button class="open-modal chip" data-target="#modal-kids-ji">Read Story</button>
+        <button class="open-modal chip" data-target="#modal-kid-ji" data-i18n="ui.read">
+          Read Story
+        </button>
       </div>
 
       <div class="kid-story">
-        <h3>Kyungjin (Maria) Park — New Heart Kids USA #1</h3>
-        <p>
-          In May 2025, God opened a beautiful new chapter as New Heart Kids #1 launched in Los Angeles.
-          What began as a dream to serve young parents became a revelation of how deeply God loves and
-          calls children as future leaders in the New Heart family…
+        <h3 data-i18n="kids.kjName">Kyungjin (Maria) Park — New Heart Kids USA #1</h3>
+        <p data-i18n="kids.kjIntro">
+          In Los Angeles, New Heart Kids USA #1 was birthed out of a longing to see parents and children encounter God together. As young parents received deep restoration in the main gathering, their children were equally met by God and envisioned as future leaders of the New Heart family.
         </p>
-        <button class="open-modal chip" data-target="#modal-kids-kj">Read Story</button>
+        <button class="open-modal chip" data-target="#modal-kid-kj" data-i18n="ui.read">
+          Read Story
+        </button>
       </div>
     </div>
   </section>
 
   <!-- KIDS FULL STORY MODALS -->
-  <div id="modal-kids-ji" class="modal" role="dialog" aria-modal="true" hidden>
+  <div id="modal-kid-ji" class="modal" role="dialog" aria-modal="true" hidden>
     <div class="modal-body">
-      <h4>New Heart Kids Korea #2 — Ji Yeo-woon</h4>
+      <h4 data-i18n="kids.jiModalTitle">Ji Yeo-woon — Full Story</h4>
       <p>
         Hello! I'm Ji Yeo-woon, who served as the coordinator for New Heart Kids.
         This year, New Heart Kids was held in Korea for the first time, and
         although we were in the same location as the adult program, we mostly
-        adjusted schedules so we wouldn't cross paths. This year, New Heart Kids had 22 children (ages 0–12) and 10 teachers.
+        adjusted schedules so we wouldn't cross paths.
       </p>
       <p>
+        This year, New Heart Kids had 22 children (ages 0–12) and 10 teachers.
         Everything was new, so both teachers and children were nervous. On the
         first night, we asked the children why they came. Answers included,
-        “To worship,” “To pray,” “To play,” and one child said, “To do missions!”
+        "To worship," "To pray," "To play," and one child said, "To do missions!"
         It was profound.
       </p>
       <p>
@@ -876,19 +880,19 @@ h1,h2,h3,h4{
       <p>
         In the end, teachers shared only gratitude — despite exhaustion, babies,
         pregnancy, and physical difficulties — because grace overflowed. Many even
-        said, “Next year!” without hesitation. We believe God is building the body
+        said, "Next year!" without hesitation. We believe God is building the body
         of Christ even among the little ones, and we look forward to what He will do
         next.
       </p>
       <div class="modal-actions">
-        <button class="close-modal chip">Close</button>
+        <button class="close-modal chip" data-i18n="ui.close">Close</button>
       </div>
     </div>
   </div>
 
-  <div id="modal-kids-kj" class="modal" role="dialog" aria-modal="true" hidden>
+  <div id="modal-kid-kj" class="modal" role="dialog" aria-modal="true" hidden>
     <div class="modal-body">
-      <h4>New Heart Kids USA #1 — Kyungjin (Maria) Park</h4>
+      <h4 data-i18n="kids.kjModalTitle">Kyungjin (Maria) Park — Full Story</h4>
       <p>
         In May 2025, God opened a beautiful new chapter as we launched New Heart
         Kids #1 in Los Angeles. It had been a long-awaited dream within New Heart to
@@ -913,7 +917,7 @@ h1,h2,h3,h4{
         us as a family, to pass His New Heart to all generations.
       </p>
       <div class="modal-actions">
-        <button class="close-modal chip">Close</button>
+        <button class="close-modal chip" data-i18n="ui.close">Close</button>
       </div>
     </div>
   </div>
@@ -930,70 +934,75 @@ h1,h2,h3,h4{
 
       <!-- EDITORIAL -->
       <article class="card prose" id="editorial">
-        <h2>Editorial</h2>
+        <h2 data-i18n="editorial.heading">Editorial</h2>
 
-        <h3>
+        <!-- Subheading -->
+        <h3 data-i18n="editorial.subheading">
           Compelled by Fire: The New Heart Family Living the Fourth Day
         </h3>
 
-        <p>
+        <!-- Paragraph 1 -->
+        <p data-i18n="editorial.p1">
           New Heart Ministry recently celebrated its 54th gathering in Korea, marking nearly two decades of God's undeniable grace across nations, including Cambodia, Vietnam, China, Ethiopia, Israel, and Korea. This movement is a divine summons igniting the promise of a New Heart (Ezekiel 36:26) in every generation and weaving us into one fierce, global Kingdom Family. Our commitment is comprehensive, extending to the New Heart Kids programs, which underscore our conviction that children are critical and active participants today, ensuring a legacy of passion that will sustain the movement for years to come.
         </p>
 
-        <p>
+        <!-- Paragraph 2 -->
+        <p data-i18n="editorial.p2">
           Our three-day gatherings are a deep immersion—a holy soaking in God's love and transformative power, but this is the preparation, not the end; we are utterly compelled to live the Fourth Day, which is the immediate, daily application of our radical, transformed hearts and our unstoppable mandate to reject spiritual stagnation and pursue sustained maturity in God's goodness and grace by remaining connected, to hold nothing back and serve in unified purpose (Acts 2). Our strength is in our unbreakable family covenant spanning continents, and we are constantly committing to this ultimate purpose of raising a people of fire and fulfilling the global expansion God promised in Isaiah 54.
         </p>
 
-        <p>
+        <!-- Paragraph 3 -->
+        <p data-i18n="editorial.p3">
           As God’s vision for New Heart Ministry continues to sharpen with undeniable clarity, we sense His urgent desire not only to document the mighty works and abundant grace flowing but also for us, the Family, to become more intimately intertwined and nurtured; hence, this quarterly Global Newsletter for the New Heart Family is a necessity, not an option, serving as the intentional tool designed to bridge the miles and cultures across the world to nurture global connections and ensure we care for one another as one body, to share the undeniable evidence of God's faithfulness from every region, solidifying our collective faith, and to keep our focus sharp, reminding us of our compulsion to live out the Fourth Day together and fostering sustained growth and maturity until the next gathering. We must step forward. The Kingdom Family is not a passive recipient of grace, but an active force compelled by an unwavering vision. By His strength, we will fulfill every declaration over this ministry.
         </p>
       </article>
 
       <!-- WAYS TO SERVE -->
       <aside class="card">
-        <h2>Ways to Serve</h2>
+        <h2 data-i18n="serve.heading">Ways to Serve</h2>
 
-        <h3 style="margin-top:.2rem;">
+        <h3 style="margin-top:.2rem;" data-i18n="serve.palancaHeading">
           Palanca Donation Charts
         </h3>
 
         <ul class="list" style="margin-top:.3rem;">
           <li>
-            <a href="assets/docs/Palanca_Donation_Chart_55_VNH_14.docx" download>
-              PALANCA DONATION CHART #55 (Vietnam #14) — 50 each
+            <a href="assets/docs/Palanca_Donation_Chart_55_VNH_14.docx"
+               download data-i18n="serve.vnChart">
+               PALANCA DONATION CHART #55 (Vietnam #14) — 50 each
             </a>
           </li>
 
           <li>
-            <a href="assets/docs/Palanca%20Donation%20Chart%20%2356%20(TNH%20%231).docx" download>
-              PALANCA DONATION CHART #56 (Thailand #1) — 40 each
+            <a href="assets/docs/Palanca%20Donation%20Chart%20%2356%20(TNH%20%231).docx"
+               download data-i18n="serve.thChart">
+               PALANCA DONATION CHART #56 (Thailand #1) — 40 each
             </a>
           </li>
         </ul>
 
-        <p class="muted" style="margin-top:.4rem;">
+        <p class="muted" data-i18n="serve.note" style="margin-top:.4rem;">
           These bless candidates and teams with encouragement and support.
         </p>
 
         <!-- QR Giving Section -->
-        <h3 style="margin-top:.8rem;">
+        <h3 style="margin-top:.8rem;" data-i18n="serve.qrHeading">
           Give by QR Code
         </h3>
-        <p class="muted">
-          You may also send a Palanca donation by scanning the QR codes below.
-          Please note in your memo which New Heart gathering the gift is for.
+        <p class="muted" data-i18n="serve.qrIntro">
+          You may also send a Palanca donation by scanning the QR codes below. Please note in your memo which New Heart gathering the gift is for.
         </p>
 
         <div class="qr-wrap">
           <div class="qr-item">
             <img src="assets/img/IMG_1320.jpg" alt="LAUC QR code for Vietnam #14 or Thailand #1">
-            <p>
+            <p data-i18n="serve.qrLauc">
               LAUC QR — use for<br>Vietnam #14 or Thailand #1
             </p>
           </div>
           <div class="qr-item">
             <img src="assets/img/IMG_1324.JPG" alt="Thailand-only QR code">
-            <p>
+            <p data-i18n="serve.qrThai">
               Thailand-only QR — use<br>specifically for Thailand #1
             </p>
           </div>
@@ -1006,21 +1015,67 @@ h1,h2,h3,h4{
 
   <!-- ===== Footer ===== -->
   <footer class="footer">
-    <p>© 2025 New Heart Ministry. All rights reserved.</p>
-    <p>Please keep this Newsletter within the New Heart Family.</p>
+    <p data-i18n="footer.copy">© 2025 New Heart Ministry. All rights reserved.</p>
+    <p data-i18n="footer.note">Please keep this Newsletter within the New Heart Family.</p>
   </footer>
 </div>
 
 <script>
 "use strict";
 
+/* Minimal translations object so everything works in English only */
+const translations = { en: {} };
+
 /* ============================================================
-   BASIC INTERACTIONS – MODALS, REVEAL, KIDS SLIDESHOW, PARALLAX
+   LANGUAGE SYSTEM (keeps flags working but falls back to EN text)
+   ============================================================ */
+const SUPPORTED = ["en","ko","he","th","vi"];
+const DEFAULT_LANG = "en";
+const state = {
+  lang: localStorage.getItem("nh_lang") || DEFAULT_LANG
+};
+
+function applyLang() {
+  const dict = translations[state.lang] || translations[DEFAULT_LANG];
+
+  document.documentElement.lang = state.lang;
+  document.documentElement.dir = (state.lang === "he") ? "rtl" : "ltr";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    const fallback = el.textContent;
+    const value = dict[key] || fallback;
+
+    if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+      el.placeholder = value;
+    } else {
+      el.textContent = value;
+    }
+  });
+
+  document.querySelectorAll(".langflags [data-lang]").forEach(btn => {
+    btn.setAttribute("aria-pressed", btn.dataset.lang === state.lang);
+  });
+}
+
+/* ============================================================
+   DOMContentLoaded – language + reveal + kids slideshow + MODALS + PARALLAX
    ============================================================ */
 document.addEventListener("DOMContentLoaded", () => {
+  applyLang();
 
-  /* CLICK EVENTS (MODALS ONLY) */
+  /* CLICK EVENTS (LANG SWITCH + MODALS) */
   document.addEventListener("click", e => {
+    const flag = e.target.closest(".langflags [data-lang]");
+    if (flag) {
+      e.preventDefault();
+      const lang = flag.dataset.lang;
+      state.lang = SUPPORTED.includes(lang) ? lang : DEFAULT_LANG;
+      localStorage.setItem("nh_lang", state.lang);
+      applyLang();
+      return;
+    }
+
     const openBtn = e.target.closest(".open-modal");
     if (openBtn) {
       e.preventDefault();
@@ -1071,10 +1126,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".reveal").forEach(el => io.observe(el));
 
-  /* Kids background slideshow – grayscale, multiple images at once */
+  /* Kids background slideshow — 3 photos at a time */
   const kidsImages = document.querySelectorAll(".kids-img");
   if (kidsImages.length > 0) {
     let index = 0;
+    const windowSize = 3;
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
     const fadeMs = isMobile ? 900 : 1800;
     const intervalMs = isMobile ? 3800 : 6500;
@@ -1083,22 +1139,19 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.transition = `opacity ${fadeMs}ms ease-in-out`;
     });
 
-    const updateActive = () => {
-      const len = kidsImages.length;
-      kidsImages.forEach((img, i) => {
-        const show =
-          i === index ||
-          i === ((index + 1) % len) ||
-          i === ((index + 2) % len); // 3 images at a time
-        img.classList.toggle("active", show);
-      });
-    };
+    function setActiveWindow(startIndex){
+      kidsImages.forEach(img => img.classList.remove("active"));
+      for (let offset = 0; offset < windowSize; offset++){
+        const idx = (startIndex + offset) % kidsImages.length;
+        kidsImages[idx].classList.add("active");
+      }
+    }
 
-    updateActive();
+    setActiveWindow(index);
 
     setInterval(() => {
       index = (index + 1) % kidsImages.length;
-      updateActive();
+      setActiveWindow(index);
     }, intervalMs);
   }
 
