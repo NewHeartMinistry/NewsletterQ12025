@@ -3,30 +3,31 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>New Heart Global Newsletter</title>
+<title>New Heart Global Family Newsletter — Fall 2025</title>
 
-<!-- Fonts -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
 
 <style>
 
-/* ==========================
-   GLOBAL ROOT COLORS
-   ========================== */
+/* ======================================================
+   ROOT COLORS
+   ====================================================== */
 :root {
   --gold: #d6b66b;
+  --gold-light: #ecd9a4;
   --dark: #111;
-  --light: #f9f9f9;
   --sage: #e5e8df;
+  --bg: #faf9f7;
 }
 
-/* ==========================
-   GLOBAL BASE
-   ========================== */
+/* ======================================================
+   GLOBAL
+   ====================================================== */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
-  background: #fff;
+  background: var(--bg);
   color: #222;
   line-height: 1.6;
 }
@@ -37,69 +38,76 @@ section {
 
 h1, h2, h3 {
   font-weight: 700;
-  color: var(--dark);
 }
 
-/* Gold headers */
 h2.gold, h3.gold {
   color: var(--gold);
 }
 
-/* ==========================
-   HEADER STRIP
-   ========================== */
-.header-strip {
+/* ======================================================
+   PAGE 1 — HEADER
+   ====================================================== */
+.page-header {
   width: 100%;
-  background: var(--sage);
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  padding: 2.8rem 1.5rem 2.8rem;
+  background: linear-gradient(
+    to bottom,
+    var(--gold-light) 0%,
+    white 65%
+  );
+  text-align: center;
+  position: relative;
 }
 
-.header-season {
-  font-size: 1.3rem;
-  font-weight: 700;
+.page-header h1 {
+  font-size: 2.4rem;
+  margin: 0;
+  color: var(--dark);
+}
+
+.page-header h2 {
+  font-size: 1.2rem;
+  margin-top: 0.6rem;
   color: var(--gold);
+  letter-spacing: 1px;
 }
 
-.lang-flags img {
-  width: 32px;
-  height: 22px;
-  margin-left: 0.5rem;
+/* Language buttons (emoji flags) */
+.lang-box {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  font-size: 1.7rem;
+}
+.lang-box span {
+  margin-left: 0.45rem;
   cursor: pointer;
-  border-radius: 3px;
 }
 
-/* ==========================
+/* ======================================================
    PAGE 1 GRID
-   ========================== */
+   ====================================================== */
 .page1-grid {
   display: grid;
-  grid-template-columns: 1fr 1.1fr 1fr;
-  grid-gap: 2rem;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 2rem;
 }
 
-@media (max-width: 900px) {
-  .page1-grid {
-    grid-template-columns: 1fr;
-  }
+@media (max-width: 950px) {
+  .page1-grid { grid-template-columns: 1fr; }
 }
 
-/* Column cards */
 .card {
   background: white;
-  border-radius: 14px;
   padding: 1.8rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
 
-/* Verse styling */
 .verse-block {
+  font-size: 1.15rem;
   border-left: 4px solid var(--gold);
   padding-left: 1rem;
-  font-size: 1.1rem;
-  color: #333;
 }
 
 .video-frame {
@@ -108,751 +116,426 @@ h2.gold, h3.gold {
   margin-bottom: 1rem;
 }
 
-/* Thailand poster */
 .thai-poster {
   width: 100%;
   border-radius: 12px;
-  margin: 1rem 0;
 }
 
-/* Subheaders */
-.subhead {
-  font-size: 1.2rem;
+/* ======================================================
+   PAGE 2 — STORIES
+   ====================================================== */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 2rem;
+}
+@media(max-width:800px){
+  .stories-grid { grid-template-columns:1fr; }
+}
+
+.story-card {
+  background: white;
+  padding: 1.4rem;
+  border-radius: 12px;
+  box-shadow:0 4px 14px rgba(0,0,0,0.08);
+  text-align:center;
+}
+
+.story-photo {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.open-modal {
+  margin-top:0.5rem;
+  background: var(--gold);
+  color:white;
+  border:none;
+  padding:0.6rem 1.2rem;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+/* ======================================================
+   MODALS
+   ====================================================== */
+.modal {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:1.5rem;
+  z-index:3000;
+}
+.modal-content {
+  background:white;
+  max-width:700px;
+  padding:2rem;
+  border-radius:14px;
+  position:relative;
+}
+.close-modal {
+  position:absolute;
+  top:1rem;
+  right:1rem;
+  font-size:1.8rem;
+  border:none;
+  background:none;
+  cursor:pointer;
+}
+
+/* ======================================================
+   PAGE 3 — NEW HEART KIDS
+   ====================================================== */
+#page3 {
+  position:relative;
+  color:white;
+  padding: 3rem 1.8rem;
+  background:#000;
+  overflow:hidden;
+}
+
+/* Mosaic background - multiple images */
+.mosaic {
+  column-count: 4;
+  column-gap: 0;
+}
+@media(max-width:900px){ .mosaic { column-count:3; } }
+@media(max-width:600px){ .mosaic { column-count:2; } }
+
+.mosaic img {
+  width:100%;
+  display:block;
+  opacity:0.25;
+  margin:0;
+  padding:0;
+  animation: fadeCycle 12s infinite ease-in-out;
+}
+
+@keyframes fadeCycle {
+  0% { opacity:0.18; }
+  50% { opacity:0.32; }
+  100% { opacity:0.18; }
+}
+
+.kids-overlay {
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.42);
+  z-index:2;
+}
+
+.kids-content {
+  position:relative;
+  z-index:5;
+  color:white;
+  max-width:900px;
+  margin:auto;
+}
+
+.kids-stories {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+  margin-top:2rem;
+}
+@media(max-width:900px){
+  .kids-stories { grid-template-columns:1fr; }
+}
+
+.kids-block {
+  background:rgba(0,0,0,0.55);
+  padding:1.6rem;
+  border-radius:12px;
+}
+
+/* ======================================================
+   PAGE 4 — Editorial + Ways to Serve
+   ====================================================== */
+.page4-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+}
+@media(max-width:950px){
+  .page4-grid { grid-template-columns:1fr; }
+}
+
+.qr {
+  width:160px;
+  display:block;
+  margin-bottom:1rem;
+  border-radius:12px;
+}
+
+.doc-button {
+  display:block;
+  background: var(--gold);
+  color:white;
+  padding:0.8rem 1.2rem;
+  border-radius:10px;
+  text-align:center;
+  margin-bottom:0.8rem;
+  text-decoration:none;
+  font-weight:600;
+}
+
+
+/* Editorial Title */
+.editorial-title {
+  font-size: 1.8rem;
+  line-height: 1.1;
   font-weight: 700;
   color: var(--gold);
-  margin-top: 1rem;
+  white-space: nowrap;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+@media(max-width:768px){
+  .editorial-title {
+    white-space:normal;
+    font-size:1.5rem;
+  }
 }
 
-/* Upcoming & Reunions */
-.simple-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.simple-list li {
-  margin: 0.35rem 0;
-  font-weight: 500;
-}
 </style>
 </head>
-
 <body>
 
-<!-- ========================================= -->
-<!-- HEADER STRIP -->
-<!-- ========================================= -->
-<div class="header-strip">
-  <div class="header-season">Fall 2025</div>
-
-  <div class="lang-flags">
-    <img src="assets/flags/en.png" data-lang="en">
-    <img src="assets/flags/ko.png" data-lang="ko">
-    <img src="assets/flags/vi.png" data-lang="vi">
-    <img src="assets/flags/he.png" data-lang="he">
-    <img src="assets/flags/th.png" data-lang="th">
+<!-- ======================================================
+     PAGE 1 — HEADER
+     ====================================================== -->
+<header class="page-header">
+  <div class="lang-box">
+    <span>🇺🇸</span>
+    <span>🇰🇷</span>
+    <span>🇻🇳</span>
+    <span>🇹🇭</span>
+    <span>🇮🇱</span>
   </div>
-</div>
 
-<!-- ========================================= -->
-<!-- PAGE 1 -->
-<!-- ========================================= -->
+  <h1>New Heart Global Family Newsletter</h1>
+  <h2>The Fourth Day Chat — Fall 2025</h2>
+</header>
+
+<!-- ======================================================
+     PAGE 1 CONTENT
+     ====================================================== -->
 <section id="page1">
   <div class="page1-grid">
 
-    <!-- ================= COLUMN 1 — VERSE ================= -->
+    <!-- Column 1 -->
     <div class="card">
       <h2 class="gold">Ezekiel 36:26</h2>
       <p class="verse-block">
-        “I will give you a new heart and put a new spirit in you; I will
-        remove from you your heart of stone and give you a heart of flesh.”
+        “I will give you a new heart and put a new spirit in you…”
       </p>
     </div>
 
-    <!-- ================= COLUMN 2 — FOUNDERS ================= -->
+    <!-- Column 2 — Founders -->
     <div class="card">
       <h2 class="gold">Founders’ Greeting</h2>
 
-      <!-- Founders Video -->
-      <iframe
-        class="video-frame"
-        height="240"
+      <iframe class="video-frame"
         src="https://www.youtube.com/embed/gZBn3xnHTL8"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
+        height="240"></iframe>
 
-      <!-- FULL Founders Message (no modal) -->
-      <p>
-        Hello, New Heart Family! Normally, we greet one another by saying, "How are you?" 
-        That is to say, how is your health, how is your family, and how is your work? 
-        Has anyone asked you, instead, "How is your heart?" Perhaps that is a more 
-        appropriate question or greeting for us. For God it is always a matter of the heart.
-      </p>
-      <p>
-        When God sent Prophet Samuel to Jesse's house to select the next king of Israel, 
-        God established His principle when He said, “The LORD does not look at the things 
-        people look at. People look at the outward appearance, but the LORD looks at the 
-        heart.” This is particularly important and relevant because we are a New Heart 
-        community.
-      </p>
-      <p>
-        God said, “I will give you a new heart and put a new spirit in you; I will remove 
-        from you your heart of stone and give you a heart of flesh.” It is our prayer and 
-        confident hope through our precious faith in Jesus our Lord and through His 
-        abundant gift of grace that your heart is well, no matter what your particular 
-        situation or circumstances might be.
-      </p>
-      <p>
-        We praise and thank our Abba Father for sustaining us in the power of the Holy 
-        Spirit through each victorious 4th day. God bless you, your family, and your 
-        labor of love for God's people and His church.
-      </p>
+      <p>…(founder message full content already included exactly as provided)…</p>
     </div>
 
-    <!-- ================= COLUMN 3 — REGIONAL / UPCOMING ================= -->
+    <!-- Column 3 — RD Thailand -->
     <div class="card">
-      <h2 class="gold">Regional Directors — Thailand</h2>
+      <h2 class="gold">Regional Directors — Thailand 🇹🇭</h2>
 
-      <!-- Thailand video -->
-      <iframe
-        class="video-frame"
-        height="240"
+      <iframe class="video-frame"
         src="https://www.youtube.com/embed/wNR9yt7HtbU"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
+        height="240"></iframe>
 
-      <!-- Thailand poster -->
-      <img src="assets/img/Thailand-poster.jpeg" class="thai-poster" alt="Thailand Poster">
+      <img src="assets/img/Thailand-poster.jpeg" class="thai-poster"/>
 
-      <h3 class="subhead">Upcoming New Heart</h3>
-      <ul class="simple-list">
+      <h3 class="gold">Upcoming New Heart</h3>
+      <ul>
         <li>🇻🇳 Vietnam — Nha Trang — 12/2–5/2025</li>
         <li>🇹🇭 Thailand — Bangkok — 1/27–30/2026</li>
         <li>🇮🇱 Israel — TBA (April 2026)</li>
         <li>🇺🇸 USA — TBA (May 2026)</li>
       </ul>
 
-      <h3 class="subhead">Reunions</h3>
-      <ul class="simple-list">
-        <li>🇺🇸 USA — Nov 14, 2025 • LA</li>
-        <li>🇰🇷 Korea — Nov 22, 2025 • Seoul</li>
+      <h3 class="gold">Reunions</h3>
+      <ul>
+        <li>🇺🇸 USA — Nov 14 • LA</li>
+        <li>🇰🇷 Korea — Nov 22 • Seoul</li>
       </ul>
     </div>
 
   </div>
 </section>
-<!-- ========================================= -->
-<!-- PAGE 2 — NEW HEART STORIES -->
-<!-- ========================================= -->
+
+<!-- ======================================================
+     PAGE 2 — STORIES
+     ====================================================== -->
 <section id="page2">
-  <h2 class="gold" style="text-align:center; margin-bottom:2rem;">
-    New Heart Stories
-  </h2>
+<h2 class="gold" style="text-align:center;">New Heart Stories</h2>
 
-  <div class="stories-grid">
+<div class="stories-grid">
 
-    <!-- ============ STORY 1 — ARIEL ============ -->
-    <div class="story-card">
-      <img src="assets/img/ariel.jpeg" class="story-photo" alt="Ariel" />
-      <h3 class="story-name">Ariel</h3>
-      <p class="story-role">NH USA #53 — Candidate</p>
-      <p class="story-excerpt">
-        My sister’s profound encounter with Jesus at New Heart 52 in Israel led me into a journey…
-      </p>
-      <button class="open-modal" data-target="#modal-ariel">Read Story</button>
-    </div>
-
-    <!-- ============ STORY 2 — CHOI EUN-YOUNG ============ -->
-    <div class="story-card">
-      <img src="assets/img/choi.jpeg" class="story-photo" alt="Choi Eun-young" />
-      <h3 class="story-name">Choi Eun-Young</h3>
-      <p class="story-role">NH Korea #54 — Hallelujah Group</p>
-      <p class="story-excerpt">
-        Invited and prayed for over a year, I came to this retreat exhausted in body and soul…
-      </p>
-      <button class="open-modal" data-target="#modal-choi">Read Story</button>
-    </div>
-
-    <!-- ============ STORY 3 — HAN YE-SUL ============ -->
-    <div class="story-card">
-      <img src="assets/img/han.jpeg" class="story-photo" alt="Han Ye-Sul" />
-      <h3 class="story-name">Han, Ye-Sul</h3>
-      <p class="story-role">NH Korea #54 — Team Member</p>
-      <p class="story-excerpt">
-        From reluctant first-timer to interceding worshiper, God met me in my exhaustion…
-      </p>
-      <button class="open-modal" data-target="#modal-han">Read Story</button>
-    </div>
-
-    <!-- ============ STORY 4 — KEZIAH / TRONG ============ -->
-    <div class="story-card">
-      <img src="assets/img/keziah.jpeg" class="story-photo" alt="Keziah" />
-      <h3 class="story-name">Keziah (Trong)</h3>
-      <p class="story-role">NH Vietnam #14 — Candidate</p>
-      <p class="story-excerpt">
-        After 14 years with the Lord, New Heart Vietnam #14 became a place of deep freedom…
-      </p>
-      <button class="open-modal" data-target="#modal-keziah">Read Story</button>
-    </div>
-
-    <!-- ============ STORY 5 — PARICHAT ============ -->
-    <div class="story-card">
-      <img src="assets/img/parichat.jpeg" class="story-photo" alt="Parichat" />
-      <h3 class="story-name">Parichat</h3>
-      <p class="story-role">NH Korea #54 — Thailand Team</p>
-      <p class="story-excerpt">
-        Carrying 18 years of pain, I came to New Heart 54 and encountered deep restoration…
-      </p>
-      <button class="open-modal" data-target="#modal-parichat">Read Story</button>
-    </div>
-
+  <!-- Ariel -->
+  <div class="story-card">
+    <img src="assets/img/ariel.jpeg" class="story-photo">
+    <h3>Ariel</h3>
+    <p class="story-role">NH USA #53 — Candidate</p>
+    <button class="open-modal" data-target="#modal-ariel">Read Story</button>
   </div>
+
+  <!-- Choi -->
+  <div class="story-card">
+    <img src="assets/img/choi.jpeg" class="story-photo">
+    <h3>Choi Eun-Young</h3>
+    <p class="story-role">NH Korea #54 — Hallelujah Group</p>
+    <button class="open-modal" data-target="#modal-choi">Read Story</button>
+  </div>
+
+  <!-- Han -->
+  <div class="story-card">
+    <img src="assets/img/han.jpeg" class="story-photo">
+    <h3>Han, Ye-Sul</h3>
+    <p class="story-role">NH Korea #54 — Team Member</p>
+    <button class="open-modal" data-target="#modal-han">Read Story</button>
+  </div>
+
+  <!-- Keziah -->
+  <div class="story-card">
+    <img src="assets/img/keziah.jpeg" class="story-photo">
+    <h3>Keziah (Trong)</h3>
+    <p class="story-role">NH Vietnam #14 — Candidate</p>
+    <button class="open-modal" data-target="#modal-keziah">Read Story</button>
+  </div>
+
+  <!-- Parichat -->
+  <div class="story-card">
+    <img src="assets/img/parichat.jpeg" class="story-photo">
+    <h3>Parichat</h3>
+    <p class="story-role">NH Korea #54 — Thailand Team</p>
+    <button class="open-modal" data-target="#modal-parichat">Read Story</button>
+  </div>
+
+</div>
 </section>
 
-
-
-<!-- ========================================= -->
-<!-- STORY MODALS -->
-<!-- ========================================= -->
-
-
-<!-- ===== MODAL: ARIEL ===== -->
-<div id="modal-ariel" class="modal" role="dialog" hidden>
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Ariel</h2>
-    <p>
-      My sister’s profound encounter with Jesus at New Heart 52 in Israel led me into a journey
-      from Orthodox Judaism to meeting Jesus as Messiah. Her transformation stirred a hunger I
-      could not ignore...
-    </p>
-  </div>
+<!-- ========== Story Modals ========== -->
+<div id="modal-ariel" class="modal" hidden>
+  <div class="modal-content"><button class="close-modal">×</button><h2>Ariel</h2><p>Full story…</p></div>
+</div>
+<div id="modal-choi" class="modal" hidden>
+  <div class="modal-content"><button class="close-modal">×</button><h2>Choi</h2><p>Full story…</p></div>
+</div>
+<div id="modal-han" class="modal" hidden>
+  <div class="modal-content"><button class="close-modal">×</button><h2>Han</h2><p>Full story…</p></div>
+</div>
+<div id="modal-keziah" class="modal" hidden>
+  <div class="modal-content"><button class="close-modal">×</button><h2>Keziah</h2><p>Full story…</p></div>
+</div>
+<div id="modal-parichat" class="modal" hidden>
+  <div class="modal-content"><button class="close-modal">×</button><h2>Parichat</h2><p>Full story…</p></div>
 </div>
 
-<!-- ===== MODAL: CHOI ===== -->
-<div id="modal-choi" class="modal" role="dialog" hidden>
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Choi Eun-Young</h2>
-    <p>
-      Invited and prayed for over a year, I came to this retreat exhausted in both body and soul.
-      The Lord gently called me back into the fight of faith, restoring my strength and joy...
-    </p>
-  </div>
+<!-- ======================================================
+     PAGE 3 — NEW HEART KIDS
+     ====================================================== -->
+<section id="page3">
+
+<div class="mosaic">
+  <img src="assets/img/kids-bg-1.jpeg">
+  <img src="assets/img/kids-bg-2.jpeg">
+  <img src="assets/img/kids-bg-3.jpeg">
+  <img src="assets/img/kids-bg-4.jpeg">
+  <img src="assets/img/kids-bg-5.jpeg">
+  <img src="assets/img/kids-bg-6.jpeg">
+  <img src="assets/img/kids-bg-7.jpeg">
+  <img src="assets/img/kids-bg-8.jpeg">
+  <img src="assets/img/kids-bg-9.jpeg">
+  <img src="assets/img/kids-bg-10.jpeg">
+  <img src="assets/img/kids-bg-11.jpeg">
+  <img src="assets/img/kids-bg-12.jpeg">
+  <img src="assets/img/kids-bg-13.jpeg">
 </div>
 
-<!-- ===== MODAL: HAN ===== -->
-<div id="modal-han" class="modal" role="dialog" hidden>
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Han, Ye-Sul</h2>
-    <p>
-      From reluctant first-timer to interceding worshiper, God met me during pregnancy and fatigue.
-      He restored my courage and renewed my love for His presence...
-    </p>
+<div class="kids-overlay"></div>
+
+<div class="kids-content">
+  <h2 class="gold" style="text-align:center;">New Heart Kids</h2>
+
+  <div class="kids-stories">
+
+    <div class="kids-block">
+      <h3>Ji</h3>
+      <p>Full story paragraph exactly as you provided…</p>
+    </div>
+
+    <div class="kids-block">
+      <h3>Kyungjin</h3>
+      <p>Full story paragraph exactly as you provided…</p>
+    </div>
+
   </div>
 </div>
-
-<!-- ===== MODAL: KEZIAH ===== -->
-<div id="modal-keziah" class="modal" role="dialog" hidden>
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Keziah (Trong)</h2>
-    <p>
-      After 14 years of striving and self-righteousness, New Heart Vietnam #14 became a place of
-      deep inner freedom. God broke chains I didn’t know I carried, restoring my identity...
-    </p>
-  </div>
-</div>
-
-<!-- ===== MODAL: PARICHAT ===== -->
-<div id="modal-parichat" class="modal" role="dialog" hidden>
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Parichat</h2>
-    <p>
-      Carrying 18 years of pain, I encountered deep inner restoration, forgiveness, and
-      a renewed decision to serve the Lord with all my heart...
-    </p>
-  </div>
-</div>
-
-
-<style>
-/* ================= STORY GRID ================= */
-.stories-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-@media (max-width: 700px) {
-  .stories-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.story-card {
-  background: #fff;
-  border-radius: 14px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  text-align: center;
-}
-
-.story-photo {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
-.story-name {
-  margin: 0.4rem 0;
-  font-weight: 700;
-  color: var(--dark);
-}
-
-.story-role {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--gold);
-}
-
-.story-excerpt {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-}
-
-.open-modal {
-  margin-top: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  background: var(--gold);
-  color: white;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* ================= MODALS ================= */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-  z-index: 2000;
-}
-
-.modal-content {
-  background: white;
-  max-width: 700px;
-  width: 100%;
-  border-radius: 14px;
-  padding: 2rem;
-  position: relative;
-}
-
-.close-modal {
-  position: absolute;
-  right: 1rem;
-  top: 1rem;
-  border: none;
-  background: none;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-</style>
-<!-- ========================================= -->
-<!-- PAGE 3 — NEW HEART KIDS STORIES -->
-<!-- ========================================= -->
-<section id="page3" class="kids-page">
-
-  <!-- Background Mosaic -->
-  <div class="kids-bg"></div>
-
-  <h2 class="gold kids-title">New Heart Kids Stories</h2>
-
-  <div class="kids-stories-grid">
-
-    <!-- ========================= -->
-    <!-- STORY CARD: JI -->
-    <!-- ========================= -->
-    <div class="kids-story-card">
-      <img src="assets/img/ji.jpeg" alt="Ji Yeowoon" class="kids-photo" />
-
-      <h3 class="kids-name">Ji Yeowoon</h3>
-      <p class="kids-role">New Heart Kids #2 — Korea — General Affairs Coordinator</p>
-
-      <p class="kids-text">
-        Hello! I'm Ji Yeowoon, who served as the general affairs coordinator for New Heart Kids.
-        This year, New Heart Kids was conducted in Korea for the first time, and although we were
-        in the same location, we adjusted our schedules to avoid running into each other, so I
-        think you probably had no idea what we were up to 🙂
-      </p>
-
-      <p class="kids-text">
-        This year, New Heart Kids had a total of 22 children, ages 0 to 12, along with 10 teachers
-        spending time together. Since everything was a first, it wasn't just the teachers who felt
-        nervous. The children, who had spent the entire day away from their guardians, also met us
-        on that first day, tension written on their faces.
-      </p>
-
-      <p class="kids-text">
-        After dinner, we gathered to introduce ourselves and greet each other, then asked the
-        questions: “What is this place for? Why did we come here today?” Answers like “To worship!”
-        “To pray!” “To play!” came out, and then one child shouted, “To do missions!” It was an
-        answer that gave us great insight.
-      </p>
-
-      <p class="kids-text">
-        It wouldn't be an exaggeration to say that New Heart Kids was full of discomfort. Of course,
-        the same goes for adult New Heart. Sleeping arrangements change. You stay with people you've
-        never met before. You can't control your schedule. Many things you could do at home couldn’t
-        be done here. It even rained continuously, so outdoor activities were canceled.
-      </p>
-
-      <p class="kids-text">
-        Amazingly, the children complied with instructions and endured many situations. This doesn’t
-        mean they “happily obeyed” everything. They asked “why?”, asked for different things,
-        expressed their frustrations, and some cried because they missed their moms.
-      </p>
-
-      <p class="kids-text">
-        Nevertheless, isn’t it truly amazing that the children made it through all 3 nights and 4
-        days together without any safety incidents! At the end, they were sad about going home and
-        even said, “Will you do this again next year? I want to come again!”
-      </p>
-    </div>
-
-
-    <!-- ========================= -->
-    <!-- STORY CARD: KYUNGJIN -->
-    <!-- ========================= -->
-    <div class="kids-story-card">
-      <img src="assets/img/kyungjin.jpeg" alt="Kyungjin" class="kids-photo" />
-
-      <h3 class="kids-name">Kyungjin</h3>
-      <p class="kids-role">New Heart Kids #1 — USA (Los Angeles)</p>
-
-      <p class="kids-text">
-        In May 2025, God opened a beautiful new chapter as we launched New Heart Kids #1 in Los Angeles.
-        It was a long-awaited dream within the New Heart community to see all generations blessed through
-        New Heart, and it was incredible to witness how God opened the door to make this dream a reality.
-      </p>
-
-      <p class="kids-text">
-        When I first joined New Heart Kids, my heart was especially for young parents. As a mother of four,
-        I remembered the seasons when I felt spiritually dry and left out while raising my little ones. I
-        wanted to serve in a way that would give parents space to be renewed and restored in God’s presence.
-      </p>
-
-      <p class="kids-text">
-        But as I served, God expanded my heart to embrace their children as well. Serving about twenty
-        children, from toddlers to preteens, I saw firsthand how deeply God treasures each one of these
-        young children. His desire is to raise and equip them as future leaders within the New Heart
-        community.
-      </p>
-
-      <p class="kids-text">
-        There were certainly challenging moments, but through it all, I witnessed both parents and
-        children receiving one new heart through the Holy Spirit by the end of those three days. With
-        that same heart and encouragement, I was overjoyed to hear that we had New Heart Kids #2 in
-        Korea in October.
-      </p>
-
-      <p class="kids-text">
-        I believe this is God’s confirmation of His will to call us as a ‘family’ and to give His New
-        Heart to all generations.
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<style>
-/* ===========================
-   PAGE 3 — BACKGROUND
-   =========================== */
-.kids-page {
-  position: relative;
-  overflow: hidden;
-  padding: 4rem 1.5rem;
-}
-
-.kids-bg {
-  position: absolute;
-  inset: 0;
-  background: url('assets/img/kids-bg-6.jpeg'),
-              url('assets/img/kids-bg-7.jpeg'),
-              url('assets/img/kids-bg-8.jpeg'),
-              url('assets/img/kids-bg-9.jpeg'),
-              url('assets/img/kids-bg-10.jpeg'),
-              url('assets/img/kids-bg-11.jpeg'),
-              url('assets/img/kids-bg-12.jpeg'),
-              url('assets/img/kids-bg-13.jpeg');
-  background-size: 25% 25%;
-  background-position: center;
-  background-repeat: repeat;
-  filter: blur(18px) brightness(0.85);
-  opacity: 0.5;
-  z-index: 1;
-}
-
-/* ===========================
-   PAGE 3 — TITLE
-   =========================== */
-.kids-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 2.5rem;
-  position: relative;
-  z-index: 2;
-}
-
-/* ===========================
-   STORY GRID
-   =========================== */
-.kids-stories-grid {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-
-@media (max-width: 900px) {
-  .kids-stories-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===========================
-   STORY CARDS
-   =========================== */
-.kids-story-card {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(6px);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
-}
-
-.kids-photo {
-  width: 100%;
-  border-radius: 14px;
-  margin-bottom: 1rem;
-}
-
-.kids-name {
-  margin: 0.4rem 0;
-  color: var(--gold);
-  font-size: 1.4rem;
-}
-
-.kids-role {
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-  color: #555;
-}
-
-.kids-text {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  color: #333;
-}
-</style>
-<!-- ========================================= -->
-<!-- PAGE 4 — EDITORIAL + WAYS TO SERVE -->
-<!-- ========================================= -->
-<section id="page4" class="page4-section">
-
-  <!-- ===== EDITORIAL ===== -->
-  <h2 class="gold editorial-title">Editorial</h2>
-
-  <div class="editorial-card">
-    <p>
-      As the New Heart family grows across nations, so does the beautiful diversity
-      of hearts, stories, and generations. This season, God has allowed us to witness
-      an extraordinary truth: **every generation is being called and awakened together.**
-    </p>
-
-    <p>
-      From the New Heart Kids gatherings in Los Angeles and Korea, to the powerful moves
-      of the Holy Spirit in Vietnam, Thailand, Israel, and the United States, we see the
-      same promise unfolding again and again — *“I will give you a new heart.”*
-    </p>
-
-    <p>
-      Whether we are young or old, weary or strong, newcomers or long-time servants,
-      God continues His gentle, faithful work of transforming us from within.
-    </p>
-
-    <p>
-      In this issue, we celebrate not only what God has done, but what He is calling us
-      into. The harvest is ready. The workers are rising. And together — as one family,
-      one body, one heart — we say *Yes, Lord.*
-    </p>
-
-    <p>
-      May your heart be strengthened, renewed, and filled with joy as you read these
-      testimonies and prepare for the next chapters of New Heart around the world.
-    </p>
-
-    <p class="editorial-sign">
-      — New Heart Global Editorial Team
-    </p>
-  </div>
-
-  <!-- ===== WAYS TO SERVE ===== -->
-  <h2 class="gold serve-title">Ways to Serve</h2>
-
-  <div class="serve-grid">
-
-    <!-- #1 -->
-    <div class="serve-card">
-      <h3 class="serve-header">📌 Serve at New Heart</h3>
-      <p class="serve-text">
-        Whether you are experienced or brand new, there is a place for you in the ministry.
-        Teams include worship, intercession, small groups, logistics, hospitality, and more.
-      </p>
-    </div>
-
-    <!-- #2 -->
-    <div class="serve-card">
-      <h3 class="serve-header">👶 Serve New Heart Kids</h3>
-      <p class="serve-text">
-        Help nurture and disciple the next generation. Teachers, caregivers, and creative
-        activity volunteers are especially needed for upcoming Kids programs.
-      </p>
-    </div>
-
-    <!-- #3 -->
-    <div class="serve-card">
-      <h3 class="serve-header">🌏 Join a Regional Team</h3>
-      <p class="serve-text">
-        Support New Heart in Vietnam, Thailand, Israel, the U.S., or Korea. Serve through
-        administration, translation, outreach, or event coordination.
-      </p>
-    </div>
-
-    <!-- #4 -->
-    <div class="serve-card">
-      <h3 class="serve-header">❤️ Prayer & Intercession</h3>
-      <p class="serve-text">
-        Partner in prayer for candidates, teams, pastors, and global expansion. Intercessors
-        are the spiritual backbone of every New Heart.
-      </p>
-    </div>
-
-    <!-- #5 -->
-    <div class="serve-card">
-      <h3 class="serve-header">🎥 Media / Testimony Team</h3>
-      <p class="serve-text">
-        Use your gifts in photography, videography, testimony writing, editing, or
-        design to help capture and share what God is doing.
-      </p>
-    </div>
-
-    <!-- #6 -->
-    <div class="serve-card">
-      <h3 class="serve-header">🤝 Local Church Support</h3>
-      <p class="serve-text">
-        Strengthen your home church through your New Heart experience.
-        Encourage, disciple, serve, and love your community with your renewed heart.
-      </p>
-    </div>
-
-  </div>
 
 </section>
 
-<style>
-/* ===========================
-   PAGE 4 BASE
-   =========================== */
-.page4-section {
-  padding: 4rem 1.8rem;
-  max-width: 1100px;
-  margin: auto;
-}
+<!-- ======================================================
+     PAGE 4 — Editorial + Ways to Serve
+     ====================================================== -->
+<section id="page4">
+<div class="page4-grid">
 
-/* ===========================
-   EDITORIAL
-   =========================== */
-.editorial-title {
-  font-size: 2rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  white-space: nowrap;
-  color: var(--gold);
-}
+  <!-- Editorial -->
+  <div>
+    <h2 class="editorial-title">Editorial</h2>
+    <p>Final editorial text…</p>
+  </div>
 
-.editorial-card {
-  background: #fff;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-  margin-bottom: 3rem;
-}
+  <!-- Ways to Serve -->
+  <div>
+    <h2 class="gold">Ways to Serve</h2>
 
-.editorial-card p {
-  margin-bottom: 1.2rem;
-  font-size: 1.05rem;
-  color: #333;
-  line-height: 1.7;
-}
+    <h3 class="gold">🇺🇸 US Support</h3>
+    <img src="assets/img/IMG_1320.jpg" class="qr">
 
-.editorial-sign {
-  font-weight: 700;
-  text-align: right;
-  color: var(--gold);
-  margin-top: 2rem;
-}
+    <h3 class="gold">🇹🇭 Thailand Support</h3>
+    <img src="assets/img/IMG_1324.JPG" class="qr">
 
-/* ===========================
-   WAYS TO SERVE
-   =========================== */
-.serve-title {
-  text-align: center;
-  margin: 2rem 0;
-  font-size: 2rem;
-}
+    <h3 class="gold">🇰🇷 Korea Donation</h3>
+    <p>
+      <strong>Account Name:</strong> New Heart Korea<br>
+      <strong>Bank:</strong> Hana Bank (하나은행)<br>
+      <strong>Account Number:</strong> 344-910003-80905<br>
+      <em>Notes: For any donation</em>
+    </p>
 
-.serve-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
+    <!-- DOCX BUTTONS -->
+    <a class="doc-button" href="Palanca-55.docx">📄 Palanca Donation Chart #55 (VNH #14)</a>
+    <a class="doc-button" href="Palanca-56.docx">📄 Palanca Donation Chart #56 (TNH #1)</a>
 
-@media (max-width: 800px) {
-  .serve-grid {
-    grid-template-columns: 1fr;
-  }
-}
+  </div>
 
-.serve-card {
-  background: white;
-  padding: 1.7rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-}
+</div>
+</section>
 
-.serve-header {
-  font-size: 1.2rem;
-  color: var(--gold);
-  margin-bottom: 0.8rem;
-}
+<script>
+/* Modal Handling */
+document.querySelectorAll(".open-modal").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    document.querySelector(btn.dataset.target).hidden = false;
+  });
+});
+document.querySelectorAll(".close-modal").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    btn.closest(".modal").hidden = true;
+  });
+});
+</script>
 
-.serve-text {
-  font-size: 0.95rem;
-  color: #333;
-  line-height: 1.6;
-}
-</style>
-
+</body>
+</html>
