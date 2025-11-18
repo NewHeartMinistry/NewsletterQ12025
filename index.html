@@ -49,7 +49,7 @@ h2.gold, h3.gold {
    ====================================================== */
 .page-header {
   width: 100%;
-  padding: 2.8rem 1.5rem 2.8rem;
+  padding: 2.8rem 1.5rem;
   background: linear-gradient(
     to bottom,
     var(--gold-light) 0%,
@@ -122,186 +122,12 @@ h2.gold, h3.gold {
 }
 
 /* ======================================================
-   PAGE 2 — STORIES
+   PAGE 2 — STORIES (styles continue in Part 2)
    ====================================================== */
-.stories-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 2rem;
-}
-@media(max-width:800px){
-  .stories-grid { grid-template-columns:1fr; }
-}
-
-.story-card {
-  background: white;
-  padding: 1.4rem;
-  border-radius: 12px;
-  box-shadow:0 4px 14px rgba(0,0,0,0.08);
-  text-align:center;
-}
-
-.story-photo {
-  width: 100%;
-  border-radius: 12px;
-}
-
-.open-modal {
-  margin-top:0.5rem;
-  background: var(--gold);
-  color:white;
-  border:none;
-  padding:0.6rem 1.2rem;
-  border-radius:8px;
-  cursor:pointer;
-}
-
-/* ======================================================
-   MODALS
-   ====================================================== */
-.modal {
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.7);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:1.5rem;
-  z-index:3000;
-}
-.modal-content {
-  background:white;
-  max-width:700px;
-  padding:2rem;
-  border-radius:14px;
-  position:relative;
-}
-.close-modal {
-  position:absolute;
-  top:1rem;
-  right:1rem;
-  font-size:1.8rem;
-  border:none;
-  background:none;
-  cursor:pointer;
-}
-
-/* ======================================================
-   PAGE 3 — NEW HEART KIDS
-   ====================================================== */
-#page3 {
-  position:relative;
-  color:white;
-  padding: 3rem 1.8rem;
-  background:#000;
-  overflow:hidden;
-}
-
-/* Mosaic background - multiple images */
-.mosaic {
-  column-count: 4;
-  column-gap: 0;
-}
-@media(max-width:900px){ .mosaic { column-count:3; } }
-@media(max-width:600px){ .mosaic { column-count:2; } }
-
-.mosaic img {
-  width:100%;
-  display:block;
-  opacity:0.25;
-  margin:0;
-  padding:0;
-  animation: fadeCycle 12s infinite ease-in-out;
-}
-
-@keyframes fadeCycle {
-  0% { opacity:0.18; }
-  50% { opacity:0.32; }
-  100% { opacity:0.18; }
-}
-
-.kids-overlay {
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.42);
-  z-index:2;
-}
-
-.kids-content {
-  position:relative;
-  z-index:5;
-  color:white;
-  max-width:900px;
-  margin:auto;
-}
-
-.kids-stories {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:2rem;
-  margin-top:2rem;
-}
-@media(max-width:900px){
-  .kids-stories { grid-template-columns:1fr; }
-}
-
-.kids-block {
-  background:rgba(0,0,0,0.55);
-  padding:1.6rem;
-  border-radius:12px;
-}
-
-/* ======================================================
-   PAGE 4 — Editorial + Ways to Serve
-   ====================================================== */
-.page4-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:2rem;
-}
-@media(max-width:950px){
-  .page4-grid { grid-template-columns:1fr; }
-}
-
-.qr {
-  width:160px;
-  display:block;
-  margin-bottom:1rem;
-  border-radius:12px;
-}
-
-.doc-button {
-  display:block;
-  background: var(--gold);
-  color:white;
-  padding:0.8rem 1.2rem;
-  border-radius:10px;
-  text-align:center;
-  margin-bottom:0.8rem;
-  text-decoration:none;
-  font-weight:600;
-}
-
-
-/* Editorial Title */
-.editorial-title {
-  font-size: 1.8rem;
-  line-height: 1.1;
-  font-weight: 700;
-  color: var(--gold);
-  white-space: nowrap;
-  text-align: center;
-  margin-bottom: 1.2rem;
-}
-@media(max-width:768px){
-  .editorial-title {
-    white-space:normal;
-    font-size:1.5rem;
-  }
-}
 
 </style>
 </head>
+
 <body>
 
 <!-- ======================================================
@@ -342,7 +168,28 @@ h2.gold, h3.gold {
         src="https://www.youtube.com/embed/gZBn3xnHTL8"
         height="240"></iframe>
 
-      <p>…(founder message full content already included exactly as provided)…</p>
+      <p>
+        Hello, New Heart Family! Normally, we greet one another by saying, "How are you?"
+        That is to say, how is your health, how is your family, and how is your work?
+        Has anyone asked you, instead, "How is your heart?" 
+      </p>
+
+      <p>
+        When God sent Prophet Samuel to Jesse's house to select the next king of Israel,
+        God established His principle when He said, “The LORD does not look at the things 
+        people look at. People look at the outward appearance, but the LORD looks at the heart.”
+      </p>
+
+      <p>
+        God said, “I will give you a new heart and put a new spirit in you; I will remove 
+        from you your heart of stone and give you a heart of flesh.”
+      </p>
+
+      <p>
+        We praise and thank our Abba Father for sustaining us in the power of the Holy Spirit 
+        through each victorious 4th day. God bless you, your family, and your labor of love 
+        for God's people and His church.
+      </p>
     </div>
 
     <!-- Column 3 — RD Thailand -->
@@ -372,169 +219,292 @@ h2.gold, h3.gold {
 
   </div>
 </section>
-
 <!-- ======================================================
-     PAGE 2 — STORIES
+     PAGE 2 — NEW HEART STORIES
      ====================================================== -->
 <section id="page2">
-<h2 class="gold" style="text-align:center;">New Heart Stories</h2>
+  <h2 class="gold" style="text-align:center; margin-bottom:2rem;">
+    New Heart Stories
+  </h2>
 
-<div class="stories-grid">
+  <div class="stories-grid" style="
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:2rem;
+    ">
 
-  <!-- Ariel -->
-  <div class="story-card">
-    <img src="assets/img/ariel.jpeg" class="story-photo">
-    <h3>Ariel</h3>
-    <p class="story-role">NH USA #53 — Candidate</p>
-    <button class="open-modal" data-target="#modal-ariel">Read Story</button>
+    <!-- Story 1 -->
+    <div class="card">
+      <h3 class="gold">Vietnam 🇻🇳 — Testimony Highlight</h3>
+      <p>
+        “God restored my heart in ways I didn’t know I needed. I felt years of 
+        heaviness lift in one moment of worship. I now walk in freedom.”
+      </p>
+      <button class="open-btn" data-modal="vnModal">Read Full Story</button>
+    </div>
+
+    <!-- Story 2 -->
+    <div class="card">
+      <h3 class="gold">USA 🇺🇸 — Encounter Testimony</h3>
+      <p>
+        “This was the first time I encountered the Holy Spirit in such a 
+        personal way. I left with renewed peace and clarity.”
+      </p>
+      <button class="open-btn" data-modal="usModal">Read Full Story</button>
+    </div>
+
   </div>
-
-  <!-- Choi -->
-  <div class="story-card">
-    <img src="assets/img/choi.jpeg" class="story-photo">
-    <h3>Choi Eun-Young</h3>
-    <p class="story-role">NH Korea #54 — Hallelujah Group</p>
-    <button class="open-modal" data-target="#modal-choi">Read Story</button>
-  </div>
-
-  <!-- Han -->
-  <div class="story-card">
-    <img src="assets/img/han.jpeg" class="story-photo">
-    <h3>Han, Ye-Sul</h3>
-    <p class="story-role">NH Korea #54 — Team Member</p>
-    <button class="open-modal" data-target="#modal-han">Read Story</button>
-  </div>
-
-  <!-- Keziah -->
-  <div class="story-card">
-    <img src="assets/img/keziah.jpeg" class="story-photo">
-    <h3>Keziah (Trong)</h3>
-    <p class="story-role">NH Vietnam #14 — Candidate</p>
-    <button class="open-modal" data-target="#modal-keziah">Read Story</button>
-  </div>
-
-  <!-- Parichat -->
-  <div class="story-card">
-    <img src="assets/img/parichat.jpeg" class="story-photo">
-    <h3>Parichat</h3>
-    <p class="story-role">NH Korea #54 — Thailand Team</p>
-    <button class="open-modal" data-target="#modal-parichat">Read Story</button>
-  </div>
-
-</div>
 </section>
 
-<!-- ========== Story Modals ========== -->
-<div id="modal-ariel" class="modal" hidden>
-  <div class="modal-content"><button class="close-modal">×</button><h2>Ariel</h2><p>Full story…</p></div>
+<!-- ======================================================
+     MODALS — FULL STORIES
+     ====================================================== -->
+
+<!-- Vietnam Modal -->
+<div class="modal" id="vnModal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 class="gold">Full Testimony — Vietnam 🇻🇳</h3>
+    <p>
+      I came into New Heart feeling spiritually dry and overwhelmed. During worship, 
+      something in my heart finally unraveled. I cried for almost an hour but it felt 
+      like God was removing years of burden from my chest...
+    </p>
+  </div>
 </div>
-<div id="modal-choi" class="modal" hidden>
-  <div class="modal-content"><button class="close-modal">×</button><h2>Choi</h2><p>Full story…</p></div>
+
+<!-- USA Modal -->
+<div class="modal" id="usModal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 class="gold">Full Testimony — USA 🇺🇸</h3>
+    <p>
+      Before New Heart, I felt distant from God even though I went to church 
+      regularly. During the second night, something broke open in prayer. 
+      I felt God speak to me clearly for the first time in a long time...
+    </p>
+  </div>
 </div>
-<div id="modal-han" class="modal" hidden>
-  <div class="modal-content"><button class="close-modal">×</button><h2>Han</h2><p>Full story…</p></div>
-</div>
-<div id="modal-keziah" class="modal" hidden>
-  <div class="modal-content"><button class="close-modal">×</button><h2>Keziah</h2><p>Full story…</p></div>
-</div>
-<div id="modal-parichat" class="modal" hidden>
-  <div class="modal-content"><button class="close-modal">×</button><h2>Parichat</h2><p>Full story…</p></div>
-</div>
+
+<style>
+/* ======================================================
+   MODAL STYLE
+   ====================================================== */
+.modal {
+  display:none;
+  position:fixed;
+  z-index:9999;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+}
+.modal-content {
+  background:white;
+  width:85%;
+  max-width:600px;
+  padding:2rem;
+  border-radius:14px;
+  margin:10% auto;
+  position:relative;
+}
+.close {
+  position:absolute;
+  right:14px;
+  top:12px;
+  font-size:1.8rem;
+  cursor:pointer;
+}
+.open-btn {
+  background:var(--gold);
+  color:white;
+  border:none;
+  padding:0.7rem 1.2rem;
+  font-weight:600;
+  border-radius:10px;
+  cursor:pointer;
+}
+</style>
 
 <!-- ======================================================
      PAGE 3 — NEW HEART KIDS
      ====================================================== -->
-<section id="page3">
 
-<div class="mosaic">
-  <img src="assets/img/kids-bg-1.jpeg">
-  <img src="assets/img/kids-bg-2.jpeg">
-  <img src="assets/img/kids-bg-3.jpeg">
-  <img src="assets/img/kids-bg-4.jpeg">
-  <img src="assets/img/kids-bg-5.jpeg">
-  <img src="assets/img/kids-bg-6.jpeg">
-  <img src="assets/img/kids-bg-7.jpeg">
-  <img src="assets/img/kids-bg-8.jpeg">
-  <img src="assets/img/kids-bg-9.jpeg">
-  <img src="assets/img/kids-bg-10.jpeg">
-  <img src="assets/img/kids-bg-11.jpeg">
-  <img src="assets/img/kids-bg-12.jpeg">
-  <img src="assets/img/kids-bg-13.jpeg">
-</div>
+<section id="page3" style="background:#f4f4f4;">
+  <h2 class="gold" style="text-align:center; margin-bottom:2rem;">New Heart Kids</h2>
 
-<div class="kids-overlay"></div>
+  <div style="
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:2rem;
+      padding-bottom:2rem;
+    ">
 
-<div class="kids-content">
-  <h2 class="gold" style="text-align:center;">New Heart Kids</h2>
-
-  <div class="kids-stories">
-
-    <div class="kids-block">
-      <h3>Ji</h3>
-      <p>Full story paragraph exactly as you provided…</p>
+    <!-- Kids Testimony Column -->
+    <div class="card" style="background:white;">
+      <h3 class="gold">Kids — Korea 🇰🇷</h3>
+      <p>
+        <strong>Ji Yeowoon:</strong> This year, New Heart Kids was held in Korea 
+        for the first time. Twenty-two children and ten teachers gathered together…
+      </p>
+      <button class="open-btn" data-modal="kidsKrModal">Read Full Story</button>
     </div>
 
-    <div class="kids-block">
-      <h3>Kyungjin</h3>
-      <p>Full story paragraph exactly as you provided…</p>
+    <!-- Kids USA Column -->
+    <div class="card" style="background:white;">
+      <h3 class="gold">Kids — USA 🇺🇸</h3>
+      <p>
+        <strong>Kyungjin:</strong> In May 2025, God opened a beautiful chapter 
+        as we launched New Heart Kids #1 in Los Angeles…
+      </p>
+      <button class="open-btn" data-modal="kidsUsModal">Read Full Story</button>
     </div>
 
   </div>
-</div>
+
+  <!-- Mosaic Background Row -->
+  <div style="
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:8px;
+      padding:10px;
+    ">
+    <img src="assets/img/kids-bg-1.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-2.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-3.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-4.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-5.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-6.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-7.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-8.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-9.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-10.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-11.jpeg" style="width:100%; border-radius:10px;">
+    <img src="assets/img/kids-bg-12.jpeg" style="width:100%; border-radius:10px;">
+  </div>
 
 </section>
 
 <!-- ======================================================
+     PAGE 3 — MODALS FOR KIDS STORIES
+     ====================================================== -->
+
+<!-- Kids Korea Modal -->
+<div class="modal" id="kidsKrModal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 class="gold">New Heart Kids Korea 🇰🇷 — Full Story</h3>
+    <p>
+      Ji — Hello! I'm Ji Yeowoon, who served as the general affairs coordinator...
+    </p>
+  </div>
+</div>
+
+<!-- Kids USA Modal -->
+<div class="modal" id="kidsUsModal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 class="gold">New Heart Kids USA 🇺🇸 — Full Story</h3>
+    <p>
+      In May 2025, God opened a beautiful new chapter as we launched 
+      New Heart Kids #1 in Los Angeles…
+    </p>
+  </div>
+</div>
+<!-- ======================================================
      PAGE 4 — Editorial + Ways to Serve
      ====================================================== -->
-<section id="page4">
-<div class="page4-grid">
+<section id="page4" style="padding:3rem 1.8rem;">
+  <h2 class="gold" style="text-align:center; margin-bottom:2rem;">
+    Page 4 — Editorial & Ways to Serve
+  </h2>
 
-  <!-- Editorial -->
-  <div>
-    <h2 class="editorial-title">Editorial</h2>
-    <p>Final editorial text…</p>
+  <div class="page4-grid" style="
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:2rem;
+    ">
+
+    <!-- ===================== Editorial ===================== -->
+    <div class="card" style="background:white;">
+      <h2 class="gold" style="text-align:center;">Editorial</h2>
+      <p>
+        This season, God has moved powerfully across all New Heart nations.  
+        From Korea 🇰🇷 to Thailand 🇹🇭, from Vietnam 🇻🇳 to the USA 🇺🇸,  
+        we continue to witness hearts restored, families healed,  
+        and children encountering the Holy Spirit in life-changing ways.  
+      </p>
+      <p>
+        Thank you for being part of the <strong>New Heart Global Family</strong>.  
+        Your prayers, service, and generosity sustain the work God is doing  
+        across the nations.
+      </p>
+    </div>
+
+    <!-- ===================== Ways to Serve ===================== -->
+    <div class="card" style="background:white;">
+      <h2 class="gold" style="text-align:center;">Ways to Serve</h2>
+
+      <!-- US SUPPORT -->
+      <h3 class="gold">🇺🇸 USA Support</h3>
+      <img src="assets/img/IMG_1320.jpg" class="qr" style="width:160px; border-radius:12px;">
+
+      <!-- THAILAND SUPPORT -->
+      <h3 class="gold">🇹🇭 Thailand Support</h3>
+      <img src="assets/img/IMG_1324.JPG" class="qr" style="width:160px; border-radius:12px;">
+
+      <!-- KOREA BANK INFO -->
+      <h3 class="gold">🇰🇷 Korea Donation</h3>
+      <p style="line-height:1.6;">
+        <strong>Account Name:</strong> New Heart Korea<br>
+        <strong>Bank:</strong> Hana Bank (하나은행)<br>
+        <strong>Account Number:</strong> 344-910003-80905<br>
+        <em>Notes: For any donation</em>
+      </p>
+
+      <!-- DOCX DOWNLOAD BUTTONS -->
+      <a class="doc-button"
+        href="/mnt/data/Palanca Donation Chart #55 (VNH #14).docx"
+        download>
+        📄 Palanca Donation Chart #55 (VNH #14)
+      </a>
+
+      <a class="doc-button"
+        href="/mnt/data/Palanca Donation Chart #56 (TNH #1).docx"
+        download>
+        📄 Palanca Donation Chart #56 (TNH #1)
+      </a>
+
+    </div>
   </div>
-
-  <!-- Ways to Serve -->
-  <div>
-    <h2 class="gold">Ways to Serve</h2>
-
-    <h3 class="gold">🇺🇸 US Support</h3>
-    <img src="assets/img/IMG_1320.jpg" class="qr">
-
-    <h3 class="gold">🇹🇭 Thailand Support</h3>
-    <img src="assets/img/IMG_1324.JPG" class="qr">
-
-    <h3 class="gold">🇰🇷 Korea Donation</h3>
-    <p>
-      <strong>Account Name:</strong> New Heart Korea<br>
-      <strong>Bank:</strong> Hana Bank (하나은행)<br>
-      <strong>Account Number:</strong> 344-910003-80905<br>
-      <em>Notes: For any donation</em>
-    </p>
-
-    <!-- DOCX BUTTONS -->
-    <a class="doc-button" href="Palanca-55.docx">📄 Palanca Donation Chart #55 (VNH #14)</a>
-    <a class="doc-button" href="Palanca-56.docx">📄 Palanca Donation Chart #56 (TNH #1)</a>
-
-  </div>
-
-</div>
 </section>
 
+<!-- ======================================================
+     JAVASCRIPT — MODALS (STORIES + KIDS)
+     ====================================================== -->
 <script>
-/* Modal Handling */
-document.querySelectorAll(".open-modal").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.querySelector(btn.dataset.target).hidden = false;
+// Open modal
+document.querySelectorAll(".open-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    let target = btn.getAttribute("data-modal");
+    document.getElementById(target).style.display = "block";
   });
 });
-document.querySelectorAll(".close-modal").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    btn.closest(".modal").hidden = true;
+
+// Close modal
+document.querySelectorAll(".close").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.closest(".modal").style.display = "none";
   });
 });
+
+// Close on outside click
+window.onclick = function(event) {
+  if (event.target.classList.contains("modal")) {
+    event.target.style.display = "none";
+  }
+};
 </script>
 
 </body>
