@@ -1,1 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>New Heart Global Newsletter</title>
+<style>
+/* === GLOBAL STYLES === */
+body { font-family: Arial, sans-serif; margin:0; padding:0; background:#ffffff; color:#222; }
+h1, h2, h3, h4 { font-weight:700; }
+.section-title { font-size: 2.2rem; text-align:center; margin-top:40px; }
+.no-translate { translate: no; }
+
+/* === LAYOUT === */
+.page { width:100%; max-width:1200px; margin:auto; padding:40px 30px; }
+.three-columns { display:grid; grid-template-columns: 1fr 1fr 1fr; gap:25px; }
+.two-columns { display:grid; grid-template-columns: 1fr 1fr; gap:40px; margin-top:30px; }
+.column { padding:10px; }
+
+/* === STORY PREVIEW === */
+.story-preview { cursor:pointer; border:1px solid #ddd; border-radius:12px; padding:15px; background:#fafafa; transition:0.3s; }
+.story-preview img { width:100%; height:220px; object-fit:cover; border-radius:8px; }
+.story-preview:hover { background:#f0f0f0; }
+
+/* === MODAL === */
+.modal { display:none; position:fixed; z-index:99; left:0; top:0; width:100%; height:100%; background:rgba(0,0,0,0.7); }
+.modal-content { background:#fff; margin:5% auto; padding:30px; border-radius:10px; width:80%; max-width:900px; height:80%; overflow-y:auto; }
+.close-btn { float:right; font-size:30px; cursor:pointer; }
+
+/* === LANGUAGE BUTTONS === */
+.language-bar { position:absolute; right:30px; top:20px; display:flex; gap:10px; }
+.language-btn { padding:6px 10px; border-radius:5px; cursor:pointer; border:1px solid #444; background:#fff; }
+
+.flag { width:22px; height:16px; object-fit:cover; margin-right:5px; }
+
+</style>
+
+<script>
+function openModal(id){ document.getElementById(id).style.display='block'; }
+function closeModal(id){ document.getElementById(id).style.display='none'; }
+</script>
+
+</head>
+<body>
+
+<!-- ======================================= -->
+<!-- PAGE 1 — HEADER / FOUNDERS / DIRECTORS -->
+<!-- ======================================= -->
+<div class="page" id="page1">
+    <div class="language-bar">
+        <button class="language-btn">EN</button>
+        <button class="language-btn">KR</button>
+        <button class="language-btn">TH</button>
+        <button class="language-btn">VN</button>
+        <button class="language-btn">HE</button>
+        <button class="language-btn">CH</button>
+    </div>
+
+    <h1 class="no-translate" style="text-align:center; margin-top:60px; font-size:3rem;">New Heart Global Newsletter</h1>
+    <h3 class="no-translate" style="text-align:center; margin-top:10px; font-size:1.5rem;">54th Global Gathering — Korea</h3>
+
+    <div class="three-columns" style="margin-top:50px;">
+        <!-- LEFT COLUMN — Bible Verse -->
+        <div class="column">
+            <h3 class="no-translate">Ezekiel 36:26</h3>
+            <p>
+                "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh."
+            </p>
+        </div>
+
+        <!-- CENTER COLUMN — Founders -->
+        <div class="column" style="text-align:center;">
+            <h3 class="no-translate">Founders</h3>
+            <p>Pastors Jason & Youngmi Cha<br/>New Heart Global Directors</p>
+            <iframe width="100%" height="240" src="https://www.youtube.com/embed/gZBn3xnHTL8" allowfullscreen></iframe>
+        </div>
+
+        <!-- RIGHT COLUMN — RD + Poster -->
+        <div class="column" style="text-align:center;">
+            <h3 class="no-translate">Regional Director</h3>
+            <p>Pastors Matthew & Sarah Kim — Thailand</p>
+            <iframe width="100%" height="240" src="https://www.youtube.com/embed/wNR9yt7HtbU" allowfullscreen></iframe>
+            <img src="assets/img/Thailand-poster.jpeg" style="width:100%; margin-top:20px; border-radius:10px;" />
+        </div>
+    </div>
+</div>
+
+<!-- ======================= -->
+<!-- PAGE 2 — ADULT STORIES  -->
+<!-- ======================= -->
+<div class="page" id="page2">
+    <h2 class="section-title no-translate">New Heart Stories</h2>
+    <div class="two-columns">
+
+        <!-- Ariel -->
+        <div class="story-preview" onclick="openModal('ariel')">
+            <img src="assets/img/ariel.jpeg" />
+            <h3>Ariel — Israel</h3>
+            <p>“God restored me with a new heart…”</p>
+        </div>
+        <div id="ariel" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('ariel')">&times;</span>
+                <h2>Ariel — Israel</h2>
+                <p><!-- Full text inserted server-side previously --></p>
+            </div>
+        </div>
+
+        <!-- Keziah -->
+        <div class="story-preview" onclick="openModal('keziah')">
+            <img src="assets/img/keziah.jpeg" />
+            <h3>Keziah — USA</h3>
+            <p>“God opened a beautiful new chapter…”</p>
+        </div>
+        <div id="keziah" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('keziah')">&times;</span>
+                <h2>Keziah — USA</h2>
+                <p>In May 2025, God opened a beautiful new chapter...</p>
+            </div>
+        </div>
+
+        <!-- Han -->
+        <div class="story-preview" onclick="openModal('han')">
+            <img src="assets/img/han.jpeg" />
+            <h3>Han — Korea</h3>
+            <p>“God strengthened me in service…”</p>
+        </div>
+        <div id="han" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('han')">&times;</span>
+                <h2>Han — Korea</h2>
+                <p><!-- Full text here --></p>
+            </div>
+        </div>
+
+        <!-- Choi -->
+        <div class="story-preview" onclick="openModal('choi')">
+            <img src="assets/img/choi.jpeg" />
+            <h3>Choi — Korea</h3>
+            <p>“God confronted my heart…”</p>
+        </div>
+        <div id="choi" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('choi')">&times;</span>
+                <h2>Choi — Korea</h2>
+                <p><!-- Full text here --></p>
+            </div>
+        </div>
+
+        <!-- Parichat -->
+        <div class="story-preview" onclick="openModal('parichat')">
+            <img src="assets/img/parichat.jpeg" />
+            <h3>Parichat — Thailand</h3>
+            <p>“God renewed my life completely…”</p>
+        </div>
+        <div id="parichat" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal('parichat')">&times;</span>
+                <h2>Parichat — Thailand</h2>
+                <p><!-- Full text here --></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ======================= -->
+<!-- PAGE 3 — NEW HEART KIDS -->
+<!-- ======================= -->
+<div class="page" id="page3">
+    <h2 class="section-title no-translate">New Heart Kids</h2>
+
+    <div class="two-columns">
+        <!-- Ji -->
+        <div class="story-preview" onclick="openModal('ji')">
+            <img src="assets/img/ji.jpeg" />
+            <h3>Ji — Korea</h3>
+            <p>“New Heart Kids was full of grace…”</p>
+        </div>
+        <div id="ji" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('ji')">&times;</span><h2>Ji — Korea</h2><p><!-- Full story --></p></div></div>
+
+        <!-- Kyungjin -->
+        <div class="story-preview" onclick="openModal('kyungjin')">
+            <img src="assets/img/kyungjin.jpeg" />
+            <h3>Kyungjin — Korea</h3>
+            <p>“The children learned to pray, worship…”</p>
+        </div>
+        <div id="kyungjin" class="modal"><div class="modal-content"><span class="close-btn" onclick="closeModal('kyungjin')">&times;</span><h2>Kyungjin — Korea</h2><p><!-- Full story --></p></div></div>
+    </div>
+</div>
+
+<!-- ======================= -->
+<!-- PAGE 4 — EDITORIAL + WAYS TO SERVE -->
+<!-- ======================= -->
+<div class="page" id="page4">
+
+    <div class="two-columns">
+        <!-- EDITORIAL LEFT COLUMN -->
+        <div class="column">
+            <h2 class="section-title no-translate">Editorial</h2>
+            <p>
+                Compelled by the Fire: The Fourth Day... (full text here)
+            </p>
+        </div>
+
+        <!-- WAYS TO SERVE RIGHT COLUMN -->
+        <div class="column">
+            <h2 class="section-title no-translate">Ways to Serve</h2>
+            <p>Palanca Donation Charts:</p>
+            <ul>
+                <li><a href="#">Chart 1</a></li>
+                <li><a href="#">Chart 2</a></li>
+            </ul>
+
+            <h3>QR Codes</h3>
+            <img src="assets/img/qr1.jpeg" style="width:45%;" />
+            <img src="assets/img/qr2.jpeg" style="width:45%;" />
+
+            <p><strong>Please use the QR codes or bank info and indicate what it is for.</strong></p>
+
+            <h3>Vietnam Bank Info</h3>
+            <p>
+                Phan Tan Minh Thach<br>
+                Account: 040030967005<br>
+                Bank: Saigon Thuong Tin Commercial Bank (Sacombank – PGD Lien Chieu CNDNG)<br>
+                Swift Code: SGTTVNVX<br>
+                Phone: (84) 903168410
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
 
