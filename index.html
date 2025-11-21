@@ -1,1123 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>New Heart Global Family Newsletter — Fall 2025</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  background: #fafafa;
-  color: #222;
-  line-height: 1.6;
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-section {
-  padding: 2.5rem 1.4rem;
-}
-
-.hidden { display: none !important; }
-
-:root {
-  --gold: #d6b66b;
-  --gold-light: #ecd9a4;
-  --dark: #111;
-  --btn-bg: #ffffff;
-  --btn-border: #d6b66b;
-  --btn-hover: #fff8e6;
-}
-
-.glow-btn, .open-modal {
-  display: inline-block;
-  padding: 0.75rem 1.4rem;
-  margin: 0.4rem 0;
-  border-radius: 10px;
-  border: 2px solid var(--btn-border);
-  background: var(--btn-bg);
-  cursor: pointer;
-  font-weight: 600;
-  text-decoration: none;
-  color: #444;
-  transition: box-shadow 0.3s ease, background 0.3s ease, transform 0.2s ease;
-  font-family: inherit;
-  font-size: 0.95rem;
-}
-
-.glow-btn:hover, .open-modal:hover {
-  background: var(--btn-hover);
-  box-shadow: 0 0 12px rgba(214,182,107,0.65);
-  transform: translateY(-2px);
-}
-
-.language-buttons {
-  position: absolute;
-  right: 25px;
-  top: 25px;
-  font-size: 1.7rem;
-  z-index: 100;
-}
-.language-buttons span {
-  margin-left: 8px;
-  cursor: pointer;
-  user-select: none;
-  transition: transform 0.2s;
-}
-.language-buttons span:hover {
-  transform: scale(1.15);
-}
-
-.page-header {
-  background: linear-gradient(to bottom, var(--gold-light), white 70%);
-  text-align: center;
-  padding: 3rem 1rem 3rem;
-  position: relative;
-}
-.page-header h1 {
-  margin: 0;
-  font-size: 2.4rem;
-  font-weight: 700;
-  color: var(--dark);
-}
-.page-header h2 {
-  margin: 0.6rem 0 0;
-  font-size: 1.2rem;
-  font-weight: 400;
-  font-style: italic;
-  color: #555;
-}
-
-/* PAGE 1 - 3 COLUMN LAYOUT */
-#page1 {
-  background: white;
-}
-.page1-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-@media (max-width: 900px) {
-  .page1-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  border: 1px solid #f0f0f0;
-}
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-.card p {
-  line-height: 1.7;
-  margin: 0.5rem 0;
-}
-.gold {
-  color: var(--gold);
-}
-.verse-block {
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #555;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-radius: 8px;
-  border-left: 4px solid var(--gold);
-}
-.video-frame {
-  width: 100%;
-  height: 240px;
-  border-radius: 12px;
-  margin: 1rem 0;
-  border: 0;
-}
-.thai-poster {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  display: block;
-  margin: 1rem auto;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0;
-}
-.card ul li {
-  padding: 0.4rem 0;
-  font-size: 0.95rem;
-}
-.card h4 {
-  color: var(--gold);
-  margin: 1.5rem 0 0.5rem;
-  font-size: 1.1rem;
-}
-
-/* PAGE 2 - STORIES */
-#page2 {
-  background: #f9f9f9;
-}
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 2rem;
-}
-.stories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.story-card {
-  background: white;
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.story-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-}
-.story-photo {
-  width: 100%;
-  max-width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  border: 4px solid var(--gold-light);
-}
-.story-name {
-  margin: 0.5rem 0 0.2rem;
-  color: var(--dark);
-}
-.story-role {
-  color: var(--gold);
-  font-size: 0.9rem;
-  margin: 0.2rem 0 1rem;
-}
-
-/* PAGE 3 - KIDS WITH BACKGROUND */
-#page3 {
-  position: relative;
-  min-height: 90vh;
-  overflow: hidden;
-  padding: 2.5rem 1.4rem;
-}
-#kids-background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-.kid-bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-}
-#kids-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.40);
-  z-index: 1;
-}
-#kids-content {
-  position: relative;
-  z-index: 2;
-  padding: 2rem 1rem;
-}
-#page3 .section-title {
-  background: rgba(255,255,255,0.95);
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  display: inline-block;
-  margin: 0 auto 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.kids-stories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 800px;
-  margin: 2rem auto;
-}
-.kids-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.kids-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
-.kids-photo {
-  width: 100%;
-  max-width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  border: 4px solid var(--gold-light);
-}
-.kids-name {
-  margin: 0.5rem 0;
-  color: var(--dark);
-}
-
-/* PAGE 4 - EDITORIAL + DONATIONS */
-#page4 {
-  background: #f9f9f9;
-}
-.page4-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-@media (max-width: 850px) {
-  .page4-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.editorial-title {
-  color: var(--gold);
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-#editorial-content {
-  line-height: 1.8;
-  text-align: justify;
-}
-#editorial-content strong {
-  color: var(--gold);
-  font-weight: 600;
-}
-.doc-button {
-  display: block;
-  padding: 0.7rem 1rem;
-  margin: 0.6rem 0;
-  background: white;
-  border: 2px solid var(--gold);
-  border-radius: 8px;
-  text-decoration: none;
-  color: #444;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-size: 0.9rem;
-}
-.doc-button:hover {
-  background: var(--btn-hover);
-  box-shadow: 0 0 12px rgba(214,182,107,0.65);
-  transform: translateX(5px);
-}
-.donation-section {
-  background: #fafafa;
-  padding: 1.2rem;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-  border: 1px solid #e8e8e8;
-}
-.donation-section h3 {
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-  font-size: 1.1rem;
-  color: var(--gold);
-}
-.donation-section p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin: 0.3rem 0;
-}
-.qr-container {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 1rem 0;
-}
-.qr {
-  width: 180px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border: 2px solid #ddd;
-}
-
-/* MODALS */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 1rem;
-  overflow-y: auto;
-}
-.modal-content {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  max-width: 700px;
-  width: 100%;
-  max-height: 85vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-}
-.modal-content h2 {
-  color: var(--gold);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-}
-.modal-content p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
-}
-.close-modal {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2.5rem;
-  line-height: 1;
-  cursor: pointer;
-  color: #999;
-  background: none;
-  border: none;
-  transition: color 0.2s;
-}
-.close-modal:hover {
-  color: #333;
-}
-@media (max-width: 600px) {
-  .modal-content {
-    padding: 2rem 1.5rem;
-  }
-}
-</style>
-</head>
-<body>
-
-<header class="page-header">
-  <div class="language-buttons">
-    <span data-lang="EN" title="English">🇺🇸</span>
-    <span data-lang="KO" title="한국어">🇰🇷</span>
-    <span data-lang="VN" title="Tiếng Việt">🇻🇳</span>
-    <span data-lang="TH" title="ไทย">🇹🇭</span>
-    <span data-lang="IL" title="עברית">🇮🇱</span>
-    <span data-lang="CH" title="中文">🇨🇳</span>
-  </div>
-
-  <h1 id="main-title">New Heart Global Family Newsletter</h1>
-  <h2 id="subtitle">The Fourth Day Chat — Fall 2025</h2>
-</header>
-
-<!-- PAGE 1 - FOUNDERS & VISION -->
-<section id="page1">
-
-<div class="page1-grid">
-
-  <!-- Bible Verse -->
-  <div class="card">
-    <h3 class="gold">Ezekiel 36:26</h3>
-    <p class="verse-block">
-      "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh."
-    </p>
-  </div>
-
-  <!-- Founders -->
-  <div class="card">
-    <h3 class="gold" id="founders-greeting-title">Founders' Greeting</h3>
-
-    <iframe class="video-frame" src="https://www.youtube.com/embed/gZBn3xnHTL8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    <p id="founder-msg"></p>
-
-    <br><br>
-    <p style="font-weight:600; margin:0;">With love,</p>
-    <p style="margin:0;">Pastors Jason & Youngmi Cha</p>
-    <p style="margin:0; color:var(--gold); font-weight:600;" id="founders-title">
-      Founders and New Heart Global Directors
-    </p>
-  </div>
-
-  <!-- Regional Director -->
-  <div class="card">
-    <h3 class="gold" id="regional-directors-title">Regional Directors — Thailand 🇹🇭</h3>
-
-    <iframe class="video-frame" src="https://www.youtube.com/embed/wNR9yt7HtbU" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    <img src="assets/img/Thailand-poster.jpeg" class="thai-poster" alt="Thailand New Heart Poster">
-
-    <h4 class="gold" id="upcoming-nh-title">Upcoming New Heart</h4>
-    <ul id="upcoming-nh-list">
-      <li>🇻🇳 Vietnam — Nha Trang — 12/2–5/2025</li>
-      <li>🇹🇭 Thailand — Bangkok — 1/27–30/2026</li>
-      <li>🇮🇱 Israel — TBA (April 2026)</li>
-      <li>🇺🇸 USA — TBA (May 2026)</li>
-    </ul>
-
-    <h4 class="gold" id="reunions-title">Reunions</h4>
-    <ul id="reunions-list">
-      <li>🇺🇸 USA — Nov 14, 2025 • LA</li>
-      <li>🇰🇷 Korea — Nov 22, 2025 • Seoul</li>
-    </ul>
-  </div>
-
-</div>
-</section>
-
-<script>
-// Founders' messages in both languages
-const founderMessages = {
-  EN: `Hello, New Heart community!
-<br><br>
-Normally, we greet one another by saying, "How are you?" That is to say, how is your health, how is your family, and how is your work. Has anyone asked you, instead, "How is your heart?" Perhaps that is more appropriate question or greeting for us. For God it is always a matter of the heart.
-<br><br>
-When God sent Prophet Samuel to Jesse's house to select the next king of Israel, God established His principle when He said, <em>The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart.</em> This is particularly important and relevant because we are a New Heart community.
-<br><br>
-God said, <em>I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh.</em> It is our prayer and confident hope through our precious faith in Jesus our Lord and through His abundant gift of grace that your heart is well, no matter what your particular situation or circumstances might be.
-<br><br>
-We praise and thank our Abba Father for sustaining us in the power of the Holy Spirit through each victorious 4th day. God bless you, your family and your labor of love for God's people and His church.`,
-  
-  KO: `안녕하세요, 뉴하트 공동체 여러분!
-<br><br>
-보통 우리는 서로 "어떻게 지내세요?"라고 인사합니다. 즉, 건강은 어떠신지, 가족은 어떠신지, 일은 어떠신지 묻습니다. 그런데 누군가 대신 "당신의 마음은 어떠세요?"라고 물어본 적이 있나요? 아마도 그것이 우리에게 더 적절한 질문이나 인사일 것입니다. 하나님께는 항상 마음의 문제이기 때문입니다.
-<br><br>
-하나님께서 선지자 사무엘을 이새의 집으로 보내어 이스라엘의 다음 왕을 선택하게 하셨을 때, 하나님은 이렇게 말씀하시며 그분의 원칙을 세우셨습니다. <em>여호와는 사람이 보는 것처럼 보지 아니하시고 사람은 외모를 보거니와 여호와는 중심을 보느니라.</em> 이것은 우리가 뉴하트 공동체이기 때문에 특히 중요하고 적절합니다.
-<br><br>
-하나님께서 말씀하셨습니다. <em>내가 너희에게 새 마음을 주고 새 영을 너희 속에 두며 너희 육신에서 굳은 마음을 제거하고 부드러운 마음을 줄 것이라.</em> 우리 주 예수님에 대한 귀한 믿음과 그분의 풍성한 은혜의 선물을 통해, 여러분의 특정한 상황이나 환경이 어떠하든 여러분의 마음이 건강하기를 기도하며 확신 있는 소망을 갖습니다.
-<br><br>
-우리는 성령의 능력 안에서 승리하는 넷째 날마다 우리를 지켜주시는 아빠 아버지를 찬양하고 감사드립니다. 하나님께서 여러분과 여러분의 가족, 그리고 하나님의 백성과 교회를 위한 여러분의 사랑의 수고를 축복하시기를 기도합니다.`,
-  
-  TH: `สวัสดีครับ ชุมชน New Heart!
-<br><br>
-โดยปกติเราทักทายกันด้วยการพูดว่า "สบายดีไหม?" นั่นคือถามว่าสุขภาพเป็นอย่างไร ครอบครัวเป็นอย่างไร และงานเป็นอย่างไร แต่มีใครเคยถามคุณแทนว่า "หัวใจของคุณเป็นอย่างไร?" บางทีนั่นอาจเป็นคำถามหรือคำทักทายที่เหมาะสมกับเรามากกว่า เพราะสำหรับพระเจ้าแล้ว มันเป็นเรื่องของหัวใจเสมอ
-<br><br>
-เมื่อพระเจ้าทรงส่งผู้เผยพระวจนะซามูเอลไปที่บ้านของเจสซี เพื่อเลือกกษัตริย์องค์ต่อไปของอิสราเอล พระเจ้าทรงตั้งหลักการของพระองค์เมื่อพระองค์ตรัสว่า <em>The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart.</em> สิ่งนี้มีความสำคัญและเกี่ยวข้องเป็นพิเศษ เพราะเราเป็นชุมชน New Heart
-<br><br>
-พระเจ้าตรัสว่า <em>I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh.</em> เป็นคำอธิษฐานและความหวังอันมั่นคงของเราผ่านความเชื่อที่ล้ำค่าในพระเยซูเจ้าของเรา และผ่านพระคุณอันอุดมสมบูรณ์ของพระองค์ ว่าหัวใจของคุณจะแข็งแรง ไม่ว่าสถานการณ์หรือสภาพการณ์ของคุณจะเป็นอย่างไรก็ตาม
-<br><br>
-เราสรรเสริญและขอบพระคุณพระบิดาอับบาของเราที่ทรงค้ำจุนเราในฤทธิ์เดชของพระวิญญาณบริสุทธิ์ตลอดวันที่ 4 แห่งชัยชนะทุกวัน ขอพระเจ้าอวยพรคุณ ครอบครัวของคุณ และแรงงานแห่งความรักของคุณสำหรับประชากรของพระเจ้าและคริสตจักรของพระองค์`
-};
-
-document.getElementById("founder-msg").innerHTML = founderMessages.EN;
-</script>
-
-<!-- PAGE 2 - NEW HEART STORIES -->
-<section id="page2">
-<h2 class="section-title" id="stories-title">New Heart Stories</h2>
-
-<div class="stories-grid">
-
-  <!-- ARIEL -->
-  <div class="story-card">
-    <img src="assets/img/ariel.jpeg" class="story-photo" alt="Ariel">
-    <h3 class="story-name">Ariel</h3>
-    <p class="story-role">NH USA #53 — Candidate</p>
-    <button class="open-modal" data-target="#modal-ariel" id="read-story-ariel">Read Story</button>
-  </div>
-
-  <!-- CHOI EUN-YOUNG -->
-  <div class="story-card">
-    <img src="assets/img/choi.jpeg" class="story-photo" alt="Choi Eun-Young">
-    <h3 class="story-name">Choi Eun-Young</h3>
-    <p class="story-role">NH Korea #54 — Hallelujah Group</p>
-    <button class="open-modal" data-target="#modal-choi" class="read-story-btn">Read Story</button>
-  </div>
-
-  <!-- HAN YE-SUL -->
-  <div class="story-card">
-    <img src="assets/img/han.jpeg" class="story-photo" alt="Han Ye-Sul">
-    <h3 class="story-name">Han Ye-Sul</h3>
-    <p class="story-role">NH Korea #54 — Team Member</p>
-    <button class="open-modal" data-target="#modal-han" class="read-story-btn">Read Story</button>
-  </div>
-
-  <!-- KEZIAH -->
-  <div class="story-card">
-    <img src="assets/img/keziah.jpeg" class="story-photo" alt="Keziah">
-    <h3 class="story-name">Keziah</h3>
-    <p class="story-role">NH Vietnam #14 — Candidate</p>
-    <button class="open-modal" data-target="#modal-keziah" class="read-story-btn">Read Story</button>
-  </div>
-
-  <!-- PARICHAT -->
-  <div class="story-card">
-    <img src="assets/img/parichat.jpeg" class="story-photo" alt="Parichat">
-    <h3 class="story-name">Parichat</h3>
-    <p class="story-role">NH Korea #54 — Thailand Team</p>
-    <button class="open-modal" data-target="#modal-parichat" class="read-story-btn">Read Story</button>
-  </div>
-
-</div>
-</section>
-
-<!-- PAGE 3 - NEW HEART KIDS -->
-<section id="page3">
-<div id="kids-background"></div>
-<div id="kids-overlay"></div>
-
-<div id="kids-content">
-  <h2 class="section-title" id="kids-title">New Heart Kids</h2>
-  
-  <div class="kids-stories-grid">
-    
-    <!-- JI YEOWOON -->
-    <div class="kids-card">
-      <img src="assets/img/ji.jpeg" class="kids-photo" alt="Ji Yeowoon">
-      <h3 class="kids-name">Ji Yeowoon</h3>
-      <p class="story-role">New Heart Kids Korea #2 — Coordinator</p>
-      <button class="open-modal" data-target="#modal-ji" class="read-story-btn">Read Story</button>
-    </div>
-
-    <!-- KYUNGJIN (MARIA) -->
-    <div class="kids-card">
-      <img src="assets/img/kyungjin.jpeg" class="kids-photo" alt="Kyungjin (Maria)">
-      <h3 class="kids-name">Kyungjin (Maria) Park</h3>
-      <p class="story-role">New Heart Kids USA #1</p>
-      <button class="open-modal" data-target="#modal-kyungjin" class="read-story-btn">Read Story</button>
-    </div>
-
-  </div>
-
-</div>
-</section>
-
-<!-- KIDS BACKGROUND ANIMATION SCRIPT -->
-<script>
-const kidsImages = [
-  "kids-bg-1.jpeg","kids-bg-2.jpeg","kids-bg-3.jpeg","kids-bg-4.jpeg",
-  "kids-bg-5.jpeg","kids-bg-6.jpeg","kids-bg-7.jpeg","kids-bg-8.jpeg",
-  "kids-bg-9.jpeg","kids-bg-10.jpeg","kids-bg-11.jpeg","kids-bg-12.jpeg",
-  "kids-bg-13.jpeg"
-];
-
-const bgContainer = document.getElementById("kids-background");
-
-kidsImages.forEach((file, index) => {
-  const img = document.createElement("img");
-  img.src = "assets/img/" + file;
-  img.classList.add("kid-bg-img");
-  img.alt = `New Heart Kids ${index + 1}`;
-  bgContainer.appendChild(img);
-});
-
-let current = 0;
-function cycleKidsImages() {
-  const bgImgs = document.querySelectorAll(".kid-bg-img");
-  bgImgs.forEach((img, idx) => {
-    img.style.opacity = (idx === current) ? 0.85 : 0;
-  });
-  current = (current + 1) % kidsImages.length;
-}
-
-cycleKidsImages();
-setInterval(cycleKidsImages, 3000);
-</script>
-
-<!-- PAGE 4 - EDITORIAL + WAYS TO SERVE -->
-<section id="page4">
-
-<div class="page4-grid">
-
-  <!-- EDITORIAL LEFT -->
-  <div>
-    <h2 class="editorial-title" id="editorial-title">Editorial</h2>
-
-    <div id="editorial-content">
-      <p>
-        <strong id="editorial-h1">Compelled by the Fire: The Fourth Day</strong><br><br>
-
-        <span id="editorial-p1">New Heart Ministry recently celebrated its 54th gathering in Korea, marking nearly two decades of God's undeniable grace across nations, including Cambodia, Vietnam, China, Ethiopia, Israel, and Korea. This movement is a divine summons igniting the promise of a New Heart (Ezekiel 36:26) in every generation and weaving us into one fierce, global Kingdom Family. Our commitment is comprehensive, extending to the New Heart Kids programs, which underscore our conviction that children are critical and active participants today, ensuring a legacy of passion that will sustain the movement for years to come.</span><br><br>
-
-        <strong id="editorial-h2">The Fourth Day: Our Unstoppable Mandate</strong><br><br>
-
-        <span id="editorial-p2">Our three-day gatherings are a deep immersion—a holy soaking in God's love and transformative power, but this is the preparation, not the end; we are utterly compelled to live the Fourth Day, which is the immediate, daily application of our radical, transformed hearts and our unstoppable mandate to reject spiritual stagnation and pursue sustained maturity in God's goodness and grace by remaining connected, to hold nothing back and serve in unified purpose (Acts 2) because isolation is not an option and our strength is in our unbreakable family covenant spanning continents, and to constantly commit to this ultimate purpose of raising a people of fire and fulfilling the global expansion God promised in Isaiah 54.</span><br><br>
-
-        <strong id="editorial-h3">This Global Newsletter</strong><br><br>
-
-        <span id="editorial-p3">As God's vision for New Heart Ministry continues to sharpen with undeniable clarity, we sense His urgent desire not only to document the mighty works and abundant grace flowing but also for us, the Family, to become more intimately intertwined and nurtured; hence, this quarterly Global Newsletter for the New Heart Family is a necessity, not an option, serving as the intentional tool designed to bridge the miles and cultures across the world to nurture global connections and ensure we care for one another as one body, to share the undeniable evidence of God's faithfulness from every region, solidifying our collective faith, and to keep our focus sharp, reminding us of our compulsion to live out the Fourth Day together and fostering sustained growth and maturity until the next gathering.</span><br><br>
-
-        <span id="editorial-closing">We must step forward. The Kingdom Family is not a passive recipient of grace, but an active force compelled by an unwavering vision. By His strength, we will fulfill every declaration over this ministry.</span>
-      </p>
-    </div>
-  </div>
-
-  <!-- WAYS TO SERVE RIGHT -->
-  <div>
-    <h2 class="gold" id="serve-title">Ways to Serve</h2>
-
-    <h3 class="gold" id="palanca-title">Palanca Donations</h3>
-
-    <a class="doc-button" 
-       href="https://docs.google.com/document/d/1ZBF6pZQ6TP2mM46tgfQeD5UHRmxW4faH/edit?usp=drive_link&ouid=106439018544553623575&rtpof=true&sd=true"
-       target="_blank"
-       rel="noopener noreferrer">
-      📄 Palanca Donation Chart #55 (VNH #14)
-    </a>
-
-    <a class="doc-button" 
-       href="https://docs.google.com/document/d/1qZGid-ARxOl8aOIGQBLuGY3LggGF1YFB/edit?usp=drive_link&ouid=106439018544553623575&rtpof=true&sd=true"
-       target="_blank"
-       rel="noopener noreferrer">
-      📄 Palanca Donation Chart #56 (TNH #1)
-    </a>
-
-    <p style="font-size:0.9rem; font-style:italic; color:#666; margin:1rem 0;" id="qr-instruction">Please use the QR codes or bank accounts below and indicate the purpose of your donation.</p>
-
-    <!-- QR CODES SIDE BY SIDE -->
-    <div class="qr-container">
-      <div style="text-align:center;">
-        <h4 class="gold">🇺🇸 USA Support</h4>
-        <img src="assets/img/IMG_1320.jpg" class="qr" alt="USA Support QR Code">
-      </div>
-      <div style="text-align:center;">
-        <h4 class="gold">🇹🇭 Thailand Support</h4>
-        <img src="assets/img/IMG_1324.JPG" class="qr" alt="Thailand Support QR Code">
-      </div>
-    </div>
-
-    <!-- VIETNAM DONATIONS -->
-    <div class="donation-section">
-      <h3>🇻🇳 Vietnam Donations</h3>
-      <p>
-        <strong>Recipient:</strong> Phan Tan Minh Thach<br>
-        <strong>Account #:</strong> 040030967005<br>
-        <strong>Bank:</strong> Sacombank – PGD Lien Chieu CNDNG<br>
-        <strong>SWIFT:</strong> SGTTVNVX<br>
-        <strong>Phone:</strong> (84) 903168410
-      </p>
-    </div>
-
-    <!-- KOREA DONATIONS -->
-    <div class="donation-section">
-      <h3>🇰🇷 Korea Donations</h3>
-      <p>
-        <strong>Account Name:</strong> New Heart Korea<br>
-        <strong>Bank:</strong> Hana Bank (하나은행)<br>
-        <strong>Account #:</strong> 344-910003-80905<br>
-        <em style="color:#888;">Notes: For any donation</em>
-      </p>
-    </div>
-
-  </div>
-
-</div>
-</section>
-
-<footer style="text-align:center; padding: 2rem 1rem; color: #777; border-top: 1px solid #e0e0e0; margin-top: 2rem;">
-  <p id="footer-copyright">© 2025 New Heart Ministry. All rights reserved.</p>
-  <p style="font-size:0.9rem;" id="footer-note">Please keep this Newsletter within the New Heart Family.</p>
-</footer>
-
-<!-- STORY MODALS -->
-<div id="modal-ariel" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Ariel — From Orthodox Judaism to Jesus</h2>
-    <p>My sister's profound experience with New Heart 52 in Israel had a deep impact on me. Witnessing her transformation and her confession of faith in Jesus to our mother inspired me to attend New Heart in the USA in May 2025.</p>
-    
-    <p>I was born into a devout Orthodox Jewish family, alongside my sister and our triplet brother. Our upbringing was steeped in the traditions and teachings of our faith, and for many years, this was the foundation of my religion. However, as I grew older, a sense of unease began to stir within me. Despite my fervent prayers and commitment to our religious practices, I found myself yearning for a deeper connection, a more profound experience of God's peace and love, which I felt was lacking.</p>
-    
-    <p>This spiritual yearning led me to seek guidance, and I prayed earnestly for God to lead me to the truth. About six years ago, my journey took a transformative turn. I began to research Jesus, approaching the subject with an open mind and a sincere desire to understand. What I discovered during this period of intense study and reflection was nothing short of revelatory.</p>
-    
-    <p>I delved into the prophecies of the Hebrew Bible and was astonished to see how clearly they pointed to Jesus as the long-awaited Messiah. The intricate details, the historical accuracy, and the profound theological implications of these prophecies resonated deeply within me. It was a profound awakening, confirming a truth that had been quietly stirring in my heart. This journey of discovery solidified my belief in Jesus, forever changing my spiritual path.</p>
-    
-    <p>Getting permission to leave Israel during my army service, especially with the ongoing war, was challenging. We booked the flight, prayed earnestly, and by God's grace, I received permission just one day before I departed for the USA.</p>
-    
-    <p>The New Heart program was a period of immense grace and personal change. Over three days, I grew closer to God by spending undistracted time with Him, a profoundly enriching experience. I am grateful to God for transforming my life and giving me a new heart during New Heart 53.</p>
-  </div>
-</div>
-
-<div id="modal-choi" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Choi Eun-Young — Called Back to the Fight</h2>
-    
-    <p><strong>Gratitude:</strong> First, I cannot forget the spiritual leaders who delivered the Word, the praise team who gave their body and soul, the Palanca team who stayed up all night making many things with devotion, those who shared love through food and snacks, the general affairs team who handled all the troublesome work behind the scenes so the gathering could proceed, and above all, the Royo members who shared their entire lives with tears and love, and each tearful prayer offered on their knees during the foot-washing ceremony. I am truly grateful. I received a profound love that one cannot receive in life.</p>
-    
-    <p><strong>Situation Before Going:</strong> I received an invitation to attend this retreat from a pastor's wife a year ago. She had been praying for me for over a year. Then this year, I received another invitation to attend the retreat. I strongly felt God inviting me to this gathering through someone. This time, I made up my mind to "go with full determination." However, one week before the retreat, my family members, who love and care for me deeply, were absolutely opposed to my attending.</p>
-    
-    <p>However, I had two desperate reasons why I absolutely had to attend the retreat this time. One was that my husband was graduating from a theological seminary this year, while simultaneously retiring from his company. I had been continuously asking God for direction on how we should live our lives from next year. The other was that I felt I had lost energy in both body and soul, and was exhausted after the COVID period.</p>
-    
-    <p><strong>Grace Received:</strong> From the moment I arrived at New Heart until I left, what I experienced was "the hospitality and deep love of those who had fervently experienced God's grace." On the first day, during the first lecture on "vision," God had me comprehensively reflect on my life. He warmly asked me, "Eun-young, how are you using your money, time, and talents?" A few years ago, I started experiencing numbness in my legs and paralysis in my arms due to neck and back disc problems.</p>
-    
-    <p>God asked me each time: your fellow workers in faith, your seniors in faith, are fighting this fight of faith with difficulty but victoriously. What fight of faith do you want to fight until the moment you die? And God gently rebuked my laziness and indolence, and called me back to the fierce spiritual battlefield.</p>
-    
-    <p><strong>After Finishing:</strong> As the retreat concluded, we sang the theme song, "I Stand Up," and the wounds and hurts I had received came flooding back. I made a tearful decision to return to those wounds, but go with the love and joy of the cross's salvation that God reconfirmed to me at the retreat. I will live another 3 days. De colores.</p>
-  </div>
-</div>
-
-<div id="modal-han" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Han Ye-Sul — From Candidate to Intercessor</h2>
-    
-    <p>Hello. My name is Han Ye-seul, and I served as a team member for the first time in the 54th session, having previously participated as a candidate in the 51st session. Honestly, I initially hesitated to share my story, worried that my quiet role as an accompanist would not be significant enough to mention. But as this is the final testimony, I decided to step forward. This decision stems from the fact that every moment of serving in New Heart's 54th session has been a profound testimony for me.</p>
-    
-    <p>When I first attended the 51st session as a candidate at my husband's suggestion, I kept asking, "What will we do? Where are we going? What's the schedule?" but received no details. I had to go with virtually no information, feeling like I was boarding a deep-sea fishing vessel. Last year, the session fell during the weekdays, and since Wednesday was a workday, I traveled from Cheonan to Yeoncheon by train and subway after work, arriving around 11 p.m. I was told not to speak, and when I asked, "Why?" I didn't get an answer. As a candidate, the terminology was often unfamiliar, and despite my tiredness, the sessions were long. Yet, through the program's struggles, I experienced many moments of awakening and repentance.</p>
-    
-    <p>My husband's initial lack of explanation about New Heart had left me somewhat resistant, though I didn't show it. By the end, however, I declared, "I really enjoyed it. I want to serve as a team member next year."</p>
-    
-    <p>When the announcement came this year, I eagerly pressed my husband, "Did you apply? Did you apply?" I was thankful he decided to join me in serving. While serving on the praise team this time, I found myself interceding more for the candidates than focusing on my own blessings. During prayer times, I couldn't dedicate much time to personal prayer because I was engaged in singing, providing accompaniment, and serving in various small ways.</p>
-    
-    <p>On the third evening during prayer, I was standing by, ready to assist with water or tissues if needed. Toward the end, I simply stood still. In that quiet moment, I felt as if God called out, "Ye-seul," in my heart. From that moment, I could do nothing but stand there with my hands raised in worship. God reminded me of the story of Mary and Martha. While serving Jesus is important, what He truly desires is for us to sit at His feet and listen to Him. I realized that while service is good, I must first be present before Jesus, listening to His words. This led me to pray resolutely, "God, while serving is valuable, I will prioritize sitting before You. Your ministry is important, but I will stand before You first."</p>
-    
-    <p>Before attending, I was genuinely worried about my physical condition. I had been resting at home, used to sleeping and eating leisurely. The sudden change to waking up at 6 a.m., serving until late, and repeating that schedule concerned me. However, God's grace sustained me. Even with short sleep, God provided deep rest. Of course, when I was extremely exhausted, I took breaks, but God rejuvenated me both physically and spiritually.</p>
-    
-    <p>I encourage all candidates to serve as team members. The grace you receive as a candidate differs significantly from the grace experienced while serving as a team member. If you have the time and opportunity next year, I sincerely hope you participate.</p>
-    
-    <p>Also, I nearly forgot to mention—please pray before deciding to join. I now realize how much I lacked in prayer for both myself and all of you. If I am given another opportunity next year, I will pray diligently, actively participate in team meetings, and prepare wholeheartedly for the souls God will entrust to us. Thank you.</p>
-  </div>
-</div>
-
-<div id="modal-keziah" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Keziah — Freedom in His Unconditional Love</h2>
-    
-    <p>Greetings, I am Keziah from Vietnam. I sincerely thank God for the opportunity to attend the 14th New Heart retreat, where God visited me miraculously and powerfully. Throughout the retreat, I experienced deep, undistracted communion with Him.</p>
-    
-    <p>I have followed the Lord for 14 years, and during that time, I have always felt His boundless love for me. Because of that love, I chose to respond by serving Him with all my heart. However, over time, I realized that I often served with the desire for His recognition, without fully grasping the completeness of His love for me.</p>
-    
-    <p>On the first night of the retreat, I wept before the Lord and asked for His forgiveness for letting my own thoughts control His work instead of submitting to His will. I came to understand that God's will is that He loves me not because of what I do, but simply because He loves me. Whether I do anything or not, His love for me is always unconditional.</p>
-    
-    <p>His Word in Jeremiah 32:40 ("I will make an everlasting covenant with them: I will never stop doing good to them, and I will inspire them to fear me, so they will not turn away from me") has freed me from being bound by my own righteousness in my faith life. Since then, I have lived in true freedom, genuinely believing in His love and the plan He has for my life. He truly revealed Himself by using me to convey His love to many others. I clearly felt His anointing upon my whole being during those moments at the retreat.</p>
-    
-    <p>Afterward, whenever I had the chance to meet and share with those who do not yet believe in the Lord, I experienced Him using my mouth and heart to communicate His love and salvation to them. Since the 14th retreat, I have prayed for 18 people who have accepted the Lord, and many others are currently being cared for by the Church and attending worship weekly.</p>
-    
-    <p>Today, God is truly close and wonderful in my life. My attitude in serving the Lord has been renewed, now originating from unconditional love and freedom in Him. He has also protected my health through all the challenges of ministry, and I rely on His words whenever He sees the need to refine me and help me become more like Jesus.</p>
-    
-    <p>Thank God; glory belongs to Him.</p>
-  </div>
-</div>
-
-<div id="modal-parichat" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Parichat — 18 Years of Pain Transformed</h2>
-    
-    <p>I, Parichat, would like to express my heartfelt thanks to Spiritual Mother Pastor Mayuri, Pastor Sarah, and Pastor Matthew for their unwavering guidance, care, and love from the moment we arrived in Korea until the final day of the mission.</p>
-    
-    <p>Thank you for the precious experiences and profound blessings I received through my involvement with the "New Heart" mission in Korea.</p>
-    
-    <p>I was deeply impressed by every aspect of the "New Heart" mission, including: the warm transportation arrangement to pick up our team, the loving welcome through songs of praise, the joyful meal team filled with laughter, the worship team overflowing with the Holy Spirit, and the prayer team that continually covered us throughout the mission.</p>
-    
-    <p>Thank you for every testimony and sermon shared by the pastors and the brothers and sisters who had previously gone through the New Heart mission. Your sharing helped us understand even more that no matter how complex or painful the situation may be, God still reigns. He continually upholds our hearts and spirits, keeping us steadfast in His righteousness now and forever.</p>
-    
-    <p>I received deep inner restoration and have made a firm decision to serve and draw even closer to God. I also chose to forgive my ex-husband for everything in the past and even in the present. The accusations and hatred that I carried for many years have now transformed into something new that leads me to pray even more. I have truly experienced transformation in both my heart and my spirit.</p>
-    
-    <p>Before joining the mission, I had carried pain in my heart for more than 18 years. But now, that burden has become so much lighter, and I can truly feel that I am no longer carrying it the way I once did.</p>
-    
-    <p>"NEW 54" has been a great blessing and a transformative experience for both my heart and my spirit. I also desire to become a blessing to the brothers and sisters who will join the next generation of the New Heart mission.</p>
-    
-    <p>May the Lord strengthen all the pastors and pour out abundant blessings on every ministry you lead, so that great fruit will come forth and flow into the lives of many people.</p>
-  </div>
-</div>
-
-<div id="modal-ji" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Ji Yeowoon — New Heart Kids Korea #2</h2>
-    
-    <p>Hello! I'm Ji Yeowoon, who served as the general affairs coordinator for New Heart Kids. This year, New Heart Kids was conducted in Korea for the first time, and although we were in the same location, we adjusted our schedules to avoid running into each other, so I think you probably had no idea what we were up to 🙂</p>
-    
-    <p>This year, New Heart Kids had a total of 22 children, ages 0 to 12, along with 10 teachers spending time together. Since everything was a first, it wasn't just the teachers who felt nervous. The children, who had spent the entire day away from their guardians, also met us on that first day, tension written on their faces.</p>
-    
-    <p>After dinner, we gathered to introduce ourselves and greet each other, then asked the questions: "What is this place for? Why did we come here today?" Answers like "To worship!" "To pray!" "To play!" came out, and then one child shouted, "To do missions!" It was an answer that gave us great insight.</p>
-    
-    <p>It wouldn't be an exaggeration to say that New Heart Kids was full of discomfort. The sleeping arrangements change. Stay with people you've never met before in places that are uncomfortable. You can't control your own schedule. Elementary school students had to turn in their cell phones. It even rained continuously so that we couldn't do outdoor activities.</p>
-    
-    <p>What did the children do? Amazingly, the children complied with instructions and endured many situations. Of course, this doesn't mean they "happily and obediently listened." When they didn't like something, they said so, sometimes asked "Why?", asked for something different. Some cried because they missed their moms. Nevertheless, isn't it truly amazing that the children made it through all 3 nights and 4 days together without any safety incidents! At the end, they were sad about going home and even said, "Will you do this again next year? I want to come again!"</p>
-    
-    <p>As we prepared for New Heart Kids, the teachers had the mindset that we needed to "teach the children something to remember." We really worked hard to design, plan, and prepare programs, but aside from delivering the Word, it's hard to say things went properly. More than half of the activities we prepared never even came out.</p>
-    
-    <p>However, I believe that God's plan was completely fulfilled. Personally, I think these 3 nights and 4 days of children rubbing shoulders might have been God's plan. Children living in modern society today rarely have opportunities to experience this kind of environment. It must have been a really big challenge for all the children.</p>
-    
-    <p>Also, even though we were physically separated from the adults, it was profoundly moving to feel often that we were tied together as one with adult New Heart. Do you remember the children singing "Grace"? As an aside, most of them were 6-9 years old, with the oldest being 12, so singing the "Grace" hymn seems really cute 😁</p>
-    
-    <p>What do you think? Don't you think we really went "on a mission"? New Heart Kids spent time being grateful for what was given, even in truly lacking, uncomfortable, and poor conditions, laughing and enjoying together, and rubbing shoulders closely. They learned to pray, sang praises, heard and shared the Word, learned worship, and spent all their days in God.</p>
-    
-    <p>You've probably heard many times the phrase, "Looking back after New Heart ended, everything was grace." It was the same for us. Every single one of our team members was in a not-easy situation. Nevertheless, when we shared feedback at the end, we exchanged words of gratitude and grace. We encouraged, motivated, and showed consideration for one another. We were truly united in one heart.</p>
-    
-    <p>I'm grateful that we had a living experience of becoming the beautiful body of the Lord. And above all, all the teachers naturally talked about their next plans to improve what was lacking, saying "Next year~". I'm promoting for many to come next year!</p>
-  </div>
-</div>
-
-<div id="modal-kyungjin" class="modal hidden">
-  <div class="modal-content">
-    <button class="close-modal">×</button>
-    <h2>Kyungjin (Maria) Park — New Heart Kids USA #1</h2>
-    
-    <p>In May 2025, God opened a beautiful new chapter as we launched New Heart Kids #1 in Los Angeles. It was a long-awaited dream within the New Heart community to see all generations blessed through New Heart, and it was incredible to witness how God opened the door to make this dream a reality.</p>
-    
-    <p>When I first joined New Heart Kids, my heart was especially for young parents. As a mother of four, I remembered the seasons when I felt spiritually dry and left out while raising my little ones. I wanted to serve in a way that would give parents space to be renewed and restored in God's presence.</p>
-    
-    <p>But as I served, God expanded my heart to embrace their children as well. Serving about twenty children, from toddlers to preteens, I saw firsthand how deeply God treasures each one of these young children. He desires to raise and equip them as future leaders within the New Heart community.</p>
-    
-    <p>There were certainly challenging moments, but by the end of those three days, I witnessed both parents and children receiving a new heart through the Holy Spirit. With the same heart and encouragement, I was overjoyed to hear that we would have New Heart Kids #2 in Korea in October.</p>
-    
-    <p>I believe this is God's confirmation of His will to call us as a 'family' and to give His New Heart to all generations. I am grateful and full of faith for what lies ahead!</p>
-  </div>
-</div>
-
-<script>
-console.log("✅ Newsletter Loading...");
-
-const translations = {
-  EN: {
-    mainTitle: "New Heart Global Family Newsletter",
-    subtitle: "The Fourth Day Chat — Fall 2025",
-    foundersGreetingTitle: "Founders' Greeting",
-    foundersTitle: "Founders and New Heart Global Directors",
-    regionalDirectorsTitle: "Regional Directors — Thailand 🇹🇭",
-    upcomingNhTitle: "Upcoming New Heart",
-    reunionsTitle: "Reunions",
-    storiesTitle: "New Heart Stories",
-    readStory: "Read Story",
-    kidsTitle: "New Heart Kids",
-    editorialTitle: "Editorial",
-    editorialH1: "Compelled by the Fire: The Fourth Day",
-    editorialP1: "New Heart Ministry recently celebrated its 54th gathering in Korea, marking nearly two decades of God's undeniable grace across nations. This movement is a divine summons igniting the promise of a New Heart (Ezekiel 36:26) in every generation and weaving us into one fierce, global Kingdom Family. Our commitment is comprehensive—including New Heart Kids—which confirms that children are not the \"future church\"… they are the church now.",
-    editorialH2: "The Fourth Day: Our Unstoppable Mandate",
-    editorialP2: "Our three-day gatherings are only the beginning. The Fourth Day is the call to walk out the transformation daily—with maturity, unity, and fire. This is not optional; this is our mandate. We reject passivity and choose the continual sharpening that comes only from living connected as one body. Isolation kills revival. Family sustains it.",
-    editorialH3: "This Global Newsletter",
-    editorialP3: "God asked us to strengthen and unify the global family—Korea, Vietnam, Israel, Thailand, the USA, and beyond. This quarterly newsletter is the tool to nurture connection, strengthen faith, and document the mighty works of God across every region. It keeps our hearts aligned and our vision clear.",
-    editorialClosing: "May we be a people compelled by fire… living the Fourth Day with conviction and joy.",
-    serveTitle: "Ways to Serve",
-    palancaTitle: "Palanca Donations",
-    qrInstruction: "Please use the QR codes or bank accounts below and indicate the purpose of your donation.",
-    footerCopyright: "© 2025 New Heart Ministry. All rights reserved.",
-    footerNote: "Please keep this Newsletter within the New Heart Family."
+พักผ่อน ฉันจะใช้ชีวิตอีก 3 วัน เด โคลอเรส</p>`
   },
   
-  KO: {
-    mainTitle: "뉴하트 세계 가족 소식지",
-    subtitle: "넷째 날 나눔 — 2025년 가을",
-    foundersGreetingTitle: "창립자 인사말",
-    foundersTitle: "창립자 및 뉴하트 세계 디렉터",
-    regionalDirectorsTitle: "지역 디렉터 — 태국 🇹🇭",
-    upcomingNhTitle: "다가오는 뉴하트",
-    reunionsTitle: "재회",
-    storiesTitle: "뉴하트 간증",
-    readStory: "간증 읽기",
-    kidsTitle: "뉴하트 키즈",
-    editorialTitle: "사설",
-    editorialH1: "불에 이끌려: 넷째 날",
-    editorialP1: "뉴하트 사역은 최근 한국에서 54기 모임을 축하하며, 캄보디아, 베트남, 중국, 에티오피아, 이스라엘, 한국을 포함한 여러 나라에 걸친 하나님의 부인할 수 없는 은혜의 거의 20년을 기록했습니다. 이 운동은 모든 세대에서 새로운 마음(에스겔 36:26)의 약속을 점화하고 우리를 하나의 강렬한 세계적인 왕국 가족으로 엮어내는 신성한 부름입니다. 우리의 헌신은 포괄적이며, 뉴하트 키즈 프로그램으로 확장되어, 어린이들이 오늘날 중요하고 활동적인 참여자이며 앞으로 몇 년 동안 운동을 지속할 열정의 유산을 보장한다는 우리의 확신을 강조합니다.",
-    editorialH2: "넷째 날: 우리의 멈출 수 없는 명령",
-    editorialP2: "3일간의 모임은 깊은 몰입입니다—하나님의 사랑과 변화시키는 능력에 거룩하게 적셔지는 것이지만, 이것은 준비이지 끝이 아닙니다. 우리는 넷째 날을 살아가도록 완전히 강요받았으며, 이는 우리의 급진적이고 변화된 마음의 즉각적이고 일상적인 적용이자 영적 침체를 거부하고 연결된 상태로 있음으로써 하나님의 선하심과 은혜 안에서 지속적인 성숙을 추구하라는 우리의 멈출 수 없는 명령입니다. 아무것도 보류하지 않고 통일된 목적으로 섬기는 것(사도행전 2장)은 고립이 선택 사항이 아니며 우리의 힘은 대륙을 넘나드는 깨지지 않는 가족 언약에 있고, 불의 백성을 일으키고 이사야 54장에서 하나님께서 약속하신 세계적 확장을 성취하는 이 궁극적인 목적에 지속적으로 헌신하기 때문입니다.",
-    editorialH3: "이 세계 소식지",
-    editorialP3: "뉴하트 사역에 대한 하나님의 비전이 부인할 수 없는 명확성으로 계속 선명해짐에 따라, 우리는 흘러넘치는 위대한 일과 풍성한 은혜를 기록할 뿐만 아니라 우리 가족이 더욱 친밀하게 얽히고 양육되기를 바라시는 그분의 긴급한 열망을 감지합니다. 따라서 뉴하트 가족을 위한 이 분기별 세계 소식지는 선택 사항이 아니라 필수품이며, 세계 곳곳의 거리와 문화를 연결하여 세계적 연결을 육성하고 우리가 한 몸으로 서로를 돌보도록 보장하고, 모든 지역에서 하나님의 신실하심의 부인할 수 없는 증거를 공유하여 우리의 집단적 믿음을 굳건히 하며, 우리의 초점을 날카롭게 유지하여 함께 넷째 날을 살아가야 한다는 우리의 강요를 상기시키고 다음 모임까지 지속적인 성장과 성숙을 촉진하도록 설계된 의도적인 도구로 기능합니다.",
-    editorialClosing: "우리는 앞으로 나아가야 합니다. 왕국 가족은 은혜의 수동적인 수령자가 아니라 흔들리지 않는 비전에 이끌린 능동적인 힘입니다. 그분의 힘으로 우리는 이 사역에 대한 모든 선언을 성취할 것입니다.",
-    serveTitle: "섬기는 방법",
-    palancaTitle: "팔란카 후원",
-    qrInstruction: "아래 QR 코드 또는 계좌를 사용하시고 후원 목적을 표시해 주세요.",
-    footerCopyright: "© 2025 뉴하트 사역. 모든 권리 보유.",
-    footerNote: "이 소식지를 뉴하트 가족 내에 보관해 주세요."
-  },
-  
-  VN: {
-    mainTitle: "Bản Tin Gia Đình Toàn Cầu New Heart",
-    subtitle: "Trò Chuyện Ngày Thứ Tư — Thu 2025",
-    foundersGreetingTitle: "Lời Chào Từ Nhà Sáng Lập",
-    foundersTitle: "Nhà Sáng Lập và Giám Đốc Toàn Cầu New Heart",
-    regionalDirectorsTitle: "Giám Đốc Khu Vực — Thái Lan 🇹🇭",
-    upcomingNhTitle: "New Heart Sắp Tới",
-    reunionsTitle: "Tái Ngộ",
-    storiesTitle: "Lời Chứng New Heart",
-    readStory: "Đọc Lời Chứng",
-    kidsTitle: "New Heart Kids",
-    editorialTitle: "Bài Xã Luận",
-    editorialH1: "Bị Lửa Thôi Thúc: Ngày Thứ Tư",
-    editorialP1: "New Heart Ministry gần đây đã kỷ niệm buổi tụ họp thứ 54 tại Hàn Quốc.",
-    editorialH2: "Ngày Thứ Tư: Nhiệm Vụ Không Thể Ngăn Cản",
-    editorialP2: "Các buổi tụ họp ba ngày của chúng ta chỉ là khởi đầu.",
-    editorialH3: "Bản Tin Toàn Cầu Này",
-    editorialP3: "Chúa yêu cầu chúng ta củng cố và thống nhất gia đình toàn cầu.",
-    editorialClosing: "Cầu xin chúng ta là những người bị lửa thôi thúc...",
-    serveTitle: "Cách Phục Vụ",
-    palancaTitle: "Quyên Góp Palanca",
-    qrInstruction: "Vui lòng sử dụng mã QR hoặc tài khoản ngân hàng bên dưới.",
-    footerCopyright: "© 2025 New Heart Ministry. Bảo lưu mọi quyền.",
-    footerNote: "Vui lòng giữ Bản Tin này trong Gia Đình New Heart."
-  },
-  
-  TH: {
-    mainTitle: "จดหมายข่าวครอบครัวทั่วโลก New Heart",
-    subtitle: "การสนทนาวันที่สี่ — ฤดูใบไม้ร่วง 2025",
-    foundersGreetingTitle: "คำทักทายจากผู้ก่อตั้ง",
-    foundersTitle: "ผู้ก่อตั้งและผู้อำนวยการ New Heart ทั่วโลก",
-    regionalDirectorsTitle: "ผู้อำนวยการภูมิภาค — ไทย 🇹🇭",
-    upcomingNhTitle: "New Heart ที่กำลังจะมาถึง",
-    reunionsTitle: "การรวมตัวกัน",
-    storiesTitle: "เรื่องราว New Heart",
-    readStory: "อ่านเรื่องราว",
-    kidsTitle: "New Heart Kids",
-    editorialTitle: "บทบรรณาธิการ",
-    editorialH1: "Compelled by the Fire: The Fourth Day",
-    editorialP1: "New Heart Ministry เพิ่งเฉลิมฉลองการชุมนุมครั้งที่ 54 ในเกาหลี โดยทำเครื่องหมายเกือบสองทศวรรษของพระคุณที่ปฏิเสธไม่ได้ของพระเจ้าทั่วประเทศต่างๆ รวมถึงกัมพูชา เวียดนาม จีน เอธิโอเปีย อิสราเอล และเกาหลี การเคลื่อนไหวนี้เป็นการเรียกร้องจากสวรรค์ที่จุดประกายคำสัญญาของหัวใจใหม่ (Ezekiel 36:26) ในทุกรุ่นและทอเราเข้าด้วยกันเป็นครอบครัวอาณาจักรทั่วโลกที่เข้มแข็ง ความมุ่งมั่นของเราครอบคลุม ขยายไปถึงโปรแกรม New Heart Kids ซึ่งเน้นย้ำความเชื่อมั่นของเราว่าเด็กๆ เป็นผู้เข้าร่วมที่สำคัญและมีบทบาทอย่างแข็งขันในปัจจุบัน เพื่อให้มั่นใจในมรดกแห่งความหลงใหลที่จะค้ำจุนการเคลื่อนไหวนี้ไปอีกหลายปี",
-    editorialH2: "The Fourth Day: Our Unstoppable Mandate",
-    editorialP2: "การชุมนุมสามวันของเราคือการแช่แข็งอย่างลึกซึ้ง—การแช่อย่างศักดิ์สิทธิ์ในความรักและพลังแห่งการเปลี่ยนแปลงของพระเจ้า แต่นี่เป็นการเตรียมการ ไม่ใช่จุดจบ เราถูกบีบคั้นอย่างสิ้นเชิงให้ใช้ชีวิตในวันที่สี่ ซึ่งเป็นการนำไปใช้ทันทีและเป็นประจำทุกวันของหัวใจที่ถูกเปลี่ยนแปลงอย่างสุดขีดของเรา และคำสั่งที่หยุดไม่ได้ของเราที่จะปฏิเสธความหยุดนิ่งทางจิตวิญญาณและแสวงหาความเป็นผู้ใหญ่อย่างต่อเนื่องในความดีและพระคุณของพระเจ้าโดยการเชื่อมต่อกันอยู่เสมอ ที่จะไม่เก็บสิ่งใดไว้และรับใช้ด้วยจุดมุ่งหมายที่รวมเป็นหนึ่งเดียว (Acts 2) เพราะการแยกตัวไม่ใช่ทางเลือก และความแข็งแกร่งของเราอยู่ในพันธสัญญาครอบครัวที่แตกไม่ได้ซึ่งทอดข้ามทวีป และที่จะมุ่งมั่นอย่างต่อเนื่องต่อจุดมุ่งหมายสูงสุดนี้ในการสร้างผู้คนแห่งไฟและการเติมเต็มการขยายทั่วโลกที่พระเจ้าทรงสัญญาไว้ใน Isaiah 54",
-    editorialH3: "This Global Newsletter",
-    editorialP3: "เมื่อวิสัยทัศน์ของพระเจ้าสำหรับ New Heart Ministry ยังคงคมชัดขึ้นด้วยความชัดเจนที่ปฏิเสธไม่ได้ เราสัมผัสได้ถึงความปรารถนาอันเร่งด่วนของพระองค์ไม่เพียงแต่จะบันทึกพระราชกิจอันยิ่งใหญ่และพระคุณอันอุดมสมบูรณ์ที่ไหลมาเท่านั้น แต่ยังรวมถึงสำหรับเรา ครอบครัว ที่จะเกี่ยวพันกันอย่างใกล้ชิดมากขึ้นและได้รับการเลี้ยงดู ดังนั้นจดหมายข่าวทั่วโลกรายไตรมาสนี้สำหรับครอบครัว New Heart จึงเป็นความจำเป็น ไม่ใช่ทางเลือก ทำหน้าที่เป็นเครื่องมือที่ตั้งใจออกแบบมาเพื่อเชื่อมโยงระยะทางและวัฒนธรรมทั่วโลก เพื่อบำรุงเลี้ยงการเชื่อมต่อทั่วโลกและให้แน่ใจว่าเราดูแลกันและกันเป็นกายเดียวกัน เพื่อแบ่งปันหลักฐานที่ปฏิเสธไม่ได้ของความสัตย์ซื่อของพระเจ้าจากทุกภูมิภาค ทำให้ความเชื่อร่วมกันของเรามั่นคง และเพื่อรักษาจุดสนใจของเราให้คมชัด เตือนเราถึงการบีบคั้นของเราที่จะใช้ชีวิตในวันที่สี่ร่วมกัน และส่งเสริมการเติบโตและความเป็นผู้ใหญ่อย่างต่อเนื่องจนกว่าจะถึงการชุมนุมครั้งต่อไป",
-    editorialClosing: "เราต้องก้าวไปข้างหน้า ครอบครัวแห่งอาณาจักรไม่ใช่ผู้รับพระคุณอย่างเฉื่อยชา แต่เป็นพลังที่กระตือรือร้นซึ่งถูกบีบคั้นโดยวิสัยทัศน์ที่ไม่หวั่นไหว ด้วยพละกำลังของพระองค์ เราจะเติมเต็มการประกาศทุกอย่างเหนือพันธกิจนี้",
-    serveTitle: "วิธีรับใช้",
-    palancaTitle: "การบริจาค Palanca",
-    qrInstruction: "กรุณาใช้รหัส QR หรือบัญชีธนาคารด้านล่างและระบุวัตถุประสงค์ของการบริจาคของคุณ",
-    footerCopyright: "© 2025 New Heart Ministry. สงวนลิขสิทธิ์.",
-    footerNote: "โปรดเก็บจดหมายข่าวนี้ไว้ในครอบครัว New Heart"
-  },
-  
-  IL: {
-    mainTitle: "ניוזלטר משפחת לב חדש העולמית",
-    subtitle: "שיחת היום הרביעי — סתיו 2025",
-    foundersGreetingTitle: "ברכת המייסדים",
-    foundersTitle: "מייסדים ומנהלי לב חדש העולמי",
-    regionalDirectorsTitle: "מנהלים אזוריים — תאילנד 🇹🇭",
-    upcomingNhTitle: "לב חדש הקרוב",
-    reunionsTitle: "מפגשים",
-    storiesTitle: "סיפורי לב חדש",
-    readStory: "קרא סיפור",
-    kidsTitle: "ילדי לב חדש",
-    editorialTitle: "מערכת",
-    editorialH1: "נאלצים על ידי האש: היום הרביעי",
-    editorialP1: "משרד לב חדש חגג לאחרונה את המפגש ה-54 בקוריאה",
-    editorialH2: "היום הרביעי: המנדט שלא ניתן לעצור",
-    editorialP2: "המפגשים בני שלושת הימים שלנו הם רק ההתחלה",
-    editorialH3: "הניוזלטר העולמי הזה",
-    editorialP3: "אלוהים ביקש מאיתנו לחזק ולאחד את המשפחה העולמית",
-    editorialClosing: "נהיה עם שנאלץ על ידי אש...",
-    serveTitle: "דרכים לשרת",
-    palancaTitle: "תרומות פלנקה",
-    qrInstruction: "אנא השתמש בקודי QR או בחשבונות הבנק למטה",
-    footerCopyright: "© 2025 משרד לב חדש. כל הזכויות שמורות.",
-    footerNote: "אנא שמור את הניוזלטר הזה בתוך משפחת לב חדש"
-  },
-  
-  CH: {
-    mainTitle: "新心全球家庭通訊",
-    subtitle: "第四天對話 — 2025年秋季",
-    foundersGreetingTitle: "創辦人問候",
-    foundersTitle: "創辦人和新心全球總監",
-    regionalDirectorsTitle: "區域總監 — 泰國 🇹🇭",
-    upcomingNhTitle: "即將舉行的新心",
-    reunionsTitle: "重聚",
-    storiesTitle: "新心見證",
-    readStory: "閱讀故事",
-    kidsTitle: "新心兒童",
-    editorialTitle: "社論",
-    editorialH1: "被火驅使：第四天",
-    editorialP1: "新心事工最近在韓國慶祝了第54次聚會",
-    editorialH2: "第四天：我們不可阻擋的使命",
-    editorialP2: "我們為期三天的聚會只是開始",
-    editorialH3: "這份全球通訊",
-    editorialP3: "上帝要求我們加強和統一全球家庭",
-    editorialClosing: "願我們成為被火驅使的人...",
-    serveTitle: "事奉方式",
-    palancaTitle: "Palanca 捐款",
-    qrInstruction: "請使用下面的二維碼或銀行帳戶",
-    footerCopyright: "© 2025 新心事工。版權所有。",
-    footerNote: "請將此通訊保留在新心家庭內"
-  }
-};
-
-// Korean modal story translations
-const modalStoriesKO = {
-  ariel: {
-    title: "อาเรียล — จากยูดาห์ออร์ทอดอกซ์สู่พระเยซู",
-    content: `<p>ประสบการณ์อันลึกซึ้งของน้องสาวฉันกับ New Heart 52 ในอิสราเอลส่งผลกระทบอย่างลึกซึ้งต่อฉัน การได้เห็นการเปลี่ยนแปลงของเธอและการสารภาพความเชื่อในพระเยซูต่อแม่ของเราเป็นแรงบันดาลใจให้ฉันเข้าร่วม New Heart ในสหรัฐอเมริกาในเดือนพฤษภาคม 2025</p>
-<p>ฉันเกิดในครอบครัวยิวออร์ทอดอกซ์ที่เคร่งครัด พร้อมกับน้องสาวและน้องชายฝาแฝดสามคนของเรา การเลี้ยงดูของเราแทรกซึมอยู่ในประเพณีและคำสอนของความเชื่อของเรา และเป็นเวลาหลายปีที่นี่เป็นรากฐานของศาสนาของฉัน อย่างไรก็ตาม เมื่อฉันโตขึ้น ความรู้สึกไม่สบายใจเริ่มเกิดขึ้นภายในตัวฉัน แม้จะมีการอธิษฐานอย่างจริงจังและความมุ่งมั่นต่อการปฏิบัติทางศาสนาของเรา ฉันพบว่าตัวเองปรารถนาความเชื่อมโยงที่ลึกซึ้งยิ่งขึ้น ประสบการณ์ที่ลึกซึ้งยิ่งขึ้นของสันติสุขและความรักของพระเจ้า ซึ่งฉันรู้สึกว่าขาดหายไป</p>
-<p>ความปรารถนาทางจิตวิญญาณนี้นำฉันไปสู่การแสวงหาการนำทาง และฉันอธิษฐานอย่างจริงจังให้พระเจ้านำฉันไปสู่ความจริง ประมาณหกปีที่แล้ว การเดินทางของฉันเกิดการเปลี่ยนแปลงอย่างมาก ฉันเริ่มศึกษาเกี่ยวกับพระเยซู โดยเข้าหาหัวข้อด้วยใจที่เปิดกว้างและความปรารถนาอย่างจริงใจที่จะเข้าใจ สิ่งที่ฉันค้นพบในช่วงเวลาแห่งการศึกษาและการไตร่ตรองอย่างเข้มข้นนั้นเป็นเรื่องที่เปิดเผยจริงๆ</p>
-<p>ฉันเจาะลึกเข้าไปในคำพยากรณ์ของพระคัมภีร์ฮีบรู และรู้สึกประหลาดใจที่เห็นว่าพวกเขาชี้ไปที่พระเยซูในฐานะพระเมสสิยาห์ที่รอคอยมานานอย่างชัดเจนเพียงใด รายละเอียดที่ซับซ้อน ความถูกต้องทางประวัติศาสตร์ และความหมายทางเทววิทยาที่ลึกซึ้งของคำพยากรณ์เหล่านี้โดนใจฉันอย่างลึกซึ้ง มันเป็นการตื่นรู้ที่ลึกซึ้ง ยืนยันความจริงที่เงียบๆ กำลังก่อตัวขึ้นในใจของฉัน การเดินทางแห่งการค้นพบนี้ทำให้ความเชื่อของฉันในพระเยซูแข็งแกร่ง เปลี่ยนเส้นทางทางจิตวิญญาณของฉันตลอดไป</p>
-<p>การได้รับอนุญาตให้ออกจากอิสราเอลระหว่างการรับราชการทหารของฉัน โดยเฉพาะอย่างยิ่งกับสงครามที่กำลังดำเนินอยู่ เป็นเรื่องท้าทาย เราจองเที่ยวบิน อธิษฐานอย่างจริงจัง และด้วยพระคุณของพระเจ้า ฉันได้รับอนุญาตเพียงวันเดียวก่อนที่ฉันจะเดินทางไปสหรัฐอเมริกา</p>
-<p>โปรแกรม New Heart เป็นช่วงเวลาแห่งพระคุณอันยิ่งใหญ่และการเปลี่ยนแปลงส่วนบุคคล เป็นเวลาสามวัน ฉันได้เข้าใกล้พระเจ้ามากขึ้นด้วยการใช้เวลากับพระองค์โดยไม่มีสิ่งรบกวน ซึ่งเป็นประสบการณ์ที่อุดมสมบูรณ์อย่างลึกซึ้ง ฉันขอบพระคุณพระเจ้าที่ทรงเปลี่ยนแปลงชีวิตของฉันและประทานหัวใจใหม่ให้ฉันในระหว่าง New Heart 53</p>`
-  },
-  choi: {
-    title: "최은영 — 싸움으로 다시 부름받다",
-    content: `<p><strong>감사:</strong> 먼저, 말씀을 전하신 영적 지도자들, 몸과 마음을 다해 찬양한 찬양팀, 밤을 새워 헌신으로 많은 것을 만든 팔란카팀, 음식과 간식으로 사랑을 나눈 분들, 모임이 진행될 수 있도록 뒤에서 번거로운 일을 모두 처리한 총무팀, 그리고 무엇보다도 눈물과 사랑으로 전 생애를 나눈 로요 멤버들과 세족식 때 무릎 꿇고 드린 눈물의 기도 하나하나를 잊을 수 없습니다. 진심으로 감사드립니다. 삶에서 받을 수 없는 깊은 사랑을 받았습니다.</p>
-<p><strong>가기 전 상황:</strong> 1년 전에 목사님 사모님으로부터 이 피정에 참석하라는 초대를 받았습니다. 그녀는 1년 넘게 나를 위해 기도해 왔습니다. 그러다 올해 다시 피정에 참석하라는 초대를 받았습니다. 하나님께서 누군가를 통해 나를 이 모임에 초대하고 계신다는 것을 강하게 느꼈습니다. 이번에는 "완전한 결단을 가지고 가겠다"고 마음을 먹었습니다. 그러나 피정 일주일 전, 나를 깊이 사랑하고 돌보는 가족들이 내 참석을 절대적으로 반대했습니다.</p>
-<p>그러나 이번에 피정에 반드시 참석해야 하는 절박한 이유가 두 가지 있었습니다. 하나는 남편이 올해 신학교를 졸업하면서 동시에 회사에서 은퇴하는 것이었습니다. 나는 내년부터 우리가 어떻게 삶을 살아가야 할지 계속해서 하나님께 방향을 구하고 있었습니다. 다른 하나는 몸과 마음 모두에서 에너지를 잃었다고 느꼈고, 코로나 기간 이후 지쳐 있었습니다.</p>
-<p><strong>받은 은혜:</strong> 뉴하트에 도착한 순간부터 떠날 때까지, 내가 경험한 것은 "하나님의 은혜를 열렬히 경험한 사람들의 환대와 깊은 사랑"이었습니다. 첫날, "비전"에 대한 첫 강의에서 하나님께서는 나에게 내 삶을 포괄적으로 돌아보게 하셨습니다. 그분은 따뜻하게 물으셨습니다. "은영아, 너는 돈, 시간, 재능을 어떻게 사용하고 있니?" 몇 년 전, 나는 목과 등 디스크 문제로 인해 다리에 저림과 팔에 마비를 경험하기 시작했습니다.</p>
-<p>하나님께서는 매번 나에게 물으셨습니다: 믿음 안에서 함께하는 동역자들, 믿음의 선배들이 어렵지만 승리하며 이 믿음의 싸움을 싸우고 있는데, 너는 죽는 순간까지 어떤 믿음의 싸움을 싸우고 싶은가? 그리고 하나님께서는 내 게으름과 나태함을 부드럽게 책망하시고, 나를 치열한 영적 전장으로 다시 부르셨습니다.</p>
-<p><strong>끝난 후:</strong> 피정이 끝나갈 때, 우리는 주제가 "일어나라"를 불렀고, 내가 받았던 상처와 아픔이 밀려왔습니다. 나는 그 상처들로 돌아가되, 하나님께서 피정에서 나에게 재확인시켜 주신 십자가 구원의 사랑과 기쁨을 가지고 가겠다는 눈물의 결단을 했습니다. 나는 또 다른 3일을 살겠습니다. 데 콜로레스.</p>`
-  },
   han: {
-    title: "한예슬 — 후보자에서 중보기도자로",
-    content: `<p>안녕하세요. 제 이름은 한예슬이고, 51기에 후보자로 참여한 후 54기에서 처음으로 팀원으로 섬겼습니다. 솔직히, 처음에는 반주자로서의 조용한 역할이 언급할 만큼 중요하지 않을까 봐 걱정되어 제 이야기를 나누는 것을 주저했습니다. 그러나 이것이 마지막 간증이기에 앞으로 나서기로 결정했습니다. 이 결정은 뉴하트 54기에서 섬기는 모든 순간이 나에게 깊은 간증이었다는 사실에서 비롯됩니다.</p>
-<p>남편의 제안으로 51기에 후보자로 처음 참석했을 때, 나는 계속해서 "우리가 무엇을 할 건가요? 어디로 가나요? 일정이 어떻게 되나요?"라고 물었지만 세부 사항을 들을 수 없었습니다. 사실상 아무 정보 없이 가야 했고, 마치 심해 낚싯배에 타는 것 같았습니다. 작년에는 주중에 세션이 있었고, 수요일이 근무일이어서 퇴근 후 천안에서 연천까지 기차와 지하철로 이동하여 밤 11시쯤 도착했습니다. 말하지 말라고 했고, "왜요?"라고 물었을 때 답을 듣지 못했습니다. 후보자로서 용어가 종종 낯설었고, 피곤함에도 불구하고 세션은 길었습니다. 그러나 프로그램의 어려움을 통해 많은 각성과 회개의 순간을 경험했습니다.</p>
-<p>남편이 처음에 뉴하트에 대해 설명하지 않아서 약간 저항감이 있었지만, 겉으로 드러내지는 않았습니다. 그러나 끝날 무렵, 나는 선언했습니다. "정말 즐거웠어요. 내년에는 팀원으로 섬기고 싶어요."</p>
-<p>올해 공지가 나왔을 때, 나는 남편을 간절히 재촉했습니다. "신청했어요? 신청했어요?" 그가 나와 함께 섬기기로 결정한 것에 감사했습니다. 이번에 찬양팀에서 섬기는 동안, 나는 내 자신의 축복에 집중하기보다 후보자들을 위해 더 많이 중보기도하는 나 자신을 발견했습니다. 기도 시간 동안, 나는 노래하고, 반주를 제공하고, 다양한 작은 방식으로 섬기는 데 참여했기 때문에 개인적인 기도에 많은 시간을 할애할 수 없었습니다.</p>
-<p>기도하는 셋째 날 저녁, 나는 필요할 경우 물이나 티슈를 돕기 위해 대기하고 있었습니다. 끝날 무렵, 나는 그냥 가만히 서 있었습니다. 그 조용한 순간에, 하나님께서 내 마음속에서 "예슬아"라고 부르신 것 같았습니다. 그 순간부터, 나는 손을 들고 예배하며 서 있는 것 외에는 아무것도 할 수 없었습니다. 하나님께서는 마리아와 마르다의 이야기를 상기시켜 주셨습니다. 예수님을 섬기는 것이 중요하지만, 그분께서 진정으로 원하시는 것은 우리가 그분의 발 앞에 앉아 그분의 말씀을 듣는 것입니다.</p>
-<p>참석하기 전에, 나는 내 신체 상태에 대해 진심으로 걱정했습니다. 나는 집에서 쉬고 있었고, 느긋하게 자고 먹는 데 익숙했습니다. 갑자기 아침 6시에 일어나서 늦게까지 섬기고, 그 일정을 반복하는 것이 걱정되었습니다. 그러나 하나님의 은혜가 나를 지탱해 주셨습니다.</p>
-<p>나는 모든 후보자들이 팀원으로 섬기도록 격려합니다. 후보자로서 받는 은혜는 팀원으로 섬기면서 경험하는 은혜와 크게 다릅니다. 내년에 시간과 기회가 있다면, 진심으로 참여하시기를 바랍니다.</p>`
+    title: "ฮัน เยซึล — จากผู้สมัครสู่ผู้อธิษฐานแทน",
+    content: `<p>สวัสดีค่ะ ฉันชื่อฮัน เยซึล และฉันได้รับใช้เป็นสมาชิกทีมเป็นครั้งแรกในเซสชันที่ 54 หลังจากที่เคยเข้าร่วมในฐานะผู้สมัครในเซสชันที่ 51 มาก่อน ตามความจริงแล้ว ตอนแรกฉันลังเลที่จะแบ่งปันเรื่องราวของฉัน เพราะกังวลว่าบทบาทที่เงียบๆ ของฉันในฐานะนักเปียโนประกอบจะไม่สำคัญพอที่จะกล่าวถึง แต่เนื่องจากนี่เป็นคำพยานสุดท้าย ฉันจึงตัดสินใจก้าวไปข้างหน้า การตัดสินใจนี้เกิดจากความจริงที่ว่าทุกช่วงเวลาของการรับใช้ใน New Heart เซสชันที่ 54 เป็นคำพยานที่ลึกซึ้งสำหรับฉัน</p>
+    
+    <p>เมื่อฉันเข้าร่วมเซสชันที่ 51 เป็นครั้งแรกในฐานะผู้สมัครตามคำแนะนำของสามี ฉันถามอยู่เรื่อยๆ ว่า "เราจะทำอะไร? เราจะไปที่ไหน? ตารางเวลาคืออะไร?" แต่ไม่ได้รับรายละเอียดใดๆ ฉันต้องไปโดยแทบไม่มีข้อมูลเลย รู้สึกเหมือนกำลังขึ้นเรือประมงในทะเลลึก ปีที่แล้ว เซสชันตรงกับวันธรรมดา และเนื่องจากวันพุธเป็นวันทำงาน ฉันเดินทางจากชอนอันไปยอนชอนด้วยรถไฟและรถไฟใต้ดินหลังเลิกงาน มาถึงประมาณ 23.00 น. ฉันถูกบอกให้อย่าพูด และเมื่อฉันถามว่า "ทำไม?" ฉันก็ไม่ได้รับคำตอบ ในฐานะผู้สมัคร คำศัพท์มักจะไม่คุ้นเคย และแม้จะเหนื่อย เซสชันก็ยาวนาน อย่างไรก็ตาม ผ่านความยากลำบากของโปรแกรม ฉันได้สัมผัสช่วงเวลาแห่งการตื่นรู้และการกลับใจมากมาย</p>
+    
+    <p>การขาดคำอธิบายเริ่มต้นของสามีเกี่ยวกับ New Heart ทำให้ฉันต่อต้านบ้าง แม้ว่าฉันจะไม่แสดงออก แต่ในท้ายที่สุด ฉันประกาศว่า "ฉันสนุกมากจริงๆ ฉันอยากรับใช้เป็นสมาชิกทีมในปีหน้า"</p>
+    
+    <p>เมื่อมีการประกาศในปีนี้ ฉันรีบเร่งสามีของฉัน "คุณสมัครหรือยัง? คุณสมัครหรือยัง?" ฉันขอบคุณที่เขาตัดสินใจร่วมรับใช้กับฉัน ในขณะที่รับใช้ในทีมสรรเสริญครั้งนี้ ฉันพบว่าตัวเองอธิษฐานแทนผู้สมัครมากกว่าที่จะมุ่งเน้นไปที่พรของตัวเอง ในระหว่างเวลาอธิษฐาน ฉันไม่สามารถอุทิศเวลามากนักสำหรับการอธิษฐานส่วนตัว เพราะฉันมีส่วนร่วมในการร้องเพลง จัดหาเพลงประกอบ และรับใช้ในรูปแบบเล็กๆ ต่างๆ</p>
+    
+    <p>ในค่ำคืนที่สามระหว่างการอธิษฐาน ฉันกำลังยืนเตรียมพร้อมที่จะช่วยเหลือด้วยน้ำหรือทิชชูหากจำเป็น ใกล้ถึงตอนท้าย ฉันเพียงแค่ยืนนิ่งๆ ในช่วงเวลาที่เงียบสงบนั้น ฉันรู้สึกเหมือนพระเจ้าเรียกว่า "เยซึล" ในใจของฉัน ตั้งแต่เวลานั้น ฉันไม่สามารถทำอะไรได้นอกจากยืนอยู่ที่นั่นโดยยกมือขึ้นนมัสการ พระเจ้าทรงระลึกถึงเรื่องราวของมารีย์และมาร์ธา ในขณะที่การรับใช้พระเยซูเป็นสิ่งสำคัญ สิ่งที่พระองค์ปรารถนาอย่างแท้จริงคือให้เรานั่งที่พระบาทของพระองค์และฟังพระองค์</p>
+    
+    <p>ก่อนเข้าร่วม ฉันกังวลจริงๆ เกี่ยวกับสภาพร่างกายของฉัน ฉันพักผ่อนที่บ้าน คุ้นเคยกับการนอนและกินอย่างสบายๆ การเปลี่ยนแปลงอย่างกะทันหันที่ต้องตื่นตอน 06.00 น. รับใช้จนดึก และทำซ้ำตารางนั้นทำให้ฉันกังวล อย่างไรก็ตาม พระคุณของพระเจ้าค้ำจุนฉัน</p>
+    
+    <p>ฉันขอแนะนำให้ผู้สมัครทุกคนรับใช้เป็นสมาชิกทีม พระคุณที่คุณได้รับในฐานะผู้สมัครแตกต่างอย่างมากจากพระคุณที่ได้รับในขณะรับใช้เป็นสมาชิกทีม หากคุณมีเวลาและโอกาสในปีหน้า ฉันหวังจริงๆ ว่าคุณจะเข้าร่วม</p>`
   },
+  
   keziah: {
-    title: "케지아 — 난민에서 주님의 딸로",
-    content: `<p>뉴하트 베트남 #14에서 제가 받은 은혜를 나누게 되어 영광입니다. 이곳에서 나는 많은 축복과 하나님의 은혜를 경험했습니다.</p>
-<p>베트남에 처음 왔을 때, 나는 이곳이 내가 예상했던 것과 매우 다르다는 것을 발견했습니다. 모든 것이 새롭고 낯설었지만, 사람들의 따뜻한 환영과 사랑이 나를 즉시 편안하게 만들었습니다.</p>
-<p>세 번째 날 동안, 나는 특히 예배와 기도 시간에 하나님의 현존을 강하게 느꼈습니다. 성령님께서 내 마음을 만지셨고, 나는 과거의 많은 상처와 고통을 떠올렸습니다. 그러나 하나님께서는 나에게 용서와 치유를 주셨습니다.</p>
-<p>나는 또한 다른 참가자들과 깊은 우정을 형성할 기회를 가졌습니다. 우리는 서로 이야기를 나누고, 기도하고, 서로를 격려했습니다. 이러한 경험을 통해 나는 진정한 형제자매가 무엇을 의미하는지 이해하게 되었습니다.</p>
-<p>뉴하트 전에, 나는 종종 외롭고 상처받았다고 느꼈습니다. 그러나 이제 나는 더 이상 혼자가 아니라는 것을 알고 있습니다. 하나님께서는 나에게 사랑하는 가족을 주셨고, 그분은 항상 나와 함께 계십니다.</p>
-<p>선교에 합류하기 전, 나는 18년 이상 내 마음에 고통을 안고 있었습니다. 그러나 이제 그 짐이 훨씬 가벼워졌고, 예전처럼 그것을 짊어지고 있지 않다는 것을 진정으로 느낄 수 있습니다.</p>
-<p>"NEW 54"는 내 마음과 영혼 모두에 큰 축복이자 변화시키는 경험이었습니다. 나는 또한 다음 세대의 뉴하트 선교에 합류할 형제자매들에게 축복이 되기를 원합니다.</p>`
+    title: "เคซิยาห์ — เสรีภาพในความรักที่ไม่มีเงื่อนไขของพระองค์",
+    content: `<p>สวัสดีค่ะ ฉันชื่อเคซิยาห์จากเวียดนาม ฉันขอบพระคุณพระเจ้าอย่างจริงใจสำหรับโอกาสที่ได้เข้าร่วมการพักผ่อน New Heart ครั้งที่ 14 ซึ่งพระเจ้าทรงเยี่ยมเยียนฉันอย่างอัศจรรย์และทรงพลัง ตลอดการพักผ่อน ฉันได้สัมผัสการสนทนาที่ลึกซึ้งและไม่มีสิ่งรบกวนกับพระองค์</p>
+    
+    <p>ฉันได้ติดตามองค์พระผู้เป็นเจ้ามา 14 ปี และในช่วงเวลานั้น ฉันรู้สึกถึงความรักที่ไร้ขอบเขตของพระองค์ที่มีต่อฉันเสมอ เพราะความรักนั้น ฉันเลือกที่จะตอบสนองด้วยการรับใช้พระองค์ด้วยสุดใจของฉัน อย่างไรก็ตาม เมื่อเวลาผ่านไป ฉันตระหนักว่าฉันมักจะรับใช้ด้วยความปรารถนาที่จะได้รับการยอมรับจากพระองค์ โดยไม่เข้าใจความสมบูรณ์ของความรักที่พระองค์มีต่อฉันอย่างเต็มที่</p>
+    
+    <p>ในคืนแรกของการพักผ่อน ฉันร้องไห้ต่อหน้าองค์พระผู้เป็นเจ้าและขอให้พระองค์ทรงให้อภัยฉันที่ปล่อยให้ความคิดของตัวเองควบคุมพระราชกิจของพระองค์แทนที่จะยอมจำนนต่อพระประสงค์ของพระองค์ ฉันเข้าใจว่าพระประสงค์ของพระเจ้าคือพระองค์ทรงรักฉันไม่ใช่เพราะสิ่งที่ฉันทำ แต่เพียงเพราะพระองค์ทรงรักฉัน</p>
+    
+    <p>พระวจนะของพระองค์ในเยเรมีย์ 32:40 ได้ปลดปล่อยฉันจากการถูกจำกัดด้วยความชอบธรรมของตัวเองในชีวิตความเชื่อของฉัน ตั้งแต่นั้นมา ฉันได้ใช้ชีวิตในเสรีภาพที่แท้จริง เชื่อในความรักและแผนการที่พระองค์มีสำหรับชีวิตของฉันอย่างแท้จริง</p>
+    
+    <p>หลังจากนั้น เมื่อใดก็ตามที่ฉันมีโอกาสพบและแบ่งปันกับผู้ที่ยังไม่เชื่อในองค์พระผู้เป็นเจ้า ฉันได้สัมผัสพระองค์ที่ใช้ปากและใจของฉันเพื่อสื่อสารความรักและความรอดของพระองค์กับพวกเขา ตั้งแต่การพักผ่อนครั้งที่ 14 ฉันได้อธิษฐานให้ 18 คนที่ยอมรับองค์พระผู้เป็นเจ้า</p>
+    
+    <p>วันนี้ พระเจ้าทรงใกล้ชิดและยอดเยี่ยมจริงๆ ในชีวิตของฉัน ทัศนคติของฉันในการรับใช้องค์พระผู้เป็นเจ้าได้รับการต่ออายุ ตอนนี้เกิดจากความรักที่ไม่มีเงื่อนไขและเสรีภาพในพระองค์ ขอบพระคุณพระเจ้า สง่าราศีเป็นของพระองค์</p>`
   },
+  
   parichat: {
-    title: "파리챗 — 불교 전통에서 자유로워지다",
-    content: `<p>태국에서 불교는 단순한 종교가 아닙니다. 그것은 문화이고, 정체성이며, 가족의 명예입니다. 28년 동안 나는 모든 전통을 지켰습니다—사원 방문, 공덕 쌓기, 명상 수련. 나는 불교 기준으로 "선한" 사람이었지만, 한 가지 질문에 시달렸습니다: 내 카르마가 충분히 좋은가?</p>
-<p>기독교인 이웃이 나를 뉴하트 태국에 초대했습니다. 나는 예의를 지키기 위해 갔고, 내 신념에 반대하는 강의를 기대했습니다. 대신, 나는 예수님에 대해 들었습니다—끝없는 환생을 요구하지 않고 지금 용서를 제공하는 하나님. 은혜는 외국 개념처럼 느껴졌습니다: 카르마에 관계없이 무조건적인 사랑?</p>
-<p>아가페 예배 중에, 나는 내 안에서 무언가가 부서지는 것을 느꼈습니다. 예수님은 더 많은 노력을 요구하지 않으셨습니다. 그분은 휴식을 제공하셨습니다. 카르마의 거짓말이 그분의 사랑의 무게 아래 산산조각났습니다.</p>
-<p>내가 그리스도를 받아들였을 때, 내 가족은 나를 버렸습니다. 대가는 높았지만, 기쁨은 더 높습니다. 그리스도 안에서 나는 자기 구원의 짓누르는 무게로부터 자유롭습니다.</p>`
+    title: "ปาริฉัตร — 18 ปีแห่งความเจ็บปวดที่ถูกเปลี่ยนแปลง",
+    content: `<p>ฉัน ปาริฉัตร ต้องการแสดงความขอบคุณอย่างจริงใจต่อแม่ฝ่ายจิตวิญญาณศิษยาภิบาลมายุรี ศิษยาภิบาลซาราห์ และศิษยาภิบาลแมทธิวสำหรับการชี้นำ การดูแล และความรักที่ไม่หวั่นไหวตั้งแต่เวลาที่เรามาถึงเกาหลีจนถึงวันสุดท้ายของภารกิจ</p>
+    
+    <p>ขอบคุณสำหรับประสบการณ์อันมีค่าและพรอันลึกซึ้งที่ฉันได้รับผ่านการมีส่วนร่วมกับภารกิจ "New Heart" ในเกาหลี</p>
+    
+    <p>ฉันประทับใจอย่างลึกซึ้งกับทุกแง่มุมของภารกิจ "New Heart" รวมถึง: การจัดการขนส่งที่อบอุ่นเพื่อรับทีมของเรา การต้อนรับที่เต็มไปด้วยความรักผ่านเพลงสรรเสริญ ทีมอาหารที่เต็มไปด้วยเสียงหัวเราะอย่างสนุกสนาน ทีมนมัสการที่ล้นเหลือด้วยพระวิญญาณบริสุทธิ์ และทีมอธิษฐานที่ครอบคลุมเราอย่างต่อเนื่องตลอดภารกิจ</p>
+    
+    <p>ขอบคุณสำหรับคำพยานและการเทศน์ทุกคำที่แบ่งปันโดยศิษยาภิบาลและพี่น้องที่ผ่านภารกิจ New Heart มาก่อน การแบ่งปันของคุณช่วยให้เราเข้าใจมากขึ้นว่าไม่ว่าสถานการณ์จะซับซ้อนหรือเจ็บปวดเพียงใด พระเจ้ายังคงครอบครอง</p>
+    
+    <p>ฉันได้รับการฟื้นฟูภายในอย่างลึกซึ้งและได้ตัดสินใจอย่างมั่นคงที่จะรับใช้และเข้าใกล้พระเจ้ามากยิ่งขึ้น ฉันยังเลือกที่จะให้อภัยอดีตสามีของฉันสำหรับทุกสิ่งในอดีตและแม้แต่ในปัจจุบัน การกล่าวหาและความเกลียดชังที่ฉันแบกมาหลายปีได้เปลี่ยนเป็นสิ่งใหม่ที่นำฉันไปสู่การอธิษฐานมากขึ้น</p>
+    
+    <p>ก่อนเข้าร่วมภารกิจ ฉันแบกความเจ็บปวดในหัวใจมากว่า 18 ปี แต่ตอนนี้ ภาระนั้นเบาลงมาก และฉันสามารถรู้สึกได้จริงๆ ว่าฉันไม่ได้แบกมันอย่างที่เคยทำ</p>
+    
+    <p>"NEW 54" เป็นพรอันยิ่งใหญ่และประสบการณ์ที่เปลี่ยนแปลงทั้งหัวใจและจิตวิญญาณของฉัน ฉันยังปรารถนาที่จะเป็นพรแก่พี่น้องที่จะเข้าร่วมรุ่นต่อไปของภารกิจ New Heart</p>`
   },
+  
   ji: {
-    title: "지여운 — 뉴하트 키즈 한국 #2",
-    content: `<p>안녕하세요! 뉴하트 키즈 총무 코디네이터로 섬긴 지여운입니다. 올해 뉴하트 키즈가 한국에서 처음으로 진행되었고, 같은 장소에 있었지만 서로 마주치지 않도록 일정을 조정해서 아마 우리가 무엇을 하고 있는지 전혀 몰랐을 거예요 🙂</p>
-<p>올해 뉴하트 키즈에는 0세부터 12세까지 총 22명의 어린이와 10명의 선생님이 함께 시간을 보냈습니다. 모든 것이 처음이었기 때문에 긴장한 것은 선생님들만이 아니었습니다. 보호자와 하루 종일 떨어져 있던 아이들도 첫날 우리를 만났을 때 긴장감이 얼굴에 가득했습니다.</p>
-<p>저녁 식사 후, 우리는 모여 서로 소개하고 인사를 나눈 다음 질문을 했습니다: "이곳은 무엇을 하는 곳인가요? 오늘 우리는 왜 여기에 왔나요?" "예배하러요!" "기도하러요!" "놀러요!"와 같은 대답이 나왔고, 그러다 한 아이가 "선교하러요!"라고 외쳤습니다.</p>
-<p>뉴하트 키즈가 불편함으로 가득했다고 말해도 과언이 아닙니다. 잠자는 곳이 바뀝니다. 전에 만난 적 없는 사람들과 불편한 곳에서 지냅니다. 자신의 일정을 통제할 수 없습니다. 초등학생들은 휴대폰을 제출해야 했습니다. 심지어 계속 비가 와서 야외 활동을 할 수 없었습니다.</p>
-<p>놀랍게도 아이들은 지시를 따르고 많은 상황을 견뎌냈습니다. 끝날 무렵, 그들은 집에 가는 것이 슬펐고 심지어 "내년에도 또 할 거예요? 다시 오고 싶어요!"라고 말했습니다.</p>
-<p>나는 하나님의 계획이 완전히 성취되었다고 믿습니다. 3박 4일 동안 아이들이 서로 어깨를 부딪히는 것이 하나님의 계획이었을 수도 있다고 생각합니다.</p>
-<p>아이들이 "은혜"를 부르는 것을 기억하시나요? 대부분이 6-9세였고, 가장 나이가 많은 아이가 12세였기 때문에 "은혜" 찬송가를 부르는 모습이 정말 귀여워 보입니다 😁</p>
-<p>우리가 정말 "선교를 하러" 갔다고 생각하지 않으세요? 뉴하트 키즈는 진정으로 부족하고 불편한 조건에서도 주어진 것에 감사하고, 함께 웃고 즐기며 시간을 보냈습니다.</p>`
+    title: "จี เยวุน — New Heart Kids Korea #2",
+    content: `<p>สวัสดีค่ะ! ฉันชื่อจี เยวุน ที่รับใช้เป็นผู้ประสานงานฝ่ายธุรการสำหรับ New Heart Kids ปีนี้ New Heart Kids จัดขึ้นในเกาหลีเป็นครั้งแรก และแม้ว่าเราจะอยู่ในสถานที่เดียวกัน เราปรับตารางเพื่อหลีกเลี่ยงการเจอกัน ดังนั้นฉันคิดว่าคุณอาจไม่รู้เลยว่าเรากำลังทำอะไร 🙂</p>
+    
+    <p>ปีนี้ New Heart Kids มีเด็กทั้งหมด 22 คน อายุ 0 ถึง 12 ปี พร้อมกับครู 10 คนใช้เวลาร่วมกัน เนื่องจากทุกอย่างเป็นครั้งแรก ไม่ใช่แค่ครูเท่านั้นที่รู้สึกประหม่า เด็กๆ ที่ใช้เวลาทั้งวันห่างจากผู้ปกครองของพวกเขา ก็พบเราในวันแรก โดยมีความตึงเครียดเขียนอยู่บนใบหน้า</p>
+    
+    <p>หลังอาหารเย็น เรารวมตัวกันเพื่อแนะนำตัวและทักทายกัน จากนั้นถามคำถามว่า: "สถานที่นี้มีไว้ทำอะไร? ทำไมเราถึงมาที่นี่วันนี้?" คำตอบเช่น "เพื่อนมัสการ!" "เพื่ออธิษฐาน!" "เพื่อเล่น!" ออกมา แล้วเด็กคนหนึ่งตะโกนว่า "เพื่อทำภารกิจ!"</p>
+    
+    <p>จะไม่เป็นการพูดเกินจริงที่จะบอกว่า New Heart Kids เต็มไปด้วยความไม่สบาย การจัดที่นอนเปลี่ยนไป อยู่กับคนที่ไม่เคยพบมาก่อนในที่ๆ ไม่สบาย ไม่สามารถควบคุมตารางของตัวเองได้ นักเรียนประถมต้องส่งโทรศัพท์มือถือ</p>
+    
+    <p>เด็กๆ ทำอะไร? น่าอัศจรรย์ เด็กๆ ปฏิบัติตามคำสั่งและทนกับสถานการณ์มากมาย อย่างไรก็ตาม มันไม่น่าอัศจรรย์หรือที่เด็กๆ ผ่านทั้ง 3 คืน 4 วันมาด้วยกันโดยไม่มีเหตุการณ์เกี่ยวกับความปลอดภัยใดๆ! ในตอนท้าย พวกเขาเศร้าที่ต้องกลับบ้านและแม้แต่พูดว่า "ปีหน้าจะทำอีกไหม? ฉันอยากมาอีก!"</p>
+    
+    <p>อย่างไรก็ตาม ฉันเชื่อว่าแผนการของพระเจ้าได้รับการบรรลุอย่างสมบูรณ์ ส่วนตัวแล้ว ฉันคิดว่า 3 คืน 4 วันของเด็กๆ ที่เสียดสีกันอาจเป็นแผนการของพระเจ้า เด็กๆ ที่อาศัยอยู่ในสังคมสมัยใหม่ในปัจจุบันไม่ค่อยมีโอกาสได้สัมผัสสภาพแวดล้อมแบบนี้</p>
+    
+    <p>คุณคิดอย่างไร? คุณไม่คิดหรือว่าเราไป "ทำภารกิจ" จริงๆ? New Heart Kids ใช้เวลารู้สึกขอบคุณสำหรับสิ่งที่ได้รับ แม้ในสภาพที่ขาดแคลน ไม่สบาย และยากจนอย่างแท้จริง พวกเขาเรียนรู้ที่จะอธิษฐาน ร้องสรรเสริญ ได้ยินและแบ่งปันพระวจนะ</p>`
   },
+  
   kyungjin: {
-    title: "박경진 (마리아) — 뉴하트 키즈 미국 #1",
-    content: `<p>2025년 5월, 하나님께서는 로스앤젤레스에서 뉴하트 키즈 #1을 시작하면서 아름다운 새로운 장을 여셨습니다. 모든 세대가 뉴하트를 통해 축복받는 것을 보는 것은 뉴하트 공동체 내에서 오랫동안 기다려온 꿈이었고, 하나님께서 이 꿈을 현실로 만들기 위해 어떻게 문을 여셨는지 목격하는 것은 놀라웠습니다.</p>
-<p>내가 처음 뉴하트 키즈에 합류했을 때, 내 마음은 특히 젊은 부모들을 위한 것이었습니다. 네 아이의 어머니로서, 나는 어린 자녀들을 키우면서 영적으로 메마르고 소외되었다고 느꼈던 시간들을 기억했습니다. 나는 부모들에게 하나님의 현존 안에서 새로워지고 회복될 수 있는 공간을 제공하는 방식으로 섬기고 싶었습니다.</p>
-<p>그러나 섬기면서 하나님께서는 그들의 자녀들도 포용하도록 내 마음을 확장시키셨습니다. 유아부터 십대 초반까지 약 스무 명의 아이들을 섬기면서, 나는 하나님께서 이 어린 자녀들 각자를 얼마나 깊이 소중히 여기시는지 직접 보았습니다.</p>
-<p>그 3일이 끝날 무렵, 나는 부모와 자녀 모두가 성령을 통해 새로운 마음을 받는 것을 목격했습니다. 10월에 한국에서 뉴하트 키즈 #2를 갖게 된다는 소식을 듣고 매우 기뻤습니다.</p>
-<p>나는 이것이 우리를 '가족'으로 부르시고 모든 세대에게 그분의 새로운 마음을 주시려는 하나님의 뜻에 대한 확인이라고 믿습니다. 앞으로 일어날 일들에 대해 감사하고 믿음으로 가득 차 있습니다!</p>`
+    title: "คยองจิน (มาเรีย) พาร์ค — New Heart Kids USA #1",
+    content: `<p>ในเดือนพฤษภาคม 2025 พระเจ้าทรงเปิดบทใหม่ที่สวยงามเมื่อเราเปิดตัว New Heart Kids #1 ในลอสแองเจลิส มันเป็นความฝันที่รอคอยมานานในชุมชน New Heart ที่จะเห็นทุกรุ่นได้รับพรผ่าน New Heart และมันน่าอัศจรรย์ที่ได้เห็นว่าพระเจ้าทรงเปิดประตูอย่างไรเพื่อทำให้ความฝันนี้เป็นจริง</p>
+    
+    <p>เมื่อฉันเข้าร่วม New Heart Kids ครั้งแรก หัวใจของฉันมีไว้สำหรับพ่อแม่หนุ่มสาวเป็นพิเศษ ในฐานะแม่ของเด็กสี่คน ฉันจำช่วงเวลาที่ฉันรู้สึกแห้งแล้งทางจิตวิญญาณและถูกทอดทิ้งในขณะที่เลี้ยงดูลูกน้อยของฉัน ฉันต้องการรับใช้ในลักษณะที่จะให้พื้นที่แก่พ่อแม่ในการได้รับการต่ออายุและฟื้นฟูในการประทับของพระเจ้า</p>
+    
+    <p>แต่ในขณะที่ฉันรับใช้ พระเจ้าทรงขยายหัวใจของฉันให้โอบกอดเด็กๆ ของพวกเขาด้วย การรับใช้เด็กประมาณยี่สิบคน ตั้งแต่เด็กเล็กจนถึงวัยก่อนวัยรุ่น ฉันได้เห็นโดยตรงว่าพระเจ้าทรงทะนุถนอมเด็กเล็กแต่ละคนอย่างลึกซึ้งเพียงใด</p>
+    
+    <p>แน่นอนว่ามีช่วงเวลาที่ท้าทาย แต่เมื่อสิ้นสุดสามวันนั้น ฉันได้เห็นทั้งพ่อแม่และเด็กๆ ได้รับหัวใจใหม่ผ่านพระวิญญาณบริสุทธิ์ ด้วยหัวใจและกำลังใจเดียวกัน ฉันดีใจมากที่ได้ยินว่าเราจะมี New Heart Kids #2 ในเกาหลีในเดือนตุลาคม</p>
+    
+    <p>ฉันเชื่อว่านี่คือการยืนยันของพระเจ้าเกี่ยวกับพระประสงค์ของพระองค์ที่จะเรียกเราเป็น 'ครอบครัว' และประทานหัวใจใหม่ของพระองค์แก่ทุกรุ่น ฉันขอบคุณและเต็มไปด้วยความเชื่อสำหรับสิ่งที่อยู่ข้างหน้า!</p>`
   }
 };
 
@@ -1167,26 +127,24 @@ function switchLanguage(lang) {
   const founderMsg = founderMessages[lang] || founderMessages.EN;
   document.getElementById("founder-msg").innerHTML = founderMsg;
   
-  // Switch modal stories to Korean or Thai
-  if (lang === "KO") {
-    switchModalsToKorean();
-  } else if (lang === "TH") {
+  // Switch modal stories to Thai if Thai is selected
+  if (lang === "TH") {
     switchModalsToThai();
   } else {
+    // For other languages, keep English modals (or add more translations)
     switchModalsToEnglish();
   }
 }
 
-function switchModalsToKorean() {
-  // Keep existing Korean function
+function switchModalsToThai() {
   const modals = [
-    {id: 'modal-ariel', data: modalStoriesKO.ariel},
-    {id: 'modal-choi', data: modalStoriesKO.choi},
-    {id: 'modal-han', data: modalStoriesKO.han},
-    {id: 'modal-keziah', data: modalStoriesKO.keziah},
-    {id: 'modal-parichat', data: modalStoriesKO.parichat},
-    {id: 'modal-ji', data: modalStoriesKO.ji},
-    {id: 'modal-kyungjin', data: modalStoriesKO.kyungjin}
+    {id: 'modal-ariel', data: modalStoriesTH.ariel},
+    {id: 'modal-choi', data: modalStoriesTH.choi},
+    {id: 'modal-han', data: modalStoriesTH.han},
+    {id: 'modal-keziah', data: modalStoriesTH.keziah},
+    {id: 'modal-parichat', data: modalStoriesTH.parichat},
+    {id: 'modal-ji', data: modalStoriesTH.ji},
+    {id: 'modal-kyungjin', data: modalStoriesTH.kyungjin}
   ];
   
   modals.forEach(modal => {
@@ -1211,27 +169,9 @@ function switchModalsToKorean() {
   });
 }
 
-function switchModalsToThai() {
-  // Thai modals - keeping "New Heart" in English
-  const modalsTH = {
-    'modal-ariel': {
-      title: 'อาเรียล — จากยูดาห์ออร์ทอดอกซ์สู่พระเยซู',
-      content: 'Thai translation content here - see THAI-MODAL-TRANSLATIONS.md file'
-    }
-    // Add all 7 Thai translations here
-  };
-  
-  Object.keys(modalsTH).forEach(modalId => {
-    const modalElement = document.getElementById(modalId);
-    if (modalElement && modalsTH[modalId]) {
-      const modalContent = modalElement.querySelector('.modal-content');
-      if (modalContent) {
-        modalContent.innerHTML = '<button class="close-modal">×</button><h2>' + modalsTH[modalId].title + '</h2><p>' + modalsTH[modalId].content + '</p>';
-      }
-    }
-  });
-  
-  // Re-attach close button listeners
+function switchModalsToEnglish() {
+  // Keep original English modals - they're already in the HTML
+  // Just re-attach event listeners
   document.querySelectorAll(".close-modal").forEach(btn => {
     btn.onclick = () => {
       const modal = btn.closest(".modal");
@@ -1241,12 +181,6 @@ function switchModalsToThai() {
       }
     };
   });
-}
-
-function switchModalsToEnglish() {
-  // Restore English content (page will reload or you keep originals)
-  // For simplicity, we'll reload the page or you can store original English content
-  location.reload();
 }
 
 document.querySelectorAll(".language-buttons span").forEach(btn => {
@@ -1295,7 +229,7 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-console.log("✅ Newsletter Loaded!");
+console.log("✅ Newsletter Loaded with Thai Translations!");
 </script>
 
 </body>
