@@ -498,15 +498,25 @@ section {
 </section>
 
 <script>
-document.getElementById("founder-msg").innerHTML = `
-Hello New Heart Family!  
+const founderMessages = {
+  EN: `Hello New Heart Family!  
 <br><br>
 Normally, we greet one another by saying "How are you?" but in the New Heart Family we greet one another by asking "How is your heart?" because together we are a global family who longs to live the Fourth Day well.  
 <br><br>
 As we witness God awakening nations, restoring families, and raising a generation who knows His heart, we are continually amazed by His grace. Our joy is to walk with you, pray with you, and see you strengthened in the goodness of God.  
 <br><br>
-We believe this newsletter will help connect our global family, share testimonies of transformation, and encourage you as you walk out your calling. We bless you and your families — may God strengthen you with a New Heart and a steadfast spirit every day.
-`;
+We believe this newsletter will help connect our global family, share testimonies of transformation, and encourage you as you walk out your calling. We bless you and your families — may God strengthen you with a New Heart and a steadfast spirit every day.`,
+  
+  KO: `안녕하세요, 뉴하트 가족 여러분!
+<br><br>
+보통 우리는 서로 "어떻게 지내세요?"라고 인사하지만, 뉴하트 가족에서는 "당신의 마음은 어떠세요?"라고 서로 묻습니다. 왜냐하면 우리는 함께 넷째 날을 잘 살아가기를 갈망하는 세계적인 가족이기 때문입니다.
+<br><br>
+하나님께서 나라들을 깨우시고, 가족들을 회복시키시며, 그분의 마음을 아는 세대를 일으키시는 것을 목격하면서, 우리는 그분의 은혜에 계속해서 놀라움을 금치 못합니다. 우리의 기쁨은 여러분과 함께 걷고, 여러분을 위해 기도하며, 하나님의 선하심 안에서 여러분이 강건해지는 것을 보는 것입니다.
+<br><br>
+우리는 이 소식지가 우리의 세계 가족을 연결하고, 변화의 간증을 나누며, 여러분이 부르심을 살아갈 때 격려가 될 것이라고 믿습니다. 우리는 여러분과 여러분의 가족을 축복합니다 — 하나님께서 매일 새로운 마음과 굳건한 영으로 여러분을 강하게 하시기를 기도합니다.`
+};
+
+document.getElementById("founder-msg").innerHTML = founderMessages.EN;
 </script>
 
 <!-- PAGE 2 - NEW HEART STORIES -->
@@ -1047,6 +1057,10 @@ function switchLanguage(lang) {
   document.getElementById("upcoming-nh-title").textContent = t.upcomingNhTitle;
   document.getElementById("reunions-title").textContent = t.reunionsTitle;
   document.getElementById("stories-title").textContent = t.storiesTitle;
+  
+  // Update founder message
+  const founderMsg = founderMessages[lang] || founderMessages.EN;
+  document.getElementById("founder-msg").innerHTML = founderMsg;
   
   document.querySelectorAll(".read-story-btn").forEach(btn => {
     btn.textContent = t.readStory;
