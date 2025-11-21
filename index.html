@@ -141,6 +141,15 @@ h2.gold, h3.gold {
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+.qr-small {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 8px;
+  display: block;
+  margin: 0.8rem auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
 /* ============================================
    PAGE 1 LAYOUT
 ============================================ */
@@ -153,6 +162,12 @@ h2.gold, h3.gold {
 @media(max-width: 850px){
   .page1-grid { grid-template-columns: 1fr; }
   .language-buttons { right: 10px; top: 10px; font-size: 1.4rem; }
+}
+
+@media(max-width: 600px){
+  div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* ============================================
@@ -646,18 +661,23 @@ setInterval(cycleKidsImages, 3000);
       📄 Palanca Donation Chart #56 (TNH #1)
     </a>
 
-    <p style="font-size:0.9rem; font-style:italic; color:#666; margin:1rem 0;">Please use the QR codes or bank accounts below and indicate the purpose of your donation.</p>
+    <p style="font-size:0.95rem; font-weight:600; background:#fffaed; border-left:4px solid var(--gold); padding:0.8rem 1rem; margin:1rem 0; color:#444; border-radius:4px;">
+      ⚠️ Please use the QR codes or bank accounts below and indicate the purpose of your donation.
+    </p>
 
-    <!-- USA SUPPORT -->
-    <div class="donation-section">
-      <h3 class="gold">🇺🇸 USA Support</h3>
-      <img src="assets/img/IMG_1320.jpg" class="qr" alt="USA Support QR Code">
-    </div>
+    <!-- QR CODES SIDE BY SIDE -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.5rem 0;">
+      <!-- USA SUPPORT -->
+      <div class="donation-section" style="text-align:center;">
+        <h3 class="gold">🇺🇸 USA Support</h3>
+        <img src="assets/img/IMG_1320.jpg" class="qr-small" alt="USA Support QR Code">
+      </div>
 
-    <!-- THAILAND SUPPORT -->
-    <div class="donation-section">
-      <h3 class="gold">🇹🇭 Thailand Support</h3>
-      <img src="assets/img/IMG_1324.JPG" class="qr" alt="Thailand Support QR Code">
+      <!-- THAILAND SUPPORT -->
+      <div class="donation-section" style="text-align:center;">
+        <h3 class="gold">🇹🇭 Thailand Support</h3>
+        <img src="assets/img/IMG_1324.JPG" class="qr-small" alt="Thailand Support QR Code">
+      </div>
     </div>
 
     <!-- VIETNAM DONATIONS -->
