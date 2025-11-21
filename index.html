@@ -1,674 +1,906 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>New Heart Global Family Newsletter – Fall 2025</title>
-<meta name="theme-color" content="#E9F1E3"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>New Heart Global Family Newsletter — The Fourth Day Chat — Fall 2025</title>
+<meta name="description" content="New Heart Global Family Newsletter - Fall 2025. Stories of transformation across nations.">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --sage:#8fa893; --sage-ink:#2e3a33; --sage-soft:#cfd8d2; --ivory:#f6f5f2;
-  --gold:#c9a648; --gold-deep:#a7892e; --ink:#2b2e2c;
+/* ============================================
+   GLOBAL + WIDTH FIX
+============================================ */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fafafa;
+  color: #222;
+  line-height: 1.6;
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
 }
-*{box-sizing:border-box}
-html,body{margin:0;padding:0;background:var(--sage);color:var(--ink);
-  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;line-height:1.55}
-.page{max-width:1024px;margin:0 auto;background:linear-gradient(180deg,var(--ivory),#fbfaf6);
-  box-shadow:0 8px 32px rgba(0,0,0,.12);position:relative;min-height:100vh}
 
-header.hero{padding:48px 28px 10px;text-align:center;position:relative}
-.gold-emboss{letter-spacing:.02em;font-weight:800;font-size:clamp(28px,5vw,46px);color:transparent;
-  background:linear-gradient(180deg,var(--gold) 0%,var(--gold-deep) 60%,var(--gold) 100%);
-  -webkit-background-clip:text;background-clip:text;filter:drop-shadow(0 1px 0 #e7d9b0)}
-.subtitle{margin-top:6px;font-style:italic;color:var(--sage-ink);font-size:18px}
-.byline{margin-top:4px;color:#516058;font-size:15px}
+section {
+  padding: 2.5rem 1.4rem;
+}
 
-.lang-bar{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;padding:12px 16px;margin-top:14px}
-.lang-btn{display:flex;align-items:center;gap:8px;border:1px solid var(--gold);padding:6px 12px;
-  border-radius:999px;background:#fffaf0;cursor:pointer;font-size:14px;transition:all .2s ease}
-.lang-btn img{width:24px;height:16px;display:block}
-.lang-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.12)}
-.lang-btn.active{background:var(--gold);color:white;font-weight:600}
+.hidden { display: none !important; }
 
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  margin:16px auto 8px;width:min(92%,880px)}
+:root {
+  --gold: #d6b66b;
+  --gold-light: #ecd9a4;
+  --dark: #111;
+  --btn-bg: #ffffff;
+  --btn-border: #d6b66b;
+  --btn-hover: #fff8e6;
+}
 
-.front{padding:18px 22px 28px;display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
-@media(max-width:900px){.front{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.front{grid-template-columns:1fr}}
-.card{background:#ffffffde;border:1px solid #eae7db;border-radius:14px;padding:16px;
-  backdrop-filter:saturate(1.2);box-shadow:0 2px 8px rgba(0,0,0,.06);cursor:pointer;
-  transition:transform .2s,box-shadow .2s}
-.card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.1)}
-.card h3{font-size:18px;color:var(--sage-ink);margin:0 0 8px}
-.card p{font-size:14px;line-height:1.6;color:#5a6c64;margin:0}
+/* ============================================
+   GLOW BUTTONS & MODALS
+============================================ */
+.glow-btn, .open-modal {
+  display: inline-block;
+  padding: 0.75rem 1.4rem;
+  margin: 0.4rem 0;
+  border-radius: 10px;
+  border: 2px solid var(--btn-border);
+  background: var(--btn-bg);
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  color: #444;
+  transition: box-shadow 0.3s ease, background 0.3s ease, transform 0.2s ease;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
 
-.modal{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;
-  background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
-.modal.show{display:flex;align-items:center;justify-content:center}
-.modal-content{background:white;padding:32px;border-radius:16px;max-width:700px;width:90%;
-  max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);position:relative}
-.modal-content h2{color:var(--sage-ink);margin-top:0}
-.modal-content p{line-height:1.7;color:#3a4842}
-.modal-close{position:absolute;top:16px;right:20px;font-size:32px;font-weight:300;
-  color:#999;cursor:pointer;line-height:1;transition:color .2s}
-.modal-close:hover{color:#333}
+.glow-btn:hover, .open-modal:hover {
+  background: var(--btn-hover);
+  box-shadow: 0 0 12px rgba(214,182,107,0.65);
+  transform: translateY(-2px);
+}
 
-.page-section{padding:28px 24px;border-top:1px dashed #d4d9cc}
-.page-section h2{text-align:center;color:var(--sage-ink);font-size:28px;margin-bottom:20px}
-.goldline{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  width:min(80%,600px);margin:24px auto}
+/* ============================================
+   HEADER
+============================================ */
+.language-buttons {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  font-size: 1.7rem;
+  z-index: 100;
+}
+.language-buttons span {
+  margin-left: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s;
+}
+.language-buttons span:hover {
+  transform: scale(1.15);
+}
 
-.kids-section{position:relative;min-height:400px;background-size:cover;background-position:center;
-  border-radius:12px;padding:32px;text-align:center;color:white;
-  box-shadow:0 4px 16px rgba(0,0,0,.15);overflow:hidden}
-.kids-section::before{content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(142,168,147,.85),rgba(107,132,110,.85));z-index:1}
-.kids-section > *{position:relative;z-index:2}
-.kids-section h2{color:white;text-shadow:0 2px 8px rgba(0,0,0,.3);font-size:32px;margin-bottom:16px}
-.kids-section p{font-size:16px;line-height:1.7;max-width:600px;margin:0 auto 20px;text-shadow:0 1px 4px rgba(0,0,0,.2)}
+.page-header {
+  background: linear-gradient(to bottom, var(--gold-light), white 70%);
+  text-align: center;
+  padding: 3rem 1rem 3rem;
+  position: relative;
+}
+.page-header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.page-header h2 {
+  margin: 0.4rem 0 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  color: var(--gold);
+}
 
-.donation-section{background:#fcfbf8;padding:40px 28px;text-align:center}
-.donation-section h2{color:var(--sage-ink);margin-bottom:24px}
-.qr-container{display:flex;gap:40px;justify-content:center;align-items:center;flex-wrap:wrap;margin:24px 0}
-.qr-box{text-align:center}
-.qr-box img{width:250px;height:250px;border:3px solid var(--gold);border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,.1);display:block}
-.qr-box p{margin-top:12px;font-weight:600;color:var(--sage-ink);font-size:16px}
-.donation-note{margin-top:24px;font-size:14px;color:#667;font-style:italic;max-width:600px;margin-left:auto;margin-right:auto}
+/* ============================================
+   CARDS & LAYOUTS
+============================================ */
+.card {
+  background: white;
+  padding: 1.7rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+}
 
-footer{background:var(--sage-ink);color:#e8ede6;padding:24px;text-align:center;font-size:14px}
-footer p{margin:4px 0}
+h2.gold, h3.gold { 
+  color: var(--gold); 
+  margin-top: 0; 
+}
 
-@media(max-width:768px){
-  .front{grid-template-columns:1fr}
-  .qr-container{flex-direction:column;gap:24px}
-  #page2 > div[style*="column-count"]{column-count:1!important}
+.verse-block {
+  padding-left: 1rem;
+  border-left: 4px solid var(--gold);
+  font-size: 1.15rem;
+}
+
+.video-frame {
+  width: 100%;
+  border-radius: 12px;
+  margin: 1rem 0;
+  border: 0;
+}
+
+.thai-poster, .qr {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  display: block;
+  margin: 0.8rem auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ============================================
+   PAGE 1 LAYOUT
+============================================ */
+.page1-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 1.6rem;
+}
+
+@media(max-width: 850px){
+  .page1-grid { grid-template-columns: 1fr; }
+  .language-buttons { right: 10px; top: 10px; font-size: 1.4rem; }
+}
+
+/* ============================================
+   PAGE 2 - STORIES
+============================================ */
+#page2 {
+  background: #f8f8f8;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--gold);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.story-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.09);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-5px);
+}
+
+.story-photo {
+  width: 100%;
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.story-name {
+  margin: 0.5rem 0 0.2rem;
+  color: var(--dark);
+}
+
+.story-role {
+  color: var(--gold);
+  font-size: 0.9rem;
+  margin: 0.2rem 0 1rem;
+}
+
+/* ============================================
+   PAGE 3 - KIDS SECTION
+============================================ */
+#page3 {
+  position: relative;
+  min-height: 90vh;
+  overflow: hidden;
+  padding: 2.5rem 1.4rem;
+}
+
+.section-title {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  color: var(--gold);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(255,255,255,0.95);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#kids-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.kid-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+#kids-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.75);
+  z-index: 1;
+}
+
+#kids-content {
+  position: relative;
+  z-index: 2;
+  padding: 2rem 1rem;
+}
+
+.kids-stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.kids-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+.kids-photo {
+  width: 100%;
+  max-width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 4px solid var(--gold-light);
+}
+
+/* ============================================
+   PAGE 4 - TWO-COLUMN LAYOUT
+============================================ */
+.page4-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media(max-width: 850px){
+  .page4-grid { grid-template-columns: 1fr; }
+}
+
+.editorial-title {
+  color: var(--gold);
+  margin-top: 0;
+}
+
+.donation-section {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.qr {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  display: block;
+  margin: 0.8rem auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.doc-button {
+  display: block;
+  padding: 0.8rem 1.2rem;
+  margin: 0.8rem 0;
+  background: white;
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.doc-button:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(214,182,107,0.4);
+}
+
+/* ============================================
+   MODAL
+============================================ */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 14px;
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+  background: none;
+  border: none;
+  transition: color 0.2s;
+}
+
+.close-modal:hover {
+  color: #333;
 }
 </style>
 </head>
+
 <body>
 
-<div class="page">
-  <header class="hero">
-    <h1 class="gold-emboss" id="main-title">New Heart Global Family Newsletter</h1>
-    <p class="subtitle" id="subtitle">The Fourth Day Quarterly</p>
-    <p class="byline" id="byline">Fall 2025 | Issue 1</p>
-    
-    <div class="lang-bar">
-      <button class="lang-btn active" onclick="setLanguage('en')">
-        <img src="https://flagcdn.com/w40/us.png" alt="English"/>
-        <span>English</span>
-      </button>
-      <button class="lang-btn" onclick="setLanguage('ko')">
-        <img src="https://flagcdn.com/w40/kr.png" alt="Korean"/>
-        <span>한국어</span>
-      </button>
-      <button class="lang-btn" onclick="setLanguage('vi')">
-        <img src="https://flagcdn.com/w40/vn.png" alt="Vietnamese"/>
-        <span>Tiếng Việt</span>
-      </button>
-      <button class="lang-btn" onclick="setLanguage('th')">
-        <img src="https://flagcdn.com/w40/th.png" alt="Thai"/>
-        <span>ไทย</span>
-      </button>
-      <button class="lang-btn" onclick="setLanguage('he')">
-        <img src="https://flagcdn.com/w40/il.png" alt="Hebrew"/>
-        <span>עברית</span>
-      </button>
-      <button class="lang-btn" onclick="setLanguage('zh')">
-        <img src="https://flagcdn.com/w40/cn.png" alt="Chinese"/>
-        <span>中文</span>
-      </button>
-    </div>
-  </header>
-
-  <div class="divider"></div>
-
-  <!-- PAGE 1: Front Page Stories -->
-  <section class="front" id="page1">
-    <div class="card" onclick="openModal('keziah')">
-      <h3 id="card-keziah-title">Keziah's Journey</h3>
-      <p id="card-keziah-preview">A testimony of healing and restoration through New Heart...</p>
-    </div>
-    
-    <div class="card" onclick="openModal('han')">
-      <h3 id="card-han-title">Han's Story</h3>
-      <p id="card-han-preview">Discovering purpose and calling in the midst of transition...</p>
-    </div>
-    
-    <div class="card" onclick="openModal('ariel')">
-      <h3 id="card-ariel-title">Ariel's Testimony</h3>
-      <p id="card-ariel-preview">From Orthodox Judaism to finding Yeshua as Messiah...</p>
-    </div>
-    
-    <div class="card" onclick="openModal('parichat')">
-      <h3 id="card-parichat-title">Parichat's Experience</h3>
-      <p id="card-parichat-preview">Breaking free from perfectionism and performance...</p>
-    </div>
-    
-    <div class="card" onclick="openModal('choi')">
-      <h3 id="card-choi-title">Choi's Reflection</h3>
-      <p id="card-choi-preview">Rediscovering joy and energy in serving God's family...</p>
-    </div>
-    
-    <div class="card" onclick="openModal('founders')">
-      <h3 id="card-founders-title">From the Founders</h3>
-      <p id="card-founders-preview">A word from Jason & Youngmi Cha about God's faithfulness...</p>
-    </div>
-  </section>
-
-  <!-- PAGE 2: Editorial -->
-  <section class="page-section" id="page2">
-    <h2 id="editorial-heading">Editorial</h2>
-    <h3 id="editorial-subheading" style="text-align:center;color:var(--gold);font-size:22px;margin:-10px 0 20px;font-weight:600">God's Faithfulness: Our Enduring Foundation</h3>
-    <div class="goldline"></div>
-    <div style="max-width:900px;margin:0 auto;padding:0 16px;column-count:2;column-gap:32px">
-      <p id="editorial-p1" style="margin-bottom:16px">
-        New Heart Ministry recently celebrated its 54th gathering in Korea, marking almost two decades of God's sustaining grace. The name "New Heart" itself was divinely inspired, and the first gathering under this banner took place in Cambodia, serving young Vietnamese students. Since then, the ministry has expanded its reach to China, Ethiopia, Israel, the Philippines, Vietnam, and Korea, with its headquarters in the United States. In a beautiful orchestration of God's heart for every generation, New Heart has also grown to include New Heart Kids programs, allowing children to join the gatherings with dedicated activities specifically designed for them. This year alone, two such programs have already taken place—one in the USA and one in Korea—underscoring the importance of every generation in the Kingdom Family.
-      </p>
-      <p id="editorial-p2" style="margin-bottom:16px">
-        Across these nations, we have seen God's faithfulness as He transforms lives—bringing souls from death to life, placing within them a New Heart (Ezekiel 36:26), and awakening them to their God-given purpose and destiny—to raise a people of fire. Despite differences in culture, location, and language, the Holy Spirit has intricately woven us together into one family: The Kingdom Family. We celebrate and honor one another according to His calling, holding nothing back as we serve each other with transformed hearts (Acts 2).
-      </p>
-      <p id="editorial-p3">
-        As God's vision for New Heart Ministry continues to sharpen, we sense His desire not only to document the mighty works and the abundant grace flowing through this ministry but also for us, as a family, to nurture our connections and care for one another. Thus, the Newsletter for New Heart Family. We believe that, as promised in Isaiah 54, God is preparing to expand New Heart—not only into new physical territories but also through spiritual elevation and enlargement. By His strength and Spirit, we are committed to fulfilling what He has declared according to His covenant over this ministry in the days ahead.
-      </p>
-    </div>
-  </section>
-
-  <!-- PAGE 3: Kids Section -->
-  <section class="page-section" id="page3">
-    <h2 id="kids-heading">New Heart Kids</h2>
-    <div class="goldline"></div>
-    <div class="kids-section" id="kids-bg">
-      <h2 id="kids-title">Planting Seeds in Young Hearts</h2>
-      <p id="kids-description">
-        New Heart Kids launched this year with 22 children experiencing God's love through worship, prayer, and fellowship. Despite simple conditions and rainy weather, the children flourished—singing, learning, and growing together as one family in Christ.
-      </p>
-      <button onclick="openModal('ji')" style="background:white;color:var(--sage-ink);border:none;padding:10px 24px;border-radius:20px;font-weight:600;cursor:pointer;font-size:15px">
-        <span id="kids-read-more">Read Ji's Story →</span>
-      </button>
-    </div>
-  </section>
-
-  <!-- PAGE 4: Thailand Event & Donation -->
-  <section class="page-section" id="page4">
-    <h2 id="thailand-heading">Coming Soon: New Heart Thailand #56</h2>
-    <div class="goldline"></div>
-    
-    <div style="text-align:center;background:#fff;padding:0;border-radius:12px;overflow:hidden;max-width:600px;margin:0 auto 32px">
-      <img src="Thailand-poster.jpeg" style="width:100%;height:auto;display:block" alt="New Heart Thailand #56"/>
-    </div>
-
-    <div class="donation-section">
-      <h2 id="donation-heading">Support New Heart Ministry</h2>
-      <p id="donation-message" style="max-width:600px;margin:0 auto 20px;color:#5a6c64">
-        Your generous gifts enable us to continue sharing God's transforming love across nations. Scan the QR codes below to give via Venmo or Zelle.
-      </p>
-      
-      <div class="qr-container">
-        <div class="qr-box">
-          <img src="venmo-qr.jpeg" alt="Venmo QR Code"/>
-          <p>Venmo</p>
-        </div>
-        <div class="qr-box">
-          <img src="zelle-qr.jpeg" alt="Zelle QR Code"/>
-          <p>Zelle</p>
-        </div>
-      </div>
-      
-      <p class="donation-note" id="donation-note">
-        All donations are tax-deductible. New Heart Ministry is a 501(c)(3) nonprofit organization. Thank you for your partnership in this mission!
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p id="footer-copyright">© 2025 New Heart Ministry. All rights reserved.</p>
-    <p id="footer-note">Please keep this Newsletter in the New Heart Family.</p>
-    <p class="verse">"I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh." — Ezekiel 36:26</p>
-  </footer>
-</div>
-
-<!-- MODALS -->
-<div id="modal-keziah" class="modal" onclick="closeModal('keziah')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="modal-close" onclick="closeModal('keziah')">&times;</span>
-    <h2 id="modal-keziah-title">Keziah's Journey</h2>
-    <div id="modal-keziah-content">
-      <p><em>Full testimony available in English</em></p>
-      <p>Keziah's powerful story of healing, restoration, and discovering her identity in Christ through the New Heart experience...</p>
-    </div>
+<!-- ======================================================
+     HEADER WITH LANGUAGE FLAGS
+====================================================== -->
+<header class="page-header">
+  <div class="language-buttons">
+    <span data-lang="EN" title="English">🇺🇸</span>
+    <span data-lang="KO" title="한국어">🇰🇷</span>
+    <span data-lang="VN" title="Tiếng Việt">🇻🇳</span>
+    <span data-lang="TH" title="ไทย">🇹🇭</span>
+    <span data-lang="IL" title="עברית">🇮🇱</span>
+    <span data-lang="CH" title="中文">🇨🇳</span>
   </div>
-</div>
+  
+  <h1>New Heart Global Family Newsletter</h1>
+  <h2>The Fourth Day Chat — Fall 2025</h2>
+</header>
 
-<div id="modal-han" class="modal" onclick="closeModal('han')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="modal-close" onclick="closeModal('han')">&times;</span>
-    <h2 id="modal-han-title">Han's Story</h2>
-    <div id="modal-han-content">
-      <p><em>Full testimony available in English</em></p>
-      <p>Han shares about finding purpose and calling during a season of career transition and uncertainty...</p>
-    </div>
-  </div>
-</div>
+<!-- ======================================================
+     PAGE 1 — FOUNDERS & VISION
+====================================================== -->
+<section id="page1">
 
-<div id="modal-ariel" class="modal" onclick="closeModal('ariel')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="modal-close" onclick="closeModal('ariel')">&times;</span>
-    <h2 id="modal-ariel-title">Ariel's Testimony</h2>
-    <div id="modal-ariel-content">
-      <p><em>Full testimony available in English</em></p>
-      <p>Born into an Orthodox Jewish family, Ariel's journey to discovering Yeshua as the Messiah through studying Hebrew Bible prophecies...</p>
-    </div>
-  </div>
-</div>
+<div class="page1-grid">
 
-<div id="modal-parichat" class="modal" onclick="closeModal('parichat')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="modal-close" onclick="closeModal('parichat')">&times;</span>
-    <h2 id="modal-parichat-title">Parichat's Experience</h2>
-    <div id="modal-parichat-content">
-      <p><em>Full testimony available in English</em></p>
-      <p>Parichat's story of breaking free from the chains of perfectionism and religious performance to experience God's unconditional love...</p>
-    </div>
+  <!-- LEFT: Bible Verse -->
+  <div class="card">
+    <h3 class="gold">Ezekiel 36:26</h3>
+    <p class="verse-block">
+      "I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh."
+    </p>
   </div>
-</div>
 
-<div id="modal-choi" class="modal" onclick="closeModal('choi')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="modal-close" onclick="closeModal('choi')">&times;</span>
-    <h2 id="modal-choi-title">Choi's Reflection</h2>
-    <div id="modal-choi-content">
-      <p><em>Full testimony available in English</em></p>
-      <p>After years of exhaustion and spiritual dryness, Choi rediscovers the joy of serving and the energy that comes from genuine community...</p>
-    </div>
-  </div>
-</div>
+  <!-- CENTER: Founders -->
+  <div class="card">
+    <h3 class="gold" data-en="Founders' Greeting">Founders' Greeting</h3>
 
-<div id="modal-ji" class="modal" onclick="closeModal('ji')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="modal-close" onclick="closeModal('ji')">&times;</span>
-    <h2 id="modal-ji-title">Ji's Story - New Heart Kids</h2>
-    <div id="modal-ji-content">
-      <p><em>Full testimony available in English</em></p>
-      <p>Shalom! I'm Ji Yawon, who served as the General Affairs Coordinator for New Heart Kids. This year, New Heart Kids was held in Korea for the first time...</p>
-    </div>
-  </div>
-</div>
+    <iframe class="video-frame" src="https://www.youtube.com/embed/gZBn3xnHTL8" height="240" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<div id="modal-founders" class="modal" onclick="closeModal('founders')">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="modal-close" onclick="closeModal('founders')">&times;</span>
-    <h2 id="modal-founders-title">From the Founders</h2>
-    <div id="modal-founders-content">
-      <p id="founders-p1">
-        Shalom, New Heart Family! Usually, we greet each other with "How are you?" meaning, "How's your health, how's your family, and how's your work?" Has anyone asked you, instead, "How is your heart?" Maybe it's more fitting for us. To God, it's always a matter of the heart.
-      </p>
-      <p id="founders-p2">
-        When God sent Samuel to Jesse's house to choose Israel's next king, He said: "For not as man sees does the LORD see, because man looks at the outward appearance, but the LORD looks at the heart." This is especially important since we are the New Heart community: "And I will give you a new heart, and a new spirit I will put within you. And I will remove the heart of stone from your flesh and give you a heart of flesh."
-      </p>
-      <p id="founders-p3">
-        This is our prayer and our confident hope in faith in Jesus and the gift of grace—that your hearts are in good condition, whatever your circumstances may be. We praise and thank our Father for existing in the power of the Holy Spirit every victorious Wednesday. God bless you, your family, and your labor of love for God's people and His community.
-      </p>
-      <p style="text-align:right;margin-top:20px"><strong>— Jason & Youngmi Cha</strong><br><em>New Heart Global Directors</em></p>
-    </div>
+    <p id="founder-msg"></p>
+
+    <br><br>
+    <p style="font-weight:600; margin:0;">With love,</p>
+    <p style="margin:0;">Pastors Jason & Youngmi Cha</p>
+    <p style="margin:0; color:var(--gold); font-weight:600;">
+      Founders / Global Directors, New Heart Ministry
+    </p>
   </div>
+
+  <!-- RIGHT: Regional Director -->
+  <div class="card">
+    <h3 class="gold">Regional Directors — Thailand 🇹🇭</h3>
+
+    <iframe class="video-frame" src="https://www.youtube.com/embed/wNR9yt7HtbU" height="240" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+    <img src="assets/img/Thailand-poster.jpeg" class="thai-poster" alt="Thailand New Heart Poster">
+
+    <h4 class="gold">Upcoming New Heart</h4>
+    <ul>
+      <li>🇻🇳 Vietnam — Nha Trang — 12/2–5/2025</li>
+      <li>🇹🇭 Thailand — Bangkok — 1/27–30/2026</li>
+      <li>🇮🇱 Israel — TBA (April 2026)</li>
+      <li>🇺🇸 USA — TBA (May 2026)</li>
+    </ul>
+
+    <h4 class="gold">Reunions</h4>
+    <ul>
+      <li>🇺🇸 USA — Nov 14, 2025 • LA</li>
+      <li>🇰🇷 Korea — Nov 22, 2025 • Seoul</li>
+    </ul>
+  </div>
+
 </div>
+</section>
 
 <script>
-// Kids background cycling
-const kidsBgs = [
-  'kids-bg-1.jpeg',
-  'kids-bg-2.jpeg', 
-  'kids-bg-3.jpeg',
-  'kids-bg-4.jpeg',
-  'kids-bg-5.jpeg'
+document.getElementById("founder-msg").innerHTML = `
+Hello New Heart Family!  
+<br><br>
+Normally, we greet one another by saying "How are you?" but in the New Heart Family we greet one another by asking "How is your heart?" because together we are a global family who longs to live the Fourth Day well.  
+<br><br>
+As we witness God awakening nations, restoring families, and raising a generation who knows His heart, we are continually amazed by His grace. Our joy is to walk with you, pray with you, and see you strengthened in the goodness of God.  
+<br><br>
+We believe this newsletter will help connect our global family, share testimonies of transformation, and encourage you as you walk out your calling. We bless you and your families — may God strengthen you with a New Heart and a steadfast spirit every day.
+`;
+</script>
+
+<!-- ======================================================
+     PAGE 2 — NEW HEART STORIES
+====================================================== -->
+<section id="page2">
+  <h2 class="section-title" data-en="New Heart Stories">New Heart Stories</h2>
+  
+  <div class="stories-grid">
+  
+    <!-- ARIEL -->
+    <div class="story-card">
+      <img src="assets/img/ariel.jpeg" alt="Ariel" class="story-photo">
+      <h3 class="story-name" data-en="Ariel">Ariel</h3>
+      <p class="story-role" data-en="NH USA #53 — Candidate">NH USA #53 — Candidate</p>
+      <button class="open-modal" data-target="#modal-ariel" data-en="Read Story">Read Story</button>
+    </div>
+    
+    <!-- CHOI EUN-YOUNG -->
+    <div class="story-card">
+      <img src="assets/img/choi.jpeg" alt="Choi Eun-Young" class="story-photo">
+      <h3 class="story-name" data-en="Choi Eun-Young">Choi Eun-Young</h3>
+      <p class="story-role">NH Korea #54 — Hallelujah</p>
+      <button class="open-modal" data-target="#modal-choi" data-en="Read Story">Read Story</button>
+    </div>
+    
+    <!-- HAN YE-SUL -->
+    <div class="story-card">
+      <img src="assets/img/han.jpeg" alt="Han Ye-Sul" class="story-photo">
+      <h3 class="story-name" data-en="Han Ye-Sul">Han Ye-Sul</h3>
+      <p class="story-role">NH Korea #54 — Hallelujah</p>
+      <button class="open-modal" data-target="#modal-han" data-en="Read Story">Read Story</button>
+    </div>
+    
+    <!-- KEZIAH -->
+    <div class="story-card">
+      <img src="assets/img/keziah.jpeg" alt="Keziah" class="story-photo">
+      <h3 class="story-name" data-en="Keziah">Keziah</h3>
+      <p class="story-role">NH USA #53 — Hallelujah</p>
+      <button class="open-modal" data-target="#modal-keziah" data-en="Read Story">Read Story</button>
+    </div>
+    
+    <!-- PARICHAT -->
+    <div class="story-card">
+      <img src="assets/img/parichat.jpeg" alt="Parichat" class="story-photo">
+      <h3 class="story-name" data-en="Parichat">Parichat</h3>
+      <p class="story-role">NH Thailand #56 — Candidate</p>
+      <button class="open-modal" data-target="#modal-parichat" data-en="Read Story">Read Story</button>
+    </div>
+    
+  </div>
+</section>
+
+<!-- ======================================================
+     PAGE 3 — NEW HEART KIDS
+====================================================== -->
+<section id="page3">
+  <div id="kids-background"></div>
+  <div id="kids-overlay"></div>
+  
+  <div id="kids-content">
+    <h2 class="section-title" data-en="New Heart Kids">New Heart Kids</h2>
+    
+    <div class="kids-stories-grid">
+      
+      <!-- JI YEOWOON -->
+      <div class="kids-card">
+        <img src="assets/img/ji.jpeg" alt="Ji Yeowoon" class="kids-photo">
+        <h3 class="story-name" data-en="Ji Yeowoon">Ji Yeowoon</h3>
+        <p class="story-role">NH Kids Korea #2 — Team</p>
+        <button class="open-modal" data-target="#modal-ji" data-en="Read Story">Read Story</button>
+      </div>
+      
+      <!-- KYUNGJIN (MARIA) -->
+      <div class="kids-card">
+        <img src="assets/img/kyungjin.jpeg" alt="Kyungjin (Maria)" class="kids-photo">
+        <h3 class="story-name" data-en="Kyungjin (Maria)">Kyungjin (Maria)</h3>
+        <p class="story-role">NH Kids USA #1 — Team Lead</p>
+        <button class="open-modal" data-target="#modal-kyungjin" data-en="Read Story">Read Story</button>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- KIDS BACKGROUND ANIMATION SCRIPT -->
+<script>
+const kidsImages = [
+  "kids-bg-1.jpeg","kids-bg-2.jpeg","kids-bg-3.jpeg","kids-bg-4.jpeg",
+  "kids-bg-5.jpeg","kids-bg-6.jpeg","kids-bg-7.jpeg","kids-bg-8.jpeg",
+  "kids-bg-9.jpeg","kids-bg-10.jpeg","kids-bg-11.jpeg","kids-bg-12.jpeg",
+  "kids-bg-13.jpeg"
 ];
-let bgIndex = 0;
-const kidsBgEl = document.getElementById('kids-bg');
-if(kidsBgEl) {
-  kidsBgEl.style.backgroundImage = `url(${kidsBgs[0]})`;
-  setInterval(() => {
-    bgIndex = (bgIndex + 1) % kidsBgs.length;
-    kidsBgEl.style.backgroundImage = `url(${kidsBgs[bgIndex]})`;
-  }, 4000);
+
+const bgContainer = document.getElementById("kids-background");
+
+// Build animated layers
+kidsImages.forEach((file, index) => {
+  const img = document.createElement("img");
+  img.src = "assets/img/" + file;
+  img.classList.add("kid-bg-img");
+  img.alt = `New Heart Kids ${index + 1}`;
+  bgContainer.appendChild(img);
+});
+
+// Fade cycle effect
+let current = 0;
+function cycleKidsImages() {
+  const bgImgs = document.querySelectorAll(".kid-bg-img");
+  bgImgs.forEach((img, idx) => {
+    img.style.opacity = (idx === current) ? 0.50 : 0;
+  });
+  current = (current + 1) % kidsImages.length;
 }
 
-// Modal functions
-function openModal(id) {
-  document.getElementById('modal-' + id).classList.add('show');
-}
-function closeModal(id) {
-  document.getElementById('modal-' + id).classList.remove('show');
-}
+// Initial display
+cycleKidsImages();
 
-// Translation data
+// Cycle every 3 seconds
+setInterval(cycleKidsImages, 3000);
+</script>
+
+<!-- ======================================================
+     PAGE 4 — EDITORIAL + WAYS TO SERVE
+====================================================== -->
+<section id="page4">
+
+<div class="page4-grid">
+
+  <!-- EDITORIAL LEFT -->
+  <div>
+    <h2 class="editorial-title" data-en="Editorial">Editorial</h2>
+
+    <p id="editorial-text">
+      <strong>Compelled by the Fire: The Fourth Day</strong><br><br>
+
+      New Heart Ministry recently celebrated its 54th gathering in Korea, marking nearly two decades of God's undeniable grace across nations. This movement is a divine summons igniting the promise of a New Heart (Ezekiel 36:26) in every generation and weaving us into one fierce, global Kingdom Family. Our commitment is comprehensive—including New Heart Kids—which confirms that children are not the "future church"… they are the church <i>now</i>.<br><br>
+
+      <strong>The Fourth Day: Our Unstoppable Mandate</strong><br><br>
+
+      Our three-day gatherings are only the beginning. The <strong>Fourth Day</strong> is the call to walk out the transformation daily—with maturity, unity, and fire. This is not optional; this is our mandate. We reject passivity and choose the continual sharpening that comes only from living connected as one body. Isolation kills revival. Family sustains it.<br><br>
+
+      <strong>This Global Newsletter</strong><br><br>
+
+      God asked us to strengthen and unify the global family—Korea, Vietnam, Israel, Thailand, the USA, and beyond. This quarterly newsletter is the tool to nurture connection, strengthen faith, and document the mighty works of God across every region. It keeps our hearts aligned and our vision clear.<br><br>
+
+      May we be a people compelled by fire… living the Fourth Day with conviction and joy.
+    </p>
+  </div>
+
+
+  <!-- WAYS TO SERVE RIGHT -->
+  <div>
+    <h2 class="gold" data-en="Ways to Serve">Ways to Serve</h2>
+
+    <h3 class="gold">Palanca Donations</h3>
+
+    <!-- GOOGLE DOC BUTTON 1 -->
+    <a class="doc-button" 
+       href="https://docs.google.com/document/d/1ZBF6pZQ6TP2mM46tgfQeD5UHRmxW4faH/edit?usp=drive_link&ouid=106439018544553623575&rtpof=true&sd=true"
+       target="_blank"
+       rel="noopener noreferrer">
+      📄 Palanca Donation Chart #55 (VNH #14)
+    </a>
+
+    <!-- GOOGLE DOC BUTTON 2 -->
+    <a class="doc-button" 
+       href="https://docs.google.com/document/d/1qZGid-ARxOl8aOIGQBLuGY3LggGF1YFB/edit?usp=drive_link&ouid=106439018544553623575&rtpof=true&sd=true"
+       target="_blank"
+       rel="noopener noreferrer">
+      📄 Palanca Donation Chart #56 (TNH #1)
+    </a>
+
+    <p style="font-size:0.9rem; font-style:italic; color:#666; margin:1rem 0;">Please use the QR codes or bank accounts below and indicate the purpose of your donation.</p>
+
+    <!-- USA SUPPORT -->
+    <div class="donation-section">
+      <h3 class="gold">🇺🇸 USA Support</h3>
+      <img src="assets/img/IMG_1320.jpg" class="qr" alt="USA Support QR Code">
+    </div>
+
+    <!-- THAILAND SUPPORT -->
+    <div class="donation-section">
+      <h3 class="gold">🇹🇭 Thailand Support</h3>
+      <img src="assets/img/IMG_1324.JPG" class="qr" alt="Thailand Support QR Code">
+    </div>
+
+    <!-- VIETNAM DONATIONS -->
+    <div class="donation-section">
+      <h3 class="gold">🇻🇳 Vietnam Donations</h3>
+      <p>
+        <strong>Recipient:</strong> Phan Tan Minh Thach<br>
+        <strong>Account #:</strong> 040030967005<br>
+        <strong>Bank:</strong> Sacombank – PGD Lien Chieu CNDNG<br>
+        <strong>SWIFT:</strong> SGTTVNVX<br>
+        <strong>Phone:</strong> (84) 903168410
+      </p>
+    </div>
+
+    <!-- KOREA DONATIONS -->
+    <div class="donation-section">
+      <h3 class="gold">🇰🇷 Korea Donations</h3>
+      <p>
+        <strong>Account Name:</strong> New Heart Korea<br>
+        <strong>Bank:</strong> Hana Bank (하나은행)<br>
+        <strong>Account #:</strong> 344-910003-80905<br>
+        <em style="color:#888;">Notes: For any donation</em>
+      </p>
+    </div>
+
+  </div>
+
+</div>
+</section>
+
+<!-- ======================================================
+     MODALS (Story Pop-ups)
+====================================================== -->
+
+<!-- ARIEL MODAL -->
+<div id="modal-ariel" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal">&times;</button>
+    <h2>Ariel's Testimony</h2>
+    <p><em>Full testimony content here...</em></p>
+  </div>
+</div>
+
+<!-- CHOI MODAL -->
+<div id="modal-choi" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal">&times;</button>
+    <h2>Choi Eun-Young's Reflection</h2>
+    <p><em>Full testimony content here...</em></p>
+  </div>
+</div>
+
+<!-- HAN MODAL -->
+<div id="modal-han" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal">&times;</button>
+    <h2>Han Ye-Sul's Story</h2>
+    <p><em>Full testimony content here...</em></p>
+  </div>
+</div>
+
+<!-- KEZIAH MODAL -->
+<div id="modal-keziah" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal">&times;</button>
+    <h2>Keziah's Journey</h2>
+    <p><em>Full testimony content here...</em></p>
+  </div>
+</div>
+
+<!-- PARICHAT MODAL -->
+<div id="modal-parichat" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal">&times;</button>
+    <h2>Parichat's Experience</h2>
+    <p><em>Full testimony content here...</em></p>
+  </div>
+</div>
+
+<!-- JI MODAL -->
+<div id="modal-ji" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal">&times;</button>
+    <h2>Ji Yeowoon - New Heart Kids</h2>
+    <p><em>Full testimony content here...</em></p>
+  </div>
+</div>
+
+<!-- KYUNGJIN MODAL -->
+<div id="modal-kyungjin" class="modal hidden">
+  <div class="modal-content">
+    <button class="close-modal">&times;</button>
+    <h2>Kyungjin (Maria) - New Heart Kids</h2>
+    <p><em>Full testimony content here...</em></p>
+  </div>
+</div>
+
+<!-- ======================================================
+     FOOTER
+====================================================== -->
+<footer style="text-align:center; padding: 2rem 1rem; color: #777; border-top: 1px solid #e0e0e0; margin-top: 2rem;">
+  <p>© 2025 New Heart Ministry. All rights reserved.</p>
+  <p style="font-size:0.9rem;">Please keep this Newsletter within the New Heart Family.</p>
+</footer>
+
+<!-- ======================================================
+     FINAL SCRIPT — MODALS + TRANSLATION
+====================================================== -->
+<script>
+console.log("✅ Newsletter JavaScript Loading...");
+
+/* ===========================
+   LANGUAGE TRANSLATIONS
+=========================== */
 const translations = {
-  en: {
-    mainTitle: "New Heart Global Family Newsletter",
-    subtitle: "The Fourth Day Quarterly",
-    byline: "Fall 2025 | Issue 1",
-    
-    cardKeziahTitle: "Keziah's Journey",
-    cardKeziahPreview: "A testimony of healing and restoration through New Heart...",
-    cardHanTitle: "Han's Story",
-    cardHanPreview: "Discovering purpose and calling in the midst of transition...",
-    cardArielTitle: "Ariel's Testimony",
-    cardArielPreview: "From Orthodox Judaism to finding Yeshua as Messiah...",
-    cardParichatTitle: "Parichat's Experience",
-    cardParichatPreview: "Breaking free from perfectionism and performance...",
-    cardChoiTitle: "Choi's Reflection",
-    cardChoiPreview: "Rediscovering joy and energy in serving God's family...",
-    cardFoundersTitle: "From the Founders",
-    cardFoundersPreview: "A word from Jason & Youngmi Cha about God's faithfulness...",
-    
-    editorialHeading: "Editorial",
-    editorialSubheading: "God's Faithfulness: Our Enduring Foundation",
-    editorialP1: "New Heart Ministry recently celebrated its 54th gathering in Korea, marking almost two decades of God's sustaining grace. The name \"New Heart\" itself was divinely inspired, and the first gathering under this banner took place in Cambodia, serving young Vietnamese students. Since then, the ministry has expanded its reach to China, Ethiopia, Israel, the Philippines, Vietnam, and Korea, with its headquarters in the United States. In a beautiful orchestration of God's heart for every generation, New Heart has also grown to include New Heart Kids programs, allowing children to join the gatherings with dedicated activities specifically designed for them. This year alone, two such programs have already taken place—one in the USA and one in Korea—underscoring the importance of every generation in the Kingdom Family.",
-    editorialP2: "Across these nations, we have seen God's faithfulness as He transforms lives—bringing souls from death to life, placing within them a New Heart (Ezekiel 36:26), and awakening them to their God-given purpose and destiny—to raise a people of fire. Despite differences in culture, location, and language, the Holy Spirit has intricately woven us together into one family: The Kingdom Family. We celebrate and honor one another according to His calling, holding nothing back as we serve each other with transformed hearts (Acts 2).",
-    editorialP3: "As God's vision for New Heart Ministry continues to sharpen, we sense His desire not only to document the mighty works and the abundant grace flowing through this ministry but also for us, as a family, to nurture our connections and care for one another. Thus, the Newsletter for New Heart Family. We believe that, as promised in Isaiah 54, God is preparing to expand New Heart—not only into new physical territories but also through spiritual elevation and enlargement. By His strength and Spirit, we are committed to fulfilling what He has declared according to His covenant over this ministry in the days ahead.",
-    
-    kidsHeading: "New Heart Kids",
-    kidsTitle: "Planting Seeds in Young Hearts",
-    kidsDescription: "New Heart Kids launched this year with 22 children experiencing God's love through worship, prayer, and fellowship. Despite simple conditions and rainy weather, the children flourished—singing, learning, and growing together as one family in Christ.",
-    kidsReadMore: "Read Ji's Story →",
-    
-    thailandHeading: "Coming Soon: New Heart Thailand #56",
-    donationHeading: "Support New Heart Ministry",
-    donationMessage: "Your generous gifts enable us to continue sharing God's transforming love across nations. Scan the QR codes below to give via Venmo or Zelle.",
-    donationNote: "All donations are tax-deductible. New Heart Ministry is a 501(c)(3) nonprofit organization. Thank you for your partnership in this mission!",
-    
-    footerCopyright: "© 2025 New Heart Ministry. All rights reserved.",
-    footerNote: "Please keep this Newsletter in the New Heart Family.",
-    
-    foundersP1: "Shalom, New Heart Family! Usually, we greet each other with \"How are you?\" meaning, \"How's your health, how's your family, and how's your work?\" Has anyone asked you, instead, \"How is your heart?\" Maybe it's more fitting for us. To God, it's always a matter of the heart.",
-    foundersP2: "When God sent Samuel to Jesse's house to choose Israel's next king, He said: \"For not as man sees does the LORD see, because man looks at the outward appearance, but the LORD looks at the heart.\" This is especially important since we are the New Heart community: \"And I will give you a new heart, and a new spirit I will put within you. And I will remove the heart of stone from your flesh and give you a heart of flesh.\"",
-    foundersP3: "This is our prayer and our confident hope in faith in Jesus and the gift of grace—that your hearts are in good condition, whatever your circumstances may be. We praise and thank our Father for existing in the power of the Holy Spirit every victorious Wednesday. God bless you, your family, and your labor of love for God's people and His community.",
-    
-    storyNotTranslated: "Full testimony available in English"
+  KO: {
+    "Founders' Greeting": "창립자 인사말",
+    "New Heart Stories": "뉴하트 간증",
+    "New Heart Kids": "뉴하트 키즈",
+    "Ways to Serve": "섬기는 방법",
+    "Editorial": "사설",
+    "Ariel": "아리엘",
+    "Choi Eun-Young": "최은영",
+    "Han Ye-Sul": "한예슬",
+    "Keziah": "케지아 (트롱)",
+    "Parichat": "파리챗",
+    "Ji Yeowoon": "지여운",
+    "Kyungjin (Maria)": "박경진 (마리아)",
+    "NH USA #53 — Candidate": "뉴하트 미국 #53 — 후보자",
+    "Read Story": "간증 읽기"
   },
-  
-  ko: {
-    mainTitle: "뉴하트 글로벌 가족 소식지",
-    subtitle: "네째 날 계간지",
-    byline: "2025년 가을 | 제1호",
-    
-    cardKeziahTitle: "케지아의 여정",
-    cardKeziahPreview: "뉴하트를 통한 치유와 회복의 간증...",
-    cardHanTitle: "한의 이야기",
-    cardHanPreview: "전환기에 목적과 소명을 발견하다...",
-    cardArielTitle: "아리엘의 간증",
-    cardArielPreview: "정통 유대교에서 메시아 예슈아를 찾기까지...",
-    cardParichatTitle: "파리챗의 경험",
-    cardParichatPreview: "완벽주의와 율법주의에서 벗어나다...",
-    cardChoiTitle: "최의 성찰",
-    cardChoiPreview: "하나님 가족을 섬기며 기쁨과 활력을 되찾다...",
-    cardFoundersTitle: "설립자로부터",
-    cardFoundersPreview: "제이슨과 영미 차의 하나님의 신실하심에 대한 말씀...",
-    
-    editorialHeading: "사설",
-    editorialSubheading: "하나님의 신실하심: 우리의 지속적인 기초",
-    editorialP1: "뉴하트 사역은 최근 한국에서 54회 모임을 축하하며, 거의 20년에 걸친 하나님의 지속적인 은혜를 기념했습니다. \"뉴하트\"라는 이름 자체가 신의 영감을 받았으며, 이 이름 아래 첫 모임은 캄보디아에서 젊은 베트남 학생들을 섬기며 열렸습니다. 그 이후로 사역은 중국, 에티오피아, 이스라엘, 필리핀, 베트남, 한국으로 범위를 확장했으며, 본부는 미국에 있습니다. 모든 세대를 향한 하나님의 마음의 아름다운 조율 속에서, 뉴하트는 뉴하트 키즈 프로그램도 포함하도록 성장했으며, 어린이들이 특별히 그들을 위해 설계된 전용 활동과 함께 모임에 참여할 수 있게 했습니다. 올해만 해도 두 개의 프로그램이 이미 진행되었습니다—하나는 미국에서, 하나는 한국에서—왕국 가족에서 모든 세대의 중요성을 강조합니다.",
-    editorialP2: "이 나라들을 통해 우리는 하나님께서 생명을 변화시키시는 신실하심을 보았습니다—죽음에서 생명으로, 그들 안에 새 마음을 두시고(에스겔 36:26), 하나님께서 주신 목적과 운명을 깨우치십니다—불의 민족을 세우기 위해. 문화, 지역, 언어의 차이에도 불구하고 성령께서 우리를 복잡하게 한 가족으로 엮으셨습니다: 왕국 가족. 우리는 그분의 부르심에 따라 서로를 축하하고 존중하며, 변화된 마음으로 서로를 섬기는 데 아낌없이 나눕니다(사도행전 2장).",
-    editorialP3: "뉴하트 사역에 대한 하나님의 비전이 계속 명확해지면서, 우리는 이 사역을 통해 흐르는 강력한 역사와 풍부한 은혜를 기록할 뿐만 아니라 가족으로서 우리의 연결을 키우고 서로를 돌보기를 원하시는 하나님의 뜻을 느낍니다. 그래서 뉴하트 가족을 위한 소식지입니다. 이사야 54장에 약속된 대로, 하나님께서 뉴하트를 확장하실 준비를 하고 계신다고 믿습니다—새로운 물리적 영역뿐만 아니라 영적인 고양과 확대를 통해서도. 그분의 힘과 성령으로 우리는 앞으로 이 사역에 대한 그분의 언약에 따라 선포하신 것을 이행하기로 헌신합니다.",
-    
-    kidsHeading: "뉴하트 키즈",
-    kidsTitle: "어린 마음에 씨앗 심기",
-    kidsDescription: "뉴하트 키즈는 올해 22명의 어린이들이 예배, 기도, 교제를 통해 하나님의 사랑을 경험하며 시작되었습니다. 간단한 환경과 비 오는 날씨에도 불구하고, 어린이들은 노래하고, 배우고, 그리스도 안에서 한 가족으로 함께 성장했습니다.",
-    kidsReadMore: "지의 이야기 읽기 →",
-    
-    thailandHeading: "곧 시작: 뉴하트 태국 #56",
-    donationHeading: "뉴하트 사역 후원",
-    donationMessage: "여러분의 관대한 헌금은 우리가 계속해서 하나님의 변화시키는 사랑을 열방에 나누는 것을 가능하게 합니다. 아래 QR 코드를 스캔하여 Venmo 또는 Zelle을 통해 헌금하세요.",
-    donationNote: "모든 헌금은 세금 공제가 가능합니다. 뉴하트 사역은 501(c)(3) 비영리 단체입니다. 이 사명에 동참해 주셔서 감사합니다!",
-    
-    footerCopyright: "© 2025 뉴하트 사역. 모든 권리 보유.",
-    footerNote: "이 소식지를 뉴하트 가족 안에 보관해 주세요.",
-    
-    foundersP1: "샬롬, 뉴하트 가족! 보통 우리는 서로에게 \"어떻게 지내세요?\"라고 인사하는데, 이것은 \"건강은 어떠세요, 가족은 어떠세요, 일은 어떠세요?\"를 의미합니다. 대신 누군가가 \"당신의 마음은 어떠세요?\"라고 물어본 적이 있나요? 아마도 우리에게 더 적합할 것입니다. 하나님께는 항상 마음의 문제입니다.",
-    foundersP2: "하나님께서 사무엘을 이새의 집으로 보내 이스라엘의 다음 왕을 선택하게 하셨을 때, 그분은 말씀하셨습니다: \"사람은 외모를 보거니와 나 여호와는 중심을 보느니라.\" 이것은 우리가 뉴하트 공동체이기 때문에 특히 중요합니다: \"또 새 마음을 너희에게 주고 새 영을 너희 속에 두되 너희 육신에서 굳은 마음을 제거하고 부드러운 마음을 줄 것이라.\"",
-    foundersP3: "이것이 예수님을 믿는 믿음과 은혜의 선물 안에서 우리의 기도이자 확신입니다—여러분의 상황이 어떻든 여러분의 마음이 좋은 상태에 있기를. 우리는 승리하는 모든 수요일에 성령의 능력 안에 존재하는 것에 대해 아버지를 찬양하고 감사드립니다. 하나님께서 여러분과 여러분의 가족, 그리고 하나님의 백성과 그분의 공동체를 향한 여러분의 사랑의 수고를 축복하시기를 기원합니다.",
-    
-    storyNotTranslated: "전체 간증은 영어로 제공됩니다"
+  VN: {
+    "Founders' Greeting": "Lời Chào Từ Nhà Sáng Lập",
+    "New Heart Stories": "Lời Chứng New Heart",
+    "New Heart Kids": "New Heart Kids",
+    "Ways to Serve": "Cách Phục Vụ",
+    "Editorial": "Bài Xã Luận",
+    "Read Story": "Đọc Lời Chứng"
   },
-  
-  vi: {
-    mainTitle: "Bản Tin Gia Đình Toàn Cầu New Heart",
-    subtitle: "Quý Báo Ngày Thứ Tư",
-    byline: "Thu 2025 | Số 1",
-    
-    cardKeziahTitle: "Hành Trình của Keziah",
-    cardKeziahPreview: "Một lời chứng về sự chữa lành và phục hồi qua New Heart...",
-    cardHanTitle: "Câu Chuyện của Han",
-    cardHanPreview: "Khám phá mục đích và sứ mệnh giữa giai đoạn chuyển tiếp...",
-    cardArielTitle: "Lời Chứng của Ariel",
-    cardArielPreview: "Từ Do Thái giáo chính thống đến tìm thấy Yeshua là Đấng Mê-si...",
-    cardParichatTitle: "Trải Nghiệm của Parichat",
-    cardParichatPreview: "Thoát khỏi chủ nghĩa hoàn hảo và thành tích...",
-    cardChoiTitle: "Suy Ngẫm của Choi",
-    cardChoiPreview: "Tìm lại niềm vui và năng lượng trong việc phục vụ gia đình Chúa...",
-    cardFoundersTitle: "Từ Các Người Sáng Lập",
-    cardFoundersPreview: "Lời từ Jason & Youngmi Cha về sự thành tín của Đức Chúa Trời...",
-    
-    editorialHeading: "Biên Tập",
-    editorialSubheading: "Sự Thành Tín của Đức Chúa Trời: Nền Tảng Lâu Dài Của Chúng Ta",
-    editorialP1: "Chức Vụ New Heart gần đây đã kỷ niệm buổi tụ họp thứ 54 tại Hàn Quốc, đánh dấu gần hai thập kỷ ân điển duy trì của Đức Chúa Trời. Bản thân tên \"New Heart\" đã được truyền cảm hứng từ thiên thượng, và buổi tụ họp đầu tiên dưới cái tên này diễn ra tại Campuchia, phục vụ các sinh viên Việt Nam trẻ tuổi. Kể từ đó, chức vụ đã mở rộng phạm vi đến Trung Quốc, Ethiopia, Israel, Philippines, Việt Nam và Hàn Quốc, với trụ sở chính tại Hoa Kỳ. Trong một sự dàn xếp tuyệt đẹp về tấm lòng của Đức Chúa Trời dành cho mọi thế hệ, New Heart cũng đã phát triển để bao gồm các chương trình New Heart Kids, cho phép trẻ em tham gia các buổi tụ họp với các hoạt động dành riêng được thiết kế đặc biệt cho chúng. Chỉ riêng năm nay, hai chương trình như vậy đã diễn ra—một ở Hoa Kỳ và một ở Hàn Quốc—nhấn mạnh tầm quan trọng của mọi thế hệ trong Gia Đình Vương Quốc.",
-    editorialP2: "Trên khắp các quốc gia này, chúng ta đã thấy sự thành tín của Đức Chúa Trời khi Ngài biến đổi cuộc sống—đưa linh hồn từ sự chết đến sự sống, đặt trong họ một Tấm Lòng Mới (Ê-xê-chi-ên 36:26), và đánh thức họ về mục đích và số phận được Đức Chúa Trời ban cho—để nuôi dưỡng một dân tộc lửa. Bất chấp sự khác biệt về văn hóa, địa điểm và ngôn ngữ, Đức Thánh Linh đã dệt nên chúng ta một cách phức tạp thành một gia đình: Gia Đình Vương Quốc. Chúng ta kỷ niệm và tôn vinh nhau theo sự kêu gọi của Ngài, không giữ lại gì khi phục vụ nhau với trái tim đã được biến đổi (Công Vụ 2).",
-    editorialP3: "Khi tầm nhìn của Đức Chúa Trời về Chức Vụ New Heart tiếp tục rõ ràng hơn, chúng ta cảm nhận được mong muốn của Ngài không chỉ để ghi lại các công việc vĩ đại và ân điển dồi dào đang chảy qua chức vụ này mà còn để chúng ta, với tư cách là một gia đình, nuôi dưỡng các kết nối của mình và chăm sóc lẫn nhau. Do đó, Bản Tin cho Gia Đình New Heart. Chúng ta tin rằng, như đã hứa trong Ê-sai 54, Đức Chúa Trời đang chuẩn bị mở rộng New Heart—không chỉ vào các lãnh thổ vật lý mới mà còn thông qua sự nâng cao và mở rộng thuộc linh. Bằng sức mạnh và Thánh Linh của Ngài, chúng ta cam kết hoàn thành những gì Ngài đã tuyên bố theo giao ước của Ngài đối với chức vụ này trong những ngày tới.",
-    
-    kidsHeading: "New Heart Kids",
-    kidsTitle: "Gieo Hạt Giống Trong Trái Tim Trẻ",
-    kidsDescription: "New Heart Kids khởi động năm nay với 22 trẻ em trải nghiệm tình yêu của Đức Chúa Trời qua thờ phượng, cầu nguyện và tình thông công. Bất chấp điều kiện đơn giản và thời tiết mưa, các em đã phát triển—ca hát, học hỏi và lớn lên cùng nhau như một gia đình trong Đấng Christ.",
-    kidsReadMore: "Đọc Câu Chuyện của Ji →",
-    
-    thailandHeading: "Sắp Ra Mắt: New Heart Thái Lan #56",
-    donationHeading: "Ủng Hộ Chức Vụ New Heart",
-    donationMessage: "Những món quà hào phóng của bạn cho phép chúng tôi tiếp tục chia sẻ tình yêu biến đổi của Đức Chúa Trời trên khắp các quốc gia. Quét mã QR bên dưới để tặng qua Venmo hoặc Zelle.",
-    donationNote: "Tất cả các khoản đóng góp đều được khấu trừ thuế. Chức Vụ New Heart là tổ chức phi lợi nhuận 501(c)(3). Cảm ơn sự hợp tác của bạn trong sứ mệnh này!",
-    
-    footerCopyright: "© 2025 Chức Vụ New Heart. Bảo lưu mọi quyền.",
-    footerNote: "Vui lòng giữ Bản Tin này trong Gia Đình New Heart.",
-    
-    foundersP1: "Shalom, Gia Đình New Heart! Thông thường, chúng ta chào hỏi nhau bằng \"Bạn khỏe không?\" có nghĩa là \"Sức khỏe của bạn thế nào, gia đình của bạn thế nào, và công việc của bạn thế nào?\" Có ai hỏi bạn, thay vào đó, \"Trái tim của bạn thế nào?\" Có lẽ điều đó phù hợp hơn với chúng ta. Đối với Đức Chúa Trời, đó luôn là vấn đề của trái tim.",
-    foundersP2: "Khi Đức Chúa Trời sai Sa-mu-ên đến nhà Gie-sê để chọn vua kế tiếp của Y-sơ-ra-ên, Ngài phán: \"Vì không như người ta thấy, Đức Giê-hô-va thấy; bởi vì người ta nhìn bề ngoài, nhưng Đức Giê-hô-va nhìn trái tim.\" Điều này đặc biệt quan trọng vì chúng ta là cộng đồng New Heart: \"Ta sẽ ban cho các ngươi một trái tim mới, và đặt một tâm thần mới trong lòng các ngươi. Ta sẽ cất khỏi xác thịt các ngươi trái tim đá, và ban cho các ngươi một trái tim thịt.\"",
-    foundersP3: "Đây là lời cầu nguyện và niềm hy vọng vững chắc của chúng ta trong đức tin nơi Chúa Giê-su và ân tứ của ân điển—rằng trái tim của bạn ở trong tình trạng tốt, bất kể hoàn cảnh của bạn là gì. Chúng ta ca ngợi và cảm tạ Cha của chúng ta vì sự tồn tại trong quyền năng của Đức Thánh Linh mỗi thứ Tư chiến thắng. Đức Chúa Trời ban phước cho bạn, gia đình của bạn, và công việc yêu thương của bạn dành cho dân sự Đức Chúa Trời và cộng đồng của Ngài.",
-    
-    storyNotTranslated: "Lời chứng đầy đủ có sẵn bằng tiếng Anh"
+  TH: {
+    "Founders' Greeting": "คำทักทายผู้ก่อตั้ง",
+    "New Heart Stories": "คำพยาน New Heart",
+    "New Heart Kids": "New Heart Kids",
+    "Ways to Serve": "วิธีรับใช้",
+    "Editorial": "บทบรรณาธิการ",
+    "Read Story": "อ่านเรื่องราว"
   },
-  
-  th: {
-    mainTitle: "จดหมายข่าวครอบครัวโลก New Heart",
-    subtitle: "รายไตรมาสวันที่สี่",
-    byline: "ฤดูใบไม้ร่วง 2025 | ฉบับที่ 1",
-    
-    cardKeziahTitle: "เส้นทางของเคเซียห์",
-    cardKeziahPreview: "คำพยานของการรักษาและการฟื้นฟูผ่าน New Heart...",
-    cardHanTitle: "เรื่องราวของฮัน",
-    cardHanPreview: "การค้นพบจุดมุ่งหมายและการเรียกในช่วงเปลี่ยนผ่าน...",
-    cardArielTitle: "คำพยานของอาเรียล",
-    cardArielPreview: "จากศาสนายิวออร์โธดอกซ์สู่การค้นพบเยชูวาเป็นพระเมสสิยาห์...",
-    cardParichatTitle: "ประสบการณ์ของปาริฉัตร",
-    cardParichatPreview: "หลุดพ้นจากลัทธิสมบูรณ์แบบและการทำผลงาน...",
-    cardChoiTitle: "การไตร่ตรองของชเว",
-    cardChoiPreview: "ค้นพบความสุขและพลังในการรับใช้ครอบครัวของพระเจ้า...",
-    cardFoundersTitle: "จากผู้ก่อตั้ง",
-    cardFoundersPreview: "คำจากเจสันและยองมี ชาเกี่ยวกับความสัตย์ซื่อของพระเจ้า...",
-    
-    editorialHeading: "บทบรรณาธิการ",
-    editorialSubheading: "ความสัตย์ซื่อของพระเจ้า: รากฐานที่ยั่งยืนของเรา",
-    editorialP1: "พันธกิจ New Heart เพิ่งเฉลิมฉลองการชุมนุมครั้งที่ 54 ในเกาหลี นับเป็นเวลาเกือบสองทศวรรษของพระคุณที่ค้ำจุนของพระเจ้า ชื่อ \"New Heart\" เองได้รับแรงบันดาลใจจากพระเจ้า และการชุมนุมครั้งแรกภายใต้ชื่อนี้เกิดขึ้นในกัมพูชา รับใช้นักเรียนเวียดนามหนุ่มสาว ตั้งแต่นั้นมา พันธกิจได้ขยายการเข้าถึงไปยังจีน เอธิโอเปีย อิสราเอล ฟิลิปปินส์ เวียดนาม และเกาหลี โดยมีสำนักงานใหญ่อยู่ในสหรัฐอเมริกา ในการจัดวางอันงดงามของพระทัยของพระเจ้าสำหรับทุกยุคทุกสมัย New Heart ยังได้เติบโตเพื่อรวมโปรแกรม New Heart Kids ที่ให้เด็กๆ เข้าร่วมการชุมนุมพร้อมกับกิจกรรมเฉพาะที่ออกแบบมาเป็นพิเศษสำหรับพวกเขา เฉพาะในปีนี้เพียงอย่างเดียว โปรแกรมดังกล่าวได้มีขึ้นแล้วสองโปรแกรม—หนึ่งในสหรัฐอเมริกาและหนึ่งในเกาหลี—เน้นย้ำความสำคัญของทุกยุคในครอบครัวแห่งอาณาจักร",
-    editorialP2: "ในประชาชาติเหล่านี้ เราได้เห็นความสัตย์ซื่อของพระเจ้าขณะที่พระองค์เปลี่ยนแปลงชีวิต—นำจิตวิญญาณจากความตายสู่ชีวิต ใส่หัวใจใหม่ไว้ในพวกเขา (เอเสเคียล 36:26) และปลุกพวกเขาให้ตระหนักถึงจุดมุ่งหมายและชะตากรรมที่พระเจ้าประทานให้—เพื่อเลี้ยงดูคนของไฟ แม้จะมีความแตกต่างทางวัฒนธรรม สถานที่ และภาษา พระวิญญาณบริสุทธิ์ได้ทอเราเข้าด้วยกันอย่างซับซ้อนเป็นครอบครัวเดียว: ครอบครัวแห่งอาณาจักร เราเฉลิมฉลองและให้เกียรติซึ่งกันและกันตามการเรียกของพระองค์ ไม่เก็บอะไรไว้เมื่อเรารับใช้ซึ่งกันและกันด้วยหัวใจที่เปลี่ยนแปลงแล้ว (กิจการ 2)",
-    editorialP3: "เมื่อวิสัยทัศน์ของพระเจ้าสำหรับพันธกิจ New Heart ยังคงชัดเจนขึ้น เรารู้สึกถึงความปรารถนาของพระองค์ไม่เพียงแต่จะบันทึกพระราชกิจที่ยิ่งใหญ่และพระคุณที่อุดมสมบูรณ์ที่ไหลผ่านพันธกิจนี้เท่านั้น แต่ยังเพื่อให้เราในฐานะครอบครัวเลี้ยงดูความเชื่อมโยงของเราและดูแลซึ่งกันและกัน ดังนั้นจดหมายข่าวสำหรับครอบครัว New Heart เราเชื่อว่าตามที่สัญญาไว้ในอิสยาห์ 54 พระเจ้ากำลังเตรียมขยาย New Heart—ไม่เพียงแต่เข้าสู่ดินแดนทางกายภาพใหม่เท่านั้น แต่ยังผ่านการยกระดับและการขยายทางจิตวิญญาณด้วย ด้วยกำลังและพระวิญญาณของพระองค์ เรามุ่งมั่นที่จะบรรลุสิ่งที่พระองค์ได้ประกาศตามพันธสัญญาของพระองค์เหนือพันธกิจนี้ในวันข้างหน้า",
-    
-    kidsHeading: "New Heart Kids",
-    kidsTitle: "ปลูกเมล็ดพืชในหัวใจเด็ก",
-    kidsDescription: "New Heart Kids เปิดตัวในปีนี้ด้วยเด็ก 22 คนที่ได้สัมผัสความรักของพระเจ้าผ่านการนมัสการ การอธิษฐาน และการสามัคคีธรรม แม้จะมีสภาพที่เรียบง่ายและสภาพอากาศฝนตก เด็กๆ ก็เจริญเติบโต—ร้องเพลง เรียนรู้ และเติบโตด้วยกันเป็นครอบครัวเดียวในพระคริสต์",
-    kidsReadMore: "อ่านเรื่องราวของจิ →",
-    
-    thailandHeading: "เร็วๆ นี้: New Heart ประเทศไทย #56",
-    donationHeading: "สนับสนุนพันธกิจ New Heart",
-    donationMessage: "ของขวัญอันใจกว้างของคุณทำให้เราสามารถแบ่งปันความรักที่เปลี่ยนแปลงของพระเจ้าทั่วประชาชาติต่างๆ สแกนรหัส QR ด้านล่างเพื่อบริจาคผ่าน Venmo หรือ Zelle",
-    donationNote: "การบริจาคทั้งหมดสามารถหักลดหย่อนภาษีได้ พันธกิจ New Heart เป็นองค์กรไม่แสวงหาผลกำไร 501(c)(3) ขอบคุณสำหรับความร่วมมือในภารกิจนี้!",
-    
-    footerCopyright: "© 2025 พันธกิจ New Heart สงวนลิขสิทธิ์",
-    footerNote: "โปรดเก็บจดหมายข่าวนี้ไว้ในครอบครัว New Heart",
-    
-    foundersP1: "ชาโลม ครอบครัว New Heart! โดยปกติเราทักทายกันด้วย \"สบายดีไหม\" หมายถึง \"สุขภาพเป็นอย่างไร ครอบครัวเป็นอย่างไร และงานเป็นอย่างไร\" มีใครถามคุณแทนว่า \"หัวใจของคุณเป็นอย่างไร\" บ้างไหม บางทีอาจเหมาะสมกับเรามากกว่า สำหรับพระเจ้า มันเป็นเรื่องของหัวใจเสมอ",
-    foundersP2: "เมื่อพระเจ้าส่งซามูเอลไปที่บ้านของเจสซีเพื่อเลือกกษัตริย์คนต่อไปของอิสราเอล พระองค์ตรัสว่า: \"เพราะไม่เหมือนที่มนุษย์เห็น พระเยโฮวาห์ทอดพระเนตร เพราะมนุษย์มองเห็นภายนอก แต่พระเยโฮวาห์ทอดพระเนตรที่หัวใจ\" นี่สำคัญเป็นพิเศษเพราะเราเป็นชุมชน New Heart: \"และเราจะให้หัวใจใหม่แก่เจ้า และเราจะใส่จิตใหม่ไว้ในตัวเจ้า และเราจะเอาหัวใจหินออกจากเนื้อหนังของเจ้า และให้หัวใจเนื้อแก่เจ้า\"",
-    foundersP3: "นี่คือคำอธิษฐานและความหวังที่มั่นใจของเราในความเชื่อในพระเยซูและของประทานแห่งพระคุณ—ว่าหัวใจของคุณอยู่ในสภาพที่ดี ไม่ว่าสถานการณ์ของคุณจะเป็นอย่างไร เราสรรเสริญและขอบพระคุณพระบิดาของเราที่มีอยู่ในฤทธานุภาพของพระวิญญาณบริสุทธิ์ทุกวันพุธแห่งชัยชนะ ขอพระเจ้าทรงอวยพรคุณ ครอบครัวของคุณ และแรงงานแห่งความรักของคุณสำหรับประชากรของพระเจ้าและชุมชนของพระองค์",
-    
-    storyNotTranslated: "คำพยานฉบับเต็มมีให้ในภาษาอังกฤษ"
+  IL: {
+    "Founders' Greeting": "ברכת המייסדים",
+    "New Heart Stories": "עדויות New Heart",
+    "New Heart Kids": "ילדי New Heart",
+    "Ways to Serve": "דרכים לשרת",
+    "Editorial": "מערכת",
+    "Read Story": "קרא סיפור"
   },
-  
-  he: {
-    mainTitle: "ניוזלטר משפחת New Heart העולמית",
-    subtitle: "רבעון היום הרביעי",
-    byline: "סתיו 2025 | גיליון 1",
-    
-    cardKeziahTitle: "מסע קזיאה",
-    cardKeziahPreview: "עדות של ריפוי ושיקום דרך New Heart...",
-    cardHanTitle: "סיפור של האן",
-    cardHanPreview: "גילוי מטרה וייעוד בעיצומו של מעבר...",
-    cardArielTitle: "עדות אריאל",
-    cardArielPreview: "מיהדות אורתודוקסית למציאת ישוע כמשיח...",
-    cardParichatTitle: "חוויה של פריצ'ט",
-    cardParichatPreview: "משחרור מפרפקציוניזם וביצועים...",
-    cardChoiTitle: "הרהור של צ'וי",
-    cardChoiPreview: "גילוי מחדש של שמחה ואנרגיה בשירות משפחת אלוהים...",
-    cardFoundersTitle: "מהמייסדים",
-    cardFoundersPreview: "מילה מג'ייסון ויונגמי צ'ה על נאמנות אלוהים...",
-    
-    editorialHeading: "מאמר מערכת",
-    editorialSubheading: "נאמנות אלוהים: היסוד המתמשך שלנו",
-    editorialP1: "משרד New Heart חגג לאחרונה את המפגש ה-54 שלו בקוריאה, מציין כמעט שני עשורים של חסד מקיים של אלוהים. השם \"New Heart\" עצמו קיבל השראה אלוהית, והמפגש הראשון תחת דגל זה התקיים בקמבודיה, משרת סטודנטים ווייטנאמים צעירים. מאז, המשרד הרחיב את טווח ההגעה שלו לסין, אתיופיה, ישראל, הפיליפינים, ווייטנאם וקוריאה, כאשר המטה שלו בארצות הברית. בתזמור יפהפה של לב אלוהים לכל דור, New Heart גם צמח לכלול תוכניות New Heart Kids, המאפשרות לילדים להצטרף למפגשים עם פעילויות ייעודיות שתוכננו במיוחד עבורם. השנה לבדה, שתי תוכניות כאלה כבר התקיימו—אחת בארה\"ב ואחת בקוריאה—המדגישות את החשיבות של כל דור במשפחת המלכות.",
-    editorialP2: "ברחבי אומות אלה, ראינו את נאמנות אלוהים כאשר הוא משנה חיים—מביא נשמות ממוות לחיים, מניח בתוכם לב חדש (יחזקאל 36:26), ומעיר אותם למטרה ולגורל שניתנו להם על ידי אלוהים—לגדל עם של אש. למרות הבדלים בתרבות, במיקום ובשפה, רוח הקודש טווה אותנו יחד בצורה מורכבת למשפחה אחת: משפחת המלכות. אנו חוגגים ומכבדים זה את זה לפי קריאתו, לא מעכבים דבר כשאנו משרתים זה את זה בלבבות משתנים (מעשי השליחים 2).",
-    editorialP3: "כאשר חזון אלוהים למשרד New Heart ממשיך להתחדד, אנו חשים את רצונו לא רק לתעד את המעשים האדירים והחסד השופע הזורמים דרך משרד זה אלא גם עבורנו, כמשפחה, לטפח את הקשרים שלנו ולדאוג זה לזה. לכן, הניוזלטר למשפחת New Heart. אנו מאמינים כי, כפי שהובטח בישעיהו 54, אלוהים מכין להרחיב את New Heart—לא רק לשטחים פיזיים חדשים אלא גם דרך התרוממות והרחבה רוחנית. בכוחו וברוחו, אנו מחויבים למלא את מה שהוא הכריז על פי בריתו על משרד זה בימים הבאים.",
-    
-    kidsHeading: "New Heart Kids",
-    kidsTitle: "נטיעת זרעים בלבבות צעירים",
-    kidsDescription: "New Heart Kids הושק השנה עם 22 ילדים שחוו את אהבת אלוהים דרך פולחן, תפילה ושותפות. למרות תנאים פשוטים ומזג אויר גשום, הילדים שגשגו—שרים, לומדים וגדלים יחד כמשפחה אחת במשיח.",
-    kidsReadMore: "קרא את סיפור ג'י →",
-    
-    thailandHeading: "בקרוב: New Heart תאילנד #56",
-    donationHeading: "תמכו במשרד New Heart",
-    donationMessage: "המתנות הנדיבות שלכם מאפשרות לנו להמשיך לחלוק את אהבת אלוהים המשנה חיים ברחבי אומות. סרקו את קודי ה-QR למטה כדי לתרום דרך Venmo או Zelle.",
-    donationNote: "כל התרומות ניתנות לניכוי במס. משרד New Heart הוא ארגון ללא מטרות רווח 501(c)(3). תודה על שותפותכם במשימה זו!",
-    
-    footerCopyright: "© 2025 משרד New Heart. כל הזכויות שמורות.",
-    footerNote: "אנא שמרו את הניוזלטר הזה במשפחת New Heart.",
-    
-    foundersP1: "שלום, משפחת New Heart! בדרך כלל, אנו מברכים זה את זה ב\"מה שלומך?\" כלומר, \"איך הבריאות שלך, איך המשפחה שלך ואיך העבודה שלך?\" האם מישהו שאל אותך, במקום זאת, \"איך הלב שלך?\" אולי זה מתאים יותר לנו. לאלוהים, זה תמיד עניין של הלב.",
-    foundersP2: "כאשר אלוהים שלח את שמואל לבית ישי לבחור את מלך ישראל הבא, הוא אמר: \"כי לא אשר יראה האדם יראה ה', כי האדם יראה לעיניים וה' יראה ללבב.\" זה חשוב במיוחד מכיוון שאנו קהילת לב חדש: \"ונתתי לכם לב חדש ורוח חדשה אתן בקרבכם והסרתי את לב האבן מבשרכם ונתתי לכם לב בשר.\"",
-    foundersP3: "זוהי תפילתנו ותקוותנו הבטוחה באמונה בישוע ובמתנת החסד—שלבכם במצב טוב, יהיו נסיבותיכם אשר יהיו. אנו משבחים ומודים לאבא שלנו על קיומנו בכוח רוח הקודש בכל יום רביעי מנצח. אלוהים יברך אותך, את משפחתך ואת עמל אהבתך לעם אלוהים ולקהילתו.",
-    
-    storyNotTranslated: "עדות מלאה זמינה באנגלית"
-  },
-  
-  zh: {
-    mainTitle: "New Heart 全球家庭通讯",
-    subtitle: "第四天季刊",
-    byline: "2025年秋季 | 第1期",
-    
-    cardKeziahTitle: "Keziah的旅程",
-    cardKeziahPreview: "通过New Heart获得医治和恢复的见证...",
-    cardHanTitle: "Han的故事",
-    cardHanPreview: "在转型中发现目标和呼召...",
-    cardArielTitle: "Ariel的见证",
-    cardArielPreview: "从正统犹太教到找到耶稣作为弥赛亚...",
-    cardParichatTitle: "Parichat的经历",
-    cardParichatPreview: "从完美主义和表现中解脱...",
-    cardChoiTitle: "Choi的反思",
-    cardChoiPreview: "重新发现服侍神家的喜乐和活力...",
-    cardFoundersTitle: "来自创始人",
-    cardFoundersPreview: "Jason和Youngmi Cha关于神信实的话语...",
-    
-    editorialHeading: "社论",
-    editorialSubheading: "神的信实：我们持久的根基",
-    editorialP1: "New Heart事工最近在韩国庆祝了第54次聚会，标志着神近二十年的持续恩典。\"New Heart\"这个名字本身就是神圣启发的，在这个旗帜下的第一次聚会在柬埔寨举行，服侍年轻的越南学生。从那时起，事工已经将其影响力扩展到中国、埃塞俄比亚、以色列、菲律宾、越南和韩国，总部设在美国。在神对每一代人的心意的美丽编排中，New Heart也成长到包括New Heart Kids计划，允许儿童参加聚会并专门为他们设计的专用活动。仅今年一年，就已经举行了两个这样的计划——一个在美国，一个在韩国——强调每一代人在国度家庭中的重要性。",
-    editorialP2: "在这些国家中，我们看到了神的信实，因为他改变了生命——将灵魂从死亡带到生命，在他们里面放置一颗新心（以西结书36:26），并唤醒他们认识神赐予的目标和命运——培养火热的子民。尽管在文化、地点和语言上存在差异，圣灵已经将我们错综复杂地编织成一个家庭：国度家庭。我们按照他的呼召彼此庆祝和尊重，在用改变的心彼此服侍时毫无保留（使徒行传2章）。",
-    editorialP3: "随着神对New Heart事工的异象继续变得更加清晰，我们感到他的愿望不仅是记录通过这个事工流动的大能作为和丰盛恩典，而且是让我们作为一个家庭，培养我们的联系并彼此照顾。因此，New Heart家庭通讯诞生了。我们相信，正如以赛亚书54章所应许的，神正在准备扩展New Heart——不仅进入新的物理领域，而且通过属灵的提升和扩大。借着他的力量和圣灵，我们致力于在未来的日子里完成他根据他对这个事工的约所宣告的。",
-    
-    kidsHeading: "New Heart Kids",
-    kidsTitle: "在幼小的心中播种",
-    kidsDescription: "New Heart Kids今年启动，22名儿童通过敬拜、祷告和团契体验神的爱。尽管条件简单，天气多雨，孩子们仍然茁壮成长——唱歌、学习，并在基督里作为一个家庭一起成长。",
-    kidsReadMore: "阅读Ji的故事 →",
-    
-    thailandHeading: "即将推出：New Heart泰国#56",
-    donationHeading: "支持New Heart事工",
-    donationMessage: "您的慷慨捐赠使我们能够继续在各国分享神改变生命的爱。扫描下面的二维码通过Venmo或Zelle捐赠。",
-    donationNote: "所有捐款均可抵税。New Heart事工是501(c)(3)非营利组织。感谢您在这项使命中的合作！",
-    
-    footerCopyright: "© 2025 New Heart事工。保留所有权利。",
-    footerNote: "请将此通讯保留在New Heart家庭中。",
-    
-    foundersP1: "平安，New Heart家庭！通常，我们用\"你好吗？\"互相问候，意思是\"你的健康如何，你的家人如何，你的工作如何？\"有人问过你，\"你的心怎么样？\"也许这对我们更合适。对神来说，这始终是心的问题。",
-    foundersP2: "当神派撒母耳去耶西家选择以色列的下一位国王时，他说：\"因为耶和华不像人看人，人是看外貌，耶和华是看内心。\"这一点尤其重要，因为我们是新心社区：\"我也要赐给你们一个新心，将新灵放在你们里面。又从你们的肉体中除掉石心，赐给你们肉心。\"",
-    foundersP3: "这是我们在耶稣里的信心和恩典礼物中的祷告和确信的希望——无论你的环境如何，你的心都处于良好状态。我们赞美和感谢我们的父，因为我们每个得胜的星期三都存在于圣灵的力量中。愿神祝福你、你的家人，以及你为神的子民和他的社区所付出的爱的劳苦。",
-    
-    storyNotTranslated: "完整见证提供英文版"
+  CH: {
+    "Founders' Greeting": "創辦人問候",
+    "New Heart Stories": "新心見證",
+    "New Heart Kids": "新心兒童",
+    "Ways to Serve": "事奉方式",
+    "Editorial": "社論",
+    "Read Story": "閱讀故事"
   }
 };
 
-let currentLang = 'en';
+/* ===========================
+   LANGUAGE SWITCHER
+=========================== */
+document.querySelectorAll(".language-buttons span").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const lang = btn.dataset.lang;
+    console.log(`🌍 Switching to language: ${lang}`);
 
-function setLanguage(lang) {
-  currentLang = lang;
-  const t = translations[lang];
-  
-  // Update all text elements
-  document.getElementById('main-title').textContent = t.mainTitle;
-  document.getElementById('subtitle').textContent = t.subtitle;
-  document.getElementById('byline').textContent = t.byline;
-  
-  // Cards
-  document.getElementById('card-keziah-title').textContent = t.cardKeziahTitle;
-  document.getElementById('card-keziah-preview').textContent = t.cardKeziahPreview;
-  document.getElementById('card-han-title').textContent = t.cardHanTitle;
-  document.getElementById('card-han-preview').textContent = t.cardHanPreview;
-  document.getElementById('card-ariel-title').textContent = t.cardArielTitle;
-  document.getElementById('card-ariel-preview').textContent = t.cardArielPreview;
-  document.getElementById('card-parichat-title').textContent = t.cardParichatTitle;
-  document.getElementById('card-parichat-preview').textContent = t.cardParichatPreview;
-  document.getElementById('card-choi-title').textContent = t.cardChoiTitle;
-  document.getElementById('card-choi-preview').textContent = t.cardChoiPreview;
-  document.getElementById('card-founders-title').textContent = t.cardFoundersTitle;
-  document.getElementById('card-founders-preview').textContent = t.cardFoundersPreview;
-  
-  // Editorial
-  document.getElementById('editorial-heading').textContent = t.editorialHeading;
-  document.getElementById('editorial-subheading').textContent = t.editorialSubheading;
-  document.getElementById('editorial-p1').textContent = t.editorialP1;
-  document.getElementById('editorial-p2').textContent = t.editorialP2;
-  document.getElementById('editorial-p3').textContent = t.editorialP3;
-  
-  // Kids section
-  document.getElementById('kids-heading').textContent = t.kidsHeading;
-  document.getElementById('kids-title').textContent = t.kidsTitle;
-  document.getElementById('kids-description').textContent = t.kidsDescription;
-  document.getElementById('kids-read-more').textContent = t.kidsReadMore;
-  
-  // Thailand & Donation
-  document.getElementById('thailand-heading').textContent = t.thailandHeading;
-  document.getElementById('donation-heading').textContent = t.donationHeading;
-  document.getElementById('donation-message').textContent = t.donationMessage;
-  document.getElementById('donation-note').textContent = t.donationNote;
-  
-  // Footer
-  document.getElementById('footer-copyright').textContent = t.footerCopyright;
-  document.getElementById('footer-note').textContent = t.footerNote;
-  
-  // Founders modal
-  document.getElementById('founders-p1').textContent = t.foundersP1;
-  document.getElementById('founders-p2').textContent = t.foundersP2;
-  document.getElementById('founders-p3').textContent = t.foundersP3;
-  
-  // Update active button
-  document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-  event.target.closest('.lang-btn').classList.add('active');
-}
+    // Apply RTL for Hebrew
+    if (lang === "IL") {
+      document.body.setAttribute("dir", "rtl");
+    } else {
+      document.body.setAttribute("dir", "ltr");
+    }
+
+    document.querySelectorAll("[data-en]").forEach(el => {
+      const key = el.dataset.en;
+      if (lang === "EN") {
+        el.textContent = key;
+      } else if (translations[lang] && translations[lang][key]) {
+        el.textContent = translations[lang][key];
+      }
+    });
+  });
+});
+
+/* ===========================
+   MODALS
+=========================== */
+document.querySelectorAll(".open-modal").forEach(btn => {
+  btn.onclick = (e) => {
+    e.preventDefault();
+    const targetSelector = btn.dataset.target;
+    const modal = document.querySelector(targetSelector);
+    if (modal) {
+      console.log(`📖 Opening modal: ${targetSelector}`);
+      modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    } else {
+      console.error(`❌ Modal not found: ${targetSelector}`);
+    }
+  };
+});
+
+document.querySelectorAll(".close-modal").forEach(btn => {
+  btn.onclick = () => {
+    const modal = btn.closest(".modal");
+    if (modal) {
+      console.log("❌ Closing modal");
+      modal.classList.add("hidden");
+      document.body.style.overflow = "auto";
+    }
+  };
+});
+
+// Click outside modal to close
+document.querySelectorAll(".modal").forEach(modal => {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      console.log("🖱️ Clicked outside modal - closing");
+      modal.classList.add("hidden");
+      document.body.style.overflow = "auto";
+    }
+  });
+});
+
+// ESC key to close modals
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    console.log("⌨️ ESC pressed - closing all modals");
+    document.querySelectorAll(".modal").forEach(modal => {
+      modal.classList.add("hidden");
+    });
+    document.body.style.overflow = "auto";
+  }
+});
+
+console.log("✅ Newsletter JavaScript Loaded Successfully!");
 </script>
 
 </body>
