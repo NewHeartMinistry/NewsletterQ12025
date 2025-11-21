@@ -498,15 +498,30 @@ section {
 </section>
 
 <script>
-document.getElementById("founder-msg").innerHTML = `
-Hello New Heart Family!  
+// Founders' messages in both languages
+const founderMessages = {
+  EN: `Hello, New Heart community!
 <br><br>
-Normally, we greet one another by saying "How are you?" but in the New Heart Family we greet one another by asking "How is your heart?" because together we are a global family who longs to live the Fourth Day well.  
+Normally, we greet one another by saying, "How are you?" That is to say, how is your health, how is your family, and how is your work. Has anyone asked you, instead, "How is your heart?" Perhaps that is more appropriate question or greeting for us. For God it is always a matter of the heart.
 <br><br>
-As we witness God awakening nations, restoring families, and raising a generation who knows His heart, we are continually amazed by His grace. Our joy is to walk with you, pray with you, and see you strengthened in the goodness of God.  
+When God sent Prophet Samuel to Jesse's house to select the next king of Israel, God established His principle when He said, <em>The LORD does not look at the things people look at. People look at the outward appearance, but the LORD looks at the heart.</em> This is particularly important and relevant because we are a New Heart community.
 <br><br>
-We believe this newsletter will help connect our global family, share testimonies of transformation, and encourage you as you walk out your calling. We bless you and your families — may God strengthen you with a New Heart and a steadfast spirit every day.
-`;
+God said, <em>I will give you a new heart and put a new spirit in you; I will remove from you your heart of stone and give you a heart of flesh.</em> It is our prayer and confident hope through our precious faith in Jesus our Lord and through His abundant gift of grace that your heart is well, no matter what your particular situation or circumstances might be.
+<br><br>
+We praise and thank our Abba Father for sustaining us in the power of the Holy Spirit through each victorious 4th day. God bless you, your family and your labor of love for God's people and His church.`,
+  
+  KO: `안녕하세요, 뉴하트 공동체 여러분!
+<br><br>
+보통 우리는 서로 "어떻게 지내세요?"라고 인사합니다. 즉, 건강은 어떠신지, 가족은 어떠신지, 일은 어떠신지 묻습니다. 그런데 누군가 대신 "당신의 마음은 어떠세요?"라고 물어본 적이 있나요? 아마도 그것이 우리에게 더 적절한 질문이나 인사일 것입니다. 하나님께는 항상 마음의 문제이기 때문입니다.
+<br><br>
+하나님께서 선지자 사무엘을 이새의 집으로 보내어 이스라엘의 다음 왕을 선택하게 하셨을 때, 하나님은 이렇게 말씀하시며 그분의 원칙을 세우셨습니다. <em>여호와는 사람이 보는 것처럼 보지 아니하시고 사람은 외모를 보거니와 여호와는 중심을 보느니라.</em> 이것은 우리가 뉴하트 공동체이기 때문에 특히 중요하고 적절합니다.
+<br><br>
+하나님께서 말씀하셨습니다. <em>내가 너희에게 새 마음을 주고 새 영을 너희 속에 두며 너희 육신에서 굳은 마음을 제거하고 부드러운 마음을 줄 것이라.</em> 우리 주 예수님에 대한 귀한 믿음과 그분의 풍성한 은혜의 선물을 통해, 여러분의 특정한 상황이나 환경이 어떠하든 여러분의 마음이 건강하기를 기도하며 확신 있는 소망을 갖습니다.
+<br><br>
+우리는 성령의 능력 안에서 승리하는 넷째 날마다 우리를 지켜주시는 아빠 아버지를 찬양하고 감사드립니다. 하나님께서 여러분과 여러분의 가족, 그리고 하나님의 백성과 교회를 위한 여러분의 사랑의 수고를 축복하시기를 기도합니다.`
+};
+
+document.getElementById("founder-msg").innerHTML = founderMessages.EN;
 </script>
 
 <!-- PAGE 2 - NEW HEART STORIES -->
@@ -634,17 +649,17 @@ setInterval(cycleKidsImages, 3000);
       <p>
         <strong id="editorial-h1">Compelled by the Fire: The Fourth Day</strong><br><br>
 
-        <span id="editorial-p1">New Heart Ministry recently celebrated its 54th gathering in Korea, marking nearly two decades of God's undeniable grace across nations. This movement is a divine summons igniting the promise of a New Heart (Ezekiel 36:26) in every generation and weaving us into one fierce, global Kingdom Family. Our commitment is comprehensive—including New Heart Kids—which confirms that children are not the "future church"… they are the church now.</span><br><br>
+        <span id="editorial-p1">New Heart Ministry recently celebrated its 54th gathering in Korea, marking nearly two decades of God's undeniable grace across nations, including Cambodia, Vietnam, China, Ethiopia, Israel, and Korea. This movement is a divine summons igniting the promise of a New Heart (Ezekiel 36:26) in every generation and weaving us into one fierce, global Kingdom Family. Our commitment is comprehensive, extending to the New Heart Kids programs, which underscore our conviction that children are critical and active participants today, ensuring a legacy of passion that will sustain the movement for years to come.</span><br><br>
 
         <strong id="editorial-h2">The Fourth Day: Our Unstoppable Mandate</strong><br><br>
 
-        <span id="editorial-p2">Our three-day gatherings are only the beginning. The Fourth Day is the call to walk out the transformation daily—with maturity, unity, and fire. This is not optional; this is our mandate. We reject passivity and choose the continual sharpening that comes only from living connected as one body. Isolation kills revival. Family sustains it.</span><br><br>
+        <span id="editorial-p2">Our three-day gatherings are a deep immersion—a holy soaking in God's love and transformative power, but this is the preparation, not the end; we are utterly compelled to live the Fourth Day, which is the immediate, daily application of our radical, transformed hearts and our unstoppable mandate to reject spiritual stagnation and pursue sustained maturity in God's goodness and grace by remaining connected, to hold nothing back and serve in unified purpose (Acts 2) because isolation is not an option and our strength is in our unbreakable family covenant spanning continents, and to constantly commit to this ultimate purpose of raising a people of fire and fulfilling the global expansion God promised in Isaiah 54.</span><br><br>
 
         <strong id="editorial-h3">This Global Newsletter</strong><br><br>
 
-        <span id="editorial-p3">God asked us to strengthen and unify the global family—Korea, Vietnam, Israel, Thailand, the USA, and beyond. This quarterly newsletter is the tool to nurture connection, strengthen faith, and document the mighty works of God across every region. It keeps our hearts aligned and our vision clear.</span><br><br>
+        <span id="editorial-p3">As God's vision for New Heart Ministry continues to sharpen with undeniable clarity, we sense His urgent desire not only to document the mighty works and abundant grace flowing but also for us, the Family, to become more intimately intertwined and nurtured; hence, this quarterly Global Newsletter for the New Heart Family is a necessity, not an option, serving as the intentional tool designed to bridge the miles and cultures across the world to nurture global connections and ensure we care for one another as one body, to share the undeniable evidence of God's faithfulness from every region, solidifying our collective faith, and to keep our focus sharp, reminding us of our compulsion to live out the Fourth Day together and fostering sustained growth and maturity until the next gathering.</span><br><br>
 
-        <span id="editorial-closing">May we be a people compelled by fire… living the Fourth Day with conviction and joy.</span>
+        <span id="editorial-closing">We must step forward. The Kingdom Family is not a passive recipient of grace, but an active force compelled by an unwavering vision. By His strength, we will fulfill every declaration over this ministry.</span>
       </p>
     </div>
   </div>
@@ -910,12 +925,12 @@ const translations = {
     kidsTitle: "뉴하트 키즈",
     editorialTitle: "사설",
     editorialH1: "불에 이끌려: 넷째 날",
-    editorialP1: "뉴하트 사역은 최근 한국에서 54기 모임을 축하하며, 여러 나라에 걸친 하나님의 부인할 수 없는 은혜의 거의 20년을 기록했습니다.",
+    editorialP1: "뉴하트 사역은 최근 한국에서 54기 모임을 축하하며, 캄보디아, 베트남, 중국, 에티오피아, 이스라엘, 한국을 포함한 여러 나라에 걸친 하나님의 부인할 수 없는 은혜의 거의 20년을 기록했습니다. 이 운동은 모든 세대에서 새로운 마음(에스겔 36:26)의 약속을 점화하고 우리를 하나의 강렬한 세계적인 왕국 가족으로 엮어내는 신성한 부름입니다. 우리의 헌신은 포괄적이며, 뉴하트 키즈 프로그램으로 확장되어, 어린이들이 오늘날 중요하고 활동적인 참여자이며 앞으로 몇 년 동안 운동을 지속할 열정의 유산을 보장한다는 우리의 확신을 강조합니다.",
     editorialH2: "넷째 날: 우리의 멈출 수 없는 명령",
-    editorialP2: "3일간의 모임은 시작에 불과합니다. 넷째 날은 성숙, 일치, 불로 매일 변화를 살아내라는 부르심입니다.",
+    editorialP2: "3일간의 모임은 깊은 몰입입니다—하나님의 사랑과 변화시키는 능력에 거룩하게 적셔지는 것이지만, 이것은 준비이지 끝이 아닙니다. 우리는 넷째 날을 살아가도록 완전히 강요받았으며, 이는 우리의 급진적이고 변화된 마음의 즉각적이고 일상적인 적용이자 영적 침체를 거부하고 연결된 상태로 있음으로써 하나님의 선하심과 은혜 안에서 지속적인 성숙을 추구하라는 우리의 멈출 수 없는 명령입니다. 아무것도 보류하지 않고 통일된 목적으로 섬기는 것(사도행전 2장)은 고립이 선택 사항이 아니며 우리의 힘은 대륙을 넘나드는 깨지지 않는 가족 언약에 있고, 불의 백성을 일으키고 이사야 54장에서 하나님께서 약속하신 세계적 확장을 성취하는 이 궁극적인 목적에 지속적으로 헌신하기 때문입니다.",
     editorialH3: "이 세계 소식지",
-    editorialP3: "하나님께서 우리에게 세계 가족을 강화하고 통일하라고 요청하셨습니다.",
-    editorialClosing: "우리가 불에 이끌린 사람들이 되기를...",
+    editorialP3: "뉴하트 사역에 대한 하나님의 비전이 부인할 수 없는 명확성으로 계속 선명해짐에 따라, 우리는 흘러넘치는 위대한 일과 풍성한 은혜를 기록할 뿐만 아니라 우리 가족이 더욱 친밀하게 얽히고 양육되기를 바라시는 그분의 긴급한 열망을 감지합니다. 따라서 뉴하트 가족을 위한 이 분기별 세계 소식지는 선택 사항이 아니라 필수품이며, 세계 곳곳의 거리와 문화를 연결하여 세계적 연결을 육성하고 우리가 한 몸으로 서로를 돌보도록 보장하고, 모든 지역에서 하나님의 신실하심의 부인할 수 없는 증거를 공유하여 우리의 집단적 믿음을 굳건히 하며, 우리의 초점을 날카롭게 유지하여 함께 넷째 날을 살아가야 한다는 우리의 강요를 상기시키고 다음 모임까지 지속적인 성장과 성숙을 촉진하도록 설계된 의도적인 도구로 기능합니다.",
+    editorialClosing: "우리는 앞으로 나아가야 합니다. 왕국 가족은 은혜의 수동적인 수령자가 아니라 흔들리지 않는 비전에 이끌린 능동적인 힘입니다. 그분의 힘으로 우리는 이 사역에 대한 모든 선언을 성취할 것입니다.",
     serveTitle: "섬기는 방법",
     palancaTitle: "팔란카 후원",
     qrInstruction: "아래 QR 코드 또는 계좌를 사용하시고 후원 목적을 표시해 주세요.",
@@ -1137,6 +1152,10 @@ function switchLanguage(lang) {
   
   document.getElementById("footer-copyright").textContent = t.footerCopyright;
   document.getElementById("footer-note").textContent = t.footerNote;
+  
+  // Switch Founder's message
+  const founderMsg = founderMessages[lang] || founderMessages.EN;
+  document.getElementById("founder-msg").innerHTML = founderMsg;
   
   // Switch modal stories to Korean
   if (lang === "KO") {
