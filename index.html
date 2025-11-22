@@ -1331,8 +1331,8 @@ function switchLanguage(lang) {
   document.getElementById("upcoming-nh-title").textContent = t.upcomingNhTitle;
   document.getElementById("reunions-title").textContent = t.reunionsTitle;
   document.getElementById("stories-title").textContent = t.storiesTitle;
-  
-  document.querySelectorAll(".open-modal").forEach(btn => {
+  // Update all modal trigger buttons
+  document.querySelectorAll('[data-target^="#modal-"]').forEach(btn => {
     btn.textContent = t.readStory;
   });
   
