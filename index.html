@@ -1332,10 +1332,9 @@ function switchLanguage(lang) {
   document.getElementById("reunions-title").textContent = t.reunionsTitle;
   document.getElementById("stories-title").textContent = t.storiesTitle;
   
-  document.querySelectorAll(".read-story-btn").forEach(btn => {
+  document.querySelectorAll(".open-modal").forEach(btn => {
     btn.textContent = t.readStory;
   });
-  document.getElementById("read-story-ariel").textContent = t.readStory;
   
   document.getElementById("kids-title").textContent = t.kidsTitle;
   document.getElementById("editorial-title").textContent = t.editorialTitle;
