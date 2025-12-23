@@ -442,13 +442,28 @@ section {
 /* Audio Controls */
 .audio-controls {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  top: 50px;
+  right: 25px;
   z-index: 9999;
   display: flex;
   flex-direction: column;
   gap: 8px;
   align-items: flex-end;
+}
+
+.audio-toggle-inline {
+  cursor: pointer;
+  font-size: 1.3rem;
+  margin-left: 10px;
+  padding: 2px 6px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  vertical-align: middle;
+}
+
+.audio-toggle-inline:hover {
+  background: rgba(214,182,107,0.4);
+  transform: scale(1.15);
 }
 
 .audio-panel {
@@ -505,27 +520,6 @@ section {
   color: white;
 }
 
-.audio-toggle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 2px solid var(--gold);
-  background: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  transition: all 0.2s;
-}
-
-.audio-toggle:hover {
-  background: var(--btn-hover);
-  transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(214,182,107,0.4);
-}
-
 .audio-status {
   font-size: 0.8rem;
   color: #666;
@@ -544,6 +538,18 @@ section {
 .speed-control input {
   width: 80px;
 }
+
+.voice-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.voice-control select {
+  flex: 1;
+  max-width: 150px;
+}
 </style>
 </head>
 <body>
@@ -556,6 +562,7 @@ section {
     <span data-lang="VN" title="Tiếng Việt">🇻🇳</span>
     <span data-lang="TH" title="ไทย">🇹🇭</span>
     <span data-lang="IL" title="עברית">🇮🇱</span>
+    <span class="audio-toggle-inline" id="audioToggleHeader" title="Listen to Newsletter">🔊</span>
   </div>
 
 
@@ -1940,7 +1947,7 @@ document.addEventListener("keydown", (e) => {
 console.log("✅ Newsletter Loaded!");
 </script>
 
-<!-- Audio Controls -->
+<!-- Audio Controls Panel -->
 <div class="audio-controls">
   <div class="audio-panel" id="audioPanel">
     <div class="audio-status" id="audioStatus">Select a section to read</div>
@@ -1952,10 +1959,14 @@ console.log("✅ Newsletter Loaded!");
       <option value="kids">👶 New Heart Kids</option>
       <option value="editorial">📝 Editorial</option>
     </select>
+    <div class="voice-control">
+      <span>Voice:</span>
+      <select id="voiceSelect"></select>
+    </div>
     <div class="speed-control">
       <span>Speed:</span>
-      <input type="range" id="speedControl" min="0.5" max="1.5" step="0.1" value="1">
-      <span id="speedValue">1x</span>
+      <input type="range" id="speedControl" min="0.7" max="1.2" step="0.05" value="0.9">
+      <span id="speedValue">0.9x</span>
     </div>
     <div class="audio-btn-row">
       <button class="audio-btn" id="playBtn" title="Play">▶️</button>
@@ -1963,36 +1974,95 @@ console.log("✅ Newsletter Loaded!");
       <button class="audio-btn" id="stopBtn" title="Stop">⏹️</button>
     </div>
   </div>
-  <button class="audio-toggle" id="audioToggle" title="Listen to Newsletter">🔊</button>
 </div>
 
 <script>
-// Text-to-Speech functionality
+// Text-to-Speech functionality with natural voice selection
 const synth = window.speechSynthesis;
 let currentUtterance = null;
 let isPaused = false;
 let currentLang = 'EN';
+let availableVoices = [];
 
 // Language codes for Web Speech API
 const langCodes = {
-  EN: 'en-US',
-  KO: 'ko-KR',
-  TH: 'th-TH',
-  VN: 'vi-VN',
-  IL: 'he-IL'
+  EN: 'en',
+  KO: 'ko',
+  TH: 'th',
+  VN: 'vi',
+  IL: 'he'
 };
+
+// Preferred voice keywords (more natural sounding voices)
+const preferredVoiceKeywords = ['Google', 'Microsoft', 'Neural', 'Natural', 'Premium', 'Enhanced'];
+
+// Load and populate voices
+function loadVoices() {
+  availableVoices = synth.getVoices();
+  populateVoiceList();
+}
+
+function populateVoiceList() {
+  const voiceSelect = document.getElementById('voiceSelect');
+  if (!voiceSelect) return;
+  
+  voiceSelect.innerHTML = '';
+  
+  // Filter voices for current language
+  const langCode = langCodes[currentLang] || 'en';
+  const matchingVoices = availableVoices.filter(voice => 
+    voice.lang.toLowerCase().startsWith(langCode.toLowerCase())
+  );
+  
+  // Sort: preferred voices first
+  matchingVoices.sort((a, b) => {
+    const aPreferred = preferredVoiceKeywords.some(kw => a.name.includes(kw));
+    const bPreferred = preferredVoiceKeywords.some(kw => b.name.includes(kw));
+    if (aPreferred && !bPreferred) return -1;
+    if (!aPreferred && bPreferred) return 1;
+    return a.name.localeCompare(b.name);
+  });
+  
+  if (matchingVoices.length === 0) {
+    // Fallback to all voices if no match
+    availableVoices.forEach((voice, i) => {
+      const option = document.createElement('option');
+      option.value = i;
+      option.textContent = `${voice.name.substring(0, 25)}`;
+      voiceSelect.appendChild(option);
+    });
+  } else {
+    matchingVoices.forEach(voice => {
+      const option = document.createElement('option');
+      option.value = availableVoices.indexOf(voice);
+      const isPreferred = preferredVoiceKeywords.some(kw => voice.name.includes(kw));
+      option.textContent = `${isPreferred ? '⭐ ' : ''}${voice.name.substring(0, 22)}`;
+      voiceSelect.appendChild(option);
+    });
+  }
+}
+
+// Load voices (may need to wait for them)
+loadVoices();
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = loadVoices;
+}
 
 // Track current language from the language switcher
 const originalSwitchLanguage = switchLanguage;
 switchLanguage = function(lang) {
   currentLang = lang;
   originalSwitchLanguage(lang);
+  populateVoiceList(); // Update voice list for new language
 };
 
-// Toggle audio panel
-document.getElementById('audioToggle').addEventListener('click', () => {
+// Toggle audio panel - using header button
+document.getElementById('audioToggleHeader').addEventListener('click', () => {
   const panel = document.getElementById('audioPanel');
   panel.classList.toggle('show');
+  if (panel.classList.contains('show')) {
+    populateVoiceList(); // Refresh voices when opening
+  }
 });
 
 // Speed control
@@ -2016,27 +2086,27 @@ function getTextContent(section) {
       const h3 = document.getElementById('editorial-h3')?.innerText || '';
       const p3 = document.getElementById('editorial-p3')?.innerText || '';
       const closing = document.getElementById('editorial-closing')?.innerText || '';
-      text = `${h1}. ${p1} ${h2}. ${p2} ${h3}. ${p3} ${closing}`;
+      text = `${h1}... ${p1}... ${h2}... ${p2}... ${h3}... ${p3}... ${closing}`;
       break;
     case 'stories':
       const storyCardsOnly = Array.from(document.querySelectorAll('.story-card')).map(card => {
         const name = card.querySelector('h3')?.innerText || '';
         const desc = card.querySelector('p')?.innerText || '';
-        return `${name}. ${desc}`;
-      }).join(' ');
-      text = document.getElementById('stories-title')?.innerText + '. ' + storyCardsOnly;
+        return `${name}... ${desc}`;
+      }).join('... ');
+      text = document.getElementById('stories-title')?.innerText + '... ' + storyCardsOnly;
       break;
     case 'upcoming':
       const upTitle = document.getElementById('upcoming-nh-title')?.innerText || '';
       const upList = document.getElementById('upcoming-nh-list')?.innerText || '';
       const reTitle = document.getElementById('reunions-title')?.innerText || '';
       const reList = document.getElementById('reunions-list')?.innerText || '';
-      text = `${upTitle}. ${upList}. ${reTitle}. ${reList}`;
+      text = `${upTitle}... ${upList}... ${reTitle}... ${reList}`;
       break;
     case 'kids':
       const kTitle = document.getElementById('kids-title')?.innerText || '';
       const kContent = document.getElementById('kids-content')?.innerText || '';
-      text = `${kTitle}. ${kContent}`;
+      text = `${kTitle}... ${kContent}`;
       break;
     case 'all':
     default:
@@ -2058,8 +2128,8 @@ function getTextContent(section) {
       const storyCards = Array.from(document.querySelectorAll('.story-card')).map(card => {
         const name = card.querySelector('h3')?.innerText || '';
         const desc = card.querySelector('p')?.innerText || '';
-        return `${name}. ${desc}`;
-      }).join(' ');
+        return `${name}... ${desc}`;
+      }).join('... ');
       
       // Page 3: Kids
       const kidsTitle = document.getElementById('kids-title')?.innerText || '';
@@ -2079,16 +2149,23 @@ function getTextContent(section) {
       const serveTitle = document.getElementById('serve-title')?.innerText || '';
       const palancaTitle = document.getElementById('palanca-title')?.innerText || '';
       
-      text = `${mainTitle}. ${subtitle}. 
-        ${founderTitle}. ${founderMsg}. 
-        ${regionalTitle}. ${upcomingTitle}. ${upcomingList}. 
-        ${reunionsTitle}. ${reunionsList}. 
-        ${storiesTitle}. ${storyCards}. 
-        ${kidsTitle}. 
-        ${editTitle}. ${editH1}. ${editP1}. ${editH2}. ${editP2}. ${editH3}. ${editP3}. ${editClosing}.
-        ${serveTitle}. ${palancaTitle}.`;
+      text = `${mainTitle}... ${subtitle}... 
+        ${founderTitle}... ${founderMsg}... 
+        ${regionalTitle}... ${upcomingTitle}... ${upcomingList}... 
+        ${reunionsTitle}... ${reunionsList}... 
+        ${storiesTitle}... ${storyCards}... 
+        ${kidsTitle}... 
+        ${editTitle}... ${editH1}... ${editP1}... ${editH2}... ${editP2}... ${editH3}... ${editP3}... ${editClosing}...
+        ${serveTitle}... ${palancaTitle}`;
       break;
   }
+  
+  // Clean up text for more natural reading
+  text = text
+    .replace(/\n+/g, '... ')  // Replace newlines with pauses
+    .replace(/\s+/g, ' ')      // Normalize whitespace
+    .replace(/\.{4,}/g, '...') // Limit consecutive dots
+    .trim();
   
   return text;
 }
@@ -2120,8 +2197,18 @@ document.getElementById('playBtn').addEventListener('click', () => {
   }
   
   currentUtterance = new SpeechSynthesisUtterance(text);
-  currentUtterance.lang = langCodes[currentLang] || 'en-US';
+  
+  // Set selected voice
+  const voiceSelect = document.getElementById('voiceSelect');
+  const selectedVoiceIndex = parseInt(voiceSelect.value);
+  if (availableVoices[selectedVoiceIndex]) {
+    currentUtterance.voice = availableVoices[selectedVoiceIndex];
+  }
+  
+  // Natural speech settings
   currentUtterance.rate = parseFloat(document.getElementById('speedControl').value);
+  currentUtterance.pitch = 1.0;  // Natural pitch
+  currentUtterance.volume = 1.0;
   
   currentUtterance.onstart = () => {
     updateStatus('▶️ Playing...');
@@ -2164,7 +2251,7 @@ document.getElementById('stopBtn').addEventListener('click', () => {
 // Close panel when clicking outside
 document.addEventListener('click', (e) => {
   const panel = document.getElementById('audioPanel');
-  const toggle = document.getElementById('audioToggle');
+  const toggle = document.getElementById('audioToggleHeader');
   if (!panel.contains(e.target) && !toggle.contains(e.target)) {
     panel.classList.remove('show');
   }
