@@ -1893,7 +1893,7 @@ function switchModalsToEnglish() {
 }
 
 
-document.querySelectorAll(".language-buttons span").forEach(btn => {
+document.querySelectorAll(".language-buttons span[data-lang]").forEach(btn => {
   btn.addEventListener("click", () => {
     switchLanguage(btn.dataset.lang);
   });
