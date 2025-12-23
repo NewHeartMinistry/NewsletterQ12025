@@ -2057,7 +2057,8 @@ switchLanguage = function(lang) {
 };
 
 // Toggle audio panel - using header button
-document.getElementById('audioToggleHeader').addEventListener('click', () => {
+document.getElementById('audioToggleHeader').addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevent document click from closing it immediately
   const panel = document.getElementById('audioPanel');
   panel.classList.toggle('show');
   if (panel.classList.contains('show')) {
@@ -2249,6 +2250,10 @@ document.getElementById('stopBtn').addEventListener('click', () => {
 });
 
 // Close panel when clicking outside
+document.getElementById('audioPanel').addEventListener('click', (e) => {
+  e.stopPropagation(); // Prevent clicks inside panel from closing it
+});
+
 document.addEventListener('click', (e) => {
   const panel = document.getElementById('audioPanel');
   const toggle = document.getElementById('audioToggleHeader');
