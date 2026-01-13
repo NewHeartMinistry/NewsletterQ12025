@@ -1,620 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>New Heart Global Family Newsletter — Fall 2025</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Heart Global Family Newsletter</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  background: #fafafa;
-  color: #222;
-  line-height: 1.6;
-  max-width: 980px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-section {
-  padding: 2.5rem 1.4rem;
-}
-
-.hidden { display: none !important; }
-
 :root {
   --gold: #d6b66b;
   --gold-light: #ecd9a4;
   --dark: #111;
-  --btn-bg: #ffffff;
-  --btn-border: #d6b66b;
-  --btn-hover: #fff8e6;
+  --text: #222;
 }
 
-.glow-btn, .open-modal {
-  display: inline-block;
-  padding: 0.75rem 1.4rem;
-  margin: 0.4rem 0;
-  border-radius: 10px;
-  border: 2px solid var(--btn-border);
-  background: var(--btn-bg);
-  cursor: pointer;
-  font-weight: 600;
-  text-decoration: none;
-  color: #444;
-  transition: box-shadow 0.3s ease, background 0.3s ease, transform 0.2s ease;
-  font-family: inherit;
-  font-size: 0.95rem;
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #fafafa;
+  color: var(--text);
+  line-height: 1.6;
 }
 
-.glow-btn:hover, .open-modal:hover {
-  background: var(--btn-hover);
-  box-shadow: 0 0 12px rgba(214,182,107,0.65);
-  transform: translateY(-2px);
+/* HEADER */
+.page-header {
+  background: linear-gradient(to bottom, var(--gold-light), white 70%);
+  text-align: center;
+  padding: 3rem 1rem 2.5rem;
+  position: relative;
 }
 
 .language-buttons {
   position: absolute;
-  right: 25px;
-  top: 25px;
-  font-size: 1.7rem;
-  z-index: 100;
+  top: 20px;
+  right: 20px;
+  font-size: 1.4rem;
 }
+
 .language-buttons span {
-  margin-left: 8px;
+  margin-left: 6px;
   cursor: pointer;
-  user-select: none;
-  transition: transform 0.2s;
-}
-.language-buttons span:hover {
-  transform: scale(1.15);
 }
 
-.page-header {
-  background: linear-gradient(to bottom, var(--gold-light), white 70%);
-  text-align: center;
-  padding: 3rem 1rem 3rem;
-  position: relative;
-}
-
-/* Logo Container Styling - Fixed spacing */
-.logo-container { 
-  margin-bottom: -0.5rem; 
+.logo-container {
+  margin-bottom: 0.6rem;
 }
 
 .newsletter-logo {
-  max-width: 300px;
+  max-width: 340px;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.page-header h1 {
-  margin: 0;
-  font-size: 2.4rem;
+.logo-text {
+  margin-top: 0.45rem;
   font-weight: 700;
-  color: var(--dark);
-}
-
-.page-header h2 {
-  margin: 0 0 0;
-  font-size: 1.2rem;
-  font-weight: 400;
-  font-style: italic;
-  color: #555;
-}
-
-/* Rest of your existing CSS stays the same... */
-/* PAGE 1 - 3 COLUMN LAYOUT */
-#page1 {
-  background: white;
-}
-.page1-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-@media (max-width: 900px) {
-  .page1-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  border: 1px solid #f0f0f0;
-}
-.card h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
-}
-.card p {
-  line-height: 1.7;
-  margin: 0.5rem 0;
-}
-.gold {
-  color: var(--gold);
-}
-.verse-block {
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #555;
-  padding: 1rem;
-  background: #f9f9f9;
-  border-radius: 8px;
-  border-left: 4px solid var(--gold);
-}
-.video-frame {
-  width: 100%;
-  height: 240px;
-  border-radius: 12px;
-  margin: 1rem 0;
-  border: 0;
-}
-.thai-poster {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 8px;
-  display: block;
-  margin: 1rem auto;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0.5rem 0;
-}
-.card ul li {
-  padding: 0.4rem 0;
+  letter-spacing: 0.14em;
   font-size: 0.95rem;
 }
-.card h4 {
-  color: var(--gold);
-  margin: 1.5rem 0 0.5rem;
+
+.subtitle {
   font-size: 1.1rem;
+  font-style: italic;
+  color: #555;
 }
 
-/* PAGE 2 - STORIES */
-#page2 {
-  background: #f9f9f9;
-}
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--gold);
-  margin-bottom: 2rem;
-}
-.stories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.story-card {
-  background: white;
-  border-radius: 14px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  padding: 1.5rem;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.story-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-}
-.story-photo {
-  width: 100%;
-  max-width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  border: 4px solid var(--gold-light);
-}
-.story-name {
-  margin: 0.5rem 0 0.2rem;
-  color: var(--dark);
-}
-.story-role {
-  color: var(--gold);
-  font-size: 0.9rem;
-  margin: 0.2rem 0 1rem;
-}
-
-/* PAGE 3 - KIDS WITH BACKGROUND */
-#page3 {
-  position: relative;
-  min-height: 90vh;
-  overflow: hidden;
-  padding: 2.5rem 1.4rem;
-}
-#kids-background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-}
-.kid-bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-}
-#kids-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.40);
-  z-index: 1;
-}
-#kids-content {
-  position: relative;
-  z-index: 2;
-  padding: 2rem 1rem;
-}
-#page3 .section-title {
-  background: rgba(255,255,255,0.95);
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  display: inline-block;
-  margin: 0 auto 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.kids-stories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 800px;
-  margin: 2rem auto;
-}
-.kids-card {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 14px;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.kids-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
-.kids-photo {
-  width: 100%;
-  max-width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-  border: 4px solid var(--gold-light);
-}
-.kids-name {
-  margin: 0.5rem 0;
-  color: var(--dark);
-}
-
-/* PAGE 4 - EDITORIAL + DONATIONS */
-#page4 {
-  background: #f9f9f9;
-}
-.page4-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-@media (max-width: 850px) {
-  .page4-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.editorial-title {
-  color: var(--gold);
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-#editorial-content {
-  line-height: 1.8;
-  text-align: justify;
-}
-#editorial-content strong {
-  color: var(--gold);
-  font-weight: 600;
-}
-.doc-button {
-  display: block;
-  padding: 0.7rem 1rem;
-  margin: 0.6rem 0;
-  background: white;
-  border: 2px solid var(--gold);
-  border-radius: 8px;
-  text-decoration: none;
-  color: #444;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  text-align: center;
-  font-size: 0.9rem;
-}
-.doc-button:hover {
-  background: var(--btn-hover);
-  box-shadow: 0 0 12px rgba(214,182,107,0.65);
-  transform: translateX(5px);
-}
-.donation-section {
-  background: #fafafa;
-  padding: 1.2rem;
-  border-radius: 8px;
-  margin: 1.5rem 0;
-  border: 1px solid #e8e8e8;
-}
-.donation-section h3 {
-  margin-top: 0;
-  margin-bottom: 0.8rem;
-  font-size: 1.1rem;
-  color: var(--gold);
-}
-.donation-section p {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  margin: 0.3rem 0;
-}
-.qr-container {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 1rem 0;
-}
-.qr {
-  width: 180px;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  border: 2px solid #ddd;
-}
-
-/* MODALS */
-.modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  padding: 1rem;
-  overflow-y: auto;
-}
-.modal-content {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 16px;
-  max-width: 700px;
-  width: 100%;
-  max-height: 85vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-}
-.modal-content h2 {
-  color: var(--gold);
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-}
-.modal-content p {
-  margin-bottom: 1rem;
-  line-height: 1.7;
-}
-.close-modal {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 2.5rem;
-  line-height: 1;
-  cursor: pointer;
-  color: #999;
-  background: none;
-  border: none;
-  transition: color 0.2s;
-}
-.close-modal:hover {
-  color: #333;
-}
-
-.modal-speak-btn {
-  position: absolute;
-  top: 1rem;
-  right: 3.5rem;
-  background: white;
-  border: 2px solid var(--gold);
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  font-size: 18px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s;
-}
-
-.modal-speak-btn:hover {
-  background: var(--gold-light);
-  transform: scale(1.1);
-}
-
-.modal-speak-btn.speaking {
-  background: var(--gold);
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-@media (max-width: 600px) {
-  .modal-content {
-    padding: 2rem 1.5rem;
-  }
-  
-  .newsletter-logo {
-    max-width: 250px;
-  }
-}
-
-/* Audio Controls */
+/* AUDIO */
 .audio-controls {
-  position: fixed;
-  top: 50px;
-  right: 25px;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-end;
-}
-
-.audio-toggle-inline {
-  cursor: pointer;
-  font-size: 1.3rem;
-  margin-left: 10px;
-  padding: 2px 6px;
-  border-radius: 6px;
-  transition: all 0.2s;
-  vertical-align: middle;
-}
-
-.audio-toggle-inline:hover {
-  background: rgba(214,182,107,0.4);
-  transform: scale(1.15);
-}
-
-.audio-panel {
-  background: white;
-  border-radius: 12px;
-  padding: 12px 16px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  border: 2px solid var(--gold);
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 200px;
-}
-
-.audio-panel.show {
-  display: flex;
-}
-
-.audio-panel select {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  font-family: inherit;
-  font-size: 0.9rem;
-}
-
-.audio-btn-row {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
+  margin-top: 1rem;
 }
 
 .audio-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
   border: 2px solid var(--gold);
   background: white;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
   font-size: 18px;
-  transition: all 0.2s;
+  cursor: pointer;
 }
 
-.audio-btn:hover {
-  background: var(--btn-hover);
-  transform: scale(1.1);
+/* CONTENT */
+main {
+  max-width: 960px;
+  margin: auto;
+  padding: 2.5rem 1.4rem;
 }
 
-.audio-btn.playing {
-  background: var(--gold);
-  color: white;
+.section {
+  background: white;
+  border-radius: 14px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 
-.audio-status {
-  font-size: 0.8rem;
-  color: #666;
+.section h2 {
+  color: var(--gold);
+}
+
+footer {
   text-align: center;
-  max-width: 180px;
-  line-height: 1.3;
-}
-
-.speed-control {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  padding: 2rem;
   font-size: 0.85rem;
+  color: #666;
 }
 
-.speed-control input {
-  width: 80px;
-}
-
-.voice-control {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-}
-
-.voice-control select {
-  flex: 1;
-  max-width: 150px;
+@media (max-width: 600px) {
+  .newsletter-logo {
+    max-width: 260px;
+  }
 }
 </style>
 </head>
+
 <body>
 
 <header class="page-header">
+
   <div class="language-buttons">
-    <span data-lang="EN" title="English">🇺🇸</span>
-    <span data-lang="KO" title="한국어">🇰🇷</span>
-    <span data-lang="VN" title="Tiếng Việt">🇻🇳</span>
-    <span data-lang="TH" title="ไทย">🇹🇭</span>
-    <span data-lang="IL" title="עברית">🇮🇱</span>
-    <span class="audio-toggle-inline" id="audioToggleHeader" title="Listen to Newsletter">🔊</span>
+    <span onclick="setLang('EN')">🇺🇸</span>
+    <span onclick="setLang('KO')">🇰🇷</span>
+    <span onclick="setLang('VN')">🇻🇳</span>
+    <span onclick="setLang('TH')">🇹🇭</span>
+    <span onclick="setLang('HE')">🇮🇱</span>
   </div>
 
   <div class="logo-container">
-    <img src="newsletter-logo.jpg" alt="New Heart Global Family Newsletter" class="newsletter-logo">
+    <img src="new-heart-logo.png" class="newsletter-logo">
+    <div class="logo-text" id="logoText">GLOBAL FAMILY NEWSLETTER</div>
   </div>
-  <h2 id="subtitle">The Fourth Day Chat — Fall 2025</h2>
+
+  <div class="subtitle" id="subtitle">
+    The Fourth Day Chat — Fall 2025
+  </div>
+
+  <div class="audio-controls">
+    <button class="audio-btn" onclick="toggleAudio()">🔊</button>
+  </div>
+
 </header>
 
-<!-- Rest of your existing HTML content continues here... -->
-<p style="text-align: center; padding: 2rem; color: #666;">
-  🏗️ <strong>Logo Added!</strong><br>
-  The New Heart logo has been integrated into your newsletter header.<br>
-  You can now copy this updated HTML file to your newsletter project.
-</p>
+<main>
+
+  <section class="section">
+    <h2 id="welcomeTitle">Welcome Family</h2>
+    <p id="welcomeText">
+      Welcome to the New Heart Global Family Newsletter. This space exists to
+      unite hearts across nations and share stories of faith and restoration.
+    </p>
+  </section>
+
+  <section class="section">
+    <h2 id="verseTitle">From the Heart</h2>
+    <p id="verseText">
+      “I will give you a new heart, and put a new spirit within you.”
+      — Ezekiel 36:26
+    </p>
+  </section>
+
+</main>
+
+<footer id="footerText">
+  © 2025 New Heart Global Family Newsletter
+</footer>
+
+<script>
+const content = {
+  EN: {
+    logo: "GLOBAL FAMILY NEWSLETTER",
+    subtitle: "The Fourth Day Chat — Fall 2025",
+    welcomeTitle: "Welcome Family",
+    welcomeText:
+      "Welcome to the New Heart Global Family Newsletter. This space exists to unite hearts across nations and share stories of faith and restoration.",
+    verseTitle: "From the Heart",
+    verseText:
+      "I will give you a new heart, and put a new spirit within you. — Ezekiel 36:26",
+    footer: "© 2025 New Heart Global Family Newsletter"
+  },
+  KO: {
+    logo: "글로벌 패밀리 뉴스레터",
+    subtitle: "네 번째 날의 대화 — 2025 가을",
+    welcomeTitle: "환영합니다",
+    welcomeText:
+      "이 뉴스레터는 전 세계의 마음을 하나로 연결하고 믿음과 회복의 이야기를 나누기 위해 만들어졌습니다.",
+    verseTitle: "마음에서",
+    verseText:
+      "새 마음을 너희에게 주고 새 영을 너희 속에 두리라. — 에스겔 36:26",
+    footer: "© 2025 뉴 하트 글로벌 패밀리"
+  },
+  VN: {
+    logo: "BẢN TIN GIA ĐÌNH TOÀN CẦU",
+    subtitle: "Cuộc Trò Chuyện Ngày Thứ Tư — Thu 2025",
+    welcomeTitle: "Chào Mừng Gia Đình",
+    welcomeText:
+      "Bản tin này kết nối những tấm lòng trên toàn thế giới và chia sẻ đức tin cùng sự phục hồi.",
+    verseTitle: "Từ Trái Tim",
+    verseText:
+      "Ta sẽ ban cho các ngươi một tấm lòng mới. — Ê-xê-chi-ên 36:26",
+    footer: "© 2025 Gia Đình Toàn Cầu New Heart"
+  },
+  TH: {
+    logo: "จดหมายข่าวครอบครัวโลก",
+    subtitle: "บทสนทนาวันที่สี่ — ฤดูใบไม้ร่วง 2025",
+    welcomeTitle: "ยินดีต้อนรับ",
+    welcomeText:
+      "จดหมายข่าวนี้สร้างขึ้นเพื่อเชื่อมโยงหัวใจทั่วโลกและแบ่งปันเรื่องราวแห่งความเชื่อ",
+    verseTitle: "จากหัวใจ",
+    verseText:
+      "เราจะให้ใจใหม่แก่เจ้า — เอเสเคียล 36:26",
+    footer: "© 2025 New Heart Global Family"
+  },
+  HE: {
+    logo: "עלון משפחתי עולמי",
+    subtitle: "שיחת היום הרביעי — סתיו 2025",
+    welcomeTitle: "ברוכים הבאים",
+    welcomeText:
+      "עלון זה נועד לאחד לבבות מכל האומות ולשתף סיפורי אמונה וריפוי.",
+    verseTitle: "מן הלב",
+    verseText:
+      "ונתתי לכם לב חדש. — יחזקאל 36:26",
+    footer: "© 2025 New Heart Global Family"
+  }
+};
+
+let speaking = false;
+let utterance;
+
+function setLang(lang) {
+  const c = content[lang];
+  document.getElementById("logoText").innerText = c.logo;
+  document.getElementById("subtitle").innerText = c.subtitle;
+  document.getElementById("welcomeTitle").innerText = c.welcomeTitle;
+  document.getElementById("welcomeText").innerText = c.welcomeText;
+  document.getElementById("verseTitle").innerText = c.verseTitle;
+  document.getElementById("verseText").innerText = c.verseText;
+  document.getElementById("footerText").innerText = c.footer;
+  speechSynthesis.cancel();
+}
+
+function toggleAudio() {
+  if (speaking) {
+    speechSynthesis.cancel();
+    speaking = false;
+    return;
+  }
+
+  const text = document.body.innerText;
+  utterance = new SpeechSynthesisUtterance(text);
+  utterance.rate = 0.95;
+  speechSynthesis.speak(utterance);
+  speaking = true;
+
+  utterance.onend = () => speaking = false;
+}
+</script>
 
 </body>
 </html>
