@@ -127,7 +127,7 @@ footer {
   </div>
 
   <div class="logo-container">
-    <img src="new-heart-logo.png" class="newsletter-logo">
+  <img src="./new-heart-logo.png" class="newsletter-logo" alt="New Heart Logo">
     <div class="logo-text" id="logoText">GLOBAL FAMILY NEWSLETTER</div>
   </div>
 
@@ -166,94 +166,95 @@ footer {
 </footer>
 
 <script>
-const content = {
-  EN: {
-    logo: "GLOBAL FAMILY NEWSLETTER",
-    subtitle: "The Fourth Day Chat — Fall 2025",
-    welcomeTitle: "Welcome Family",
-    welcomeText:
-      "Welcome to the New Heart Global Family Newsletter. This space exists to unite hearts across nations and share stories of faith and restoration.",
-    verseTitle: "From the Heart",
-    verseText:
-      "I will give you a new heart, and put a new spirit within you. — Ezekiel 36:26",
-    footer: "© 2025 New Heart Global Family Newsletter"
-  },
-  KO: {
-    logo: "글로벌 패밀리 뉴스레터",
-    subtitle: "네 번째 날의 대화 — 2025 가을",
-    welcomeTitle: "환영합니다",
-    welcomeText:
-      "이 뉴스레터는 전 세계의 마음을 하나로 연결하고 믿음과 회복의 이야기를 나누기 위해 만들어졌습니다.",
-    verseTitle: "마음에서",
-    verseText:
-      "새 마음을 너희에게 주고 새 영을 너희 속에 두리라. — 에스겔 36:26",
-    footer: "© 2025 뉴 하트 글로벌 패밀리"
-  },
-  VN: {
-    logo: "BẢN TIN GIA ĐÌNH TOÀN CẦU",
-    subtitle: "Cuộc Trò Chuyện Ngày Thứ Tư — Thu 2025",
-    welcomeTitle: "Chào Mừng Gia Đình",
-    welcomeText:
-      "Bản tin này kết nối những tấm lòng trên toàn thế giới và chia sẻ đức tin cùng sự phục hồi.",
-    verseTitle: "Từ Trái Tim",
-    verseText:
-      "Ta sẽ ban cho các ngươi một tấm lòng mới. — Ê-xê-chi-ên 36:26",
-    footer: "© 2025 Gia Đình Toàn Cầu New Heart"
-  },
-  TH: {
-    logo: "จดหมายข่าวครอบครัวโลก",
-    subtitle: "บทสนทนาวันที่สี่ — ฤดูใบไม้ร่วง 2025",
-    welcomeTitle: "ยินดีต้อนรับ",
-    welcomeText:
-      "จดหมายข่าวนี้สร้างขึ้นเพื่อเชื่อมโยงหัวใจทั่วโลกและแบ่งปันเรื่องราวแห่งความเชื่อ",
-    verseTitle: "จากหัวใจ",
-    verseText:
-      "เราจะให้ใจใหม่แก่เจ้า — เอเสเคียล 36:26",
-    footer: "© 2025 New Heart Global Family"
-  },
-  HE: {
-    logo: "עלון משפחתי עולמי",
-    subtitle: "שיחת היום הרביעי — סתיו 2025",
-    welcomeTitle: "ברוכים הבאים",
-    welcomeText:
-      "עלון זה נועד לאחד לבבות מכל האומות ולשתף סיפורי אמונה וריפוי.",
-    verseTitle: "מן הלב",
-    verseText:
-      "ונתתי לכם לב חדש. — יחזקאל 36:26",
-    footer: "© 2025 New Heart Global Family"
-  }
-};
+document.addEventListener("DOMContentLoaded", function () {
 
-let speaking = false;
-let utterance;
+  const content = {
+    EN: {
+      logo: "GLOBAL FAMILY NEWSLETTER",
+      subtitle: "The Fourth Day Chat — Fall 2025",
+      welcomeTitle: "Welcome Family",
+      welcomeText:
+        "Welcome to the New Heart Global Family Newsletter. This space exists to unite hearts across nations and share stories of faith and restoration.",
+      verseTitle: "From the Heart",
+      verseText:
+        "I will give you a new heart, and put a new spirit within you. — Ezekiel 36:26",
+      footer: "© 2025 New Heart Global Family Newsletter"
+    },
+    KO: {
+      logo: "글로벌 패밀리 뉴스레터",
+      subtitle: "네 번째 날의 대화 — 2025 가을",
+      welcomeTitle: "환영합니다",
+      welcomeText:
+        "이 뉴스레터는 전 세계의 마음을 하나로 연결하고 믿음과 회복의 이야기를 나누기 위해 만들어졌습니다.",
+      verseTitle: "마음에서",
+      verseText:
+        "새 마음을 너희에게 주고 새 영을 너희 속에 두리라. — 에스겔 36:26",
+      footer: "© 2025 뉴 하트 글로벌 패밀리"
+    },
+    VN: {
+      logo: "BẢN TIN GIA ĐÌNH TOÀN CẦU",
+      subtitle: "Cuộc Trò Chuyện Ngày Thứ Tư — Thu 2025",
+      welcomeTitle: "Chào Mừng Gia Đình",
+      welcomeText:
+        "Bản tin này kết nối những tấm lòng trên toàn thế giới và chia sẻ đức tin cùng sự phục hồi.",
+      verseTitle: "Từ Trái Tim",
+      verseText:
+        "Ta sẽ ban cho các ngươi một tấm lòng mới. — Ê-xê-chi-ên 36:26",
+      footer: "© 2025 Gia Đình Toàn Cầu New Heart"
+    },
+    TH: {
+      logo: "จดหมายข่าวครอบครัวโลก",
+      subtitle: "บทสนทนาวันที่สี่ — ฤดูใบไม้ร่วง 2025",
+      welcomeTitle: "ยินดีต้อนรับ",
+      welcomeText:
+        "จดหมายข่าวนี้สร้างขึ้นเพื่อเชื่อมโยงหัวใจทั่วโลกและแบ่งปันเรื่องราวแห่งความเชื่อ",
+      verseTitle: "จากหัวใจ",
+      verseText:
+        "เราจะให้ใจใหม่แก่เจ้า — เอเสเคียล 36:26",
+      footer: "© 2025 New Heart Global Family"
+    },
+    HE: {
+      logo: "עלון משפחתי עולמי",
+      subtitle: "שיחת היום הרביעי — סתיו 2025",
+      welcomeTitle: "ברוכים הבאים",
+      welcomeText:
+        "עלון זה נועד לאחד לבבות מכל האומות ולשתף סיפורי אמונה וריפוי.",
+      verseTitle: "מן הלב",
+      verseText:
+        "ונתתי לכם לב חדש. — יחזקאל 36:26",
+      footer: "© 2025 New Heart Global Family"
+    }
+  };
 
-function setLang(lang) {
-  const c = content[lang];
-  document.getElementById("logoText").innerText = c.logo;
-  document.getElementById("subtitle").innerText = c.subtitle;
-  document.getElementById("welcomeTitle").innerText = c.welcomeTitle;
-  document.getElementById("welcomeText").innerText = c.welcomeText;
-  document.getElementById("verseTitle").innerText = c.verseTitle;
-  document.getElementById("verseText").innerText = c.verseText;
-  document.getElementById("footerText").innerText = c.footer;
-  speechSynthesis.cancel();
-}
+  let speaking = false;
+  let utterance;
 
-function toggleAudio() {
-  if (speaking) {
+  window.setLang = function (lang) {
+    const c = content[lang];
+    document.getElementById("logoText").textContent = c.logo;
+    document.getElementById("subtitle").textContent = c.subtitle;
+    document.getElementById("welcomeTitle").textContent = c.welcomeTitle;
+    document.getElementById("welcomeText").textContent = c.welcomeText;
+    document.getElementById("verseTitle").textContent = c.verseTitle;
+    document.getElementById("verseText").textContent = c.verseText;
+    document.getElementById("footerText").textContent = c.footer;
     speechSynthesis.cancel();
-    speaking = false;
-    return;
-  }
+  };
 
-  const text = document.body.innerText;
-  utterance = new SpeechSynthesisUtterance(text);
-  utterance.rate = 0.95;
-  speechSynthesis.speak(utterance);
-  speaking = true;
+  window.toggleAudio = function () {
+    if (speaking) {
+      speechSynthesis.cancel();
+      speaking = false;
+      return;
+    }
+    utterance = new SpeechSynthesisUtterance(document.body.innerText);
+    utterance.rate = 0.95;
+    speechSynthesis.speak(utterance);
+    speaking = true;
+    utterance.onend = () => speaking = false;
+  };
 
-  utterance.onend = () => speaking = false;
-}
+});
 </script>
 
 </body>
