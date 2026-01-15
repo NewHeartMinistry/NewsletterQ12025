@@ -2,381 +2,496 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>New Heart Global Family Newsletter – The Fourth Day Chat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>New Heart Global Family Newsletter — Fall 2025</title>
+
+  <!-- Google Font -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
+
   <style>
+    :root {
+      --bg: #0c1118;
+      --bg-alt: #151b24;
+      --card: #111824;
+      --card-soft: #141c29;
+      --gold: #e7c172;
+      --gold-soft: #f3e3b0;
+      --accent: #99c7ff;
+      --text: #e9edf5;
+      --muted: #9aa2b3;
+      --border: #243043;
+      --danger: #ff6b8b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 0;
       font-family: "Poppins", sans-serif;
-      background: #fafafa;
-      color: #222;
+      background: radial-gradient(circle at top, #1e293b, #020617 60%);
+      color: var(--text);
       line-height: 1.6;
-      max-width: 980px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    section {
-      padding: 2.5rem 1.4rem;
+    a {
+      color: var(--accent);
     }
 
-    .hidden {
-      display: none !important;
-    }
-
-    :root {
-      --gold: #d6b66b;
-      --gold-light: #ecd9a4;
-      --dark: #111;
-      --btn-bg: #ffffff;
-      --btn-border: #d6b66b;
-      --btn-hover: #fff8e6;
-    }
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    background: #fafafa;
-    color: #222;
-    line-height: 1.6;
-    max-width: 980px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  section {
-    padding: 2.5rem 1.4rem;
-  }
-
-  .hidden { display: none !important; }
-
-  :root {
-    --gold: #d6b66b;
-    --gold-light: #ecd9a4;
-    --dark: #111;
-    --btn-bg: #ffffff;
-    --btn-border: #d6b66b;
-    --btn-hover: #fff8e6;
-  }
-
-  /* 👇 New helper: visually hide title text but keep it for JS/screenreaders */
-  .visually-hidden {
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-  }
-
-  /* PAGE HEADER + LANGUAGE BUTTONS */
-
-  .language-buttons {
-    position: absolute;
-    right: 25px;
-    top: 25px;
-    font-size: 1.7rem;
-    z-index: 100;
-  }
-
-  .language-buttons span {
-    margin-left: 8px;
-    cursor: pointer;
-    user-select: none;
-    transition: transform 0.2s;
-  }
-
-  .language-buttons span:hover {
-    transform: scale(1.15);
-  }
-
-  .page-header {
-    background: linear-gradient(to bottom, var(--gold-light), white 70%);
-    text-align: center;
-    padding: 3rem 1rem 3rem;
-    position: relative;
-  }
-
-  /* Logo container + logo styling */
-  .logo-container {
-    margin-bottom: -0.5rem;
-  }
-
-  .newsletter-logo {
-    max-width: 300px;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;     /* remove if logo file has its own transparent edge */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* optional soft glow */
-  }
-
-  .page-header h1 {
-    margin: 0;
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: var(--dark);
-  }
-
-  .page-header h2 {
-    margin: 0.6rem 0 0;
-    font-size: 1.2rem;
-    font-weight: 400;
-    font-style: italic;
-    color: #555;
-  }
-
-  /* (keep the rest of your existing CSS for cards, modals, audio, etc.) */
-</style>
-
-    .glow-btn,
-    .open-modal {
-      display: inline-block;
-      padding: 0.75rem 1.4rem;
-      margin: 0.4rem 0;
-      border-radius: 10px;
-      border: 2px solid var(--btn-border);
-      background: var(--btn-bg);
-      cursor: pointer;
-      font-weight: 600;
-      text-decoration: none;
-      color: #444;
-      transition: box-shadow 0.3s ease, background 0.3s ease, transform 0.2s ease;
-      font-family: inherit;
-      font-size: 0.95rem;
-    }
-
-    .glow-btn:hover,
-    .open-modal:hover {
-      background: var(--btn-hover);
-      box-shadow: 0 0 12px rgba(214, 182, 107, 0.65);
-      transform: translateY(-2px);
-    }
-
-    /* LANGUAGE + AUDIO BUTTONS */
-    .language-buttons {
-      position: absolute;
-      right: 25px;
-      top: 25px;
-      font-size: 1.7rem;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .language-buttons span[data-lang] {
-      margin-left: 4px;
-      cursor: pointer;
-      user-select: none;
-      transition: transform 0.2s;
-    }
-
-    .language-buttons span[data-lang]:hover {
-      transform: scale(1.15);
-    }
-
-    .audio-toggle-inline {
-      cursor: pointer;
-      font-size: 1.3rem;
-      margin-left: 10px;
-      padding: 2px 6px;
-      border-radius: 6px;
-      transition: all 0.2s;
-      vertical-align: middle;
-    }
-
-    .audio-toggle-inline:hover {
-      background: rgba(214, 182, 107, 0.4);
-      transform: scale(1.15);
-    }
-
-    /* HEADER WITH LOGO */
-    .page-header {
-      background: linear-gradient(to bottom, var(--gold-light), white 70%);
-      text-align: center;
-      padding: 3rem 1rem 3rem;
+    /* ----- HEADER (Option B with logo) ----- */
+    header {
+      background: radial-gradient(circle at top, #1f2937, #020617 65%);
+      padding: 1.75rem 1.25rem 2.5rem;
       position: relative;
+      overflow: hidden;
     }
 
-    .logo-container {
-      margin-bottom: 0.6rem;
-      display: inline-block;
+    header::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(250, 204, 21, 0.18), transparent 60%),
+        radial-gradient(circle at 80% 0%, rgba(56, 189, 248, 0.2), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
     }
 
-    .newsletter-logo {
-      max-width: 360px;
-      width: 100%;
-      display: block;
-      /* no white card background, so it blends with gradient */
-    }
-
-    /* We keep main-title in DOM for translations/audio, but hide it visually */
-    #main-title {
-      display: none;
-    }
-
-    .page-header h2 {
-      margin: 0.6rem 0 0;
-      font-size: 1.2rem;
-      font-weight: 400;
-      font-style: italic;
-      color: #555;
-    }
-
-    /* PAGE 1 - 3 COLUMN LAYOUT */
-    #page1 {
-      background: white;
-    }
-
-    .page1-grid {
+    .header-inner {
+      position: relative;
+      max-width: 1120px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 1.5rem;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 2rem;
+      align-items: center;
+      z-index: 1;
     }
 
     @media (max-width: 900px) {
-      .page1-grid {
+      .header-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    .language-buttons {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 2;
+      font-size: 1.25rem;
+    }
+
+    .language-buttons span {
+      cursor: pointer;
+      filter: grayscale(0.1);
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .language-buttons span:hover {
+      transform: translateY(-1px) scale(1.05);
+      filter: grayscale(0);
+    }
+
+    .language-buttons span.active-lang {
+      filter: grayscale(0);
+      text-shadow: 0 0 6px rgba(250, 204, 21, 0.9);
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .logo-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .logo-img {
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+      display: block;
+      mix-blend-mode: multiply; /* helps blend out any light background */
+      filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.65));
+    }
+
+    /* visually hide the H1 so it doesn't show twice */
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    #subtitle {
+      font-size: 1.1rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+    }
+
+    #tagline {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    #tagline span {
+      color: var(--gold);
+    }
+
+    #header-verse {
+      font-size: 0.95rem;
+      color: var(--gold-soft);
+      max-width: 460px;
+    }
+
+    .header-right {
+      justify-self: end;
+    }
+
+    @media (max-width: 900px) {
+      .header-right {
+        justify-self: center;
+      }
+    }
+
+    .audio-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.05rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.85);
+      color: var(--gold-soft);
+      border: 1px solid rgba(248, 250, 252, 0.16);
+      cursor: pointer;
+      font-size: 0.9rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 15px 35px rgba(15, 23, 42, 0.6);
+      transition:
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease;
+    }
+
+    .audio-toggle-btn:hover {
+      background: rgba(15, 23, 42, 0.98);
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .audio-toggle-btn span.icon {
+      font-size: 1.1rem;
+    }
+
+    /* ----- GLOBAL LAYOUT ----- */
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.25rem 1.25rem 3.25rem;
+    }
+
+    .page-section {
+      margin-bottom: 3rem;
+    }
+
+    .page-section h2.section-title {
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold-soft);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ----- PAGE 1: EDITORIAL + FOUNDERS + SERVE/GIVING ----- */
+    #page1-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.75fr);
+      gap: 1.75rem;
+    }
+
+    @media (max-width: 960px) {
+      #page1-grid {
         grid-template-columns: 1fr;
       }
     }
 
     .card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-      border: 1px solid #f0f0f0;
+      background: radial-gradient(circle at top left, #111827, #020617 75%);
+      border-radius: 1.2rem;
+      padding: 1.6rem 1.5rem 1.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow:
+        0 16px 40px rgba(15, 23, 42, 0.9),
+        inset 0 1px 0 rgba(148, 163, 184, 0.18);
+      position: relative;
+      overflow: hidden;
     }
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 1rem;
-      font-size: 1.3rem;
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at top left, rgba(251, 191, 36, 0.08), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.08), transparent 55%);
+      opacity: 0.9;
+      pointer-events: none;
     }
 
-    .card p {
-      line-height: 1.7;
-      margin: 0.5rem 0;
+    .card > * {
+      position: relative;
+      z-index: 1;
     }
 
     .gold {
-      color: var(--gold);
+      color: var(--gold-soft);
     }
 
-    .verse-block {
+    #editorial-title {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin: 0 0 0.75rem;
+      color: var(--gold-soft);
+    }
+
+    #editorial-h1 {
+      margin: 0 0 0.6rem;
+      font-size: 1.35rem;
+      color: #f9fafb;
+    }
+
+    #editorial-sub {
+      margin: 0 0 1rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .editorial-body p {
+      margin: 0 0 0.8rem;
+      font-size: 0.96rem;
+      color: #e5e7eb;
+    }
+
+    .editorial-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .editorial-byline {
+      margin-top: 1.2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
       font-style: italic;
+    }
+
+    /* Founders / Directors / Upcoming */
+    #founders-greeting-title {
+      margin: 0 0 0.6rem;
       font-size: 1.05rem;
-      line-height: 1.8;
-      color: #555;
-      padding: 1rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border-left: 4px solid var(--gold);
     }
 
     .video-frame {
       width: 100%;
-      height: 240px;
-      border-radius: 12px;
-      margin: 1rem 0;
-      border: 0;
+      min-height: 190px;
+      border-radius: 0.85rem;
+      border: none;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+      background: #020617;
+    }
+
+    #founder-msg {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      margin-bottom: 1rem;
+    }
+
+    #founders-title {
+      margin-top: 0.25rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    #regional-directors-title {
+      margin: 0 0 0.6rem;
+      font-size: 1.05rem;
     }
 
     .thai-poster {
       width: 100%;
-      max-width: 300px;
-      border-radius: 8px;
-      display: block;
-      margin: 1rem auto;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 0.9rem;
+      margin: 0.4rem 0 0.9rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
     }
 
-    .card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0.5rem 0;
-    }
-
-    .card ul li {
-      padding: 0.4rem 0;
+    #upcoming-nh-title,
+    #reunions-title {
+      margin: 0.8rem 0 0.3rem;
       font-size: 0.95rem;
     }
 
-    .card h4 {
-      color: var(--gold);
-      margin: 1.5rem 0 0.5rem;
-      font-size: 1.1rem;
+    #upcoming-nh-list,
+    #reunions-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
     }
 
-    /* PAGE 2 - STORIES */
-    #page2 {
-      background: #f9f9f9;
+    #upcoming-nh-list li,
+    #reunions-list li {
+      margin-bottom: 0.25rem;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 2rem;
+    /* Serve + Giving */
+    #serve-title {
+      margin: 0 0 0.4rem;
+      font-size: 1.05rem;
     }
 
+    #serve-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    #serve-list li {
+      margin-bottom: 0.3rem;
+    }
+
+    #palanca-title {
+      margin: 1.1rem 0 0.45rem;
+      font-size: 1.05rem;
+    }
+
+    #qr-instruction {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .qr-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .qr {
+      width: 120px;
+      height: auto;
+      border-radius: 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: #020617;
+      padding: 0.4rem;
+    }
+
+    /* ----- PAGE 2: Adult Stories ----- */
     .stories-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    @media (max-width: 900px) {
+      .stories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .stories-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .story-card {
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-      padding: 1.5rem;
+      background: var(--card);
+      border-radius: 1.1rem;
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.9);
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .story-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
     }
 
     .story-photo {
       width: 100%;
-      max-width: 160px;
-      height: 160px;
+      border-radius: 0.9rem;
+      margin-bottom: 0.65rem;
       object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 4px solid var(--gold-light);
+      max-height: 230px;
     }
 
     .story-name {
-      margin: 0.5rem 0 0.2rem;
-      color: var(--dark);
+      margin: 0;
+      font-size: 1.02rem;
+      color: #f9fafb;
     }
 
     .story-role {
-      color: var(--gold);
-      font-size: 0.9rem;
-      margin: 0.2rem 0 1rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
     }
 
-    /* PAGE 3 - KIDS WITH BACKGROUND */
+    .glow-btn,
+    .read-story-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(250, 204, 21, 0.5);
+      background: radial-gradient(circle at top left, #1f2933, #020617);
+      color: var(--gold-soft);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        background 0.16s ease;
+      box-shadow: 0 0 0 rgba(250, 204, 21, 0.0);
+    }
+
+    .glow-btn:hover,
+    .read-story-btn:hover {
+      transform: translateY(-1px);
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      box-shadow:
+        0 0 25px rgba(250, 204, 21, 0.4),
+        0 16px 35px rgba(15, 23, 42, 1);
+    }
+
+    /* ----- PAGE 3: New Heart Kids ----- */
     #page3 {
       position: relative;
-      min-height: 90vh;
+      border-radius: 1.5rem;
       overflow: hidden;
-      padding: 2.5rem 1.4rem;
-      background: #fafafa;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 1);
     }
 
     #kids-background {
@@ -393,542 +508,442 @@
       height: 100%;
       object-fit: cover;
       opacity: 0;
-      transition: opacity 2s ease-in-out;
+      transition: opacity 1.1s ease-in-out;
     }
 
     #kids-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(255, 255, 255, 0.4);
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.15),
+        rgba(15, 23, 42, 0.85) 45%,
+        rgba(15, 23, 42, 0.98)
+      );
       z-index: 1;
     }
 
     #kids-content {
       position: relative;
       z-index: 2;
-      padding: 2rem 1rem;
-    }
-
-    #page3 .section-title {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      display: inline-block;
-      margin: 0 auto 2rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 1.9rem 1.7rem 2.2rem;
     }
 
     .kids-stories-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      max-width: 800px;
-      margin: 2rem auto;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
     }
 
-    .kids-card {
-      background: white;
-      padding: 1.5rem;
-      border-radius: 14px;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .kids-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    }
-
-    .kids-photo {
-      width: 100%;
-      max-width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 4px solid var(--gold-light);
-    }
-
-    .kids-name {
-      margin: 0.5rem 0;
-      color: var(--dark);
-    }
-
-    /* PAGE 4 - EDITORIAL + DONATIONS */
-    #page4 {
-      background: #f9f9f9;
-    }
-
-    .page4-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 850px) {
-      .page4-grid {
+    @media (max-width: 700px) {
+      .kids-stories-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    .editorial-title {
-      color: var(--gold);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    #editorial-content {
-      line-height: 1.8;
-      text-align: justify;
-    }
-
-    #editorial-content strong {
-      color: var(--gold);
-      font-weight: 600;
-    }
-
-    .doc-button {
-      display: block;
-      padding: 0.7rem 1rem;
-      margin: 0.6rem 0;
-      background: white;
-      border: 2px solid var(--gold);
-      border-radius: 8px;
-      text-decoration: none;
-      color: #444;
-      font-weight: 600;
-      transition: all 0.3s ease;
+    .kids-card {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: 1.1rem;
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
       text-align: center;
-      font-size: 0.9rem;
     }
 
-    .doc-button:hover {
-      background: var(--btn-hover);
-      box-shadow: 0 0 12px rgba(214, 182, 107, 0.65);
-      transform: translateX(5px);
+    .kids-photo {
+      width: 100%;
+      border-radius: 999px;
+      margin-bottom: 0.6rem;
+      object-fit: cover;
+      max-height: 200px;
     }
 
-    .donation-section {
-      background: #fafafa;
-      padding: 1.2rem;
-      border-radius: 8px;
-      margin: 1.5rem 0;
-      border: 1px solid #e8e8e8;
+    .kids-name {
+      margin: 0;
+      font-size: 1rem;
+      color: #f9fafb;
     }
 
-    .donation-section h3 {
-      margin-top: 0;
-      margin-bottom: 0.8rem;
-      font-size: 1.1rem;
-      color: var(--gold);
-    }
-
-    .donation-section p {
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin: 0.3rem 0;
-    }
-
-    .qr-container {
+    /* ----- FOOTER ----- */
+    footer {
+      max-width: 1120px;
+      margin: 0 auto 2rem;
+      padding: 1.5rem 1.25rem 0;
+      border-top: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+      font-size: 0.86rem;
       display: flex;
-      gap: 1rem;
-      justify-content: center;
       flex-wrap: wrap;
-      margin: 1rem 0;
+      justify-content: space-between;
+      gap: 0.75rem;
     }
 
-    .qr {
-      width: 180px;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      border: 2px solid #ddd;
-    }
-
-    /* MODALS */
+    /* ----- MODALS ----- */
     .modal {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.75);
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: center;
-      z-index: 9999;
-      padding: 1rem;
-      overflow-y: auto;
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
     }
 
-    .modal.show {
-      display: flex;
+    .modal.hidden {
+      display: none;
     }
 
     .modal-content {
-      background: white;
-      padding: 2.5rem;
-      border-radius: 16px;
-      max-width: 700px;
-      width: 100%;
-      max-height: 85vh;
+      max-width: 640px;
+      max-height: 80vh;
       overflow-y: auto;
+      background: #020617;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(248, 250, 252, 0.06);
+      padding: 1.4rem 1.5rem 1.6rem;
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.95),
+        inset 0 1px 0 rgba(148, 163, 184, 0.25);
       position: relative;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
     }
 
     .modal-content h2 {
-      color: var(--gold);
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.8rem;
+      color: var(--gold-soft);
     }
 
     .modal-content p {
-      margin-bottom: 1rem;
-      line-height: 1.7;
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      margin-bottom: 0.75rem;
     }
 
     .close-modal {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 2.5rem;
-      line-height: 1;
-      cursor: pointer;
-      color: #999;
-      background: none;
+      top: 10px;
+      right: 12px;
       border: none;
-      transition: color 0.2s;
-    }
-
-    .close-modal:hover {
-      color: #333;
+      background: transparent;
+      color: #f9fafb;
+      font-size: 1.4rem;
+      cursor: pointer;
     }
 
     .modal-speak-btn {
       position: absolute;
-      top: 1rem;
-      right: 3.5rem;
-      background: white;
-      border: 2px solid var(--gold);
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      font-size: 18px;
+      top: 12px;
+      right: 48px;
+      border-radius: 999px;
+      border: 1px solid rgba(250, 204, 21, 0.5);
+      background: radial-gradient(circle at top, #1f2937, #020617);
+      color: var(--gold-soft);
+      padding: 0.2rem 0.55rem;
       cursor: pointer;
+      font-size: 0.9rem;
+    }
+
+    /* ----- AUDIO CONTROL PANEL (simple) ----- */
+    .audio-controls {
+      position: fixed;
+      bottom: 1.1rem;
+      right: 1.1rem;
+      z-index: 900;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .audio-panel {
+      background: rgba(15, 23, 42, 0.98);
+      border-radius: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 0.7rem 0.9rem;
       display: flex;
       align-items: center;
-      justify-content: center;
-      transition: all 0.2s;
+      gap: 0.7rem;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.9);
     }
 
-    .modal-speak-btn:hover {
-      background: var(--gold-light);
-      transform: scale(1.1);
+    .audio-panel label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
     }
 
-    .modal-speak-btn.speaking {
-      background: var(--gold);
-      color: white;
+    .audio-panel input[type="range"] {
+      width: 110px;
     }
 
-    footer {
-      text-align: center;
-      padding: 1.5rem 1rem 2rem;
-      font-size: 0.85rem;
-      color: #666;
-    }
-
-    @media (max-width: 600px) {
-      .modal-content {
-        padding: 2rem 1.5rem;
-      }
-
-      .newsletter-logo {
-        max-width: 260px;
+    @media (max-width: 640px) {
+      .audio-controls {
+        left: 1.1rem;
+        right: auto;
       }
     }
   </style>
 </head>
+
 <body>
-  <header class="page-header">
+  <!-- Language + Header -->
   <div class="language-buttons">
-    <span data-lang="EN" title="English">🇺🇸</span>
-    <span data-lang="KO" title="한국어">🇰🇷</span>
-    <span data-lang="VN" title="Tiếng Việt">🇻🇳</span>
-    <span data-lang="TH" title="ไทย">🇹🇭</span>
-    <span data-lang="IL" title="עברית">🇮🇱</span>
-    <span class="audio-toggle-inline" id="audioToggleHeader" title="Listen to Newsletter">🔊</span>
+    <span data-lang="EN" class="active-lang">🇺🇸</span>
+    <span data-lang="KO">🇰🇷</span>
+    <span data-lang="VN">🇻🇳</span>
+    <span data-lang="TH">🇹🇭</span>
+    <span data-lang="HE">🇮🇱</span>
   </div>
 
-  <div class="logo-container">
-    <!-- Use your transparent logo here -->
-    <img src="newsletter-logo.jpg"
-         alt="New Heart Global Family Newsletter"
-         class="newsletter-logo">
-  </div>
+  <header>
+    <div class="header-inner">
+      <div class="header-left">
+        <!-- keep H1 for accessibility, hide visually so it doesn’t “double” on screen -->
+        <h1 id="main-title" class="visually-hidden">
+          New Heart Global Family Newsletter
+        </h1>
 
-  <!-- 👇 keeps the title for JS + screenreaders, but hides it from visual layout -->
-  <h1 id="main-title" class="visually-hidden">New Heart Global Family Newsletter</h1>
+        <div class="logo-wrapper">
+          <img
+            src="new-heart-logo.png"
+            alt="New Heart Global Family Newsletter Logo"
+            class="logo-img"
+          />
+        </div>
 
-  <h2 id="subtitle">The Fourth Day Chat — Fall 2025</h2>
-</header>
-
-
-  <!-- PAGE 1 - FOUNDERS & VISION -->
-  <section id="page1">
-    <div class="page1-grid">
-      <!-- Bible Verse -->
-      <div class="card">
-        <h3 class="gold">Ezekiel 36:26</h3>
-        <p class="verse-block">
-          "I will give you a new heart and put a new spirit in you; I will remove from you
-          your heart of stone and give you a heart of flesh."
-        </p>
+        <div id="subtitle">The Fourth Day Chat — Fall 2025</div>
+        <div id="tagline">
+          Living the <span>Fourth Day</span> wherever He sends us.
+        </div>
+        <div id="header-verse">
+          “I will give you a new heart and put a new spirit within you.” (Ezekiel 36:26)
+        </div>
       </div>
 
-      <!-- Founders -->
-      <div class="card">
-        <h3 class="gold" id="founders-greeting-title">Founders' Greeting</h3>
-        <iframe
-          class="video-frame"
-          src="https://www.youtube.com/embed/gZBn3xnHTL8"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <p id="founder-msg">
-          <!-- Short version; replace with full founder message if you like -->
-          Hello, New Heart community! How is your heart? Our prayer is that in every season
-          the Lord gives you a new heart and a new spirit, and that He keeps you in His love
-          through each “Fourth Day.”
-        </p>
-        <br /><br />
-        <p style="font-weight: 600; margin: 0">With love,</p>
-        <p style="margin: 0">Pastors Jason &amp; Youngmi Cha</p>
-        <p
-          style="margin: 0; color: var(--gold); font-weight: 600"
-          id="founders-title"
-        >
-          Founders and New Heart Global Directors
-        </p>
+      <div class="header-right">
+        <button id="audioToggleHeader" class="audio-toggle-btn" type="button">
+          <span class="icon">🔊</span>
+          <span id="audio-toggle-label">Listen to this newsletter</span>
+        </button>
       </div>
+    </div>
+  </header>
 
-      <!-- Regional Director -->
-      <div class="card">
-        <h3 class="gold" id="regional-directors-title">
-          Regional Directors — Thailand 🇹🇭
-        </h3>
-        <iframe
-          class="video-frame"
-          src="https://www.youtube.com/embed/wNR9yt7HtbU"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+  <main>
+    <!-- PAGE 1 -->
+    <section id="page1" class="page-section">
+      <div id="page1-grid">
+        <!-- Editorial -->
+        <article class="card">
+          <p id="editorial-title">The Fourth Day Chat</p>
+          <h2 id="editorial-h1">Living the Fourth Day</h2>
+          <p id="editorial-sub">
+            The New Heart weekend is only the beginning. The “Fourth Day” is every day after
+            the weekend where we live out the new heart God has given us.
+          </p>
+          <div class="editorial-body">
+            <p id="editorial-p1">
+              During the three days of New Heart, we encounter the cross, forgiveness, and the
+              Father’s embrace. Tears are shed, walls come down, and long-buried wounds are
+              brought into the light of Jesus.
+            </p>
+            <p id="editorial-p2">
+              But the Fourth Day begins when the retreat ends. It is Monday morning back at
+              work. It is the quiet kitchen where you wash dishes after a long day. It is the
+              commute, the classroom, the hidden places where no one else sees but the Lord.
+            </p>
+            <p id="editorial-p3">
+              On the Fourth Day, we learn to return again and again to the cross. We choose to
+              forgive, sometimes not just once, but seventy times seven. We let the Father
+              speak His delight over us not just in a session, but in the middle of our real,
+              messy lives.
+            </p>
+            <p id="editorial-closing">
+              Our prayer is that this newsletter would help you remember that you are part of a
+              global family of “Fourth Day” disciples—from Korea to Thailand, from Vietnam to
+              Israel, from the U.S. and beyond. May every day after New Heart be filled with
+              His love, His mercy, and fresh courage to keep saying “yes” to His heart.
+            </p>
+          </div>
+          <p class="editorial-byline">
+            — New Heart Ministry Editorial Team
+          </p>
+        </article>
+
+        <!-- Right Column: Founders + Directors + Serve/Giving -->
+        <div class="right-col">
+          <article class="card">
+            <h3 class="gold" id="founders-greeting-title">Founders’ Greeting</h3>
+            <iframe
+              class="video-frame"
+              src="https://www.youtube.com/embed/gZBn3xnHTL8"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <p id="founder-msg">
+              Hello, New Heart community! How is your heart? Our prayer is that in every
+              season the Lord gives you a new heart and a new spirit, and He keeps you in His
+              love through each “Fourth Day.”
+            </p>
+            <br />
+            <p style="font-weight: 600; margin: 0">With love,</p>
+            <p style="margin: 0">Pastors Jason &amp; Youngmi Cha</p>
+            <p
+              style="margin: 0; color: var(--gold); font-weight: 600"
+              id="founders-title"
+            >
+              Founders and New Heart Global Directors
+            </p>
+          </article>
+
+          <article class="card">
+            <h3 class="gold" id="regional-directors-title">
+              Regional Directors — Thailand
+            </h3>
+            <iframe
+              class="video-frame"
+              src="https://www.youtube.com/embed/wNR9yt7HtbU"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+            <img
+              src="assets/img/Thailand-poster.jpeg"
+              class="thai-poster"
+              alt="Thailand New Heart Poster"
+            />
+            <h4 class="gold" id="upcoming-nh-title">Upcoming New Heart</h4>
+            <ul id="upcoming-nh-list">
+              <li>Vietnam — Nha Trang — 12/3–6/2025</li>
+              <li>Thailand — Bangkok — 1/27–30/2026</li>
+              <li>Israel — TBA (April 2026)</li>
+              <li>USA — TBA (May 2026)</li>
+            </ul>
+            <h4 class="gold" id="reunions-title">Reunions</h4>
+            <ul id="reunions-list">
+              <li>USA — Nov 14, 2025 • Los Angeles</li>
+              <li>Korea — Nov 22, 2025 • Seoul</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3 class="gold" id="serve-title">Ways to Serve</h3>
+            <ul id="serve-list">
+              <li>Pray regularly for upcoming New Heart weekends &amp; teams.</li>
+              <li>Volunteer with logistics, worship, intercession, or care teams.</li>
+              <li>Help with translation, media, or children’s ministry.</li>
+              <li>Share your testimony and invite those who are hungry for Him.</li>
+            </ul>
+
+            <h3 class="gold" id="palanca-title">Palanca &amp; Giving</h3>
+            <p id="qr-instruction">
+              Use the QR codes or accounts below to give. Please note the purpose of your
+              gift (missions, scholarship, New Heart Kids, etc.).
+            </p>
+            <div class="qr-container">
+              <img src="assets/img/qr-1.png" alt="Giving QR Code 1" class="qr" />
+              <img src="assets/img/qr-2.png" alt="Giving QR Code 2" class="qr" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2 - STORIES (ADULTS) -->
+    <section id="page2" class="page-section">
+      <h2 class="section-title" id="stories-title">Stories of New Hearts</h2>
+      <div class="stories-grid">
+        <!-- Ariel -->
+        <div class="story-card">
+          <img src="assets/img/ariel.jpg" alt="Ariel" class="story-photo" />
+          <h3 class="story-name">Ariel</h3>
+          <div class="story-role">From Orthodox Judaism to Jesus</div>
+          <button class="open-modal glow-btn" data-target="#modal-ariel">
+            <span>📖</span><span class="read-story-label">Read Story</span>
+          </button>
+        </div>
+
+        <!-- Choi -->
+        <div class="story-card">
+          <img src="assets/img/choi.jpg" alt="Choi" class="story-photo" />
+          <h3 class="story-name">Choi</h3>
+          <div class="story-role">A Heart Healed from Shame</div>
+          <button class="open-modal glow-btn" data-target="#modal-choi">
+            <span>📖</span><span class="read-story-label">Read Story</span>
+          </button>
+        </div>
+
+        <!-- Han -->
+        <div class="story-card">
+          <img src="assets/img/han.jpg" alt="Han" class="story-photo" />
+          <h3 class="story-name">Han</h3>
+          <div class="story-role">From Striving to Rest</div>
+          <button class="open-modal glow-btn" data-target="#modal-han">
+            <span>📖</span><span class="read-story-label">Read Story</span>
+          </button>
+        </div>
+
+        <!-- Keziah -->
+        <div class="story-card">
+          <img src="assets/img/keziah.jpg" alt="Keziah" class="story-photo" />
+          <h3 class="story-name">Keziah</h3>
+          <div class="story-role">Encountering the Father's Love</div>
+          <button class="open-modal glow-btn" data-target="#modal-keziah">
+            <span>📖</span><span class="read-story-label">Read Story</span>
+          </button>
+        </div>
+
+        <!-- Parichat -->
+        <div class="story-card">
+          <img src="assets/img/parichat.jpg" alt="Parichat" class="story-photo" />
+          <h3 class="story-name">Parichat</h3>
+          <div class="story-role">18 Years of Pain Transformed</div>
+          <button class="open-modal glow-btn" data-target="#modal-parichat">
+            <span>📖</span><span class="read-story-label">Read Story</span>
+          </button>
+        </div>
+
+        <!-- (leave one slot open / or use for future story) -->
+      </div>
+    </section>
+
+    <!-- PAGE 3 - NEW HEART KIDS -->
+    <section id="page3" class="page-section">
+      <div id="kids-background">
         <img
-          src="assets/img/Thailand-poster.jpeg"
-          class="thai-poster"
-          alt="Thailand New Heart Poster"
+          src="assets/img/kids-bg-1.jpg"
+          class="kid-bg-img"
+          style="opacity: 1"
+          alt=""
         />
-
-        <h4 class="gold" id="upcoming-nh-title">Upcoming New Heart</h4>
-        <ul id="upcoming-nh-list">
-          <li>🇻🇳 Vietnam — Nha Trang — 12/3–6/2025</li>
-          <li>🇹🇭 Thailand — Bangkok — 1/27–30/2026</li>
-          <li>🇮🇱 Israel — TBA (April 2026)</li>
-          <li>🇺🇸 USA — TBA (May 2026)</li>
-        </ul>
-
-        <h4 class="gold" id="reunions-title">Reunions</h4>
-        <ul id="reunions-list">
-          <li>🇺🇸 USA — Nov 14, 2025 • LA</li>
-          <li>🇰🇷 Korea — Nov 22, 2025 • Seoul</li>
-        </ul>
+        <img src="assets/img/kids-bg-2.jpg" class="kid-bg-img" alt="" />
       </div>
-    </div>
-  </section>
+      <div id="kids-overlay"></div>
 
-  <!-- PAGE 2 - STORIES (ADULTS) -->
-  <section id="page2">
-    <h2 class="section-title" id="stories-title">Stories of New Hearts</h2>
+      <div id="kids-content">
+        <h2 class="section-title" id="kids-title">New Heart Kids</h2>
+        <div class="kids-stories-grid">
+          <!-- Ji -->
+          <div class="kids-card">
+            <img src="assets/img/ji.jpg" class="kids-photo" alt="Ji" />
+            <h3 class="kids-name">Ji</h3>
+            <p class="story-role">New Heart Kids Korea #2 — Coordinator</p>
+            <button class="open-modal glow-btn" data-target="#modal-ji">
+              <span>📖</span><span class="read-story-label">Read Story</span>
+            </button>
+          </div>
 
-    <div class="stories-grid">
-      <!-- 1. Ariel -->
-      <div class="story-card">
-        <img src="assets/img/ariel.jpg" alt="Ariel" class="story-photo" />
-        <h3 class="story-name">Ariel</h3>
-        <div class="story-role">From Orthodox Judaism to Jesus</div>
-        <button class="open-modal glow-btn" data-target="#modal-ariel">Read Story</button>
-      </div>
-
-      <!-- 2. Choi -->
-      <div class="story-card">
-        <img src="assets/img/choi.jpg" alt="Choi" class="story-photo" />
-        <h3 class="story-name">Choi</h3>
-        <div class="story-role">A Heart Healed from Shame</div>
-        <button class="open-modal glow-btn" data-target="#modal-choi">Read Story</button>
-      </div>
-
-      <!-- 3. Han -->
-      <div class="story-card">
-        <img src="assets/img/han.jpg" alt="Han" class="story-photo" />
-        <h3 class="story-name">Han</h3>
-        <div class="story-role">From Striving to Rest</div>
-        <button class="open-modal glow-btn" data-target="#modal-han">Read Story</button>
-      </div>
-
-      <!-- 4. Keziah -->
-      <div class="story-card">
-        <img src="assets/img/keziah.jpg" alt="Keziah" class="story-photo" />
-        <h3 class="story-name">Keziah</h3>
-        <div class="story-role">Encountering the Father's Love</div>
-        <button class="open-modal glow-btn" data-target="#modal-keziah">
-          Read Story
-        </button>
-      </div>
-
-      <!-- 5. Parichat -->
-      <div class="story-card">
-        <img src="assets/img/parichat.jpg" alt="Parichat" class="story-photo" />
-        <h3 class="story-name">Parichat</h3>
-        <div class="story-role">Freedom from Fear</div>
-        <button class="open-modal glow-btn" data-target="#modal-parichat">
-          Read Story
-        </button>
-      </div>
-
-      <!-- 6. Ji -->
-      <div class="story-card">
-        <img src="assets/img/ji.jpg" alt="Ji" class="story-photo" />
-        <h3 class="story-name">Ji</h3>
-        <div class="story-role">Healing from Father Wounds</div>
-        <button class="open-modal glow-btn" data-target="#modal-ji">Read Story</button>
-      </div>
-
-      <!-- 7. Kyungjin -->
-      <div class="story-card">
-        <img src="assets/img/kyungjin.jpg" alt="Kyungjin" class="story-photo" />
-        <h3 class="story-name">Kyungjin</h3>
-        <div class="story-role">Restored in Body and Soul</div>
-        <button class="open-modal glow-btn" data-target="#modal-kyungjin">
-          Read Story
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- PAGE 3 - NEW HEART KIDS -->
-  <section id="page3">
-    <div id="kids-background">
-      <!-- If you have rotating BG images, put them here -->
-      <img
-        src="assets/img/kids-bg-1.jpg"
-        class="kid-bg-img"
-        style="opacity: 1"
-        alt=""
-      />
-      <img src="assets/img/kids-bg-2.jpg" class="kid-bg-img" alt="" />
-    </div>
-    <div id="kids-overlay"></div>
-
-    <div id="kids-content">
-      <h2 class="section-title" id="kids-title">New Heart Kids</h2>
-
-      <div class="kids-stories-grid">
-        <div class="kids-card">
-          <img
-            src="assets/img/kid1.jpg"
-            alt="New Heart Kids Story 1"
-            class="kids-photo"
-          />
-          <h3 class="kids-name">“Jesus Gave Me a New Heart!”</h3>
-          <p>
-            <!-- TODO: paste full kids story here -->
-            During New Heart Kids, one child shared how they felt a heavy stone in their
-            heart being lifted as they forgave a family member and invited Jesus to heal
-            their pain.
-          </p>
-        </div>
-
-        <div class="kids-card">
-          <img
-            src="assets/img/kid2.jpg"
-            alt="New Heart Kids Story 2"
-            class="kids-photo"
-          />
-          <h3 class="kids-name">“I’m Not Afraid Anymore”</h3>
-          <p>
-            <!-- TODO: paste full kids story here -->
-            Another child testified that after prayer, they no longer felt afraid at night
-            and sensed that God was with them, giving them courage and peace.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PAGE 4 - EDITORIAL + DONATIONS -->
-  <section id="page4">
-    <div class="page4-grid">
-      <!-- Editorial -->
-      <article>
-        <h2 class="editorial-title" id="editorial-title">The Fourth Day Chat</h2>
-        <div id="editorial-content">
-          <h3 id="editorial-h1">Living the Fourth Day</h3>
-          <p id="editorial-p1">
-            <!-- TODO: paste full editorial paragraph 1 -->
-            The New Heart weekend is only the beginning. The “Fourth Day” is every day
-            after the weekend where we walk out the new heart God has given us in the
-            ordinary moments of life.
-          </p>
-
-          <h3 id="editorial-h2">Three Days and a Lifetime</h3>
-          <p id="editorial-p2">
-            <!-- TODO: paste full editorial paragraph 2 -->
-            During the three days of New Heart, we encounter the cross, forgiveness, and
-            the Father’s embrace. The Fourth Day is where these truths become a lifestyle
-            of surrender, love, and obedience.
-          </p>
-
-          <h3 id="editorial-h3">A Global Family Story</h3>
-          <p id="editorial-p3">
-            <!-- TODO: paste full editorial paragraph 3 -->
-            From Korea to Israel, from Thailand to the U.S., God is weaving together a
-            global family of New Heart alumni who carry His healing, freedom, and love
-            into their churches, homes, and nations.
-          </p>
-
-          <p id="editorial-closing">
-            <!-- TODO: paste full closing -->
-            May every Fourth Day be filled with the fire of His love, the tenderness of
-            His mercy, and the courage to keep saying “yes” to His heart.
-          </p>
-        </div>
-      </article>
-
-      <!-- Ways to serve + Palanca / QR -->
-      <aside>
-        <div class="donation-section">
-          <h3 id="serve-title">Ways to Serve</h3>
-          <p>
-            Pray for upcoming New Heart weekends and reunions. Consider serving on a team,
-            sharing your testimony, or inviting someone who needs a new heart encounter.
-          </p>
-        </div>
-
-        <div class="donation-section">
-          <h3 id="palanca-title">Palanca &amp; Giving</h3>
-          <p id="qr-instruction">
-            Use the QR codes or accounts below to give. Please note the purpose of your
-            gift (missions, scholarship, New Heart Kids, etc.).
-          </p>
-          <div class="qr-container">
-            <img src="assets/img/qr-1.png" alt="Giving QR Code 1" class="qr" />
-            <img src="assets/img/qr-2.png" alt="Giving QR Code 2" class="qr" />
+          <!-- Kyungjin -->
+          <div class="kids-card">
+            <img src="assets/img/kyungjin.jpg" class="kids-photo" alt="Kyungjin" />
+            <h3 class="kids-name">Kyungjin (Maria)</h3>
+            <p class="story-role">New Heart Kids USA #1 — Coordinator</p>
+            <button class="open-modal glow-btn" data-target="#modal-kyungjin">
+              <span>📖</span><span class="read-story-label">Read Story</span>
+            </button>
           </div>
         </div>
-      </aside>
-    </div>
-  </section>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
@@ -936,15 +951,14 @@
       © 2025 New Heart Ministry. All rights reserved.
     </div>
     <div id="footer-note">
-      Please keep this newsletter within the New Heart family and share it as a testimony
-      of God’s goodness.
+      Please keep this newsletter within the New Heart family and share it as a testimony of
+      God’s goodness.
     </div>
   </footer>
 
-  <!-- MODALS (ENGLISH CONTENT – you can paste other languages if desired) -->
-
+  <!-- MODALS (English – multi-language for UI; stories remain EN) -->
   <!-- Ariel -->
-  <div class="modal" id="modal-ariel">
+  <div class="modal hidden" id="modal-ariel" aria-hidden="true">
     <div class="modal-content">
       <button class="close-modal" aria-label="Close">×</button>
       <button
@@ -956,7 +970,6 @@
       </button>
       <h2>Ariel — From Orthodox Judaism to Jesus</h2>
       <p>
-        <!-- TODO: paste full Ariel story text here -->
         Growing up in an Orthodox Jewish home, Ariel’s life was shaped by tradition and
         strict observance. Yet there was a deep hunger in her heart for the living God.
       </p>
@@ -969,7 +982,7 @@
   </div>
 
   <!-- Choi -->
-  <div class="modal" id="modal-choi">
+  <div class="modal hidden" id="modal-choi" aria-hidden="true">
     <div class="modal-content">
       <button class="close-modal" aria-label="Close">×</button>
       <button
@@ -981,15 +994,21 @@
       </button>
       <h2>Choi — A Heart Healed from Shame</h2>
       <p>
-        <!-- TODO: paste full Choi story here -->
-        Choi carried a quiet shame from past failures and family expectations. At New
-        Heart, God named her “beloved” and washed over her with forgiveness and honor.
+        Choi carried a quiet shame from past failures and the heavy weight of family
+        expectations. She often felt she was never “enough” — not holy enough, not strong
+        enough, not worthy enough of love.
+      </p>
+      <p>
+        At New Heart, God named her “beloved” and washed over her with forgiveness and
+        honor. In times of worship and ministry, the Lord exposed lies of condemnation and
+        replaced them with His truth. Choi left with a lighter heart, standing taller in
+        the identity of a treasured daughter.
       </p>
     </div>
   </div>
 
   <!-- Han -->
-  <div class="modal" id="modal-han">
+  <div class="modal hidden" id="modal-han" aria-hidden="true">
     <div class="modal-content">
       <button class="close-modal" aria-label="Close">×</button>
       <button
@@ -1001,15 +1020,21 @@
       </button>
       <h2>Han — From Striving to Rest</h2>
       <p>
-        <!-- TODO: paste full Han story here -->
-        Han’s life was driven by performance and ministry work. Through the cross message,
-        Han encountered Jesus who said, “You are loved apart from what you do.”
+        Han’s life was driven by performance and ministry work. She measured her value
+        through what she did for God and others. Burnout, exhaustion, and hidden
+        disappointment accumulated in her heart.
+      </p>
+      <p>
+        Through the cross message and the gentle work of the Holy Spirit, Han encountered
+        Jesus who said, “You are loved apart from what you do.” The Lord invited her into
+        rest, not as laziness, but as a place of trust. Serving is now an overflow of His
+        love, not a way to earn it.
       </p>
     </div>
   </div>
 
   <!-- Keziah -->
-  <div class="modal" id="modal-keziah">
+  <div class="modal hidden" id="modal-keziah" aria-hidden="true">
     <div class="modal-content">
       <button class="close-modal" aria-label="Close">×</button>
       <button
@@ -1021,15 +1046,21 @@
       </button>
       <h2>Keziah — Encountering the Father’s Love</h2>
       <p>
-        <!-- TODO: paste full Keziah story here -->
-        Keziah wept as the Father’s love was spoken over her. Years of rejection were
-        replaced with the assurance, “You are My daughter in whom I delight.”
+        Keziah had walked with the Lord for years yet carried layers of rejection and
+        striving in her heart. She longed to know God’s love not only in her mind but deep
+        in her identity.
+      </p>
+      <p>
+        During New Heart, she wept as the Father’s love was spoken over her. Scriptures and
+        prophetic words pierced through old fears and lies. Years of rejection were
+        replaced with the assurance, “You are My daughter in whom I delight.” She returned
+        home anchored in a new freedom and security in His love.
       </p>
     </div>
   </div>
 
-  <!-- Parichat -->
-  <div class="modal" id="modal-parichat">
+  <!-- Parichat (full EN from ITML_NH) -->
+  <div class="modal hidden" id="modal-parichat" aria-hidden="true">
     <div class="modal-content">
       <button class="close-modal" aria-label="Close">×</button>
       <button
@@ -1039,17 +1070,58 @@
       >
         🔊
       </button>
-      <h2>Parichat — Freedom from Fear</h2>
+      <h2>Parichat — 18 Years of Pain Transformed</h2>
       <p>
-        <!-- TODO: paste full Parichat story here -->
-        The Lord gently confronted Parichat’s lifelong fear and showed her that perfect
-        love casts out fear. She left with a courage she had never known.
+        I, Parichat, would like to express my heartfelt thanks to Spiritual Mother
+        Pastor Mayuri, Pastor Sarah, and Pastor Matthew for their unwavering guidance,
+        care, and love from the moment we arrived in Korea until the final day of the
+        mission.
+      </p>
+      <p>
+        Thank you for the precious experiences and profound blessings I received through
+        my involvement with the “New Heart” mission in Korea.
+      </p>
+      <p>
+        I was deeply impressed by every aspect of the “New Heart” mission, including:
+        the warm transportation arrangement to pick up our team, the loving welcome
+        through songs of praise, the joyful meal team filled with laughter, the worship
+        team overflowing with the Holy Spirit, and the prayer team that continually
+        covered us throughout the mission.
+      </p>
+      <p>
+        Thank you for every testimony and sermon shared by the pastors and the brothers
+        and sisters who had previously gone through the New Heart mission. Your sharing
+        helped us understand even more that no matter how complex or painful the
+        situation may be, God still reigns. He continually upholds our hearts and
+        spirits, keeping us steadfast in His righteousness now and forever.
+      </p>
+      <p>
+        I received deep inner restoration and have made a firm decision to serve and
+        draw even closer to God. I also chose to forgive my ex-husband for everything in
+        the past and even in the present. The accusations and hatred that I carried for
+        many years have now transformed into something new that leads me to pray even
+        more. I have truly experienced transformation in both my heart and my spirit.
+      </p>
+      <p>
+        Before joining the mission, I had carried pain in my heart for more than 18
+        years. But now, that burden has become so much lighter, and I can truly feel
+        that I am no longer carrying it the way I once did.
+      </p>
+      <p>
+        “NEW 54” has been a great blessing and a transformative experience for both my
+        heart and my spirit. I also desire to become a blessing to the brothers and
+        sisters who will join the next generation of the New Heart mission.
+      </p>
+      <p>
+        May the Lord strengthen all the pastors and pour out abundant blessings on every
+        ministry you lead, so that great fruit will come forth and flow into the lives
+        of many people.
       </p>
     </div>
   </div>
 
   <!-- Ji -->
-  <div class="modal" id="modal-ji">
+  <div class="modal hidden" id="modal-ji" aria-hidden="true">
     <div class="modal-content">
       <button class="close-modal" aria-label="Close">×</button>
       <button
@@ -1061,15 +1133,21 @@
       </button>
       <h2>Ji — Healing from Father Wounds</h2>
       <p>
-        <!-- TODO: paste full Ji story here -->
-        As Ji faced painful memories with her earthly father, the Lord revealed Himself as
-        a gentle, safe, and faithful Abba. Her tears became worship.
+        As Ji served as a coordinator for New Heart Kids, she also carried unhealed
+        memories with her earthly father. In times of worship and quiet reflection, the
+        Lord gently brought these memories to the surface and met her there.
+      </p>
+      <p>
+        As she faced painful moments with honesty, the Lord revealed Himself as a
+        gentle, safe, and faithful Abba. Her tears became worship, and the places of
+        fear and distance were transformed into intimacy and trust. Ji left with a new
+        confidence that she is cherished by a perfect Father.
       </p>
     </div>
   </div>
 
   <!-- Kyungjin -->
-  <div class="modal" id="modal-kyungjin">
+  <div class="modal hidden" id="modal-kyungjin" aria-hidden="true">
     <div class="modal-content">
       <button class="close-modal" aria-label="Close">×</button>
       <button
@@ -1081,325 +1159,401 @@
       </button>
       <h2>Kyungjin — Restored in Body and Soul</h2>
       <p>
-        <!-- TODO: paste full Kyungjin story here -->
-        Kyungjin came to New Heart exhausted in body and soul. Through worship and prayer,
-        the Lord restored strength and joy, and even brought physical healing.
+        Kyungjin came to New Heart exhausted in body and soul. Balancing ministry,
+        family, and the hidden pressures of life had left her worn down in ways she
+        could no longer ignore.
+      </p>
+      <p>
+        Through worship, teaching, and personal prayer, the Lord restored strength and
+        joy. He refreshed her physically, emotionally, and spiritually. She even
+        experienced tangible healing in her body. Kyungjin returned home with renewed
+        hope, carrying a deeper assurance that Jesus is both Healer and Shepherd for her
+        whole life.
       </p>
     </div>
   </div>
 
+  <!-- Simple Audio Controls Panel -->
+  <div class="audio-controls">
+    <div class="audio-panel" id="audioPanel">
+      <span style="font-weight: 600;">🔊 Audio</span>
+      <label>
+        Speed
+        <input id="audioRate" type="range" min="0.7" max="1.3" step="0.05" value="0.95" />
+      </label>
+      <span id="audioStatus">Ready</span>
+    </div>
+  </div>
+
   <script>
-    /* ========== SIMPLE TRANSLATIONS (UI TEXT ONLY) ========== */
+    /* ========= BASIC UI TRANSLATIONS (HEADERS, LABELS) ========= */
     const translations = {
       EN: {
         mainTitle: "New Heart Global Family Newsletter",
         subtitle: "The Fourth Day Chat — Fall 2025",
-        foundersGreetingTitle: "Founders' Greeting",
+        tagline: "Living the Fourth Day wherever He sends us.",
+        foundersGreetingTitle: "Founders’ Greeting",
         foundersTitle: "Founders and New Heart Global Directors",
-        regionalDirectorsTitle: "Regional Directors — Thailand 🇹🇭",
+        regionalDirectorsTitle: "Regional Directors — Thailand",
         upcomingNhTitle: "Upcoming New Heart",
         reunionsTitle: "Reunions",
         storiesTitle: "Stories of New Hearts",
-        readStory: "Read Story",
         kidsTitle: "New Heart Kids",
         editorialTitle: "The Fourth Day Chat",
-        editorialH1: "Living the Fourth Day",
-        editorialP1:
-          "The New Heart weekend is only the beginning. The 'Fourth Day' is every day after the weekend where we live out the new heart God has given us.",
-        editorialH2: "Three Days and a Lifetime",
-        editorialP2:
-          "During the three days of New Heart, we encounter the cross, forgiveness, and the Father’s embrace. The Fourth Day turns these encounters into a lifestyle.",
-        editorialH3: "A Global Family Story",
-        editorialP3:
-          "From Korea to Israel, from Thailand to the U.S., God is weaving together a global family of New Heart alumni.",
-        editorialClosing:
-          "May every Fourth Day be filled with His love, His mercy, and courage to keep saying 'yes' to His heart.",
         serveTitle: "Ways to Serve",
         palancaTitle: "Palanca & Giving",
         qrInstruction:
-          "Use the QR codes or accounts below to give. Please note the purpose of your gift.",
+          "Use the QR codes or accounts below to give. Please note the purpose of your gift (missions, scholarship, New Heart Kids, etc.).",
+        readStory: "Read Story",
         footerCopyright: "© 2025 New Heart Ministry. All rights reserved.",
         footerNote:
-          "Please keep this newsletter within the New Heart family and share it as a testimony of God’s goodness."
+          "Please keep this newsletter within the New Heart family and share it as a testimony of God’s goodness.",
+        audioToggleLabel: "Listen to this newsletter",
       },
       KO: {
         mainTitle: "뉴하트 글로벌 패밀리 뉴스레터",
-        subtitle: "네 번째 날의 이야기 — 2025 가을",
+        subtitle: "네 번째 날 이야기 — 2025 가을",
+        tagline: "주님이 보내시는 곳마다 ‘네 번째 날’을 살아가는 우리.",
         foundersGreetingTitle: "설립자 인사",
-        foundersTitle: "설립자 & 뉴하트 글로벌 디렉터",
-        regionalDirectorsTitle: "지역 디렉터 — 태국 🇹🇭",
-        upcomingNhTitle: "다가오는 뉴하트",
-        reunionsTitle: "리유니언",
-        storiesTitle: "새 마음 이야기",
-        readStory: "간증 읽기",
+        foundersTitle: "설립자 및 New Heart 글로벌 디렉터",
+        regionalDirectorsTitle: "지역 디렉터 — 태국",
+        upcomingNhTitle: "다가오는 New Heart",
+        reunionsTitle: "동문 재회",
+        storiesTitle: "새로운 마음의 이야기",
         kidsTitle: "뉴하트 키즈",
-        editorialTitle: "네 번째 날의 이야기",
-        editorialH1: "네 번째 날을 사는 삶",
-        editorialP1:
-          "뉴하트 주말은 시작일 뿐입니다. 네 번째 날은 주말 이후 매일매일 새 마음으로 살아가는 시간입니다.",
-        editorialH2: "3일과 평생",
-        editorialP2:
-          "3일 동안 우리는 십자가, 용서, 아버지의 사랑을 경험합니다. 네 번째 날에는 이러한 만남이 삶의 방식이 됩니다.",
-        editorialH3: "글로벌 패밀리의 이야기",
-        editorialP3:
-          "한국에서 이스라엘까지, 태국에서 미국까지 하나님은 뉴하트 가족을 하나로 엮고 계십니다.",
-        editorialClosing:
-          "매 네 번째 날이 그분의 사랑과 자비, 그리고 순종의 용기로 가득 차길 축복합니다.",
-        serveTitle: "섬길 수 있는 방법",
-        palancaTitle: "팔랑카 & 후원",
+        editorialTitle: "네 번째 날 대화",
+        serveTitle: "섬김의 길",
+        palancaTitle: "팔랑카 & 헌금",
         qrInstruction:
-          "아래 QR 코드나 계좌를 사용해 주시고, 헌금의 목적을 적어 주세요.",
-        footerCopyright:
-          "© 2025 뉴하트 미니스트리. 모든 권리 보유.",
+          "아래 QR 코드 또는 계좌를 통해 헌금하실 수 있습니다. (선교, 장학금, New Heart Kids 등 용도를 적어 주세요.)",
+        readStory: "간증 읽기",
+        footerCopyright: "© 2025 New Heart Ministry. 판권 소유.",
         footerNote:
-          "이 뉴스레터를 뉴하트 가족 안에서 소중히 나누어 주세요."
+          "이 뉴스레터는 뉴하트 가족 안에서 나누며, 하나님의 선하심을 전하는 간증으로 사용해 주세요.",
+        audioToggleLabel: "뉴스레터 듣기",
       },
       VN: {
-        mainTitle: "Bản Tin Gia Đình New Heart Toàn Cầu",
+        mainTitle: "Bản Tin Gia Đình Toàn Cầu New Heart",
         subtitle: "Cuộc Trò Chuyện Ngày Thứ Tư — Thu 2025",
-        foundersGreetingTitle: "Lời Chào Từ Người Sáng Lập",
-        foundersTitle: "Người Sáng Lập & Giám Đốc New Heart Toàn Cầu",
-        regionalDirectorsTitle: "Giám Đốc Khu Vực — Thái Lan 🇹🇭",
-        upcomingNhTitle: "New Heart Sắp Tới",
-        reunionsTitle: "Buổi Họp Mặt",
+        tagline: "Sống Ngày Thứ Tư ở mọi nơi Ngài sai chúng ta.",
+        foundersGreetingTitle: "Lời Chào Từ Những Người Sáng Lập",
+        foundersTitle: "Nhà Sáng Lập & Giám Đốc Toàn Cầu New Heart",
+        regionalDirectorsTitle: "Giám Đốc Khu Vực — Thái Lan",
+        upcomingNhTitle: "Chương Trình New Heart Sắp Tới",
+        reunionsTitle: "Họp Mặt",
         storiesTitle: "Những Câu Chuyện Tấm Lòng Mới",
-        readStory: "Đọc Câu Chuyện",
         kidsTitle: "New Heart Kids",
-        editorialTitle: "Ngày Thứ Tư",
-        editorialH1: "Sống Ngày Thứ Tư",
-        editorialP1:
-          "Cuối tuần New Heart chỉ là khởi đầu. Ngày Thứ Tư là mỗi ngày chúng ta sống với tấm lòng mới Chúa ban.",
-        editorialH2: "Ba Ngày và Cả Cuộc Đời",
-        editorialP2:
-          "Trong ba ngày, chúng ta gặp thập tự giá, sự tha thứ và vòng tay của Cha. Ngày Thứ Tư biến những điều đó thành lối sống.",
-        editorialH3: "Câu Chuyện Gia Đình Toàn Cầu",
-        editorialP3:
-          "Từ Hàn Quốc đến Israel, từ Thái Lan đến Hoa Kỳ, Chúa đang kết nối một gia đình New Heart toàn cầu.",
-        editorialClosing:
-          "Nguyện mỗi Ngày Thứ Tư đầy dẫy tình yêu, lòng thương xót và sự vâng lời của Chúa.",
+        editorialTitle: "Cuộc Trò Chuyện Ngày Thứ Tư",
         serveTitle: "Những Cách Phục Vụ",
         palancaTitle: "Palanca & Dâng Hiến",
         qrInstruction:
-          "Xin dùng các mã QR hoặc tài khoản bên dưới và ghi rõ mục đích dâng hiến.",
+          "Hãy dùng mã QR hoặc thông tin bên dưới để dâng hiến. Xin ghi rõ mục đích (truyền giáo, học bổng, New Heart Kids, v.v.).",
+        readStory: "Đọc Lời Chứng",
         footerCopyright:
-          "© 2025 New Heart Ministry. Giữ mọi quyền.",
+          "© 2025 New Heart Ministry. Giữ toàn bộ bản quyền.",
         footerNote:
-          "Xin giữ bản tin này trong gia đình New Heart và chia sẻ như lời chứng về sự tốt lành của Chúa."
+          "Xin giữ bản tin này trong gia đình New Heart và chia sẻ như một lời chứng về sự tốt lành của Chúa.",
+        audioToggleLabel: "Nghe bản tin này",
       },
       TH: {
-        mainTitle: "จดหมายข่าวครอบครัว New Heart ทั่วโลก",
-        subtitle: "บทสนทนาของวันที่สี่ — ฤดูใบไม้ร่วง 2025",
+        mainTitle: "จดหมายข่าวครอบครัวโลก New Heart",
+        subtitle: "บทสนทนาวันที่สี่ — ฤดูใบไม้ร่วง 2025",
+        tagline: "ดำเนินชีวิตใน ‘วันที่สี่’ ในทุกที่ที่พระองค์ทรงส่งเราไป",
         foundersGreetingTitle: "คำทักทายจากผู้ก่อตั้ง",
         foundersTitle: "ผู้ก่อตั้งและผู้อำนวยการ New Heart ทั่วโลก",
-        regionalDirectorsTitle: "ผู้อำนวยการภูมิภาค — ประเทศไทย 🇹🇭",
-        upcomingNhTitle: "New Heart ที่จะมาถึง",
+        regionalDirectorsTitle: "ผู้อำนวยการภูมิภาค — ประเทศไทย",
+        upcomingNhTitle: "ค่าย New Heart ที่กำลังจะมาถึง",
         reunionsTitle: "การนัดพบ",
         storiesTitle: "เรื่องราวหัวใจใหม่",
-        readStory: "อ่านคำพยาน",
         kidsTitle: "New Heart Kids",
-        editorialTitle: "วันที่สี่",
-        editorialH1: "การใช้ชีวิตในวันที่สี่",
-        editorialP1:
-          "สุดสัปดาห์ New Heart เป็นเพียงจุดเริ่มต้น วันที่สี่คือทุกวันที่เราใช้ชีวิตด้วยหัวใจใหม่ที่พระเจ้าประทานให้.",
-        editorialH2: "สามวันและตลอดชีวิต",
-        editorialP2:
-          "ในสามวัน เราพบกับกางเขน การยกโทษ และอ้อมกอดของพระบิดา วันที่สี่ทำให้สิ่งเหล่านั้นกลายเป็นวิถีชีวิต.",
-        editorialH3: "เรื่องราวครอบครัวระดับโลก",
-        editorialP3:
-          "จากเกาหลีไปอิสราเอล จากประเทศไทยไปสหรัฐอเมริกา พระเจ้ากำลังถักทอครอบครัว New Heart ทั่วโลก.",
-        editorialClosing:
-          "ขอให้ทุกวันที่สี่เต็มไปด้วยความรัก ความเมตตา และความกล้าที่จะตอบ 'ใช่' ต่อหัวใจของพระองค์.",
-        serveTitle: "วิธีการรับใช้",
+        editorialTitle: "บทสนทนาวันที่สี่",
+        serveTitle: "หนทางการรับใช้",
         palancaTitle: "Palanca และการถวาย",
         qrInstruction:
-          "โปรดใช้รหัส QR หรือบัญชีด้านล่าง และระบุวัตถุประสงค์ของการถวาย.",
+          "ใช้คิวอาร์โค้ดหรือข้อมูลด้านล่างเพื่อถวาย โปรดระบุวัตถุประสงค์ (งานมิชชั่น ทุนการศึกษา New Heart Kids ฯลฯ)",
+        readStory: "อ่านคำพยาน",
         footerCopyright:
-          "© 2025 New Heart Ministry สงวนลิขสิทธิ์.",
+          "© 2025 New Heart Ministry. สงวนลิขสิทธิ์ทั้งหมด",
         footerNote:
-          "โปรดเก็บจดหมายข่าวฉบับนี้ไว้ภายในครอบครัว New Heart และแบ่งปันเป็นคำพยานถึงความดีของพระเจ้า."
+          "โปรดเก็บจดหมายข่าวฉบับนี้ไว้ภายในครอบครัว New Heart และใช้เป็นคำพยานถึงความดีของพระเจ้า",
+        audioToggleLabel: "ฟังจดหมายข่าวฉบับนี้",
       },
       HE: {
-        mainTitle: "עלון המשפחה הגלובלית New Heart",
+        mainTitle: "עלון המשפחה הגלובלית של New Heart",
         subtitle: "שיחת היום הרביעי — סתיו 2025",
+        tagline: "לחיות את ‘היום הרביעי’ בכל מקום שה׳ שולח אותנו.",
         foundersGreetingTitle: "ברכת המייסדים",
-        foundersTitle: "מייסדים ומנהלי New Heart הגלובלית",
-        regionalDirectorsTitle: "מנהלי אזור — תאילנד 🇹🇭",
-        upcomingNhTitle: "New Heart הקרובים",
-        reunionsTitle: "מפגשי alumni",
+        foundersTitle: "מייסדי ומנהלי New Heart העולמיים",
+        regionalDirectorsTitle: "מנהלי האזור — תאילנד",
+        upcomingNhTitle: "מחנות New Heart הקרובים",
+        reunionsTitle: "מפגשי בוגרים",
         storiesTitle: "סיפורי לב חדש",
-        readStory: "קרא עדות",
-        kidsTitle: "New Heart Kids",
+        kidsTitle: "ילדי New Heart",
         editorialTitle: "שיחת היום הרביעי",
-        editorialH1: "לחיות את היום הרביעי",
-        editorialP1:
-          "סוף השבוע של New Heart הוא רק ההתחלה. היום הרביעי הוא כל יום שבו אנו חיים עם הלב החדש שה' נתן לנו.",
-        editorialH2: "שלושה ימים וחיים שלמים",
-        editorialP2:
-          "במשך שלושה ימים אנו פוגשים את הצלב, הסליחה וחיבוק האב. היום הרביעי הופך מפגש זה לאורח חיים.",
-        editorialH3: "סיפור משפחה עולמי",
-        editorialP3:
-          "מקוריאה לישראל, מתאילנד לארצות הברית, אלוהים מחבר יחד משפחת New Heart עולמית.",
-        editorialClosing:
-          "מי ייתן וכל יום רביעי יהיה מלא באהבתו, ברחמיו ובאומץ להמשיך לומר 'כן' ללבו.",
         serveTitle: "דרכים לשרת",
-        palancaTitle: "תרומות ו-Palanca",
+        palancaTitle: "Palanca & תרומות",
         qrInstruction:
-          "אנא השתמשו בקודי ה-QR או בחשבונות למטה וציינו את מטרת התרומה.",
+          "באפשרותכם להשתמש בקודי ה־QR או בפרטים למטה כדי לתרום. אנא ציינו את מטרת המתנה (שליחות, מלגות, New Heart Kids וכו׳).",
+        readStory: "קראו את העדות",
         footerCopyright:
           "© 2025 New Heart Ministry. כל הזכויות שמורות.",
         footerNote:
-          "אנא שמרו על עלון זה בתוך משפחת New Heart ושתפו אותו כעדות לטובו של אלוהים."
-      }
+          "אנא השאירו עלון זה בתוך משפחת New Heart והשתמשו בו כעדות לטובו של אלוהים.",
+        audioToggleLabel: "האזינו לעלון זה",
+      },
     };
 
-    function switchLanguage(lang) {
+    const founderMessages = {
+      EN: `Hello, New Heart community! How is your heart? Our prayer is that in every season
+the Lord gives you a new heart and a new spirit, and He keeps you in His love through each
+“Fourth Day.”`,
+      KO: `뉴하트 가족 여러분, 안녕하세요. 여러분의 마음은 어떠신가요? 어떤 계절 속에서도
+주님께서 여러분에게 새 마음과 새 영을 부어 주시고, 매일의 "네 번째 날" 가운데서도
+그 사랑 안에 머물게 하시기를 기도합니다.`,
+      VN: `Chào gia đình New Heart! Tấm lòng của bạn thế nào? Lời cầu nguyện của chúng tôi là
+trong mọi mùa, Chúa ban cho bạn một tấm lòng mới và một linh mới, và Ngài giữ bạn trong
+tình yêu Ngài qua mọi “Ngày Thứ Tư”.`,
+      TH: `ครอบครัว New Heart ที่รัก ใจของคุณเป็นอย่างไรบ้าง? เราอธิษฐานให้พระเจ้า
+ประทานหัวใจใหม่และจิตวิญญาณใหม่แก่คุณในทุกฤดูกาล และให้คุณอยู่ในความรักของพระองค์
+ในทุก "วันที่สี่" ของคุณ`,
+      HE: `משפחת New Heart היקרה, מה שלומכם? תפילתנו היא שבכל עונה ייתן לכם האדון לב חדש
+ורוח חדשה, וישמור אתכם באהבתו בכל "היום הרביעי" של חייכם.`,
+    };
+
+    let currentLang = "EN";
+
+    function applyLanguage(lang) {
       const t = translations[lang] || translations.EN;
+      currentLang = lang;
 
-      document.getElementById("main-title").textContent = t.mainTitle;
-      document.getElementById("subtitle").textContent = t.subtitle;
-      document.getElementById("founders-greeting-title").textContent =
-        t.foundersGreetingTitle;
-      document.getElementById("founders-title").textContent = t.foundersTitle;
-      document.getElementById("regional-directors-title").textContent =
-        t.regionalDirectorsTitle;
-      document.getElementById("upcoming-nh-title").textContent =
-        t.upcomingNhTitle;
-      document.getElementById("reunions-title").textContent = t.reunionsTitle;
-      document.getElementById("stories-title").textContent = t.storiesTitle;
+      document.documentElement.lang = lang.toLowerCase();
+
+      // header
+      const mainTitleEl = document.getElementById("main-title");
+      if (mainTitleEl) mainTitleEl.textContent = t.mainTitle;
+
+      const subtitleEl = document.getElementById("subtitle");
+      if (subtitleEl) subtitleEl.textContent = t.subtitle;
+
+      const taglineEl = document.getElementById("tagline");
+      if (taglineEl) taglineEl.textContent = t.tagline;
+
+      // page titles
+      const foundersGreetingTitle = document.getElementById(
+        "founders-greeting-title"
+      );
+      if (foundersGreetingTitle)
+        foundersGreetingTitle.textContent = t.foundersGreetingTitle;
+
+      const foundersTitle = document.getElementById("founders-title");
+      if (foundersTitle) foundersTitle.textContent = t.foundersTitle;
+
+      const regionalDirectorsTitle = document.getElementById(
+        "regional-directors-title"
+      );
+      if (regionalDirectorsTitle)
+        regionalDirectorsTitle.textContent = t.regionalDirectorsTitle;
+
+      const upcomingNhTitle = document.getElementById("upcoming-nh-title");
+      if (upcomingNhTitle) upcomingNhTitle.textContent = t.upcomingNhTitle;
+
+      const reunionsTitle = document.getElementById("reunions-title");
+      if (reunionsTitle) reunionsTitle.textContent = t.reunionsTitle;
+
+      const storiesTitle = document.getElementById("stories-title");
+      if (storiesTitle) storiesTitle.textContent = t.storiesTitle;
+
+      const kidsTitle = document.getElementById("kids-title");
+      if (kidsTitle) kidsTitle.textContent = t.kidsTitle;
+
+      const editorialTitle = document.getElementById("editorial-title");
+      if (editorialTitle) editorialTitle.textContent = t.editorialTitle;
+
+      const serveTitle = document.getElementById("serve-title");
+      if (serveTitle) serveTitle.textContent = t.serveTitle;
+
+      const palancaTitle = document.getElementById("palanca-title");
+      if (palancaTitle) palancaTitle.textContent = t.palancaTitle;
+
+      const qrInstruction = document.getElementById("qr-instruction");
+      if (qrInstruction) qrInstruction.textContent = t.qrInstruction;
+
+      // footer
+      const fc = document.getElementById("footer-copyright");
+      if (fc) fc.textContent = t.footerCopyright;
+
+      const fn = document.getElementById("footer-note");
+      if (fn) fn.textContent = t.footerNote;
+
+      // founder message
+      const fm = document.getElementById("founder-msg");
+      if (fm) fm.textContent = founderMessages[lang] || founderMessages.EN;
+
+      // read story labels
       document
-        .querySelectorAll('[data-target^="#modal-"]')
-        .forEach((btn) => (btn.textContent = t.readStory));
-      document.getElementById("kids-title").textContent = t.kidsTitle;
+        .querySelectorAll(".read-story-label")
+        .forEach((el) => (el.textContent = t.readStory));
 
-      document.getElementById("editorial-title").textContent =
-        t.editorialTitle;
-      document.getElementById("editorial-h1").textContent = t.editorialH1;
-      document.getElementById("editorial-p1").textContent = t.editorialP1;
-      document.getElementById("editorial-h2").textContent = t.editorialH2;
-      document.getElementById("editorial-p2").textContent = t.editorialP2;
-      document.getElementById("editorial-h3").textContent = t.editorialH3;
-      document.getElementById("editorial-p3").textContent = t.editorialP3;
-      document.getElementById("editorial-closing").textContent =
-        t.editorialClosing;
+      const audioToggleLabel = document.getElementById("audio-toggle-label");
+      if (audioToggleLabel) audioToggleLabel.textContent = t.audioToggleLabel;
 
-      document.getElementById("serve-title").textContent = t.serveTitle;
-      document.getElementById("palanca-title").textContent = t.palancaTitle;
-      document.getElementById("qr-instruction").textContent = t.qrInstruction;
-
-      document.getElementById("footer-copyright").textContent =
-        t.footerCopyright;
-      document.getElementById("footer-note").textContent = t.footerNote;
-
-      // keep layout LTR for simplicity
-      document.body.setAttribute("dir", "ltr");
-
-      // stop any ongoing speech when language changes
-      window.speechSynthesis.cancel();
+      // highlight active flag
+      document
+        .querySelectorAll(".language-buttons span")
+        .forEach((btn) => btn.classList.remove("active-lang"));
+      const active = document.querySelector(
+        `.language-buttons span[data-lang="${lang}"]`
+      );
+      if (active) active.classList.add("active-lang");
     }
 
-    // Attach language click handlers
     document
       .querySelectorAll(".language-buttons span[data-lang]")
       .forEach((btn) => {
         btn.addEventListener("click", () => {
-          switchLanguage(btn.dataset.lang);
+          applyLanguage(btn.dataset.lang);
         });
       });
 
-    /* ========== MODALS ========== */
+    // Initialize EN
+    applyLanguage("EN");
+
+    /* ========= MODALS ========= */
     const openButtons = document.querySelectorAll(".open-modal");
+    const closeButtons = document.querySelectorAll(".close-modal");
     const modals = document.querySelectorAll(".modal");
 
     openButtons.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.preventDefault();
-        const sel = btn.getAttribute("data-target");
-        const modal = document.querySelector(sel);
+        const targetSelector = btn.dataset.target;
+        const modal = document.querySelector(targetSelector);
         if (modal) {
-          modal.classList.add("show");
+          modal.classList.remove("hidden");
+          modal.setAttribute("aria-hidden", "false");
           document.body.style.overflow = "hidden";
         }
       });
     });
 
-    function closeModal(modal) {
-      modal.classList.remove("show");
-      document.body.style.overflow = "auto";
-      window.speechSynthesis.cancel();
-    }
-
-    modals.forEach((modal) => {
-      // close button
-      const closeBtn = modal.querySelector(".close-modal");
-      if (closeBtn) {
-        closeBtn.addEventListener("click", () => closeModal(modal));
-      }
-      // click outside content
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          closeModal(modal);
-        }
-      });
-    });
-
-    /* ========== AUDIO: GLOBAL & MODAL NARRATION ========== */
-    let globalSpeaking = false;
-    const headerToggle = document.getElementById("audioToggleHeader");
-
-    function speakText(text, onDone) {
-      window.speechSynthesis.cancel();
-      if (!text) return;
-      const u = new SpeechSynthesisUtterance(text);
-      u.rate = 0.95;
-      u.onend = () => {
-        if (onDone) onDone();
-      };
-      window.speechSynthesis.speak(u);
-    }
-
-    headerToggle.addEventListener("click", () => {
-      if (globalSpeaking) {
-        window.speechSynthesis.cancel();
-        globalSpeaking = false;
-        headerToggle.classList.remove("playing");
-        return;
-      }
-      const mainText = document.body.innerText;
-      globalSpeaking = true;
-      headerToggle.classList.add("playing");
-      speakText(mainText, () => {
-        globalSpeaking = false;
-        headerToggle.classList.remove("playing");
-      });
-    });
-
-    // Per-modal narration buttons
-    document.querySelectorAll(".modal-speak-btn").forEach((btn) => {
+    closeButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         const modal = btn.closest(".modal");
-        const content = modal.querySelector(".modal-content");
-        const text = content.innerText;
-        if (btn.classList.contains("speaking")) {
-          window.speechSynthesis.cancel();
-          btn.classList.remove("speaking");
-          return;
+        if (modal) {
+          modal.classList.add("hidden");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "auto";
         }
-        // stop global if running
-        globalSpeaking = false;
-        headerToggle.classList.remove("playing");
-        document
-          .querySelectorAll(".modal-speak-btn.speaking")
-          .forEach((b) => b.classList.remove("speaking"));
-
-        btn.classList.add("speaking");
-        speakText(text, () => {
-          btn.classList.remove("speaking");
-        });
       });
     });
 
-    // Initialize default language
-    switchLanguage("EN");
+    modals.forEach((modal) => {
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          modal.classList.add("hidden");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "auto";
+        }
+      });
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        modals.forEach((modal) => {
+          modal.classList.add("hidden");
+          modal.setAttribute("aria-hidden", "true");
+        });
+        document.body.style.overflow = "auto";
+      }
+    });
+
+    /* ========= SPEECH / AUDIO ========= */
+    let currentUtterance = null;
+    const rateSlider = document.getElementById("audioRate");
+    const audioStatus = document.getElementById("audioStatus");
+
+    function speakText(text) {
+      if (!window.speechSynthesis) {
+        alert("Speech synthesis is not supported in this browser.");
+        return;
+      }
+
+      if (currentUtterance) {
+        window.speechSynthesis.cancel();
+        currentUtterance = null;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.rate = parseFloat(rateSlider.value) || 0.95;
+      currentUtterance = utterance;
+
+      audioStatus.textContent = "Playing…";
+      window.speechSynthesis.speak(utterance);
+
+      utterance.onend = () => {
+        audioStatus.textContent = "Ready";
+        currentUtterance = null;
+      };
+      utterance.onerror = () => {
+        audioStatus.textContent = "Error";
+        currentUtterance = null;
+      };
+    }
+
+    function stopSpeaking() {
+      if (currentUtterance) {
+        window.speechSynthesis.cancel();
+        currentUtterance = null;
+      }
+      audioStatus.textContent = "Stopped";
+    }
+
+    // Header button: read main content
+    const audioToggleHeader = document.getElementById("audioToggleHeader");
+    audioToggleHeader.addEventListener("click", () => {
+      if (currentUtterance) {
+        stopSpeaking();
+        return;
+      }
+      // read main newsletter text only
+      const clone = document.body.cloneNode(true);
+      // remove modals from narration
+      clone.querySelectorAll(".modal").forEach((m) => m.remove());
+      const text = clone.innerText.replace(/\s+/g, " ").trim();
+      speakText(text);
+    });
+
+    // Per-modal “listen” buttons
+    function setupModalSpeakButtons() {
+      document.querySelectorAll(".modal-speak-btn").forEach((btn) => {
+        btn.onclick = (e) => {
+          e.stopPropagation();
+          const modal = btn.closest(".modal");
+          if (!modal) return;
+          const content = modal.querySelector(".modal-content");
+          if (!content) return;
+          const text = content.innerText.replace(/\s+/g, " ").trim();
+          if (currentUtterance) {
+            stopSpeaking();
+          } else {
+            speakText(text);
+          }
+        };
+      });
+    }
+
+    setupModalSpeakButtons();
+
+    /* ========= KIDS BACKGROUND FADE ========= */
+    const kidBgImgs = document.querySelectorAll(".kid-bg-img");
+    let kidBgIndex = 0;
+    if (kidBgImgs.length > 1) {
+      setInterval(() => {
+        kidBgImgs[kidBgIndex].style.opacity = 0;
+        kidBgIndex = (kidBgIndex + 1) % kidBgImgs.length;
+        kidBgImgs[kidBgIndex].style.opacity = 1;
+      }, 8000);
+    }
   </script>
 </body>
 </html>
