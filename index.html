@@ -186,7 +186,7 @@
     }
 
     .gold {
-      color: var(--gold);
+      color: #d6b66b;
     }
 
     .verse-block {
@@ -306,7 +306,7 @@
       overflow: hidden;
     }
 
-    .kid-bg-img {
+    .kids-bg-img {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -329,28 +329,12 @@
       padding: 2rem 1rem;
     }
 
-    .kids-stories-large {
+    .kids-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
-      margin-top: 1.5rem;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .kids-story-card {
-      background: rgba(255, 255, 255, 0.96);
-      border-radius: 14px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.15);
-      max-height: 60vh;
-      overflow-y: auto;
-    }
-
-    .kids-story-card h3 {
-      margin-top: 0;
-      color: var(--gold);
+      margin: 1.5rem auto 0;
     }
 
     /* PAGE 4 - EDITORIAL + DONATIONS */
@@ -371,10 +355,18 @@
       }
     }
 
-    .editorial-title {
+    .editorial-section-title {
       color: var(--gold);
-      font-size: 2rem;
+      font-size: 1.6rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .editorial-title-line {
+      color: var(--gold);
+      font-size: 1.3rem;
+      margin-top: 0;
       margin-bottom: 1rem;
+      font-weight: 600;
     }
 
     #editorial-content {
@@ -610,16 +602,22 @@
           greeting for us. For God it is always a matter of the heart.
           <br /><br />
           When God sent Prophet Samuel to Jesse's house to select the next king of Israel,
-          God established His principle when He said, <em>The LORD does not look at the
-          things people look at. People look at the outward appearance, but the LORD looks
-          at the heart.</em> This is particularly important and relevant because we are a
-          New Heart community.
+          God established His principle when He said,
+          <em
+            >The LORD does not look at the things people look at. People look at the
+            outward appearance, but the LORD looks at the heart.</em
+          >
+          This is particularly important and relevant because we are a New Heart
+          community.
           <br /><br />
-          God said, <em>I will give you a new heart and put a new spirit in you; I will
-          remove from you your heart of stone and give you a heart of flesh.</em> It is
-          our prayer and confident hope through our precious faith in Jesus our Lord and
-          through His abundant gift of grace that your heart is well, no matter what your
-          particular situation or circumstances might be.
+          God said,
+          <em
+            >I will give you a new heart and put a new spirit in you; I will remove from
+            you your heart of stone and give you a heart of flesh.</em
+          >
+          It is our prayer and confident hope through our precious faith in Jesus our Lord
+          and through His abundant gift of grace that your heart is well, no matter what
+          your particular situation or circumstances might be.
           <br /><br />
           We praise and thank our Abba Father for sustaining us in the power of the Holy
           Spirit through each victorious 4th day. God bless you, your family and your
@@ -725,33 +723,35 @@
     </div>
   </section>
 
-  <!-- PAGE 3 - NEW HEART KIDS (WITH ROTATING BG & Ji / Kyungjin ONLY) -->
+  <!-- PAGE 3 - NEW HEART KIDS (CARDS + MODALS, ROTATING BG) -->
   <section id="page3">
     <div id="kids-background">
       <img
-        src="assets/img/kid-bg-1.jpeg"
-        class="kid-bg-img"
+        src="assets/img/kids-bg-1.jpeg"
+        class="kids-bg-img"
         alt="New Heart Kids"
         style="opacity: 1"
       />
-      <img src="assets/img/kid-bg-2.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-3.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-4.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-5.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-6.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-7.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-8.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-9.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-10.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-11.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-12.jpeg" class="kid-bg-img" alt="New Heart Kids" />
-      <img src="assets/img/kid-bg-13.jpeg" class="kid-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-2.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-3.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-4.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-5.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-6.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-7.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-8.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-9.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-10.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-11.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-12.jpeg" class="kids-bg-img" alt="New Heart Kids" />
+      <img src="assets/img/kids-bg-13.jpeg" class="kids-bg-img" alt="New Heart Kids" />
     </div>
 
     <div id="kids-overlay"></div>
 
     <div id="kids-content">
-      <h2 class="section-title" id="kids-title">New Heart Kids</h2>
+      <h2 class="section-title" id="kids-title">
+        New Heart Kids — The Fourth Generation
+      </h2>
 
       <p id="kids-intro">
         From Los Angeles to Korea, God is giving His New Heart to the youngest members of
@@ -759,181 +759,25 @@
         hear the Word, and encounter Jesus while their parents are being renewed.
       </p>
 
-      <div class="kids-stories-large">
-        <!-- Ji full story -->
-        <div class="kids-story-card">
-          <h3>New Heart Kids #2 — Ji Yeowoon</h3>
-          <p>
-            Hello! I'm Ji Yeowoon, who served as the general affairs coordinator for New
-            Heart Kids. This year, New Heart Kids was conducted in Korea for the first
-            time, and although we were in the same location, we adjusted our schedules to
-            avoid running into each other, so I think you probably had no idea what we
-            were up to 🙂
-          </p>
-          <p>
-            This year, New Heart Kids had a total of 22 children, ages 0 to 12, along with
-            10 teachers spending time together. Since everything was a first, it wasn't
-            just the teachers who felt nervous. The children, who had spent the entire day
-            away from their guardians, also met us on that first day, tension written on
-            their faces.
-          </p>
-          <p>
-            After dinner, we gathered to introduce ourselves and greet each other, then
-            asked the questions: "What is this place for? Why did we come here today?"
-            Answers like "To worship!" "To pray!" "To play!" came out, and then one child
-            shouted, "To do missions!" It was an answer that gave us great insight.
-          </p>
-          <p>
-            It wouldn't be an exaggeration to say that New Heart Kids was full of
-            discomfort. Of course, the same goes for adult New Heart. Let me give you some
-            examples of what I mean. First, the sleeping arrangements change. Stay with
-            people you've never met before in places that are uncomfortable rather than
-            cozy. You can't control your own schedule. While the meals and refreshments
-            are excellent, it's not a system where you can choose and order the menu you
-            want.
-          </p>
-          <p>
-            Let me get closer to the children's perspective. You might want to be quiet,
-            but your surroundings might be noisy; you might want to run around, but there
-            are times when you have to sit still. Because various ages are mixed, you
-            can't behave as you would with your friends, and you always need to be
-            careful.
-          </p>
-          <p>
-            You have to wake up earlier than usual, and even though you eat meals from
-            morning to evening, you can't see your mom or dad, and someone you've never
-            met even bathes you. Elementary school students had to turn in their cell
-            phones, too. There's a TV right in front of you, but it's not turned on unless
-            it's the designated time. Even then, all the content you can watch is
-            Jesus-related.
-          </p>
-          <p>
-            Many things you could do at home couldn't be done here. It even rained
-            continuously so that we couldn't do outdoor activities. The list would be
-            endless.
-          </p>
-          <p>
-            What did the children do? Amazingly, the children complied with instructions
-            and endured many situations. Of course, this doesn't mean they "happily and
-            obediently listened." When they didn't like something, they said so,
-            sometimes asked "Why?", asked for something different, and there were
-            naturally children who acted according to their own stubbornness. Some cried
-            because they missed their moms.
-          </p>
-          <p>
-            Nevertheless, isn't it truly amazing that the children made it through all 3
-            nights and 4 days together without any safety incidents! If the children
-            hadn't been obedient, we really couldn't have made it to the end. At the end,
-            they were sad about going home and even said, "Will you do this again next
-            year? I want to come again!"
-          </p>
-          <p>
-            As we prepared for New Heart Kids, the teachers had the mindset that we needed
-            to "teach the children something to remember." We heard a lot from the
-            leadership that New Heart Kids is not simply "childcare." So we really worked
-            hard to design, plan, and prepare programs, but aside from delivering the
-            Word, it's hard to say things went properly. More than half of the
-            small-group/large-group activities and games we prepared for the children
-            never even came out.
-          </p>
-          <p>
-            We didn't realize that the distance to the chapel and the time it would take
-            to put umbrellas over each child one by one would be so far. Adjusting times
-            and avoiding the adult candidates so as not to run into them also required
-            quite a bit of attention. At least from a human perspective, one could
-            evaluate that things didn't proceed according to plan.
-          </p>
-          <p>
-            However, I believe that God's plan was completely fulfilled. Personally, I
-            think these 3 nights and 4 days of children rubbing shoulders might have been
-            God's plan. Children living in modern society today rarely have opportunities
-            to experience this kind of environment. Especially for preschool children,
-            there would be even fewer such opportunities. It must have been a really big
-            challenge for all the children.
-          </p>
-          <p>
-            Also, even though we were physically separated from the adults, it was
-            profoundly moving to feel often that we were tied together as one with adult
-            New Heart, going forward together. Do you remember the children singing
-            "Grace"? Actually, none of us participated in the Loyoloom worship, so we
-            never imagined the adult candidates would sing this song. But when we went
-            back later, it was on the list. As an aside, most of them were 6–9 years old,
-            with the oldest being 12, so singing the "Grace" hymn seems really cute 😁
-          </p>
-          <p>
-            What do you think? Don't you think we really went "on a mission"? New Heart
-            Kids spent time being grateful for what was given, even in truly lacking,
-            uncomfortable, and poor conditions, laughing and enjoying together, and
-            rubbing shoulders closely. They learned to pray, sang praises, heard and
-            shared the Word, learned worship, and spent all their days in God. All these
-            things were possible because the children followed along so well. Especially
-            without the Holy Spirit's presence, all of this would have been impossible,
-            and there would have been no desire to return to such an uncomfortable place.
-          </p>
-          <p>
-            You've probably heard many times the phrase, "Looking back after New Heart
-            ended, everything was grace." It was the same for us. A sister who had to care
-            for her four and five year-old son and daughter while pregnant with her third
-            child, a sister who returned as a New Heart team member after 13 years but
-            couldn't go anywhere because she came with her 12-month-old child who was shy
-            around strangers, a sister who had to deliver the Word to the children while
-            holding her child because the child severely refused to be separated from mom,
-            a mother who barely left room 101 of the accommodation because she was cooking
-            meals for the children as a first-time team member, dads who had to rush in to
-            bathe the boys while playing outside, etc... It seems like every single one of
-            our team members was in a not-easy situation.
-          </p>
-          <p>
-            Nevertheless, when we shared feedback at the end, instead of anyone
-            complaining about how hard it was in the poor environment, we exchanged words
-            of gratitude and grace. Especially from my perspective, when I suddenly had to
-            change the schedule or insert an unplanned one, everyone who willingly said
-            okay when I visited and asked them to do something was grateful. There were no
-            team members blaming others. We encouraged, motivated, and showed
-            consideration for one another, recognizing each other's weaknesses.
-          </p>
-          <p>
-            We were truly united in one heart when we shared impressions of being moved by
-            each other's actions. I'm grateful that we had a living experience of becoming
-            the beautiful body of the Lord. And above all, all the teachers naturally
-            talked about their next plans to improve what was lacking this time, saying
-            "Next year~". I'm promoting that many people should join the Kids team next
-            year, who want to do this again 😆
-          </p>
+      <div class="kids-grid">
+        <!-- Ji card -->
+        <div class="story-card">
+          <img src="assets/img/ji.jpeg" alt="Ji Yeowoon" class="story-photo" />
+          <h3 class="story-name">Ji Yeowoon</h3>
+          <div class="story-role">New Heart Kids #2 — Korea</div>
+          <button class="open-modal glow-btn" data-target="#modal-ji">
+            Read Story
+          </button>
         </div>
 
-        <!-- Kyungjin full story -->
-        <div class="kids-story-card">
-          <h3>New Heart Kids #1 — Kyungjin</h3>
-          <p>
-            In May 2025, God opened a beautiful new chapter as we launched New Heart Kids
-            #1 in Los Angeles. It was a long-awaited dream within the New Heart community
-            to see all generations blessed through New Heart, and it was incredible to
-            witness how God opened the door to make this dream a reality.
-          </p>
-          <p>
-            When I first joined New Heart Kids, my heart was especially for young parents.
-            As a mother of four, I remembered the seasons when I felt spiritually dry and
-            left out while raising my little ones. I wanted to serve in a way that would
-            give parents space to be renewed and restored in God’s presence.
-          </p>
-          <p>
-            But as I served, God expanded my heart to embrace their children as well.
-            Serving about twenty children, from toddlers to preteens, I saw firsthand how
-            deeply God treasures each one of these young children. His desire is to raise
-            and equip them as future leaders within the New Heart community.
-          </p>
-          <p>
-            There were certainly challenging moments, but through it all, I witnessed both
-            parents and children receiving one new heart through the Holy Spirit by the
-            end of those three days.
-          </p>
-          <p>
-            With that same heart and encouragement, I was overjoyed to hear that we had
-            New Heart Kids #2 in Korea in October. I believe this is God’s confirmation of
-            His will to call us as a “family” and to give His New Heart to all
-            generations.
-          </p>
+        <!-- Kyungjin card -->
+        <div class="story-card">
+          <img src="assets/img/kyungjin.jpeg" alt="Kyungjin" class="story-photo" />
+          <h3 class="story-name">Kyungjin</h3>
+          <div class="story-role">New Heart Kids #1 — Los Angeles</div>
+          <button class="open-modal glow-btn" data-target="#modal-kyungjin">
+            Read Story
+          </button>
         </div>
       </div>
     </div>
@@ -944,9 +788,12 @@
     <div class="page4-grid">
       <!-- Editorial -->
       <article>
-        <h2 class="editorial-title" id="editorial-title">
-          Compelled by the Fire: The Fourth Day
+        <h2 class="editorial-section-title" id="editorial-section-title">
+          Editorial
         </h2>
+        <h3 class="editorial-title-line" id="editorial-title-line">
+          Compelled by the Fire: The Fourth Day
+        </h3>
         <div id="editorial-content">
           <h3 id="editorial-h1">Compelled by the Fire: The Fourth Day</h3>
           <p id="editorial-p1">
@@ -1107,7 +954,7 @@
     </div>
   </footer>
 
-  <!-- ===== MODALS (ADULT STORIES ONLY) ===== -->
+  <!-- ===== MODALS (ADULT STORIES + KIDS STORIES) ===== -->
 
   <!-- Ariel -->
   <div class="modal" id="modal-ariel">
@@ -1507,6 +1354,190 @@
     </div>
   </div>
 
+  <!-- Ji (Kids) -->
+  <div class="modal" id="modal-ji">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Close">×</button>
+      <button class="modal-speak-btn" type="button" title="Listen to this story">
+        🔊
+      </button>
+
+      <h2>Ji Yeowoon — New Heart Kids #2 (Korea)</h2>
+
+      <p>
+        Hello! I'm Ji Yeowoon, who served as the general affairs coordinator for New Heart
+        Kids. This year, New Heart Kids was conducted in Korea for the first time, and
+        although we were in the same location, we adjusted our schedules to avoid running
+        into each other, so I think you probably had no idea what we were up to 🙂
+      </p>
+      <p>
+        This year, New Heart Kids had a total of 22 children, ages 0 to 12, along with 10
+        teachers spending time together. Since everything was a first, it wasn't just the
+        teachers who felt nervous. The children, who had spent the entire day away from
+        their guardians, also met us on that first day, tension written on their faces.
+      </p>
+      <p>
+        After dinner, we gathered to introduce ourselves and greet each other, then asked
+        the questions: "What is this place for? Why did we come here today?" Answers like
+        "To worship!" "To pray!" "To play!" came out, and then one child shouted, "To do
+        missions!" It was an answer that gave us great insight.
+      </p>
+      <p>
+        It wouldn't be an exaggeration to say that New Heart Kids was full of discomfort.
+        Of course, the same goes for adult New Heart. Let me give you some examples of
+        what I mean. First, the sleeping arrangements change. Stay with people you've
+        never met before in places that are uncomfortable rather than cozy. You can't
+        control your own schedule. While the meals and refreshments are excellent, it's
+        not a system where you can choose and order the menu you want.
+      </p>
+      <p>
+        Let me get closer to the children's perspective. You might want to be quiet, but
+        your surroundings might be noisy; you might want to run around, but there are
+        times when you have to sit still. Because various ages are mixed, you can't
+        behave as you would with your friends, and you always need to be careful.
+      </p>
+      <p>
+        You have to wake up earlier than usual, and even though you eat meals from
+        morning to evening, you can't see your mom or dad, and someone you've never met
+        even bathes you. Elementary school students had to turn in their cell phones,
+        too. There's a TV right in front of you, but it's not turned on unless it's the
+        designated time. Even then, all the content you can watch is Jesus-related.
+      </p>
+      <p>
+        Many things you could do at home couldn't be done here. It even rained
+        continuously so that we couldn't do outdoor activities. The list would be
+        endless.
+      </p>
+      <p>
+        What did the children do? Amazingly, the children complied with instructions and
+        endured many situations. Of course, this doesn't mean they "happily and obediently
+        listened." When they didn't like something, they said so, sometimes asked "Why?",
+        asked for something different, and there were naturally children who acted
+        according to their own stubbornness. Some cried because they missed their moms.
+      </p>
+      <p>
+        Nevertheless, isn't it truly amazing that the children made it through all 3
+        nights and 4 days together without any safety incidents! If the children hadn't
+        been obedient, we really couldn't have made it to the end. At the end, they were
+        sad about going home and even said, "Will you do this again next year? I want to
+        come again!"
+      </p>
+      <p>
+        As we prepared for New Heart Kids, the teachers had the mindset that we needed to
+        "teach the children something to remember." We heard a lot from the leadership
+        that New Heart Kids is not simply "childcare." So we really worked hard to
+        design, plan, and prepare programs, but aside from delivering the Word, it's hard
+        to say things went properly. More than half of the small-group/large-group
+        activities and games we prepared for the children never even came out.
+      </p>
+      <p>
+        We didn't realize that the distance to the chapel and the time it would take to
+        put umbrellas over each child one by one would be so far. Adjusting times and
+        avoiding the adult candidates so as not to run into them also required quite a
+        bit of attention. At least from a human perspective, one could evaluate that
+        things didn't proceed according to plan.
+      </p>
+      <p>
+        However, I believe that God's plan was completely fulfilled. Personally, I think
+        these 3 nights and 4 days of children rubbing shoulders might have been God's
+        plan. Children living in modern society today rarely have opportunities to
+        experience this kind of environment. Especially for preschool children, there
+        would be even fewer such opportunities. It must have been a really big challenge
+        for all the children.
+      </p>
+      <p>
+        Also, even though we were physically separated from the adults, it was profoundly
+        moving to feel often that we were tied together as one with adult New Heart,
+        going forward together. Do you remember the children singing "Grace"? Actually,
+        none of us participated in the Loyoloom worship, so we never imagined the adult
+        candidates would sing this song. But when we went back later, it was on the list.
+        As an aside, most of them were 6–9 years old, with the oldest being 12, so
+        singing the "Grace" hymn seems really cute 😁
+      </p>
+      <p>
+        What do you think? Don't you think we really went "on a mission"? New Heart Kids
+        spent time being grateful for what was given, even in truly lacking,
+        uncomfortable, and poor conditions, laughing and enjoying together, and rubbing
+        shoulders closely. They learned to pray, sang praises, heard and shared the Word,
+        learned worship, and spent all their days in God. All these things were possible
+        because the children followed along so well. Especially without the Holy Spirit's
+        presence, all of this would have been impossible, and there would have been no
+        desire to return to such an uncomfortable place.
+      </p>
+      <p>
+        You've probably heard many times the phrase, "Looking back after New Heart ended,
+        everything was grace." It was the same for us. A sister who had to care for her
+        four and five year-old son and daughter while pregnant with her third child, a
+        sister who returned as a New Heart team member after 13 years but couldn't go
+        anywhere because she came with her 12-month-old child who was shy around
+        strangers, a sister who had to deliver the Word to the children while holding her
+        child because the child severely refused to be separated from mom, a mother who
+        barely left room 101 of the accommodation because she was cooking meals for the
+        children as a first-time team member, dads who had to rush in to bathe the boys
+        while playing outside, etc... It seems like every single one of our team members
+        was in a not-easy situation.
+      </p>
+      <p>
+        Nevertheless, when we shared feedback at the end, instead of anyone complaining
+        about how hard it was in the poor environment, we exchanged words of gratitude
+        and grace. Especially from my perspective, when I suddenly had to change the
+        schedule or insert an unplanned one, everyone who willingly said okay when I
+        visited and asked them to do something was grateful. There were no team members
+        blaming others. We encouraged, motivated, and showed consideration for one
+        another, recognizing each other's weaknesses.
+      </p>
+      <p>
+        We were truly united in one heart when we shared impressions of being moved by
+        each other's actions. I'm grateful that we had a living experience of becoming
+        the beautiful body of the Lord. And above all, all the teachers naturally talked
+        about their next plans to improve what was lacking this time, saying "Next
+        year~". I'm promoting that many people should join the Kids team next year, who
+        want to do this again 😆
+      </p>
+    </div>
+  </div>
+
+  <!-- Kyungjin (Kids) -->
+  <div class="modal" id="modal-kyungjin">
+    <div class="modal-content">
+      <button class="close-modal" aria-label="Close">×</button>
+      <button class="modal-speak-btn" type="button" title="Listen to this story">
+        🔊
+      </button>
+
+      <h2>Kyungjin — New Heart Kids #1 (Los Angeles)</h2>
+
+      <p>
+        In May 2025, God opened a beautiful new chapter as we launched New Heart Kids #1
+        in Los Angeles. It was a long-awaited dream within the New Heart community to see
+        all generations blessed through New Heart, and it was incredible to witness how
+        God opened the door to make this dream a reality.
+      </p>
+      <p>
+        When I first joined New Heart Kids, my heart was especially for young parents. As
+        a mother of four, I remembered the seasons when I felt spiritually dry and left
+        out while raising my little ones. I wanted to serve in a way that would give
+        parents space to be renewed and restored in God’s presence.
+      </p>
+      <p>
+        But as I served, God expanded my heart to embrace their children as well. Serving
+        about twenty children, from toddlers to preteens, I saw firsthand how deeply God
+        treasures each one of these young children. His desire is to raise and equip them
+        as future leaders within the New Heart community.
+      </p>
+      <p>
+        There were certainly challenging moments, but through it all, I witnessed both
+        parents and children receiving one new heart through the Holy Spirit by the end
+        of those three days.
+      </p>
+      <p>
+        With that same heart and encouragement, I was overjoyed to hear that we had New
+        Heart Kids #2 in Korea in October. I believe this is God’s confirmation of His
+        will to call us as a “family” and to give His New Heart to all generations.
+      </p>
+    </div>
+  </div>
+
   <!-- ========= SCRIPT (LANGUAGE, MODALS, AUDIO, KIDS BG) ========= -->
   <script>
     /* ========= HELPER ========= */
@@ -1527,8 +1558,8 @@
         reunionsTitle: "Reunions",
         storiesTitle: "Stories of New Hearts",
         readStory: "Read Story",
-        kidsTitle: "New Heart Kids",
-        editorialTitle: "Compelled by the Fire: The Fourth Day",
+        kidsTitle: "New Heart Kids — The Fourth Generation",
+        editorialSectionTitle: "Editorial",
         serveTitle: "Ways to Serve",
         palancaTitle: "Palanca Donations",
         qrInstruction:
@@ -1548,8 +1579,8 @@
         reunionsTitle: "리유니언",
         storiesTitle: "새 마음 이야기",
         readStory: "간증 읽기",
-        kidsTitle: "뉴하트 키즈",
-        editorialTitle: "불에 붙들린 네 번째 날",
+        kidsTitle: "뉴하트 키즈 — 네 번째 세대",
+        editorialSectionTitle: "에디토리얼",
         serveTitle: "섬길 수 있는 방법",
         palancaTitle: "팔랑카 헌금",
         qrInstruction:
@@ -1569,8 +1600,8 @@
         reunionsTitle: "Hội Ngộ",
         storiesTitle: "Những Tấm Lòng Mới",
         readStory: "Đọc Lời Chứng",
-        kidsTitle: "New Heart Kids",
-        editorialTitle: "Bị Lửa Thúc Dục: Ngày Thứ Tư",
+        kidsTitle: "New Heart Kids — Thế Hệ Thứ Tư",
+        editorialSectionTitle: "Bài Biên Tập",
         serveTitle: "Những Cách Phục Vụ",
         palancaTitle: "Palanca & Dâng Hiến",
         qrInstruction:
@@ -1590,8 +1621,8 @@
         reunionsTitle: "การนัดพบ",
         storiesTitle: "เรื่องราวหัวใจใหม่",
         readStory: "อ่านคำพยาน",
-        kidsTitle: "New Heart Kids",
-        editorialTitle: "ถูกไฟผลักดัน: วันที่สี่",
+        kidsTitle: "New Heart Kids — เจเนอเรชันที่สี่",
+        editorialSectionTitle: "บทบรรณาธิการ",
         serveTitle: "วิธีการรับใช้",
         palancaTitle: "Palanca & การถวาย",
         qrInstruction:
@@ -1611,8 +1642,8 @@
         reunionsTitle: "מפגשי בוגרים",
         storiesTitle: "סיפורי לב חדש",
         readStory: "קרא עדות",
-        kidsTitle: "New Heart Kids",
-        editorialTitle: "נמשכים באש: היום הרביעי",
+        kidsTitle: "New Heart Kids — הדור הרביעי",
+        editorialSectionTitle: "מאמר מערכת",
         serveTitle: "דרכים לשרת",
         palancaTitle: "פלנקה ונתינה",
         qrInstruction:
@@ -1636,7 +1667,7 @@
       safeSetText("reunions-title", t.reunionsTitle);
       safeSetText("stories-title", t.storiesTitle);
       safeSetText("kids-title", t.kidsTitle);
-      safeSetText("editorial-title", t.editorialTitle);
+      safeSetText("editorial-section-title", t.editorialSectionTitle);
       safeSetText("serve-title", t.serveTitle);
       safeSetText("palanca-title", t.palancaTitle);
       safeSetText("qr-instruction", t.qrInstruction);
@@ -1755,12 +1786,11 @@
 
     /* ========= KIDS BACKGROUND ROTATION ========= */
     (function setupKidsBackgroundRotation() {
-      const bgImages = document.querySelectorAll(".kid-bg-img");
+      const bgImages = document.querySelectorAll(".kids-bg-img");
       if (!bgImages || bgImages.length < 2) return;
 
       let current = 0;
       bgImages.forEach((img, idx) => {
-        // first one might already be style="opacity:1", that's fine
         if (idx !== 0) img.style.opacity = "0";
       });
 
