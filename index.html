@@ -1539,267 +1539,438 @@
   </div>
 
   <!-- ========= SCRIPT (LANGUAGE, MODALS, AUDIO, KIDS BG) ========= -->
-  <script>
-    /* ========= HELPER ========= */
-    function safeSetText(id, text) {
-      const el = document.getElementById(id);
-      if (el && typeof text === "string") el.textContent = text;
-    }
+ <script>
+  /* ========= HELPER ========= */
+  function safeSetText(id, text) {
+    const el = document.getElementById(id);
+    if (el && typeof text === "string") el.textContent = text;
+  }
 
-    /* ========= TRANSLATIONS (UI ONLY) ========= */
-    const translations = {
-      EN: {
-        mainTitle: "New Heart Global Family Newsletter",
-        subtitle: "The Fourth Day Chat — Fall 2025",
-        foundersGreetingTitle: "Founders' Greeting",
-        foundersTitle: "Founders and New Heart Global Directors",
-        regionalDirectorsTitle: "Regional Directors — Thailand",
-        upcomingNhTitle: "Upcoming New Heart",
-        reunionsTitle: "Reunions",
-        storiesTitle: "Stories of New Hearts",
-        readStory: "Read Story",
-        kidsTitle: "New Heart Kids — The Fourth Generation",
-        editorialSectionTitle: "Editorial",
-        serveTitle: "Ways to Serve",
-        palancaTitle: "Palanca Donations",
-        qrInstruction:
-          "Please use the QR codes or bank accounts below and indicate the purpose of your donation.",
-        footerCopyright:
-          "© 2025 New Heart Ministry. All rights reserved.",
-        footerNote:
-          "Please keep this newsletter within the New Heart family and share it as a testimony of God’s goodness."
-      },
-      KO: {
-        mainTitle: "뉴하트 글로벌 패밀리 뉴스레터",
-        subtitle: "네 번째 날의 이야기 — 2025 가을",
-        foundersGreetingTitle: "설립자 인사",
-        foundersTitle: "설립자 & 뉴하트 글로벌 디렉터",
-        regionalDirectorsTitle: "지역 디렉터 — 태국",
-        upcomingNhTitle: "다가오는 뉴하트",
-        reunionsTitle: "리유니언",
-        storiesTitle: "새 마음 이야기",
-        readStory: "간증 읽기",
-        kidsTitle: "뉴하트 키즈 — 네 번째 세대",
-        editorialSectionTitle: "에디토리얼",
-        serveTitle: "섬길 수 있는 방법",
-        palancaTitle: "팔랑카 헌금",
-        qrInstruction:
-          "아래 QR 코드나 계좌로 헌금하실 수 있습니다. (선교, 장학금, 뉴하트 키즈 등 목적을 적어주세요.)",
-        footerCopyright:
-          "© 2025 뉴하트 미니스트리. All rights reserved.",
-        footerNote:
-          "이 뉴스레터는 뉴하트 가족 안에서 하나님의 선하심을 나누는 간증으로 사용해 주세요."
-      },
-      VN: {
-        mainTitle: "Bản Tin Gia Đình New Heart Toàn Cầu",
-        subtitle: "Cuộc Trò Chuyện Ngày Thứ Tư — Thu 2025",
-        foundersGreetingTitle: "Lời Chào Từ Người Sáng Lập",
-        foundersTitle: "Người Sáng Lập & Giám Đốc New Heart Toàn Cầu",
-        regionalDirectorsTitle: "Giám Đốc Khu Vực — Thái Lan",
-        upcomingNhTitle: "New Heart Sắp Tới",
-        reunionsTitle: "Hội Ngộ",
-        storiesTitle: "Những Tấm Lòng Mới",
-        readStory: "Đọc Lời Chứng",
-        kidsTitle: "New Heart Kids — Thế Hệ Thứ Tư",
-        editorialSectionTitle: "Bài Biên Tập",
-        serveTitle: "Những Cách Phục Vụ",
-        palancaTitle: "Palanca & Dâng Hiến",
-        qrInstruction:
-          "Hãy dùng mã QR hoặc các tài khoản bên dưới để dâng hiến và ghi rõ mục đích dâng hiến.",
-        footerCopyright:
-          "© 2025 New Heart Ministry. All rights reserved.",
-        footerNote:
-          "Xin hãy giữ bản tin này trong gia đình New Heart và chia sẻ như một lời chứng về sự tốt lành của Đức Chúa Trời."
-      },
-      TH: {
-        mainTitle: "จดหมายข่าวครอบครัวนิวฮาร์ททั่วโลก",
-        subtitle: "บทสนทนาในวันที่สี่ — ฤดูใบไม้ร่วง 2025",
-        foundersGreetingTitle: "คำทักทายจากผู้ก่อตั้ง",
-        foundersTitle: "ผู้ก่อตั้งและผู้อำนวยการ New Heart ทั่วโลก",
-        regionalDirectorsTitle: "ผู้อำนวยการภูมิภาค — ประเทศไทย",
-        upcomingNhTitle: "กำหนดการ New Heart ครั้งต่อไป",
-        reunionsTitle: "การนัดพบ",
-        storiesTitle: "เรื่องราวหัวใจใหม่",
-        readStory: "อ่านคำพยาน",
-        kidsTitle: "New Heart Kids — เจเนอเรชันที่สี่",
-        editorialSectionTitle: "บทบรรณาธิการ",
-        serveTitle: "วิธีการรับใช้",
-        palancaTitle: "Palanca & การถวาย",
-        qrInstruction:
-          "ใช้ QR code หรือบัญชีด้านล่างเพื่อถวาย โปรดระบุวัตถุประสงค์ของการถวายด้วย.",
-        footerCopyright:
-          "© 2025 New Heart Ministry. All rights reserved.",
-        footerNote:
-          "โปรดเก็บจดหมายข่าวฉบับนี้ไว้ในครอบครัว New Heart และแบ่งปันเป็นพยานถึงความดีของพระเจ้า."
-      },
-      IL: {
-        mainTitle: "עלון משפחת ניוהארט הגלובלית",
-        subtitle: "שיחת היום הרביעי — סתיו 2025",
-        foundersGreetingTitle: "ברכת המייסדים",
-        foundersTitle: "המייסדים ומנהלי New Heart הגלובליים",
-        regionalDirectorsTitle: "מנהלי אזור — תאילנד",
-        upcomingNhTitle: "סופי שבוע קרובים של New Heart",
-        reunionsTitle: "מפגשי בוגרים",
-        storiesTitle: "סיפורי לב חדש",
-        readStory: "קרא עדות",
-        kidsTitle: "New Heart Kids — הדור הרביעי",
-        editorialSectionTitle: "מאמר מערכת",
-        serveTitle: "דרכים לשרת",
-        palancaTitle: "פלנקה ונתינה",
-        qrInstruction:
-          "השתמשו בקודי ה-QR או בחשבונות שלמטה כדי לתת. אנא ציינו את מטרת הנתינה.",
-        footerCopyright:
-          "© 2025 New Heart Ministry. All rights reserved.",
-        footerNote:
-          "אנא השאירו עלון זה בתוך משפחת New Heart ושתפו אותו כעדות לטובו של אלוהים."
-      }
-    };
+  /* ========= CAPTURE ORIGINAL ENGLISH HTML ========= */
+  const originalFounderHTML =
+    document.getElementById("founder-msg")?.innerHTML || "";
+  const originalEditorialHTML =
+    document.getElementById("editorial-content")?.innerHTML || "";
 
-    function switchLanguage(lang) {
-      const t = translations[lang] || translations.EN;
+  /* ========= FULL-TEXT TRANSLATIONS FOR FOUNDER + EDITORIAL =========
+     You can add VN / TH / IL below following the same pattern.
+  */
+  const fullText = {
+    EN: {
+      founder: originalFounderHTML,
+      editorial: originalEditorialHTML,
+    },
 
-      safeSetText("main-title", t.mainTitle);
-      safeSetText("subtitle", t.subtitle);
-      safeSetText("founders-greeting-title", t.foundersGreetingTitle);
-      safeSetText("founders-title", t.foundersTitle);
-      safeSetText("regional-directors-title", t.regionalDirectorsTitle);
-      safeSetText("upcoming-nh-title", t.upcomingNhTitle);
-      safeSetText("reunions-title", t.reunionsTitle);
-      safeSetText("stories-title", t.storiesTitle);
-      safeSetText("kids-title", t.kidsTitle);
-      safeSetText("editorial-section-title", t.editorialSectionTitle);
-      safeSetText("serve-title", t.serveTitle);
-      safeSetText("palanca-title", t.palancaTitle);
-      safeSetText("qr-instruction", t.qrInstruction);
-      safeSetText("footer-copyright", t.footerCopyright);
-      safeSetText("footer-note", t.footerNote);
+    // ----- KOREAN FULL TRANSLATIONS (example) -----
+    KO: {
+      founder: `
+        안녕하세요, 뉴하트 가족 여러분!
+        <br /><br />
+        우리는 보통 서로를 만날 때 “어떻게 지내세요?”라고 인사합니다.
+        이것은 건강은 어떤지, 가정은 어떤지, 일은 어떤지를 묻는 말입니다.
+        하지만 누군가가 이렇게 물어본 적이 있으신가요?
+        “당신의 마음은 어떻습니까?”
+        어쩌면 우리에게는 이 질문이 더 어울리는 인사일지도 모릅니다.
+        하나님께는 언제나 “마음”이 가장 중요한 문제이기 때문입니다.
+        <br /><br />
+        하나님께서 사무엘 선지자를 이새의 집으로 보내셔서
+        이스라엘의 다음 왕을 택하게 하실 때,
+        하나님은 이렇게 말씀하시며 자신의 원칙을 분명히 하셨습니다.
+        <em>“여호와는 사람과 같이 보지 아니하시나니
+        사람은 외모를 보거니와 여호와는 중심을 보시느니라.”</em>
+        <br /><br />
+        이것은 우리 뉴하트 공동체에게 특히 더 중요하고 깊이 관련된 말씀입니다.
+        왜냐하면 우리는 “새 마음” 공동체이기 때문입니다.
+        <br /><br />
+        하나님은 우리에게 약속하셨습니다.
+        <em>“또 새 영을 너희 속에 두고 너희 육신에서 굳은 마음을 제거하고
+        부드러운 마음을 줄 것이며”(겔 36:26)</em>
+        <br />
+        우리는 예수 그리스도 안에 있는 귀한 믿음과
+        그분이 풍성히 부어 주신 은혜로 말미암아,
+        여러분의 상황이나 형편이 어떠하든지
+        여러분의 “마음”이 잘 되기를, 늘 강건하기를 소망하며 기도합니다.
+        <br /><br />
+        아바 아버지께서 성령의 능력 가운데 우리를 붙드시고
+        매 순간 승리하는 “네 번째 날”을 살아가도록
+        지금까지 인도해 주심을 찬양하며 감사드립니다.
+        <br /><br />
+        여러분과 여러분의 가정과,
+        하나님의 백성과 교회를 향한 여러분의 모든 사랑의 수고 위에
+        주님의 복이 충만하기를 축복합니다.
+        <br /><br />
+        사랑과 감사 안에서,
+        <br />
+        차제이슨 &amp; 차영미 목사 드림
+      `,
 
-      document.querySelectorAll(".open-modal").forEach((btn) => {
-        btn.textContent = t.readStory;
-      });
+      editorial: `
+        <h3 id="editorial-h1">불에 붙들린 네 번째 날</h3>
 
-      // Hebrew: make modal text RTL; others: LTR
-      document.querySelectorAll(".modal-content").forEach((mc) => {
-        if (lang === "IL") {
-          mc.setAttribute("dir", "rtl");
-          mc.style.textAlign = "right";
-        } else {
-          mc.setAttribute("dir", "ltr");
-          mc.style.textAlign = "left";
-        }
-      });
-    }
+        <p id="editorial-p1">
+          뉴하트 미니스트리는 최근 한국에서 제54차 뉴하트를 마쳤습니다.
+          이는 캄보디아, 베트남, 중국, 에티오피아, 이스라엘, 한국 등
+          여러 나라에서 거의 20년에 걸쳐 부어진 하나님의 부인할 수 없는
+          은혜의 여정을 기념하는 시간이었습니다.
+          이 움직임은 에스겔 36장 26절의 약속처럼,
+          모든 세대 가운데 “새 마음”을 주시겠다는
+          하나님의 부르심에 대한 응답이며,
+          우리를 한 뜨거운 글로벌 킹덤 패밀리로 엮어 가시는
+          하나님의 손길입니다.
+          <br /><br />
+          이 부르심은 온전한 부르심입니다.
+          어른 세대만이 아니라,
+          뉴하트 키즈 사역을 통해 자녀 세대 역시
+          오늘 이 시간 하나님의 역사에 적극적으로 동참하는 세대로 세우시는
+          하나님의 마음을 보여 줍니다.
+          이는 앞으로도 이 운동이 오래도록
+          열정과 불로 이어지도록 하는 중요한 기초입니다.
+        </p>
 
-    // Default language
-    switchLanguage("EN");
+        <h3 id="editorial-h2">네 번째 날: 멈출 수 없는 사명</h3>
 
-    // Language button clicks
-    document
-      .querySelectorAll(".language-buttons span[data-lang]")
-      .forEach((btn) => {
-        btn.addEventListener("click", () => {
-          switchLanguage(btn.dataset.lang);
-        });
-      });
+        <p id="editorial-p2">
+          뉴하트의 3일 동안 우리는 하나님의 사랑과
+          변혁의 능력 안으로 깊이 잠기는 시간을 보냅니다.
+          그러나 이 3일 자체가 끝이 아니라, 준비일 뿐입니다.
+          우리는 반드시 “네 번째 날”을 살아가도록 부르심을 받았습니다.
+          <br /><br />
+          네 번째 날이란, 하나님께서 새롭게 하신 우리의 마음으로
+          매일의 삶 속에서 즉각 순종하며 살아가는 삶입니다.
+          영적 침체를 거절하고,
+          하나님의 선하심과 은혜 안에서
+          계속 자라가기를 선택하는 삶입니다.
+          사도행전 2장의 공동체처럼,
+          서로 연결된 상태로 머물며
+          아무것도 숨기지 않고 함께 섬기는 삶입니다.
+          <br /><br />
+          우리는 고립을 선택할 수 없습니다.
+          대륙과 나라를 가로질러 맺어진
+          이 깨어지지 않는 패밀리 언약 안에서
+          우리의 강함이 드러납니다.
+          우리는 이 불붙은 백성을 일으키려는 하나님의 꿈,
+          이사야 54장의 확장되는 장막의 비전을
+          함께 이루어 가기로 다시 헌신합니다.
+        </p>
 
-    /* ========= MODALS ========= */
-    const modals = document.querySelectorAll(".modal");
+        <h3 id="editorial-h3">이 글로벌 뉴스레터의 목적</h3>
+
+        <p id="editorial-p3">
+          하나님께서 뉴하트 미니스트리에 주신 비전이
+          점점 더 또렷해질수록,
+          우리는 단지 “하나님이 하신 일을 기록하는 것”을 넘어서
+          패밀리 전체가 더욱 긴밀히 연결되고 돌봄을 받기를 원하시는
+          하나님의 마음을 느낍니다.
+          <br /><br />
+          그래서 이 분기별 글로벌 뉴스레터는
+          선택 사항이 아니라 반드시 필요한 도구입니다.
+          이 뉴스레터는
+          전 세계에 흩어져 있는 뉴하트 가족을
+          한 몸으로 연결하고,
+          각 지역에서 나타나는 하나님의 신실하심의 증거를 나누며,
+          함께 우리의 시선을 다시 맞추도록 돕는 통로입니다.
+          <br /><br />
+          우리는 각 나라, 각 세대의 간증을 들을 때마다
+          “네 번째 날”을 함께 살아가자는 부르심을 새롭게 기억합니다.
+          이 뉴스레터가 우리 모두가
+          계속해서 성숙해지고, 자라가고, 확장되도록 돕는
+          은혜의 도구가 되기를 기도합니다.
+        </p>
+
+        <p id="editorial-closing">
+          이제 우리가 걸어가야 할 길은 분명합니다.
+          우리는 은혜만 수동적으로 받는 공동체가 아니라,
+          변함없는 비전에 붙들린 “능동적인 하나님의 군대”입니다.
+          하나님의 능력을 힘입어,
+          주님께서 이 사역 위에 선포하신
+          모든 말씀과 약속이 온전히 이루어질 때까지
+          함께 나아가겠습니다.
+        </p>
+      `,
+    },
+
+    // ----- PLACEHOLDERS FOR VN / TH / IL -----
+    // You (or I in follow-ups) can fill these with full translations:
+    VN: {
+      founder: null,
+      editorial: null,
+    },
+    TH: {
+      founder: null,
+      editorial: null,
+    },
+    IL: {
+      founder: null,
+      editorial: null,
+    },
+  };
+
+  /* ========= UI LABEL TRANSLATIONS ========= */
+  const translations = {
+    EN: {
+      mainTitle: "New Heart Global Family Newsletter",
+      subtitle: "The Fourth Day Chat — Fall 2025",
+      foundersGreetingTitle: "Founders' Greeting",
+      foundersTitle: "Founders and New Heart Global Directors",
+      regionalDirectorsTitle: "Regional Directors — Thailand",
+      upcomingNhTitle: "Upcoming New Heart",
+      reunionsTitle: "Reunions",
+      storiesTitle: "Stories of New Hearts",
+      readStory: "Read Story",
+      kidsTitle: "New Heart Kids — The Fourth Generation",
+      editorialSectionTitle: "Editorial",
+      serveTitle: "Ways to Serve",
+      palancaTitle: "Palanca Donations",
+      qrInstruction:
+        "Please use the QR codes or bank accounts below and indicate the purpose of your donation.",
+      footerCopyright: "© 2025 New Heart Ministry. All rights reserved.",
+      footerNote:
+        "Please keep this newsletter within the New Heart family and share it as a testimony of God’s goodness.",
+    },
+    KO: {
+      mainTitle: "뉴하트 글로벌 패밀리 뉴스레터",
+      subtitle: "네 번째 날의 이야기 — 2025 가을",
+      foundersGreetingTitle: "설립자 인사",
+      foundersTitle: "설립자 & 뉴하트 글로벌 디렉터",
+      regionalDirectorsTitle: "지역 디렉터 — 태국",
+      upcomingNhTitle: "다가오는 뉴하트",
+      reunionsTitle: "리유니언",
+      storiesTitle: "새 마음 이야기",
+      readStory: "간증 읽기",
+      kidsTitle: "뉴하트 키즈 — 네 번째 세대",
+      editorialSectionTitle: "에디토리얼",
+      serveTitle: "섬길 수 있는 방법",
+      palancaTitle: "팔랑카 헌금",
+      qrInstruction:
+        "아래 QR 코드나 계좌로 헌금하실 수 있습니다. (선교, 장학금, 뉴하트 키즈 등 목적을 적어주세요.)",
+      footerCopyright:
+        "© 2025 뉴하트 미니스트리. All rights reserved.",
+      footerNote:
+        "이 뉴스레터는 뉴하트 가족 안에서 하나님의 선하심을 나누는 간증으로 사용해 주세요.",
+    },
+    VN: {
+      mainTitle: "Bản Tin Gia Đình New Heart Toàn Cầu",
+      subtitle: "Cuộc Trò Chuyện Ngày Thứ Tư — Thu 2025",
+      foundersGreetingTitle: "Lời Chào Từ Người Sáng Lập",
+      foundersTitle: "Người Sáng Lập & Giám Đốc New Heart Toàn Cầu",
+      regionalDirectorsTitle: "Giám Đốc Khu Vực — Thái Lan",
+      upcomingNhTitle: "New Heart Sắp Tới",
+      reunionsTitle: "Hội Ngộ",
+      storiesTitle: "Những Tấm Lòng Mới",
+      readStory: "Đọc Lời Chứng",
+      kidsTitle: "New Heart Kids — Thế Hệ Thứ Tư",
+      editorialSectionTitle: "Bài Biên Tập",
+      serveTitle: "Những Cách Phục Vụ",
+      palancaTitle: "Palanca & Dâng Hiến",
+      qrInstruction:
+        "Hãy dùng mã QR hoặc các tài khoản bên dưới để dâng hiến và ghi rõ mục đích dâng hiến.",
+      footerCopyright:
+        "© 2025 New Heart Ministry. All rights reserved.",
+      footerNote:
+        "Xin hãy giữ bản tin này trong gia đình New Heart và chia sẻ như một lời chứng về sự tốt lành của Đức Chúa Trời.",
+    },
+    TH: {
+      mainTitle: "จดหมายข่าวครอบครัวนิวฮาร์ททั่วโลก",
+      subtitle: "บทสนทนาในวันที่สี่ — ฤดูใบไม้ร่วง 2025",
+      foundersGreetingTitle: "คำทักทายจากผู้ก่อตั้ง",
+      foundersTitle: "ผู้ก่อตั้งและผู้อำนวยการ New Heart ทั่วโลก",
+      regionalDirectorsTitle: "ผู้อำนวยการภูมิภาค — ประเทศไทย",
+      upcomingNhTitle: "กำหนดการ New Heart ครั้งต่อไป",
+      reunionsTitle: "การนัดพบ",
+      storiesTitle: "เรื่องราวหัวใจใหม่",
+      readStory: "อ่านคำพยาน",
+      kidsTitle: "New Heart Kids — เจเนอเรชันที่สี่",
+      editorialSectionTitle: "บทบรรณาธิการ",
+      serveTitle: "วิธีการรับใช้",
+      palancaTitle: "Palanca & การถวาย",
+      qrInstruction:
+        "ใช้ QR code หรือบัญชีด้านล่างเพื่อถวาย โปรดระบุวัตถุประสงค์ของการถวายด้วย.",
+      footerCopyright:
+        "© 2025 New Heart Ministry. All rights reserved.",
+      footerNote:
+        "โปรดเก็บจดหมายข่าวฉบับนี้ไว้ในครอบครัว New Heart และแบ่งปันเป็นพยานถึงความดีของพระเจ้า.",
+    },
+    IL: {
+      mainTitle: "עלון משפחת ניוהארט הגלובלית",
+      subtitle: "שיחת היום הרביעי — סתיו 2025",
+      foundersGreetingTitle: "ברכת המייסדים",
+      foundersTitle: "המייסדים ומנהלי New Heart הגלובליים",
+      regionalDirectorsTitle: "מנהלי אזור — תאילנד",
+      upcomingNhTitle: "סופי שבוע קרובים של New Heart",
+      reunionsTitle: "מפגשי בוגרים",
+      storiesTitle: "סיפורי לב חדש",
+      readStory: "קרא עדות",
+      kidsTitle: "New Heart Kids — הדור הרביעי",
+      editorialSectionTitle: "מאמר מערכת",
+      serveTitle: "דרכים לשרת",
+      palancaTitle: "פלנקה ונתינה",
+      qrInstruction:
+        "השתמשו בקודי ה-QR או בחשבונות שלמטה כדי לתת. אנא ציינו את מטרת הנתינה.",
+      footerCopyright:
+        "© 2025 New Heart Ministry. All rights reserved.",
+      footerNote:
+        "אנא השאירו עלון זה בתוך משפחת New Heart ושתפו אותו כעדות לטובו של אלוהים.",
+    },
+  };
+
+  function switchLanguage(lang) {
+    const t = translations[lang] || translations.EN;
+
+    safeSetText("main-title", t.mainTitle);
+    safeSetText("subtitle", t.subtitle);
+    safeSetText("founders-greeting-title", t.foundersGreetingTitle);
+    safeSetText("founders-title", t.foundersTitle);
+    safeSetText("regional-directors-title", t.regionalDirectorsTitle);
+    safeSetText("upcoming-nh-title", t.upcomingNhTitle);
+    safeSetText("reunions-title", t.reunionsTitle);
+    safeSetText("stories-title", t.storiesTitle);
+    safeSetText("kids-title", t.kidsTitle);
+    safeSetText("editorial-section-title", t.editorialSectionTitle);
+    safeSetText("serve-title", t.serveTitle);
+    safeSetText("palanca-title", t.palancaTitle);
+    safeSetText("qr-instruction", t.qrInstruction);
+    safeSetText("footer-copyright", t.footerCopyright);
+    safeSetText("footer-note", t.footerNote);
 
     document.querySelectorAll(".open-modal").forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        const target = btn.getAttribute("data-target");
-        if (!target) return;
-        const modal = document.querySelector(target);
-        if (modal) {
-          modal.classList.add("show");
-          document.body.style.overflow = "hidden";
-        }
+      btn.textContent = t.readStory;
+    });
+
+    // Hebrew: make modal text RTL; others: LTR
+    document.querySelectorAll(".modal-content").forEach((mc) => {
+      if (lang === "IL") {
+        mc.setAttribute("dir", "rtl");
+        mc.style.textAlign = "right";
+      } else {
+        mc.setAttribute("dir", "ltr");
+        mc.style.textAlign = "left";
+      }
+    });
+
+    // === NEW: swap Founder + Editorial full content ===
+    const ft = fullText[lang] || fullText.EN;
+    const founderEl = document.getElementById("founder-msg");
+    const editorialEl = document.getElementById("editorial-content");
+
+    if (founderEl) {
+      founderEl.innerHTML = ft.founder || originalFounderHTML;
+    }
+    if (editorialEl) {
+      editorialEl.innerHTML = ft.editorial || originalEditorialHTML;
+    }
+  }
+
+  // Default language
+  switchLanguage("EN");
+
+  // Language button clicks
+  document
+    .querySelectorAll(".language-buttons span[data-lang]")
+    .forEach((btn) => {
+      btn.addEventListener("click", () => {
+        switchLanguage(btn.dataset.lang);
       });
     });
 
-    document.querySelectorAll(".close-modal").forEach((btn) => {
+  /* ========= MODALS ========= */
+  const modals = document.querySelectorAll(".modal");
+
+  document.querySelectorAll(".open-modal").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = btn.getAttribute("data-target");
+      if (!target) return;
+      const modal = document.querySelector(target);
+      if (modal) {
+        modal.classList.add("show");
+        document.body.style.overflow = "hidden";
+      }
+    });
+  });
+
+  document.querySelectorAll(".close-modal").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const modal = btn.closest(".modal");
+      if (modal) {
+        modal.classList.remove("show");
+        document.body.style.overflow = "auto";
+      }
+    });
+  });
+
+  modals.forEach((modal) => {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.remove("show");
+        document.body.style.overflow = "auto";
+      }
+    });
+  });
+
+  /* ========= AUDIO: FULL PAGE ========= */
+  let headerSpeaking = false;
+  let headerUtterance = null;
+
+  function toggleHeaderAudio() {
+    if (headerSpeaking) {
+      window.speechSynthesis.cancel();
+      headerSpeaking = false;
+      return;
+    }
+    const mainText = document.body.innerText;
+    headerUtterance = new SpeechSynthesisUtterance(mainText);
+    headerUtterance.rate = 0.95;
+    window.speechSynthesis.speak(headerUtterance);
+    headerSpeaking = true;
+    headerUtterance.onend = () => {
+      headerSpeaking = false;
+    };
+  }
+
+  const headerAudioBtn = document.getElementById("audioToggleHeader");
+  if (headerAudioBtn) {
+    headerAudioBtn.addEventListener("click", toggleHeaderAudio);
+  }
+
+  /* ========= AUDIO: INDIVIDUAL MODALS ========= */
+  function setupModalSpeakButtons() {
+    document.querySelectorAll(".modal-speak-btn").forEach((btn) => {
       btn.addEventListener("click", () => {
         const modal = btn.closest(".modal");
-        if (modal) {
-          modal.classList.remove("show");
-          document.body.style.overflow = "auto";
-        }
-      });
-    });
+        if (!modal) return;
+        const text = modal.innerText;
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.rate = 0.95;
 
-    modals.forEach((modal) => {
-      modal.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.classList.remove("show");
-          document.body.style.overflow = "auto";
-        }
-      });
-    });
-
-    /* ========= AUDIO: FULL PAGE ========= */
-    let headerSpeaking = false;
-    let headerUtterance = null;
-
-    function toggleHeaderAudio() {
-      if (headerSpeaking) {
+        btn.classList.add("speaking");
         window.speechSynthesis.cancel();
-        headerSpeaking = false;
-        return;
-      }
-      const mainText = document.body.innerText;
-      headerUtterance = new SpeechSynthesisUtterance(mainText);
-      headerUtterance.rate = 0.95;
-      window.speechSynthesis.speak(headerUtterance);
-      headerSpeaking = true;
-      headerUtterance.onend = () => {
-        headerSpeaking = false;
-      };
-    }
+        window.speechSynthesis.speak(utter);
 
-    const headerAudioBtn = document.getElementById("audioToggleHeader");
-    if (headerAudioBtn) {
-      headerAudioBtn.addEventListener("click", toggleHeaderAudio);
-    }
-
-    /* ========= AUDIO: INDIVIDUAL MODALS ========= */
-    function setupModalSpeakButtons() {
-      document.querySelectorAll(".modal-speak-btn").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const modal = btn.closest(".modal");
-          if (!modal) return;
-          const text = modal.innerText;
-          const utter = new SpeechSynthesisUtterance(text);
-          utter.rate = 0.95;
-
-          btn.classList.add("speaking");
-          window.speechSynthesis.cancel();
-          window.speechSynthesis.speak(utter);
-
-          utter.onend = () => {
-            btn.classList.remove("speaking");
-          };
-        });
+        utter.onend = () => {
+          btn.classList.remove("speaking");
+        };
       });
-    }
-    setupModalSpeakButtons();
+    });
+  }
+  setupModalSpeakButtons();
 
-    /* ========= KIDS BACKGROUND ROTATION ========= */
-    (function setupKidsBackgroundRotation() {
-      const bgImages = document.querySelectorAll(".kids-bg-img");
-      if (!bgImages || bgImages.length < 2) return;
+  /* ========= KIDS BACKGROUND ROTATION ========= */
+  (function setupKidsBackgroundRotation() {
+    const bgImages = document.querySelectorAll(".kids-bg-img");
+    if (!bgImages || bgImages.length < 2) return;
 
-      let current = 0;
-      bgImages.forEach((img, idx) => {
-        if (idx !== 0) img.style.opacity = "0";
-      });
+    let current = 0;
+    bgImages.forEach((img, idx) => {
+      if (idx !== 0) img.style.opacity = "0";
+    });
 
-      setInterval(() => {
-        bgImages[current].style.opacity = "0";
-        current = (current + 1) % bgImages.length;
-        bgImages[current].style.opacity = "1";
-      }, 8000);
-    })();
-  </script>
+    setInterval(() => {
+      bgImages[current].style.opacity = "0";
+      current = (current + 1) % bgImages.length;
+      bgImages[current].style.opacity = "1";
+    }, 8000);
+  })();
+</script>
+ 
 </body>
 </html>
